@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-fetch"
+      ],
+      "type": "stdio"
+    },
+    "notion": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@notionhq/notion-mcp-server"
+      ],
+      "env": {
+        "NOTION_API_KEY": "your_notion_api_key_here"
+      },
+      "type": "stdio"
+    },
+    "exa": {
+      "url": "https://mcp.exa.ai/mcp?tools=web_search_exa,get_code_context_exa,company_research_exa,deep_search_exa",
+      "type": "http"
+    },
+    "gamma-api": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["~/.claude/mcp-servers/gamma-api/dist/index.js"],
+      "env": {
+        "GAMMA_API_KEY": "your_gamma_api_key_here",
+        "GAMMA_TIMEOUT_MS": "120000"
+      }
+    }
+  }
+}

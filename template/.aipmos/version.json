@@ -1,0 +1,20 @@
+{
+  "version": "1.1.0",
+  "lastUpdated": "2026-02-09T16:00:00Z",
+  "schemaVersion": "1.0",
+  "changelog": [
+    {
+      "version": "1.1.0",
+      "date": "2026-02-09",
+      "type": "minor",
+      "summary": "Added version tracking, sleeping memory manifest, /think modes, orchestration docs, evaluation system"
+    },
+    {
+      "version": "1.0.0",
+      "date": "2026-01-30",
+      "type": "major",
+      "summary": "Initial AIPMOS release with Phase 1-4 architecture"
+    }
+  ],
+  "breakingChanges": []
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Planview Design System - Positioning Boxes Layout
+ * Use for: Landmine questions, strategic positioning, key differentiators
+ * Dimensions: 720pt × 405pt (16:9 aspect ratio)
+ */
+
+html { background: #F8FAFC; }
+body {
+  width: 720pt;
+  height: 405pt;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+}
+
+/* DARK SLATE HEADER BAR */
+.header {
+  background: #0F172A;
+  padding: 10pt 24pt;
+}
+
+.header-title {
+  color: #FFFFFF;
+  font-size: 22pt;
+  font-weight: bold;
+  margin: 0;
+}
+
+.header-tagline {
+  color: #E2251B;
+  font-size: 9pt;
+  font-weight: bold;
+  margin: 4pt 0 0 0;
+  letter-spacing: 0.5pt;
+  text-transform: uppercase;
+}
+
+/* POSITIONING BOXES */
+.boxes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12pt;
+  padding: 16pt 24pt;
+}
+
+/* NAVY BOX (Pivot/Insight) */
+.pivot-box {
+  background: #002060;
+  border-radius: 4pt;
+  padding: 14pt 16pt;
+}
+
+.pivot-label {
+  color: #E2251B;
+  font-size: 8pt;
+  font-weight: bold;
+  margin: 0 0 6pt 0;
+  text-transform: uppercase;
+}
+
+.pivot-text {
+  color: #FFFFFF;
+  font-size: 10pt;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* DARK BOX (Positioning Statement) */
+.positioning-box {
+  background: #0F172A;
+  border-radius: 4pt;
+  padding: 12pt 16pt;
+}
+
+.positioning-text {
+  color: #FFFFFF;
+  font-size: 11pt;
+  font-style: italic;
+  margin: 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* WHITE BOX WITH RED ACCENT (Differentiators) */
+.differentiator-box {
+  background: #FFFFFF;
+  border-radius: 4pt;
+  padding: 14pt 16pt;
+  border-left: 4pt solid #E2251B;
+}
+
+.differentiator-label {
+  color: #002060;
+  font-size: 10pt;
+  font-weight: bold;
+  margin: 0 0 8pt 0;
+}
+
+.differentiator-items {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.differentiator-items li {
+  color: #334155;
+  font-size: 9pt;
+  margin-bottom: 6pt;
+  padding-left: 16pt;
+  position: relative;
+  line-height: 1.4;
+}
+
+/* FOOTER */
+.footer {
+  padding: 6pt 24pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-text {
+  color: #94A3B8;
+  font-size: 6pt;
+  margin: 0;
+}
+
+.footer-logo {
+  height: 10pt;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <p class="header-title">{{TITLE}}</p>
+  <p class="header-tagline">{{TAGLINE}}</p>
+</div>
+
+<div class="boxes">
+  <!-- Positioning statement (dark box) -->
+  <div class="positioning-box">
+    <p class="positioning-text">"{{POSITIONING_TEXT}}"</p>
+  </div>
+
+  <!-- Pivot box (navy) -->
+  <div class="pivot-box">
+    <p class="pivot-label">{{PIVOT_LABEL}}</p>
+    <p class="pivot-text">{{PIVOT_TEXT}}</p>
+  </div>
+
+  <!-- Differentiator box (white with red accent) -->
+  <div class="differentiator-box">
+    <p class="differentiator-label">{{DIFF_LABEL}}</p>
+    <ul class="differentiator-items">
+      <li>{{DIFF_ITEM1}}</li>
+      <li>{{DIFF_ITEM2}}</li>
+      <li>{{DIFF_ITEM3}}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <p class="footer-text">Planview Confidential</p>
+  <img class="footer-logo" src="/tmp/planview-logo.png">
+</div>
+
+</body>
+</html>

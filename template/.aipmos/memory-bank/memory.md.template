@@ -1,0 +1,105 @@
+# Workspace Memory
+
+## Current Focus
+
+**Role**: {{YOUR_ROLE}} at {{YOUR_COMPANY}} ({{DATE}})
+
+**Product Vision**: [UPDATE: Brief description of your product vision]
+
+**Active Task**: [UPDATE: What you're currently working on]
+
+**Recent Completed Work**:
+- [UPDATE: Recent accomplishment 1]
+- [UPDATE: Recent accomplishment 2]
+- [UPDATE: Recent accomplishment 3]
+
+### [{{DATE}}] Session: [UPDATE: Session title]
+**Planned**: [UPDATE: What was planned]
+**Completed**: [UPDATE: What was completed]
+**Outcome**: [UPDATE: Result/impact]
+
+## Product Context
+
+### {{PRODUCT_1}}
+
+**What is {{PRODUCT_1}}**: [UPDATE: Product description]
+
+- **Value Proposition**: [UPDATE]
+- **Core Differentiator**: [UPDATE]
+- **Strategic Positioning**: [UPDATE]
+
+### {{PRODUCT_2}}
+
+**What is {{PRODUCT_2}}**: [UPDATE: Product description]
+
+- **Value Proposition**: [UPDATE]
+- **Core Differentiator**: [UPDATE]
+- **Strategic Positioning**: [UPDATE]
+
+## Technical Notes
+
+### AIPMOS (AI Product Management Operating System)
+**Portable Configuration System**:
+- `AIPMOSConfig` class for workspace discovery and configuration management
+- `.aipmos/` directory structure with `aipmos.yaml` configuration
+- CLI tool: `tools/aipmos` (init, test, doctor, config commands)
+- All automation scripts portable across workspaces
+
+**Key Files**:
+- `scripts/automation/shared/aipmos_config.py` - Config class
+- `scripts/automation/today_cmd/` - Daily planning workflow
+- `.claude/scripts/session-start.sh` - Session startup hook
+
+**Command Infrastructure**:
+- `/brainstorm` - Tactical/pre-PRD brainstorming with PM, Designer, Engineer personas
+- Located in `.claude/commands/`
+- COMMAND-REFERENCE.md provides intent detection for all commands
+
+## Workspace Organization
+
+```
+{{WORKSPACE_PATH}}/
+├── 📦 Products/              # Product strategy, ICP, ROI
+├── 🏢 Company/               # Company business context
+├── 🎓 Product-Management/    # PM frameworks and resources
+├── 📝 Docs/                  # Documentation, API docs, memos
+├── 🔧 Automation/            # Python automation scripts
+├── .claude/               # Claude Code configuration
+└── .aipmos/               # AIPMOS configuration and memory
+    └── memory-bank/       # This file
+```
+
+## Working Principles
+
+1. **Evidence-based decisions** - Data over assumptions, with clear attribution
+2. **Executive communication** - BLUF (bottom line up front), clarity over cleverness
+3. **Source attribution** - Label claims: SOURCE, ASSUMPTION, INFERENCE, NEEDS VALIDATION
+4. **Git workflow** - Frequent checkpoint commits, never force push to main
+5. **Quality** - Run typecheck before ending tasks, never commit without explicit approval
+
+## Active Decisions
+
+**Strategic Questions**:
+1. [UPDATE: Strategic question 1]
+2. [UPDATE: Strategic question 2]
+3. [UPDATE: Strategic question 3]
+
+**Open Questions**:
+- [UPDATE: Open question 1]
+- [UPDATE: Open question 2]
+
+## Known Gaps
+
+**Baseline Metrics Needed**:
+- [UPDATE: Metric 1]
+- [UPDATE: Metric 2]
+
+**Documentation Gaps**:
+- [UPDATE: Gap 1]
+- [UPDATE: Gap 2]
+
+---
+
+**Last Updated**: {{DATE}}
+**Purpose**: Single unified memory file for AI context across sessions
+**Location**: `.aipmos/memory-bank/memory.md`

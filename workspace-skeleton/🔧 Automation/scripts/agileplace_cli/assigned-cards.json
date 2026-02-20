@@ -1,0 +1,3157 @@
+{
+  "pageMeta": {
+    "totalRecords": 39,
+    "offset": 0,
+    "limit": 200,
+    "startRow": 1,
+    "endRow": 39
+  },
+  "cards": [
+    {
+      "id": "2169834577",
+      "title": "SKILL: \"What work has changed in the past period X?\" - Analyze History Use Case",
+      "index": 15,
+      "laneId": "2186654255",
+      "boardId": "2142708755",
+      "cardStatus": "notStarted",
+      "color": "#BFDFC2",
+      "tags": [
+        "AgilePlace",
+        "Use Case"
+      ],
+      "size": 0,
+      "priority": "critical",
+      "plannedStart": "2024-06-01",
+      "plannedFinish": "2024-08-30",
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2024-07-10T22:43:01.537Z",
+      "movedOn": "2024-08-20T22:05:08.237Z",
+      "updatedOn": "2024-09-10T22:17:24.753Z",
+      "externalLinks": [],
+      "customIconLabel": "Scoring",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": {
+        "id": "2165416785",
+        "title": "Dependency",
+        "cardColor": "#FFFFFF",
+        "iconColor": "e35027",
+        "iconName": "barrier-block",
+        "iconPath": "/customicon/barrier-block?color=e35027"
+      },
+      "customHeader": {
+        "value": "AP Team, Copilot Team",
+        "header": "AP Team, Copilot Team",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2142708757",
+        "name": "App Team Adoption & Feature Support"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [
+        {
+          "id": "2160008797",
+          "title": "Support product teams in expanding use cases\u200b"
+        }
+      ],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2024-07-10T22:43:01.537Z"
+        }
+      ],
+      "connectedCardStats": {
+        "startedCount": 1,
+        "startedSize": 1,
+        "notStartedCount": 0,
+        "notStartedSize": 0,
+        "completedCount": 0,
+        "completedSize": 0,
+        "totalCount": 1,
+        "totalSize": 1,
+        "plannedStart": null,
+        "plannedFinish": null,
+        "actualStart": "2024-07-11T14:40:20Z",
+        "actualFinish": null,
+        "blockedCount": 0,
+        "pastDueCount": 0,
+        "projectedLateCount": 0
+      },
+      "customFields": {
+        "2142708771": [
+          "AgilePlace"
+        ],
+        "2163461475": "",
+        "2163466479": null,
+        "2181659533": "AgilePlace"
+      },
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2165436460",
+      "title": "\"What should we work on next?\" - Card status and insights at the board level Use Case",
+      "index": 9,
+      "laneId": "2186654255",
+      "boardId": "2142708755",
+      "cardStatus": "notStarted",
+      "color": "#BFDFC2",
+      "tags": [
+        "AgilePlace",
+        "Use Case"
+      ],
+      "size": 0,
+      "priority": "high",
+      "plannedStart": "2024-06-01",
+      "plannedFinish": "2024-07-01",
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2024-06-28T17:20:53.947Z",
+      "movedOn": "2024-08-20T22:05:08.237Z",
+      "updatedOn": "2024-10-22T22:02:57.370Z",
+      "externalLinks": [],
+      "customIconLabel": "Scoring",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": {
+        "id": "2165416785",
+        "title": "Dependency",
+        "cardColor": "#FFFFFF",
+        "iconColor": "e35027",
+        "iconName": "barrier-block",
+        "iconPath": "/customicon/barrier-block?color=e35027"
+      },
+      "customHeader": {
+        "value": "Copilot, AgilePlace",
+        "header": "Copilot, AgilePlace",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2142708757",
+        "name": "App Team Adoption & Feature Support"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2024-06-28T17:20:53.947Z"
+        }
+      ],
+      "connectedCardStats": {
+        "startedCount": 1,
+        "startedSize": 1,
+        "notStartedCount": 0,
+        "notStartedSize": 0,
+        "completedCount": 0,
+        "completedSize": 0,
+        "totalCount": 1,
+        "totalSize": 1,
+        "plannedStart": null,
+        "plannedFinish": null,
+        "actualStart": "2024-07-11T14:40:39Z",
+        "actualFinish": null,
+        "blockedCount": 0,
+        "pastDueCount": 0,
+        "projectedLateCount": 0
+      },
+      "customFields": {
+        "2142708771": [
+          "AgilePlace"
+        ],
+        "2181659533": "AgilePlace",
+        "2212733246": "Uncommitted",
+        "2212741764": "Copilot"
+      },
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2165435293",
+      "title": "SKILL: \"Which/what KR is X?\" - Support OKR data Use Case",
+      "index": 10,
+      "laneId": "2186654255",
+      "boardId": "2142708755",
+      "cardStatus": "notStarted",
+      "color": "#BFDFC2",
+      "tags": [
+        "AgilePlace",
+        "Use Case"
+      ],
+      "size": 0,
+      "priority": "high",
+      "plannedStart": "2024-06-01",
+      "plannedFinish": "2024-10-31",
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2024-06-28T17:17:08.757Z",
+      "movedOn": "2024-08-20T22:05:08.237Z",
+      "updatedOn": "2024-09-10T22:17:42.320Z",
+      "externalLinks": [],
+      "customIconLabel": "Scoring",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": {
+        "id": "2165416785",
+        "title": "Dependency",
+        "cardColor": "#FFFFFF",
+        "iconColor": "e35027",
+        "iconName": "barrier-block",
+        "iconPath": "/customicon/barrier-block?color=e35027"
+      },
+      "customHeader": {
+        "value": "Copilot, AgilePlace",
+        "header": "Copilot, AgilePlace",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2142708757",
+        "name": "App Team Adoption & Feature Support"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2024-06-28T17:17:08.757Z"
+        }
+      ],
+      "connectedCardStats": {
+        "startedCount": 1,
+        "startedSize": 1,
+        "notStartedCount": 0,
+        "notStartedSize": 0,
+        "completedCount": 0,
+        "completedSize": 0,
+        "totalCount": 1,
+        "totalSize": 1,
+        "plannedStart": null,
+        "plannedFinish": null,
+        "actualStart": "2024-07-11T14:40:37Z",
+        "actualFinish": null,
+        "blockedCount": 0,
+        "pastDueCount": 0,
+        "projectedLateCount": 0
+      },
+      "customFields": {
+        "2142708771": [
+          "AgilePlace"
+        ],
+        "2181659533": "OKRs"
+      },
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2179344039",
+      "title": "SKILL: What are the latest status updates for the cards in the [X] lane?",
+      "index": 11,
+      "laneId": "2186654255",
+      "boardId": "2142708755",
+      "cardStatus": "notStarted",
+      "color": "#BFDFC2",
+      "tags": [
+        "AgilePlace"
+      ],
+      "size": 0,
+      "priority": "high",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2024-08-02T16:19:28.180Z",
+      "movedOn": "2024-08-20T22:05:08.237Z",
+      "updatedOn": "2024-09-10T22:17:39.857Z",
+      "externalLinks": [],
+      "customIconLabel": "Scoring",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": "Copilot, AgilePlace",
+        "header": "Copilot, AgilePlace",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2142708757",
+        "name": "App Team Adoption & Feature Support"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2024-08-02T16:32:53.470Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2374454316",
+      "title": "Ability to filter on key results that are relevant for a BU.",
+      "index": 22,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-10-30T23:54:18.580Z",
+      "movedOn": "2025-10-30T23:54:18.580Z",
+      "updatedOn": "2025-10-30T23:54:18.580Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512563",
+        "name": "OKRs"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602156414",
+          "fullName": "Dominique Trimino",
+          "avatar": "/io/user/602156414/avatar",
+          "emailAddress": "dtrimino@planview.com",
+          "addedOn": "2025-10-30T23:54:18.580Z"
+        },
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-10-30T23:54:18.580Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2256401386",
+      "title": "Agile Planning needs",
+      "index": 1,
+      "laneId": "2256245112",
+      "boardId": "2256245098",
+      "cardStatus": "started",
+      "color": "#B8CFDF",
+      "tags": [
+        "Quantitative"
+      ],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": "2025-02-03",
+      "plannedFinish": "2025-04-01",
+      "actualStart": "2025-02-17T19:25:42Z",
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-01-31T19:50:31.460Z",
+      "movedOn": "2025-02-17T19:25:42.217Z",
+      "updatedOn": "2025-04-20T23:21:59.433Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": "AgilePlace",
+        "header": "AgilePlace",
+        "url": null
+      },
+      "taskBoardStats": {
+        "totalCount": 10,
+        "completedCount": 1,
+        "totalSize": 10,
+        "completedSize": 1
+      },
+      "containingCardId": null,
+      "cardType": {
+        "id": "2256245100",
+        "name": "Survey"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 1,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-01-31T19:50:31.460Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {
+        "2256331604": null
+      },
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2298424907",
+      "title": "AgilePlace Work Card Breakdown to child items",
+      "index": 9,
+      "laneId": "2322493428",
+      "boardId": "2214199783",
+      "cardStatus": "notStarted",
+      "color": "#BFDFC2",
+      "tags": [
+        "AP"
+      ],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": "2025-10-01",
+      "plannedFinish": "2025-12-12",
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-05-06T21:00:04.137Z",
+      "movedOn": "2025-07-03T06:41:02.070Z",
+      "updatedOn": "2026-01-06T19:04:13.457Z",
+      "externalLinks": [
+        {
+          "label": "Jira",
+          "url": "https://tasktop.atlassian.net/browse/PVC-1554"
+        }
+      ],
+      "customIconLabel": "Component",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": "AgilePlace",
+        "header": "AgilePlace",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2214366950",
+        "name": "Feature"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 3,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-05-09T23:02:35.467Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {
+        "2236323977": "Copilot",
+        "2236337680": "Release Tier 5",
+        "2236345751": "AgilePlace",
+        "2284248043": "Uncommitted",
+        "2285369119": "",
+        "2343848734": "Uncommitted",
+        "2389537453": "Not Planview Admin related",
+        "2389539853": "Not Planview.Me related",
+        "2389564865": "Not Anvi Related",
+        "2391375417": "Not a dependency"
+      },
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "1716235027",
+      "title": "AgilePlace: Product renaming",
+      "index": 1,
+      "laneId": "1708885232",
+      "boardId": "1679641749",
+      "cardStatus": "notStarted",
+      "color": "#FFF1BF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2022-03-23T11:18:29.353Z",
+      "movedOn": "2022-03-23T12:04:57.227Z",
+      "updatedOn": "2022-08-09T18:13:15.507Z",
+      "externalLinks": [],
+      "customIconLabel": "Finished",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": "Product renaming",
+        "header": "Product renaming",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "1716216113",
+        "name": "Not started"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 1,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": null
+        }
+      ],
+      "connectedCardStats": {
+        "startedCount": 0,
+        "startedSize": 0,
+        "notStartedCount": 0,
+        "notStartedSize": 0,
+        "completedCount": 1,
+        "completedSize": 1,
+        "totalCount": 1,
+        "totalSize": 1,
+        "plannedStart": "2022-05-23",
+        "plannedFinish": "2022-09-30",
+        "actualStart": "2022-05-23T07:47:02Z",
+        "actualFinish": "2022-10-06T15:32:24Z",
+        "blockedCount": 0,
+        "pastDueCount": 0,
+        "projectedLateCount": 0
+      },
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2376035896",
+      "title": "Anvi OKR Performance Queries",
+      "index": 29,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-11-04T05:37:08.000Z",
+      "movedOn": "2025-11-04T05:37:08.000Z",
+      "updatedOn": "2025-11-04T05:37:08.000Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512563",
+        "name": "OKRs"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602156414",
+          "fullName": "Dominique Trimino",
+          "avatar": "/io/user/602156414/avatar",
+          "emailAddress": "dtrimino@planview.com",
+          "addedOn": "2025-11-04T05:37:08.000Z"
+        },
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-11-04T05:37:08.000Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2379894739",
+      "title": "AP/TF/JIRA Integration",
+      "index": 15,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#BFDFC2",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-11-12T02:58:11.823Z",
+      "movedOn": "2025-11-12T02:58:11.823Z",
+      "updatedOn": "2025-11-12T03:02:20.807Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512561",
+        "name": "AgilePlace"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 2,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-11-12T02:58:41.157Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2376037041",
+      "title": "Automated Exports",
+      "index": 30,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-11-04T05:38:15.860Z",
+      "movedOn": "2025-11-04T05:38:15.860Z",
+      "updatedOn": "2025-11-04T05:38:15.860Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512563",
+        "name": "OKRs"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602156414",
+          "fullName": "Dominique Trimino",
+          "avatar": "/io/user/602156414/avatar",
+          "emailAddress": "dtrimino@planview.com",
+          "addedOn": "2025-11-04T05:38:15.860Z"
+        },
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-11-04T05:38:15.860Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2221923202",
+      "title": "Calculate OKR progress by KR target - progress % for every target ",
+      "index": 14,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": "2024-11-13T06:10:05Z",
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2024-11-13T06:10:05.643Z",
+      "movedOn": "2024-11-13T06:12:07.767Z",
+      "updatedOn": "2025-11-12T03:00:57.163Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": "OKR Progress calc by KR",
+        "header": "OKR Progress calc by KR",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512563",
+        "name": "OKRs"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 4,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602156414",
+          "fullName": "Dominique Trimino",
+          "avatar": "/io/user/602156414/avatar",
+          "emailAddress": "dtrimino@planview.com",
+          "addedOn": "2024-11-13T06:10:05.643Z"
+        },
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-10-30T23:46:25.007Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2377976219",
+      "title": "Card Bulk Export Capability Boards",
+      "index": 33,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#BFDFC2",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-11-07T03:09:27.773Z",
+      "movedOn": "2025-11-07T03:09:27.773Z",
+      "updatedOn": "2025-11-07T03:09:34.847Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512561",
+        "name": "AgilePlace"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-11-07T03:09:34.847Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2400927448",
+      "title": "Create DPD combined Roadmaps",
+      "index": 1,
+      "laneId": "1599461460",
+      "boardId": "1524588502",
+      "cardStatus": "started",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": "2026-01-07",
+      "actualStart": "2026-01-06T22:33:20Z",
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2026-01-06T22:33:20.683Z",
+      "movedOn": "2026-01-06T22:33:20.683Z",
+      "updatedOn": "2026-01-06T22:33:37.113Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "1524588506",
+        "name": "Work"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2026-01-06T22:33:37.113Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2094460872",
+      "title": "Create tips & tricks video for tasks",
+      "index": 4,
+      "laneId": "1966790168",
+      "boardId": "1524588502",
+      "cardStatus": "notStarted",
+      "color": "#A2D9AB",
+      "tags": [],
+      "size": 1000000000,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": "2025-03-28",
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2024-02-15T15:28:57.790Z",
+      "movedOn": "2024-06-18T00:36:12.807Z",
+      "updatedOn": "2025-06-23T19:19:03.360Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "1839330078",
+        "name": "Project"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 1,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-02-25T15:46:47.747Z"
+        }
+      ],
+      "connectedCardStats": {
+        "startedCount": 0,
+        "startedSize": 0,
+        "notStartedCount": 1,
+        "notStartedSize": 1,
+        "completedCount": 2,
+        "completedSize": 2,
+        "totalCount": 3,
+        "totalSize": 3,
+        "plannedStart": null,
+        "plannedFinish": "2025-08-31",
+        "actualStart": "2024-06-25T20:16:34Z",
+        "actualFinish": null,
+        "blockedCount": 0,
+        "pastDueCount": 1,
+        "projectedLateCount": 1
+      },
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2216143310",
+      "title": "Create virtual workshop content",
+      "index": 2,
+      "laneId": "2022730270",
+      "boardId": "2022767137",
+      "cardStatus": "notStarted",
+      "color": "#FA86EA",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2024-10-29T20:12:03.127Z",
+      "movedOn": "2024-10-29T20:12:03.127Z",
+      "updatedOn": "2024-11-01T18:08:53.347Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2022767143",
+        "name": "Product | PM"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2024-10-29T20:12:22.487Z"
+        },
+        {
+          "id": "773360087",
+          "fullName": "Gareth Bradley",
+          "avatar": "/io/user/773360087/avatar",
+          "emailAddress": "gbradley@planview.com",
+          "addedOn": "2024-10-29T20:12:22.487Z"
+        },
+        {
+          "id": "1548773100",
+          "fullName": "Limor Schmitz",
+          "avatar": "/io/user/1548773100/avatar",
+          "emailAddress": "lschmitz@planview.com",
+          "addedOn": "2024-11-01T18:08:53.347Z"
+        },
+        {
+          "id": "1587573928",
+          "fullName": "Erik Peterson",
+          "avatar": "/io/user/1587573928/avatar",
+          "emailAddress": "espeterson@planview.com",
+          "addedOn": "2024-10-29T20:12:22.487Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2216134757",
+      "title": "Demo recording -- 5 minutes on Copilot for AgilePlace",
+      "index": 5,
+      "laneId": "2022767158",
+      "boardId": "2022767137",
+      "cardStatus": "started",
+      "color": "#FA86EA",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": "2024-11-08",
+      "actualStart": "2024-10-29T19:59:36Z",
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2024-10-29T19:59:36.353Z",
+      "movedOn": "2024-10-29T19:59:36.353Z",
+      "updatedOn": "2024-10-29T20:02:12.280Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2022767143",
+        "name": "Product | PM"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2024-10-29T20:02:12.280Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2374454680",
+      "title": "Dependency mapping",
+      "index": 24,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#BFDFC2",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-10-30T23:56:27.383Z",
+      "movedOn": "2025-10-30T23:56:27.383Z",
+      "updatedOn": "2025-10-30T23:56:27.383Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512561",
+        "name": "AgilePlace"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-10-30T23:56:27.383Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2388580789",
+      "title": "Dependency on Roadmaps Team",
+      "index": 5,
+      "laneId": "2236991349",
+      "boardId": "2236929295",
+      "cardStatus": "notStarted",
+      "color": "#BFDFC2",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": "2025-12-17",
+      "plannedFinish": "2026-02-24",
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-12-03T09:23:21.137Z",
+      "movedOn": "2025-12-19T08:06:05.707Z",
+      "updatedOn": "2025-12-19T08:08:34.630Z",
+      "externalLinks": [],
+      "customIconLabel": "Status",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": "Dependency on Roadmaps Team",
+        "header": "Dependency on Roadmaps Team",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2236929299",
+        "name": "Core Product Enhancement"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 1,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-12-03T09:23:21.137Z"
+        },
+        {
+          "id": "602175607",
+          "fullName": "Shawn Lacroix",
+          "avatar": "/io/user/602175607/avatar",
+          "emailAddress": "slacroix@planview.com",
+          "addedOn": "2025-12-03T09:23:21.137Z"
+        },
+        {
+          "id": "1548630903",
+          "fullName": "Josue Morales",
+          "avatar": "/io/user/1548630903/avatar",
+          "emailAddress": "jmorales@planview.com",
+          "addedOn": "2025-12-03T09:23:21.137Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {
+        "2236929291": "Roadmaps",
+        "2262761993": "",
+        "2285381155": "",
+        "2391851515": ""
+      },
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": [],
+      "dependencyStats": {
+        "incomingCount": 0,
+        "incomingResolvedCount": 0,
+        "incomingExceptionCount": 0,
+        "incomingUnresolvedBlockedCount": 0,
+        "outgoingCount": 1,
+        "outgoingResolvedCount": 0,
+        "outgoingExceptionCount": 1,
+        "outgoingUnresolvedBlockedCount": 0,
+        "totalCount": 1,
+        "totalResolvedCount": 0,
+        "totalExceptionCount": 1,
+        "totalUnresolvedBlockedCount": 0
+      }
+    },
+    {
+      "id": "2152085881",
+      "title": "E2E Tooling Strategy - Card Automation opportunities",
+      "index": 19,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#FFFFFF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2024-06-03T04:14:45.737Z",
+      "movedOn": "2024-06-03T04:14:45.737Z",
+      "updatedOn": "2024-06-03T04:15:02.000Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": "E2E Tooling Strategy - Card Automation",
+        "header": "E2E Tooling Strategy - Card Automation",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2143431724",
+        "name": "Other Work"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2024-06-03T04:15:02.000Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2378278227",
+      "title": "Ensemble strategy + roadmap",
+      "index": 0,
+      "laneId": "2379116285",
+      "boardId": "2232818133",
+      "cardStatus": "started",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": "2026-02-28",
+      "actualStart": "2026-01-08T18:12:24Z",
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-11-07T17:15:23.297Z",
+      "movedOn": "2026-01-08T18:12:24.277Z",
+      "updatedOn": "2026-01-08T18:12:24.277Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2247146438",
+        "name": "AgilePlace"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 1,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-11-07T19:37:09.250Z"
+        },
+        {
+          "id": "2371681983",
+          "fullName": "Jennifer Jaffe",
+          "avatar": "/io/user/2371681983/avatar",
+          "emailAddress": "c-jennifer.jaffe@planview.com",
+          "addedOn": "2025-11-07T19:41:38.330Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2221923966",
+      "title": "Have multiple parents for objectives ",
+      "index": 10,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": "2024-11-13T06:10:21Z",
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2024-11-13T06:10:21.690Z",
+      "movedOn": "2024-11-13T06:12:09.960Z",
+      "updatedOn": "2025-11-11T22:23:09.573Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": "Multiple parents for objectives",
+        "header": "Multiple parents for objectives",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512563",
+        "name": "OKRs"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 2,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602156414",
+          "fullName": "Dominique Trimino",
+          "avatar": "/io/user/602156414/avatar",
+          "emailAddress": "dtrimino@planview.com",
+          "addedOn": "2024-11-13T06:10:21.690Z"
+        },
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-10-30T23:43:55.903Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2374454337",
+      "title": "Hierarchy Roll ups",
+      "index": 26,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-10-30T23:57:43.243Z",
+      "movedOn": "2025-10-30T23:57:43.243Z",
+      "updatedOn": "2025-10-30T23:57:43.243Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512563",
+        "name": "OKRs"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602156414",
+          "fullName": "Dominique Trimino",
+          "avatar": "/io/user/602156414/avatar",
+          "emailAddress": "dtrimino@planview.com",
+          "addedOn": "2025-10-30T23:57:43.243Z"
+        },
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-10-30T23:57:43.243Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "1929297973",
+      "title": "How to build product sense",
+      "index": 1,
+      "laneId": "1929204215",
+      "boardId": "1524588502",
+      "cardStatus": "notStarted",
+      "color": "#FFF1BF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": "2025-10-31",
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2023-05-11T01:54:47.363Z",
+      "movedOn": "2023-05-11T01:54:47.363Z",
+      "updatedOn": "2025-10-07T18:04:50.810Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "1524588508",
+        "name": "Documentation"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 1,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [
+        {
+          "id": "2118254490",
+          "title": "Product Model"
+        }
+      ],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-01-06T19:08:30.557Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2378294991",
+      "title": "Mirror Jon's PM system setup",
+      "index": 3,
+      "laneId": "2379116285",
+      "boardId": "2232818133",
+      "cardStatus": "started",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": "2025-11-10",
+      "plannedFinish": "2025-11-14",
+      "actualStart": "2025-11-10T20:43:29Z",
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-11-07T17:45:31.267Z",
+      "movedOn": "2025-11-10T20:43:29.847Z",
+      "updatedOn": "2025-11-12T20:47:55.393Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2247146438",
+        "name": "AgilePlace"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 1,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-11-07T19:33:47.310Z"
+        },
+        {
+          "id": "2371681983",
+          "fullName": "Jennifer Jaffe",
+          "avatar": "/io/user/2371681983/avatar",
+          "emailAddress": "c-jennifer.jaffe@planview.com",
+          "addedOn": "2025-11-07T19:41:21.893Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2150628950",
+      "title": "Multiple AP boards for the same AP activity card",
+      "index": 16,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#BFDFC2",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2024-05-30T07:51:01.990Z",
+      "movedOn": "2024-05-30T07:51:01.990Z",
+      "updatedOn": "2024-06-03T04:07:23.187Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": "Multiple AP boards for the same AP activity card",
+        "header": "Multiple AP boards for the same AP activity card",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512561",
+        "name": "AgilePlace"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 2,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2024-05-30T07:51:23.367Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2374454180",
+      "title": "OKR Bulk Upload/API",
+      "index": 20,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-10-30T23:47:14.140Z",
+      "movedOn": "2025-10-30T23:47:14.140Z",
+      "updatedOn": "2025-11-11T22:30:10.907Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512563",
+        "name": "OKRs"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 1,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602156414",
+          "fullName": "Dominique Trimino",
+          "avatar": "/io/user/602156414/avatar",
+          "emailAddress": "dtrimino@planview.com",
+          "addedOn": "2025-10-30T23:49:22.643Z"
+        },
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-10-30T23:49:22.643Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2377974881",
+      "title": "OKR Collaboration",
+      "index": 32,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-11-07T03:08:41.917Z",
+      "movedOn": "2025-11-07T03:08:41.917Z",
+      "updatedOn": "2025-11-07T03:08:57.150Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512563",
+        "name": "OKRs"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-11-07T03:08:57.150Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2374454516",
+      "title": "OKR Tagging Enhancements",
+      "index": 27,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-10-30T23:58:23.880Z",
+      "movedOn": "2025-10-30T23:58:23.880Z",
+      "updatedOn": "2025-10-30T23:58:23.880Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512563",
+        "name": "OKRs"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602156414",
+          "fullName": "Dominique Trimino",
+          "avatar": "/io/user/602156414/avatar",
+          "emailAddress": "dtrimino@planview.com",
+          "addedOn": "2025-10-30T23:58:23.880Z"
+        },
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-10-30T23:58:23.880Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2378278152",
+      "title": "POV on RKO plan + content",
+      "index": 0,
+      "laneId": "2247212546",
+      "boardId": "2232818133",
+      "cardStatus": "notStarted",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": "2025-11-10",
+      "plannedFinish": "2025-11-28",
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-11-07T17:15:23.287Z",
+      "movedOn": "2025-11-10T20:41:07.510Z",
+      "updatedOn": "2025-11-10T20:41:07.510Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2247146438",
+        "name": "AgilePlace"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-11-07T19:54:56.290Z"
+        },
+        {
+          "id": "2371681983",
+          "fullName": "Jennifer Jaffe",
+          "avatar": "/io/user/2371681983/avatar",
+          "emailAddress": "c-jennifer.jaffe@planview.com",
+          "addedOn": "2025-11-07T19:54:56.290Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2378278231",
+      "title": "Productize the \"Norman\" demo",
+      "index": 1,
+      "laneId": "2379116285",
+      "boardId": "2232818133",
+      "cardStatus": "started",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": "2026-01-06T22:33:54Z",
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-11-07T17:15:23.300Z",
+      "movedOn": "2026-01-06T22:33:54.167Z",
+      "updatedOn": "2026-01-06T22:33:54.167Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2247146438",
+        "name": "AgilePlace"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-11-07T19:33:31.027Z"
+        }
+      ],
+      "connectedCardStats": {
+        "startedCount": 0,
+        "startedSize": 0,
+        "notStartedCount": 1,
+        "notStartedSize": 1,
+        "completedCount": 0,
+        "completedSize": 0,
+        "totalCount": 1,
+        "totalSize": 1,
+        "plannedStart": null,
+        "plannedFinish": null,
+        "actualStart": null,
+        "actualFinish": null,
+        "blockedCount": 0,
+        "pastDueCount": 0,
+        "projectedLateCount": 0
+      },
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2376036655",
+      "title": "Real time OKR delivery dashboard",
+      "index": 31,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-11-04T05:38:37.997Z",
+      "movedOn": "2025-11-04T05:38:37.997Z",
+      "updatedOn": "2025-11-04T05:38:59.850Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512563",
+        "name": "OKRs"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602156414",
+          "fullName": "Dominique Trimino",
+          "avatar": "/io/user/602156414/avatar",
+          "emailAddress": "dtrimino@planview.com",
+          "addedOn": "2025-11-04T05:38:59.850Z"
+        },
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-11-04T05:38:59.850Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2378307832",
+      "title": "Reassess DPD product planning operating model",
+      "index": 3,
+      "laneId": "2379265296",
+      "boardId": "2232818133",
+      "cardStatus": "notStarted",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": "2025-11-17",
+      "plannedFinish": "2025-12-12",
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-11-07T18:08:50.827Z",
+      "movedOn": "2025-11-10T20:45:16.440Z",
+      "updatedOn": "2025-11-10T20:45:16.440Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2247146438",
+        "name": "AgilePlace"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-11-07T19:40:01.577Z"
+        },
+        {
+          "id": "2371681983",
+          "fullName": "Jennifer Jaffe",
+          "avatar": "/io/user/2371681983/avatar",
+          "emailAddress": "c-jennifer.jaffe@planview.com",
+          "addedOn": "2025-11-07T19:40:01.577Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2150629646",
+      "title": "Refresh AP prod data into non-prod",
+      "index": 18,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#BFDFC2",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2024-05-30T07:53:53.467Z",
+      "movedOn": "2024-05-30T07:53:53.467Z",
+      "updatedOn": "2025-11-12T03:05:52.367Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": "Refresh AP prod data into non-prod",
+        "header": "Refresh AP prod data into non-prod",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512561",
+        "name": "AgilePlace"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 2,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2024-05-30T07:54:07.900Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2374454000",
+      "title": "Reminders for OKR updates",
+      "index": 21,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#B8CFDF",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-10-30T23:50:40.217Z",
+      "movedOn": "2025-10-30T23:50:40.217Z",
+      "updatedOn": "2025-10-30T23:57:54.280Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": null,
+        "header": null,
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512563",
+        "name": "OKRs"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602156414",
+          "fullName": "Dominique Trimino",
+          "avatar": "/io/user/602156414/avatar",
+          "emailAddress": "dtrimino@planview.com",
+          "addedOn": "2025-10-30T23:50:40.217Z"
+        },
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-10-30T23:50:40.217Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2255784894",
+      "title": "Tabatha Juestel",
+      "index": 78,
+      "laneId": "2242776008",
+      "boardId": "2242749014",
+      "cardStatus": "notStarted",
+      "color": "#E4DACC",
+      "tags": [
+        "Portfolios and ProjectPlace Working Together",
+        "Portfolios and AgilePlace Working Together",
+        "Portfolios Analytics and Reporting",
+        "Logbook",
+        "Planview.Me Widgets",
+        "AgilePlace/OKRs/Roadmaps"
+      ],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-01-30T17:41:13.973Z",
+      "movedOn": "2025-01-30T17:41:13.973Z",
+      "updatedOn": "2025-04-11T15:05:25.380Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": "frostbank",
+        "header": "frostbank",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2242749022",
+        "name": "Listening/Feedback Call"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 0,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-04-11T14:59:04.183Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {
+        "2255709016": "PF Jan-25"
+      },
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2267180735",
+      "title": "Timestamp on Recent Items API",
+      "index": 2,
+      "laneId": "1827419131",
+      "boardId": "668397049",
+      "cardStatus": "notStarted",
+      "color": "#BFDFC2",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2025-02-24T16:36:38.800Z",
+      "movedOn": "2025-03-11T22:20:36.777Z",
+      "updatedOn": "2026-01-07T20:57:18.573Z",
+      "externalLinks": [],
+      "customIconLabel": "Status",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": "Recent Items - AgilePlace",
+        "header": "Recent Items - AgilePlace",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "668670138",
+        "name": "Core Product Enhancement"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 3,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2025-02-24T16:41:50.420Z"
+        },
+        {
+          "id": "602185158",
+          "fullName": "Yessica Archilla",
+          "avatar": "/io/user/602185158/avatar",
+          "emailAddress": "yarchilla@planview.com",
+          "addedOn": "2025-02-24T16:43:52.727Z"
+        }
+      ],
+      "connectedCardStats": {
+        "startedCount": 0,
+        "startedSize": 0,
+        "notStartedCount": 1,
+        "notStartedSize": 1,
+        "completedCount": 0,
+        "completedSize": 0,
+        "totalCount": 1,
+        "totalSize": 1,
+        "plannedStart": null,
+        "plannedFinish": null,
+        "actualStart": null,
+        "actualFinish": null,
+        "blockedCount": 0,
+        "pastDueCount": 0,
+        "projectedLateCount": 0
+      },
+      "customFields": {
+        "2144121572": "AgilePlace",
+        "2389477592": null,
+        "2389584884": "Not Planview Admin related",
+        "2389592653": "Not Planview.Me related"
+      },
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2175455292",
+      "title": "Total Cost of an OKR/ Agile Work",
+      "index": 4,
+      "laneId": "2183345950",
+      "boardId": "2022519193",
+      "cardStatus": "notStarted",
+      "color": "#C2A8EE",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": null,
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2024-07-24T14:11:00.667Z",
+      "movedOn": "2024-08-13T15:59:02.077Z",
+      "updatedOn": "2025-06-06T20:35:41.207Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": "New Widget",
+        "header": "New Widget",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2022519198",
+        "name": "New Widget Idea"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": 34.68,
+      "scoreOverride": null,
+      "scoreTotal": 50.63,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 1,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": 50.63,
+        "scoreOverride": null,
+        "confidenceTotal": 34.68,
+        "scores": [
+          {
+            "metricId": "5",
+            "score": 52.26473226737831,
+            "confidence": 50.06329840677479
+          },
+          {
+            "metricId": "6",
+            "score": 51.00209907640638,
+            "confidence": 19.30523917995444
+          }
+        ]
+      },
+      "scores": [
+        {
+          "metricId": "5",
+          "score": 52.26473226737831,
+          "confidence": 50.06329840677479
+        },
+        {
+          "metricId": "6",
+          "score": 51.00209907640638,
+          "confidence": 19.30523917995444
+        }
+      ],
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602156414",
+          "fullName": "Dominique Trimino",
+          "avatar": "/io/user/602156414/avatar",
+          "emailAddress": "dtrimino@planview.com",
+          "addedOn": "2024-11-05T22:11:58.217Z"
+        },
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2024-11-11T23:00:39.380Z"
+        },
+        {
+          "id": "1587573928",
+          "fullName": "Erik Peterson",
+          "avatar": "/io/user/1587573928/avatar",
+          "emailAddress": "espeterson@planview.com",
+          "addedOn": "2024-11-11T23:00:24.810Z"
+        },
+        {
+          "id": "1885647325",
+          "fullName": "Ananya Singh",
+          "avatar": "/io/user/1885647325/avatar",
+          "emailAddress": "ananya.singh@planview.com",
+          "addedOn": "2024-11-05T22:11:58.217Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    },
+    {
+      "id": "2221924893",
+      "title": "UI/UX List View - AP",
+      "index": 9,
+      "laneId": "2143431735",
+      "boardId": "2143431723",
+      "cardStatus": "notStarted",
+      "color": "#BFDFC2",
+      "tags": [],
+      "size": 0,
+      "priority": "normal",
+      "plannedStart": null,
+      "plannedFinish": null,
+      "actualStart": "2024-11-13T06:21:11Z",
+      "actualFinish": null,
+      "isDone": false,
+      "createdOn": "2024-11-13T06:21:11.593Z",
+      "movedOn": "2024-11-13T06:21:14.563Z",
+      "updatedOn": "2025-11-07T03:34:59.437Z",
+      "externalLinks": [],
+      "customIconLabel": "Class of Service",
+      "isMirroredCard": false,
+      "blockedStatus": {
+        "isBlocked": false,
+        "reason": null
+      },
+      "customIcon": null,
+      "customHeader": {
+        "value": "List View - AP",
+        "header": "List View - AP",
+        "url": null
+      },
+      "taskBoardStats": null,
+      "containingCardId": null,
+      "cardType": {
+        "id": "2150512561",
+        "name": "AgilePlace"
+      },
+      "subscriptionId": null,
+      "confidenceTotal": null,
+      "scoreOverride": null,
+      "scoreTotal": null,
+      "isTemplateChanged": false,
+      "attachmentsCount": 0,
+      "commentsCount": 1,
+      "archivedOn": null,
+      "scoring": {
+        "isTemplateChanged": false,
+        "scoreTotal": null,
+        "scoreOverride": null,
+        "confidenceTotal": null,
+        "scores": null
+      },
+      "scores": null,
+      "parentCards": [],
+      "assignedUsers": [
+        {
+          "id": "602162162",
+          "fullName": "Jon High",
+          "avatar": "/io/user/602162162/avatar",
+          "emailAddress": "jhigh@planview.com",
+          "addedOn": "2024-11-13T06:21:11.593Z"
+        }
+      ],
+      "connectedCardStats": null,
+      "customFields": {},
+      "reactions": [],
+      "assignedTeams": [],
+      "policyRuleFieldIdViolations": []
+    }
+  ]
+}
