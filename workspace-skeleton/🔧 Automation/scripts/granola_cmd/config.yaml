@@ -1,0 +1,34 @@
+# Granola Command Configuration
+
+# Granola MCP server settings
+granola:
+  # Path to the granola-mcp-server executable
+  mcp_server_path: {{GRANOLA_MCP_PATH}}/.venv/bin/granola-mcp-server
+
+# Meeting filters
+filters:
+  # Minimum meeting duration in minutes
+  min_duration: 5
+
+  # Exclude meetings matching these patterns (optional)
+  exclude_patterns:
+    - "1:1"
+    - "catch-up"
+
+  # Only include meetings with these participants (optional, empty = all)
+  include_participants: []
+
+# Storage configuration
+storage:
+  enabled: true
+  # Output path for meeting markdown files
+  # Output under 🏢 Company/meetings per workspace restructure
+  output_path: {{WORKSPACE_PATH}}/🏢 Company/meetings/granola
+
+# Target date for extraction
+# Options: "yesterday", "today", or "YYYY-MM-DD"
+target_date: yesterday
+
+# Logging configuration
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR

@@ -1,0 +1,117 @@
+
+<!-- Source: .ruler/AGENTS.md -->
+
+# AI Agent Instructions for {{YOUR_COMPANY}} Product Management Workspace
+
+> **Note**: This file contains project-specific context for the {{YOUR_COMPANY}} workspace. For shared frameworks (communication, copywriting, engineering standards), see the global template at `~/.config/ruler/AGENTS.md`.
+
+This document provides project-specific context to complement the global AI agent rules. The global template contains all reusable frameworks and standards.
+
+---
+
+## Quick Start (For AI Assistants)
+
+**First 3 Things**:
+1. Check `GOALS.md` for role, portfolio, current goals, and key stakeholders
+2. Check `📋 Tasks/today.md` for daily priorities and active work
+3. Check `.aipmos/memory-bank/memory.md` for current focus (or `🤖 AI/memory/memory.md` if present)
+
+**Context**: See `GOALS.md` for role, portfolio, and current goals.
+
+**Common Commands**: `/today`, `/think`, `/granola`, `/compete` — see `.claude/commands/COMMAND-REFERENCE.md`
+
+**Working principle**: Simplicity > Complexity. Shorter is almost always better. Plain language beats jargon. When in doubt, simplify.
+
+---
+
+## Product Rules
+
+These rules define how to operate as a 10X Product Leader. Reference them proactively.
+
+| Rule | When to Reference |
+|------|-------------------|
+| **pm-operating-principles.mdc** | Default operating mode — Execution Bias, Ruthless Prioritization, Four Risks, Data-Informed decisions |
+| **mental-models.mdc** | Strategic thinking, investment decisions, system design — 20 models including ROI, Working Backwards, Flywheels |
+| **decision-framework.mdc** | Making or documenting decisions — One-Way vs Two-Way Doors, 70% Rule, Disagree and Commit |
+| **frameworks-as-tools.mdc** | Selecting PM frameworks — library by purpose, when to abandon frameworks |
+| **communication-standards.mdc** | Writing for specific audiences — Executives, ICs, Customers, Cross-functional stakeholders |
+| **product-sense.mdc** | Product critiques, trusting gut vs data, developing product intuition |
+
+**Default**: Follow `pm-operating-principles.mdc` unless a specific situation calls for another rule.
+
+---
+
+## Workspace Organization
+
+### Directory Structure
+```
+{{WORKSPACE_PATH}}/
+├── GOALS.md                # Identity, ownership, Q1 goals, stakeholders (read first)
+├── 📦 Products/            # Product strategy, ICP, ROI
+├── 📁 Workflows/           # Repeatable processes: QPR prep, weekly update, research synthesis
+├── 🏢 Company/             # Company business context
+├── 🎓 Product-Management/  # PM frameworks, mental models, strategy
+├── 📋 Tasks/               # today.md, backlog.md, completed, archive
+├── 📚 Knowledge/           # Reference, Research, People (stakeholder notes)
+├── .aipmos/memory-bank/    # AI context persistence (memory.md)
+├── .cursor/                # Cursor IDE (rules, commands)
+└── .ruler/                 # Ruler configuration (this file)
+```
+
+### Key Knowledge Sources
+- **Product Strategy**: `Products/{{PRODUCT_1}}/`, `Products/{{PRODUCT_2}}/`
+- **Market Intelligence**: `Company/competitive-analysis.md`
+- **Customer Data**: `Company/customer-research/`
+- **PM Frameworks**: `Product-Management/`
+
+---
+
+## File Placement Guidelines
+
+### Where to Put Different Types of Content
+
+**IMPORTANT**: The `memory-bank/` directory is ONLY for AI memory/context persistence files. Do NOT put other content there.
+
+| Content Type | Location | Examples |
+|--------------|----------|----------|
+| **Memory/Context** | `memory-bank/` | `memory.md`, `activeContext.md` (AI reads these at session start) |
+| **PRDs** | `PRDs/` | Product requirements documents, feature specs |
+| **Design Mockups** | `Products/[Product]/designs/` | HTML/CSS mockups, design decisions |
+| **Product Strategy** | `Products/[Product]/` | ICP, ROI, positioning, competitive analysis |
+| **PM Frameworks** | `Product-Management/` | Mental models, strategy frameworks |
+| **Company Context** | `Company/` | Business context, customer research |
+| **Commands/Skills** | `.claude/commands/` or `.claude/skills/` | AI workflow commands, reusable skills |
+
+### Examples
+
+**Correct**:
+- ✅ `/Products/{{PRODUCT_1}}/designs/view.mockup.html`
+- ✅ `/PRDs/feature-prd.md`
+- ✅ `/memory-bank/memory.md`
+
+**Incorrect**:
+- ❌ `/memory-bank/mockups/` — Mockups are NOT memories
+- ❌ `/memory-bank/prds/` — PRDs are NOT memories
+- ❌ `/memory-bank/docs/` — General docs are NOT memories
+
+### Rationale
+
+The memory bank is for **persistent AI context** that needs to be read at every session start. Putting other content there:
+1. Clutters the memory bank with non-memory content
+2. Makes it harder to find actual memory files
+3. Violates the principle of organizing content by its purpose
+
+---
+
+## Memory Bank
+
+Single unified context file: **`.aipmos/memory-bank/memory.md`** (or `🤖 AI/memory/memory.md`). Update when session focus or milestones change; use `/refresh-memory` to append session activity.
+
+---
+
+*This document is managed by Ruler and automatically synced to all configured AI agents. Update `.ruler/AGENTS.md` and run `ruler apply` to update agent configurations. For framework updates, modify the global template at `~/.config/ruler/AGENTS.md`.*
+
+
+## Accumulated Wisdom
+
+See **`.aipmos/patterns/learned-patterns.md`** for workspace conventions, past decisions, and patterns worth preserving. Read it when starting work that touches presentations, documentation structure, or memory files.

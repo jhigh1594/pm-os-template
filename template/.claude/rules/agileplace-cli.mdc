@@ -1,0 +1,201 @@
+# AgilePlace CLI Usage Rule
+
+**When to Apply**: Any time the user requests interaction with AgilePlace - creating cards, updating cards, fetching card details, listing cards from boards, etc.
+
+## MANDATORY: Use AgilePlace CLI
+
+When the user asks to interact with AgilePlace, you MUST use the AgilePlace CLI rather than direct API calls or web automation.
+
+### CLI Location
+```
+🔧 Automation/scripts/agileplace_cli/cli.py
+```
+
+### Invocation
+```bash
+python ./🔧\ Automation/scripts/agileplace_cli/cli.py <command>
+```
+
+Or from within the workspace:
+```bash
+python ./🔧/Automation/scripts/agileplace_cli/cli.py <command>
+```
+
+## Available Commands
+
+### Authentication
+```bash
+# Check current user / verify auth
+agileplace auth whoami
+agileplace auth whoami --format table
+```
+
+### Boards
+
+#### List Boards
+```bash
+# List all boards
+agileplace boards list
+
+# Search for boards by title
+agileplace boards list --search "roadmap"
+
+# Table format for quick review
+agileplace boards list --format table --limit 50
+```
+
+#### Get Board Details
+```bash
+# Full JSON response
+agileplace boards get <board_id>
+
+# Human-readable summary
+agileplace boards get <board_id> --format summary
+```
+
+#### List Cards on a Board
+```bash
+# All cards on a board
+agileplace boards cards <board_id>
+
+# Filter by lanes
+agileplace boards cards <board_id> --lanes "Ready,In Progress"
+
+# Include archived cards
+agileplace boards cards <board_id> --include-archived --format table
+```
+
+### Cards
+
+#### Get My Assigned Cards
+```bash
+# List all cards assigned to current user
+agileplace cards mine
+
+# With options
+agileplace cards mine --limit 50 --format table
+agileplace cards mine --card-status started --show-blocked-first
+agileplace cards mine --out assigned-cards.json
+```
+
+#### Get Card Details
+```bash
+# Full JSON response
+agileplace cards get <card_id>
+
+# Human-readable summary
+agileplace cards get <card_id> --format summary
+```
+
+#### Search Cards (Advanced)
+```bash
+# Full text search across all boards
+agileplace cards search --search "dependency"
+
+# Search on a specific board
+agileplace cards search --board <board_id> --search "feature"
+
+# Filter by assigned users
+agileplace cards search --users "userId1,userId2"
+
+# Filter by lane class (backlog/active/archive)
+agileplace cards search --lane-class "active,backlog"
+
+# Include custom fields and dependencies
+agileplace cards search --board <board_id> --include "customFields,dependencies"
+
+# Cards updated since a date, sorted by title
+agileplace cards search --since "2024-01-01T00:00:00Z" --sort title
+
+# Fetch specific cards by ID
+agileplace cards search --cards "123,456,789"
+```
+
+#### Create a Card
+```bash
+# Required: board_id and title
+agileplace cards create <board_id> --title "Card Title"
+
+# With description (supports markdown)
+agileplace cards create <board_id> --title "Card Title" --description "## Overview\n\nDescription here..."
+```
+
+#### Update a Card
+```bash
+# Update title
+agileplace cards update <card_id> --title "New Title"
+
+# Update description (markdown supported)
+agileplace cards update <card_id> --description "Updated description"
+
+# Update both
+agileplace cards update <card_id> --title "New Title" --description "New description"
+```
+
+#### Get Card Tasks
+```bash
+agileplace cards tasks <card_id>
+agileplace cards tasks <card_id> --format table --limit 50
+```
+
+## Common Workflows
+
+### User Request: "Create an AgilePlace card for [feature]"
+1. Ask for board ID if not provided (or check common boards)
+2. Use: `agileplace cards create <board_id> --title "..." --description "..."`
+
+### User Request: "Update AgilePlace card [ID] with [details]"
+1. Use: `agileplace cards update <card_id> --title "..." --description "..."`
+
+### User Request: "Show me my AgilePlace cards"
+1. Use: `agileplace cards mine --format table`
+
+### User Request: "Get details about card [ID]"
+1. Use: `agileplace cards get <card_id> --format summary`
+2. For tasks: `agileplace cards tasks <card_id>`
+
+### User Request: "List boards" or "Find board [name]"
+1. Use: `agileplace boards list --search "name" --format table`
+
+### User Request: "Show me cards on board [ID]"
+1. Use: `agileplace boards cards <board_id> --format table`
+
+### User Request: "Search for cards containing [text]"
+1. Use: `agileplace cards search --search "text" --format table`
+2. Can filter by board: `--board <board_id>`
+3. Can include extra data: `--include "customFields,dependencies"`
+
+### User Request: "Find cards assigned to [user]"
+1. Use: `agileplace cards search --users <user_id> --format table`
+
+## Environment Configuration
+
+The CLI reads credentials from:
+1. `--env-file` option if specified
+2. `Automation/scripts/.env` (relative to cli.py)
+3. `.env` in current working directory
+
+Required environment variables:
+```
+AGILEPLACE_DOMAIN=https://planview.leankit.com
+AGILEPLACE_API_TOKEN=<token>
+```
+
+## Error Handling
+
+If you get authentication errors:
+1. Check that `.env` file exists with valid credentials
+2. Run `agileplace auth whoami` to verify
+3. If token expired, user needs to regenerate from AgilePlace settings
+
+## Response Formats
+
+Most commands support `--format json` (default) or `--format table`:
+- **json**: Full API response, good for parsing
+- **table**: Human-readable summary
+
+## Notes
+
+- Description fields support markdown and are auto-converted to HTML
+- Card URLs follow pattern: `https://planview.leankit.com/card/<card_id>`
+- Board ID can be extracted from board URL (the alphanumeric string after `/board/`)

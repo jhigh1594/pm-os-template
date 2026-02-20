@@ -1,0 +1,34 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+ENV/
+
+# Node
+node_modules/
+
+# Logs
+*.log
+.logs/
+
+# Secrets - these should NEVER be committed
+# (included for safety, though template doesn't have real secrets)
+*.key
+.env
+!.env.example
+
+# User-specific files that get created during install
+# (the .template versions are committed, not the final files)

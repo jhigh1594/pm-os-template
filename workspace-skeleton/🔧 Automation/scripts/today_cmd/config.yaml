@@ -1,0 +1,58 @@
+# /today Command Configuration
+
+# Memory Bank path for context (OKRs, focus, progress)
+memory_bank:
+  path: {{WORKSPACE_PATH}}/memory-bank
+
+# Outlook configuration (dev-browser integration)
+outlook:
+  url: https://outlook.office.com
+  # Optional: Path to persistent browser profile
+  # Run: dev-browser init --profile=/path/to/profile
+  # Then manually login to Outlook once (session persists)
+  browser_profile: null
+
+# AgilePlace configuration
+agileplace:
+  # User IDs to fetch tasks for
+  # Find your user ID in AgilePlace: Profile > User ID
+  user_ids:
+    - "602162162"  # Replace with actual AgilePlace user ID
+  # Optional: MCP server URL (default from env)
+  mcp_server_url: null
+
+# Granola meeting notes configuration
+granola:
+  enabled: true
+  auto_fetch: true  # Run granola extraction before analyzing
+  days_back: 1  # 1 = yesterday, 2 = day before yesterday, etc.
+  # Granola meeting notes (🏢 Company/meetings per workspace restructure)
+storage_path: {{WORKSPACE_PATH}}/🏢 Company/meetings/granola
+
+  # Extraction configuration - uses structured Next Steps section from meeting summary
+  extraction:
+    source: summary  # Options: summary, notes, transcript
+    section: "Next Steps"  # Section heading to parse
+    min_item_length: 10
+    max_items_per_meeting: 10
+
+  # Note: Old regex patterns removed - no longer needed with structured parsing
+
+# History (mem-search) configuration
+history:
+  lookback_days: 7  # How many days back to search
+
+# Delivery configuration
+delivery:
+  slack:
+    enabled: true
+    # Set in environment: SLACK_EMAIL, SMTP_SERVER, SMTP_PORT, SMTP_USER, SMTP_PASSWORD
+
+# Storage configuration
+storage:
+  enabled: true
+  daily_plans_path: {{WORKSPACE_PATH}}/memory-bank
+
+# Logging configuration
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR

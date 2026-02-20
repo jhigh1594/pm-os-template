@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Planview Design System - 4-Column Executive Strategy Layout
+ * Use for: Executive overviews, strategy comparisons, key pillars
+ * Dimensions: 720pt × 405pt (16:9 aspect ratio)
+ */
+
+html { background: #F8FAFC; }
+body {
+  width: 720pt;
+  height: 405pt;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+}
+
+/* DARK SLATE HEADER BAR */
+.header {
+  background: #0F172A;
+  padding: 10pt 24pt;
+}
+
+.header-title {
+  color: #FFFFFF;
+  font-size: 22pt;
+  font-weight: bold;
+  margin: 0;
+}
+
+.header-tagline {
+  color: #E2251B;
+  font-size: 9pt;
+  font-weight: bold;
+  margin: 4pt 0 0 0;
+  letter-spacing: 0.5pt;
+  text-transform: uppercase;
+}
+
+/* 4-COLUMN CARD LAYOUT */
+.cards {
+  flex: 1;
+  display: flex;
+  gap: 12pt;
+  padding: 16pt 24pt;
+}
+
+.card {
+  flex: 1;
+  background: #FFFFFF;
+  border-radius: 4pt;
+  padding: 12pt;
+  border-left: 3pt solid #C00000;
+}
+
+.card-category {
+  color: #002060;
+  font-size: 9pt;
+  font-weight: bold;
+  margin: 0 0 6pt 0;
+  text-transform: uppercase;
+}
+
+.card-headline {
+  color: #0F172A;
+  font-size: 12pt;
+  font-weight: bold;
+  margin: 0 0 8pt 0;
+  line-height: 1.3;
+}
+
+.card-bullets {
+  color: #334155;
+  font-size: 9pt;
+  margin: 0;
+  padding-left: 12pt;
+  line-height: 1.4;
+}
+
+.card-bullets li {
+  margin-bottom: 4pt;
+}
+
+/* FOOTER */
+.footer {
+  padding: 6pt 24pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-text {
+  color: #94A3B8;
+  font-size: 6pt;
+  margin: 0;
+}
+
+.footer-logo {
+  height: 10pt;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <p class="header-title">{{TITLE}}</p>
+  <p class="header-tagline">{{TAGLINE}}</p>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <p class="card-category">{{CAT1}}</p>
+    <p class="card-headline">{{HEADLINE1}}</p>
+    <ul class="card-bullets">
+      <li>{{BULLET1_1}}</li>
+      <li>{{BULLET1_2}}</li>
+      <li>{{BULLET1_3}}</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p class="card-category">{{CAT2}}</p>
+    <p class="card-headline">{{HEADLINE2}}</p>
+    <ul class="card-bullets">
+      <li>{{BULLET2_1}}</li>
+      <li>{{BULLET2_2}}</li>
+      <li>{{BULLET2_3}}</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p class="card-category">{{CAT3}}</p>
+    <p class="card-headline">{{HEADLINE3}}</p>
+    <ul class="card-bullets">
+      <li>{{BULLET3_1}}</li>
+      <li>{{BULLET3_2}}</li>
+      <li>{{BULLET3_3}}</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p class="card-category">{{CAT4}}</p>
+    <p class="card-headline">{{HEADLINE4}}</p>
+    <ul class="card-bullets">
+      <li>{{BULLET4_1}}</li>
+      <li>{{BULLET4_2}}</li>
+      <li>{{BULLET4_3}}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <p class="footer-text">Planview Confidential</p>
+  <img class="footer-logo" src="/tmp/planview-logo.png">
+</div>
+
+</body>
+</html>

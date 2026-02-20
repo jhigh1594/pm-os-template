@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Planview Design System - Full-Width Content Layout
+ * Use for: Tables, charts, data visualization
+ * Dimensions: 720pt × 405pt (16:9 aspect ratio)
+ */
+
+html { background: #F8FAFC; }
+body {
+  width: 720pt;
+  height: 405pt;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+}
+
+/* DARK SLATE HEADER BAR */
+.header {
+  background: #0F172A;
+  padding: 10pt 24pt;
+}
+
+.header-title {
+  color: #FFFFFF;
+  font-size: 22pt;
+  font-weight: bold;
+  margin: 0;
+}
+
+.header-tagline {
+  color: #E2251B;
+  font-size: 9pt;
+  font-weight: bold;
+  margin: 4pt 0 0 0;
+  letter-spacing: 0.5pt;
+  text-transform: uppercase;
+}
+
+/* FULL-WIDTH CONTENT AREA */
+.content {
+  flex: 1;
+  padding: 16pt 24pt;
+  display: flex;
+  flex-direction: column;
+  gap: 12pt;
+}
+
+/* INTRO TEXT (optional) */
+.intro-text {
+  color: #334155;
+  font-size: 10pt;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* PLACEHOLDER FOR CHARTS */
+.chart-area {
+  flex: 1;
+  background: #FFFFFF;
+  border-radius: 4pt;
+  border-left: 3pt solid #C00000;
+}
+
+/* TABLE STYLING */
+.table-container {
+  background: #FFFFFF;
+  border-radius: 4pt;
+  overflow: hidden;
+}
+
+.table-header {
+  background: #0F172A;
+  padding: 8pt 12pt;
+  display: flex;
+}
+
+.table-header-cell {
+  color: #FFFFFF;
+  font-size: 9pt;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.table-row {
+  padding: 8pt 12pt;
+  display: flex;
+  border-bottom: 1pt solid #E2E8F0;
+}
+
+.table-row:nth-child(even) {
+  background: #F8FAFC;
+}
+
+.table-cell {
+  color: #334155;
+  font-size: 9pt;
+  margin: 0;
+}
+
+.table-cell-bold {
+  color: #0F172A;
+  font-size: 9pt;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* FOOTER */
+.footer {
+  padding: 6pt 24pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-text {
+  color: #94A3B8;
+  font-size: 6pt;
+  margin: 0;
+}
+
+.footer-logo {
+  height: 10pt;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <p class="header-title">{{TITLE}}</p>
+  <p class="header-tagline">{{TAGLINE}}</p>
+</div>
+
+<div class="content">
+  <!-- Optional intro text -->
+  <p class="intro-text">{{INTRO_TEXT}}</p>
+
+  <!-- Use this for charts (placeholder will be detected by html2pptx): -->
+  <div id="chart" class="placeholder chart-area"></div>
+
+  <!-- OR use this for tables: -->
+  <!--
+  <div class="table-container">
+    <div class="table-header">
+      <p class="table-header-cell" style="flex: 2;">Capability</p>
+      <p class="table-header-cell" style="flex: 1;">Planview</p>
+      <p class="table-header-cell" style="flex: 1;">Competitor</p>
+      <p class="table-header-cell" style="flex: 2;">Talk Track</p>
+    </div>
+    <div class="table-row">
+      <p class="table-cell-bold" style="flex: 2;">Feature Name</p>
+      <p class="table-cell" style="flex: 1;">Check</p>
+      <p class="table-cell" style="flex: 1;">X</p>
+      <p class="table-cell" style="flex: 2;">Talk track text</p>
+    </div>
+  </div>
+  -->
+</div>
+
+<div class="footer">
+  <p class="footer-text">Planview Confidential</p>
+  <img class="footer-logo" src="/tmp/planview-logo.png">
+</div>
+
+</body>
+</html>

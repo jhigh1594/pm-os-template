@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Planview Design System - Base Template
+ * Use this as a starting point for all Planview slides.
+ * Dimensions: 720pt × 405pt (16:9 aspect ratio)
+ */
+
+html { background: #F8FAFC; }
+body {
+  width: 720pt;
+  height: 405pt;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;  /* Web-safe font only */
+  background: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+}
+
+/* DARK SLATE HEADER BAR */
+.header {
+  background: #0F172A;
+  padding: 10pt 24pt;
+  min-height: 36pt;
+}
+
+.header-title {
+  color: #FFFFFF;
+  font-size: 22pt;
+  font-weight: bold;
+  margin: 0;
+}
+
+.header-tagline {
+  color: #E2251B;
+  font-size: 9pt;
+  font-weight: bold;
+  margin: 4pt 0 0 0;
+  letter-spacing: 0.5pt;
+}
+
+/* MAIN CONTENT AREA */
+.content {
+  flex: 1;
+  padding: 16pt 24pt;
+  display: flex;
+  flex-direction: column;
+}
+
+/* FOOTER */
+.footer {
+  padding: 6pt 24pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 16pt;
+}
+
+.footer-text {
+  color: #94A3B8;
+  font-size: 6pt;
+  margin: 0;
+}
+
+.footer-logo {
+  height: 10pt;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <p class="header-title">{{TITLE}}</p>
+  <p class="header-tagline">{{TAGLINE}}</p>
+</div>
+
+<div class="content">
+  <!-- ADD YOUR CONTENT HERE -->
+  <p>Content goes here</p>
+</div>
+
+<div class="footer">
+  <p class="footer-text">Planview Confidential</p>
+  <img class="footer-logo" src="/tmp/planview-logo.png">
+</div>
+
+</body>
+</html>
