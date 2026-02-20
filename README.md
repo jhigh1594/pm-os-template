@@ -40,27 +40,24 @@ PM-Workspace/
 ### Installation
 
 ```bash
-# Clone or download this template
-git clone <repository-url> pm-os-template
+# Clone this template
+git clone https://github.com/jhigh1594/pm-os-template.git
 cd pm-os-template
 
-# Run the installer
-./install.sh
-
-# Or specify a custom location
-./install.sh ~/My-PM-Workspace
+# Run the installer (creates a new workspace at the specified location)
+./install.sh ~/PM-Workspace
 ```
 
-The installer will prompt you for:
-- Your name and role
-- Your company
-- Your products
+The installer will:
+1. Create a new workspace at `~/PM-Workspace` (or wherever you specify)
+2. Prompt for your name, role, company, and products
+3. Set up all directories, commands, and configuration files
+4. Initialize a git repo in the new workspace
 
 ### After Installation
 
-1. **Add your API keys** (see [Security Notes](#security-notes)):
+1. **Add your API keys** to your new workspace (see [Security Notes](#security-notes)):
    ```bash
-   # Edit these files with your keys
    vim ~/PM-Workspace/.aipmos/environment
    vim ~/PM-Workspace/.mcp.json
    ```
@@ -76,12 +73,7 @@ The installer will prompt you for:
    # Edit .env with your Pendo credentials
    ```
 
-3. **Customize your goals**:
-   ```bash
-   vim ~/PM-Workspace/GOALS.md
-   ```
-
-4. **Open in Claude Code**:
+3. **Open your workspace in Claude Code**:
    ```bash
    cd ~/PM-Workspace
    claude
