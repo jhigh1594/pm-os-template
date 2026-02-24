@@ -1,6 +1,6 @@
 # PM Operating System (PM-OS)
 
-A complete AI-powered Product Management workspace that supercharges your PM workflow with Claude Code.
+A complete AI-powered Product Management workspace that supercharges your PM workflow with Cursor or Claude Code.
 
 ## Quick Start
 
@@ -21,7 +21,7 @@ claude
 
 ## Setup Checklist
 
-After cloning, run `/onboard` in Claude Code to be guided through setup, or manually update:
+After cloning, run `/onboard` in Curosr or Claude Code to be guided through setup, or manually update:
 
 ### Required
 - [ ] **GOALS.md** - Add your name, role, company, products, and quarterly goals
