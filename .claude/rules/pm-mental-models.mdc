@@ -1,0 +1,274 @@
+# Mental Models for 10X Product Leaders
+
+**Load this file when:** Strategic thinking, investment decisions, systems design, or mental model selection is needed.
+
+---
+
+## Core Philosophy
+
+**"To the man with only a hammer, every problem looks like a nail." Build a latticework of mental models.**
+
+Mental models are thinking patterns that help you see reality more clearly. The power comes from having multiple models—when you only have one or two, human psychology makes you force-fit reality to your models. Great PMs accumulate mental models across disciplines (finance, systems thinking, psychology, strategy) and apply the most relevant models to each situation.
+
+**Key principle (Charlie Munger):** You can't really know anything if you just remember isolated facts. Facts must hang together on a latticework of theory to be useful. Array your experience—both vicarious and direct—on this latticework of models.
+
+**Critical caveat:** Mental models are powerful, but their utility is limited to the contexts they were extrapolated from. Don't force models where they don't fit. Use them as lenses to see more clearly, not as hammers to force reality into shape.
+
+---
+
+## Mental Model Library: 20 Models for PMs
+
+### **Category 1: Investment & ROI Thinking**
+
+#### **ROI Thinking (Return on Investment)**
+- **What:** Every decision is an investment. What do we put in? What do we get out?
+- **When to use:** Prioritization, resource allocation, evaluating initiatives
+- **Key questions:**
+  - What's the investment? (time, money, focus, opportunity cost)
+  - What's the return? (revenue, learning, strategic position, team capability)
+  - What's the risk-adjusted ROI?
+  - Is this the highest-ROI use of these resources?
+
+#### **Cost of Delay**
+- **What:** The cost of NOT doing something now. Delay has economic consequences.
+- **When to use:** Prioritization when timing matters, opportunity windows
+- **Key questions:**
+  - What happens if we do this 3 months from now instead of today?
+  - Are we losing customers, market position, or learning by waiting?
+  - Is there a deadline (competitor, market shift, customer commitment)?
+- **Application:** Cost of Delay Divided by Duration (CD3) for prioritization
+
+#### **Opportunity Cost**
+- **What:** Every choice means NOT doing something else. The cost is the value of the forgone alternative.
+- **When to use:** Every prioritization decision, resource allocation
+- **Key questions:**
+  - What are we NOT doing if we do this?
+  - Is this more valuable than the alternatives?
+  - What's the best alternative we're giving up?
+- **Application:** Never evaluate in isolation—always compare to alternatives
+
+#### **Sunk Cost Fallacy**
+- **What:** Past investments shouldn't influence future decisions. Only future costs and benefits matter.
+- **When to use:** Killing initiatives, pivoting, changing direction
+- **Key questions:**
+  - If we started fresh today, would we invest in this?
+  - Are we continuing because of what we've already spent?
+  - What would we do if we had no history with this?
+- **Application:** "If we weren't already doing this, would we start it today?"
+
+---
+
+### **Category 2: Strategic Thinking**
+
+#### **Working Backwards (Amazon)**
+- **What:** Start with the desired customer experience in the future, work backwards to what you need to build today.
+- **When to use:** 0→1 product development, feature vision, strategic planning
+- **Key questions:**
+  - What does the ideal customer experience look like in 2 years?
+  - What would need to be true for that to happen?
+  - What can we build today that moves us toward that?
+- **Application:** Write the press release from the future first
+
+#### **First Principles Thinking**
+- **What:** Break down to fundamental truths, reason up from there. Don't reason by analogy.
+- **When to use:** Complex problems, challenging assumptions, innovation
+- **Key questions:**
+  - What do we know to be true?
+  - What are we assuming that might not be true?
+  - If we started from scratch, how would we solve this?
+- **Application:** "Why does it have to be this way?" → "What if it didn't?"
+
+#### **Inversion**
+- **What:** Think about what you want to avoid, not just what you want to achieve. Avoiding stupidity is easier than seeking brilliance.
+- **When to use:** Risk assessment, strategy development, decision-making
+- **Key questions:**
+  - What would guarantee failure? How do we avoid that?
+  - What's the worst that could happen? How do we prevent it?
+  - What are we trying to NOT be?
+- **Application:** Pre-mortem analysis, risk mitigation
+
+#### **Second-Order Thinking**
+- **What:** Don't just think about immediate consequences. Think about consequences of consequences.
+- **When to use:** Strategy, policy decisions, major product changes
+- **Key questions:**
+  - And then what happens?
+  - What are the second-order effects?
+  - What unintended consequences might this create?
+- **Application:** "If we do X, customers will do Y, which will lead to Z..."
+
+---
+
+### **Category 3: Systems & Leverage**
+
+#### **Flywheels & Loops**
+- **What:** Sustainable growth comes from self-reinforcing loops where output becomes input.
+- **When to use:** Growth strategy, retention, product design
+- **Key questions:**
+  - What's the loop? How does output feed input?
+  - What starts the loop?
+  - How do we accelerate the loop?
+- **Examples:**
+  - Content loop: Users create content → Attracts more users → More content
+  - Data loop: Usage creates data → Better personalization → More usage
+  - Network loop: User invites others → More value for everyone → More invites
+
+#### **Leverage Points (Donella Meadows)**
+- **What:** Systems have leverage points where small changes create big effects. Know where to push.
+- **When to use:** Strategy, identifying high-impact interventions
+- **Leverage hierarchy (highest to lowest impact):**
+  1. Paradigm/mindset shift
+  2. Goals of the system
+  3. Information flows
+  4. Rules and incentives
+  5. Stocks and flows
+  6. Delays
+  7. Parameters (numbers)
+- **Application:** "Where's the highest-leverage place to intervene?"
+
+#### **Compounding**
+- **What:** Small improvements compound over time. Small declines compound too.
+- **When to use:** Long-term strategy, habit building, capability development
+- **Key questions:**
+  - What improves 1% every month?
+  - What's the compound effect of this decision over 5 years?
+  - Are we building capabilities that compound?
+- **Application:** 1.01^365 = 37.8; 0.99^365 = 0.03
+
+---
+
+### **Category 4: Psychology & Human Behavior**
+
+#### **Cognitive Biases**
+- **What:** Systematic errors in thinking that affect decisions. Know them to avoid them.
+- **When to use:** Decision-making, user research, stakeholder management
+- **Key biases for PMs:**
+  - **Confirmation bias:** Seeking information that confirms existing beliefs
+  - **Survivorship bias:** Focusing on successes, ignoring failures
+  - **Sunk cost fallacy:** Continuing because of past investment
+  - **Availability bias:** Overweighting recent or memorable examples
+  - **Anchoring:** Being influenced by initial reference points
+- **Application:** Actively seek disconfirming evidence
+
+#### **Loss Aversion**
+- **What:** People feel losses 2x more than equivalent gains. Fear of loss drives behavior.
+- **When to use:** Pricing, messaging, user motivation, stakeholder influence
+- **Key questions:**
+  - What will users lose if they don't act?
+  - How do we frame this in terms of avoiding loss?
+  - What loss are stakeholders trying to avoid?
+- **Application:** "Don't lose your progress" > "Keep your progress"
+
+#### **Social Proof**
+- **What:** People look to others when uncertain. Behavior is contagious.
+- **When to use:** Growth, messaging, adoption, stakeholder influence
+- **Key questions:**
+  - Who else is doing this?
+  - What do peers/competitors do?
+  - How do we show others are using this?
+- **Application:** "Join 10,000+ teams who use..."
+
+---
+
+### **Category 5: Markets & Competition**
+
+#### **Network Effects**
+- **What:** Products get more valuable as more people use them. The strongest moat.
+- **When to use:** Product strategy, competitive analysis, platform design
+- **Types:**
+  - **Direct:** More users = more value (phones, social networks)
+  - **Indirect:** More users = more complements (platforms, marketplaces)
+  - **Data:** More users = better product (search, recommendations)
+- **Key questions:**
+  - Does this get better as more people use it?
+  - What type of network effect do we have?
+  - How do we strengthen the network effect?
+
+#### **Moats (7 Powers - Hamilton Helmer)**
+- **What:** Sustainable competitive advantages that protect profits from competition.
+- **When to use:** Competitive strategy, valuation, investment decisions
+- **The 7 powers:**
+  1. **Scale economies:** Cost advantage from size
+  2. **Network economies:** Value from user base
+  3. **Counter-positioning:** New approach incumbents can't adopt
+  4. **Switching costs:** Pain of changing providers
+  5. **Branding:** Trust and recognition premium
+  6. **Cornered resource:** Exclusive access to asset
+  7. **Process power:** Better way of doing things
+- **Key questions:**
+  - What protects our profits from competition?
+  - How durable is this advantage?
+  - What would erode this moat?
+
+#### **Two-Sided Markets**
+- **What:** Platforms connecting two groups where each benefits from the other's participation.
+- **When to use:** Marketplace strategy, platform design, pricing
+- **Key principles:**
+  - **Chicken-egg problem:** How to get both sides initially?
+  - **Subsidy side:** Often one side pays, other is subsidized
+  - **Critical mass:** Value increases non-linearly with scale
+- **Key questions:**
+  - Who are the two sides?
+  - Which side is harder to acquire?
+  - How do we solve the cold start problem?
+
+---
+
+## Model Selection Guide
+
+**For Strategy & Vision:**
+- Working Backwards (customer-back thinking)
+- First Principles (challenge assumptions)
+- Inversion (avoid failure modes)
+
+**For Prioritization:**
+- ROI Thinking (investment vs. return)
+- Cost of Delay (timing matters)
+- Opportunity Cost (what are we NOT doing)
+
+**For Growth & Retention:**
+- Flywheels/Loops (sustainable growth)
+- Network Effects (viral growth)
+- Social Proof (adoption drivers)
+
+**For Competitive Analysis:**
+- Moats (sustainable advantage)
+- Network Effects (defensibility)
+- Two-Sided Markets (platform dynamics)
+
+**For Decision-Making:**
+- Second-Order Thinking (consequences)
+- Cognitive Biases (avoid errors)
+- Sunk Cost Fallacy (don't look back)
+
+**For User Behavior:**
+- Loss Aversion (motivation)
+- Social Proof (influence)
+- Cognitive Biases (predictable errors)
+
+---
+
+## Building Your Latticework
+
+1. **Learn one model at a time:** Don't try to memorize all 20. Learn one, apply it, then learn another.
+
+2. **Apply to real situations:** Models are useless in theory. Use them on actual problems.
+
+3. **Notice when models conflict:** This is where insight happens. When ROI says "go" but Inversion says "risk," dig deeper.
+
+4. **Build your go-to set:** Most PMs have 5-7 models they use constantly. Find yours.
+
+5. **Expand deliberately:** When you encounter a new problem type, learn the relevant model.
+
+---
+
+## Common Mistakes
+
+1. **Using only one model:** The "hammer and nail" problem. Build a latticework.
+
+2. **Forcing models where they don't fit:** Not every situation needs a mental model.
+
+3. **Modeling instead of deciding:** Analysis paralysis by another name.
+
+4. **Ignoring context:** Models from one domain may not transfer to another.
+
+5. **Treating models as truth:** They're simplifications. Reality is more complex.

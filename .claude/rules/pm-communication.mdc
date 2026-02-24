@@ -1,0 +1,273 @@
+# Communication Standards Detail
+
+**Load this file when:** Writing for specific audiences, needing full templates, or stakeholder alignment strategies.
+
+---
+
+## Communication Quality Bar
+
+All PM communication must meet these standards:
+
+### **1. Purpose-Driven**
+- Every document, email, or presentation answers: "What outcome am I driving?"
+- Acceptable outcomes: Decision made, alignment created, action taken, understanding achieved
+- Unacceptable: "Sharing information" without clear purpose
+
+### **2. Audience-Optimized**
+- Match format and depth to audience
+- Default: If unsure, optimize for the most senior person in the audience
+
+### **3. Evidence-Based**
+- No claims without sources (data, research, customer quotes)
+- Label clearly: "DATA: ..." "CUSTOMER QUOTE: ..." "HYPOTHESIS: ..." "ASSUMPTION: ..."
+
+### **4. Clarity-First**
+- Simple words over sophisticated language
+- Short sentences over complex constructions
+- Active voice over passive voice
+- 12-year-old test: Can a smart middle-schooler understand the core idea?
+
+### **5. Scannable Structure**
+- Lead with the most important point (no warm-up, no preamble)
+- Use headings, bullets, bold, and white space liberally
+- Visual > text when possible
+- TL;DR at the top for anything > 1 page
+
+### **6. Actionable**
+- Every communication ends with clear next steps
+- Specify: Who does what by when
+- One primary CTA, avoid choice paralysis
+
+---
+
+## Executive Communication
+
+**Goal:** Enable fast, confident decisions with minimal cognitive load
+
+### **Structure Template:**
+```
+DECISION NEEDED: [Specific ask] by [date]
+
+RECOMMENDATION: [What you recommend] because [top 2 reasons]
+
+CONTEXT: [2-3 sentences of essential background]
+
+OPTIONS CONSIDERED:
+1. [Option A]: [Outcome] - [Key tradeoff]
+2. [Option B]: [Outcome] - [Key tradeoff]
+
+RATIONALE: [Why your recommendation, with evidence]
+
+RISKS & MITIGATIONS: [What could go wrong, how you'll handle it]
+
+NEXT STEPS: [What happens if approved]
+```
+
+### **Frameworks:**
+- **BLUF:** Decision/recommendation first, rationale after
+- **Pyramid Principle:** Conclusion first, supporting arguments grouped logically
+- **SCQA:** Set context, identify problem, pose question, provide answer
+
+### **Principles:**
+- Lead with recommendation, not analysis
+- 1-pager max for summary, appendix for details
+- Quantify everything (time, money, risk, impact)
+- Frame in business outcomes, not features
+- Respect their time—optimize for 2-minute read
+
+### **Anti-patterns:**
+- ❌ Burying the ask on page 3
+- ❌ Presenting 5 equally weighted options
+- ❌ Using jargon without definition
+- ❌ Making them hunt for "so what does this mean?"
+
+---
+
+## IC & Cross-Functional Communication
+
+**Goal:** Provide context and detail needed for execution
+
+### **PRD/Spec Structure:**
+```
+PROBLEM: [What user problem are we solving? For whom?]
+
+WHY NOW: [Why is this important? What's the cost of not solving?]
+
+SUCCESS CRITERIA: [How will we know this worked? Specific metrics]
+
+USER EXPERIENCE:
+- [User flow or interaction model]
+- [Edge cases and error states]
+
+TECHNICAL APPROACH:
+- [High-level architecture]
+- [Key technical decisions and rationale]
+
+OUT OF SCOPE: [What we're explicitly NOT doing and why]
+
+OPEN QUESTIONS: [What we need to decide/validate]
+
+NEXT STEPS: [Who does what by when]
+```
+
+### **Frameworks:**
+- **Problem/Solution/Outcome:** Start with why, explain how, define success
+- **Jobs-to-be-Done:** Frame work in terms of customer jobs
+- **Technical Context → Business Impact:** Connect technical work to value
+
+### **Principles:**
+- Provide context—why this matters, what we learned
+- Be specific—"reduce p95 latency from 800ms to 200ms" not "improve performance"
+- Acknowledge uncertainty—call out assumptions and unknowns
+- Connect to strategy—link to vision, OKRs, or strategic initiatives
+- Use visuals—diagrams, mockups, data charts over walls of text
+
+### **Anti-patterns:**
+- ❌ Assuming everyone has the context you have
+- ❌ Spec'ing the solution without explaining the problem
+- ❌ Using ambiguous language ("better," "faster," "improved")
+- ❌ Skipping edge cases and error states
+
+---
+
+## Customer Communication
+
+**Goal:** Build trust, provide value, drive adoption/retention
+
+### **Product Update Structure:**
+```
+HEADLINE: [Benefit] + [Availability]
+Example: "See delivery risks 3 weeks early—available now"
+
+OPENING: Bridge current pain to new possibility
+"Remember when [specific frustration]? That changes today."
+
+VALUE STACK:
+✓ [Primary benefit] - [Specific outcome]
+✓ [Secondary benefit] - [Efficiency gain]
+✓ [Tertiary benefit] - [Strategic advantage]
+
+PROOF: [Early customer result or concrete data]
+
+HOW TO ACCESS: [Specific steps, < 3 clicks]
+
+NEXT STEPS: [Clear CTA with timeline]
+```
+
+### **Frameworks:**
+- **Before/After/Bridge:** Current pain → Future state → Product as the path
+- **PAS (Problem/Agitate/Solution):** Identify pain, make cost clear, offer solution
+- **StoryBrand:** Position customer as hero, you as guide
+
+### **Translation Rules:**
+```
+INSTEAD OF → SAY THIS
+
+API Integration → Connects with tools your team uses
+Throughput Optimization → Helps work flow faster
+Dependency Mapping → Shows how your work affects other teams
+Technical Debt → Shortcuts that slow future work
+MVP → Simplest version that solves the core problem
+```
+
+### **Principles:**
+- Lead with benefit, not feature
+- Use customer language, not product terminology
+- Quantify impact ("Save 6 hours/week" not "Increase efficiency")
+- Make adoption easy—clear, simple steps (< 3)
+- Build trust—proof points, customer quotes, real results
+
+### **Anti-patterns:**
+- ❌ Leading with features ("We built X")
+- ❌ Using internal jargon or acronyms
+- ❌ Assuming they know why this matters
+- ❌ Making adoption complex (> 3 steps)
+
+---
+
+## Stakeholder Alignment & Influence
+
+**Goal:** Build coalitions, gain buy-in, navigate politics
+
+### **Alignment Doc Structure:**
+```
+PURPOSE: [What decision/alignment we need]
+
+CONTEXT: [Why this matters now, what changed]
+
+PROPOSAL: [What you're recommending]
+
+BENEFITS BY STAKEHOLDER:
+- [Engineering]: [What they gain]
+- [Sales]: [What they gain]
+- [Exec team]: [What they gain]
+
+ADDRESSING CONCERNS:
+- [Concern 1]: [How we mitigate]
+- [Concern 2]: [How we mitigate]
+
+SUCCESS METRICS: [How we'll measure progress]
+
+NEXT STEPS: [Clear path forward]
+```
+
+### **Influence Strategies:**
+- **Make it their idea:** Ask questions that lead them to your conclusion
+- **Align to their goals:** Frame your proposal in terms of what they care about
+- **Build coalition first:** Secure key allies before broad communication
+- **Address objections proactively:** Surface and resolve concerns early
+- **Use their language:** Mirror their terminology and priorities
+
+### **Frameworks:**
+- **Narrative Arc:** Story-driven vision that creates emotional connection
+- **Intention & Obstacle:** Show what you're trying to achieve and what's blocking you
+- **Social Proof:** Leverage authority, peers, consensus to build credibility
+
+### **Principles:**
+- Understand motivations—what does each stakeholder care about?
+- Frame in their terms—engineering wants feasibility, sales wants competitive advantage
+- Build trust through transparency—acknowledge risks and tradeoffs
+- Create forcing functions—deadlines, dependencies, external commitments
+- Make the default path your desired outcome
+
+### **Anti-patterns:**
+- ❌ Assuming logic wins—politics and incentives matter
+- ❌ Surprising stakeholders in group settings
+- ❌ Ignoring power dynamics and org politics
+- ❌ Presenting only upside—acknowledging risks builds credibility
+
+---
+
+## Framework Selection Guide
+
+**Decision-Focused (Executives, Approvals):**
+- **BLUF:** Urgent decisions, time-constrained executives
+- **Pyramid Principle:** Complex arguments, multiple stakeholders
+- **SCQA:** When context-setting is critical
+
+**Problem-Focused (Discovery, Validation):**
+- **PAS:** Competitive positioning, urgent problems
+- **Jobs-to-be-Done:** User research, customer discovery
+- **Four Risks:** Pre-build validation
+
+**Narrative-Focused (Vision, Alignment):**
+- **StoryBrand:** Brand messaging, customer journey
+- **Before/After/Bridge:** Product launches, transformation stories
+- **Intention & Obstacle:** Any narrative-driven content
+
+**Technical/Execution-Focused (Specs, ICs):**
+- **Problem → Solution → Outcome:** PRDs, technical specs
+- **STAR:** Case studies, success stories, retrospectives
+
+---
+
+## Communication Anti-Patterns
+
+1. **Burying the Lead:** Saving the most important point for the end
+2. **Audience Mismatch:** Using exec frameworks for IC audience (or vice versa)
+3. **Missing Evidence:** Claims without sources or data
+4. **Ambiguous CTAs:** "Let me know your thoughts" instead of specific asks
+5. **Over-Engineering:** 10-page doc when 1-pager + appendix would work
+6. **Jargon Overload:** Using terms audience doesn't understand
+7. **No Next Steps:** Ending without clear action items
+8. **Context Overload:** Providing too much background before the point

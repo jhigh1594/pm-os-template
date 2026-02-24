@@ -1,7 +1,0 @@
-# Ignore sensitive environment files
-environment
-environment.local
-*.key
-
-# Ignore local overrides
-aipmos.local.yaml

@@ -1,0 +1,278 @@
+# Decision Framework Detail
+
+**Load this file when:** Documenting decisions, conducting decision reviews, or needing full decision templates.
+
+---
+
+## Decision-Making Principles (Expanded)
+
+### **1. One-Way vs. Two-Way Doors (Bezos Framework)**
+
+**ONE-WAY DOORS (Irreversible or very costly to reverse):**
+- Require: 90%+ certainty, broad input, senior approval, thorough analysis
+- Speed: Slow and deliberate (days to weeks)
+- Examples:
+  - Changing pricing model (hard to reverse without customer backlash)
+  - Shutting down a product line (can't easily restart)
+  - Making a key hire or firing someone (people decisions have long tails)
+  - Major architectural decisions (technical debt accumulates)
+  - Signing multi-year vendor contracts
+  - Entering new markets or verticals
+
+**TWO-WAY DOORS (Reversible or low cost to reverse):**
+- Require: 70% certainty, bias for action, fast iteration
+- Speed: Fast (hours to days)
+- Examples:
+  - Feature prioritization (can reprioritize next sprint)
+  - UI/UX changes (can revert if data shows problems)
+  - Messaging/positioning tests (easily adjusted)
+  - Experimental features (can be killed or evolved)
+  - Process changes (can be adjusted based on feedback)
+  - Most tactical execution decisions
+
+**Decision framework:**
+```
+Is this decision easily reversible?
+  → YES: Decide at 70% certainty, ship fast, learn from data
+  → NO: Is reversal very costly (time, money, trust)?
+      → YES: One-way door—slow down, gather input, get to 90%+
+      → NO: Two-way door—decide and move
+```
+
+---
+
+### **2. The 70% Rule: Decide with Sufficient Certainty**
+
+**The math:**
+- Reversible decision at 70% certainty → Ship, learn, adjust (days)
+- Waiting to get to 90% certainty → Delayed learning, competitor moves first (weeks)
+- Cost of being wrong on reversible decision: Small (can fix quickly)
+- Cost of being slow: High (opportunity cost, competitive risk, team momentum)
+
+**70% CERTAINTY CHECKLIST:**
+- [ ] Do you understand the problem clearly?
+- [ ] Have you considered 2-3 options?
+- [ ] Do you know what success looks like?
+- [ ] Have you identified key risks?
+- [ ] Do you have a plan to mitigate top risks?
+- [ ] Can you explain your reasoning?
+
+**If YES to most: You're at 70%. Decide.**
+
+---
+
+### **3. Decision Ownership: Who Decides?**
+
+**YOU DECIDE (Individual ownership):**
+- Your domain/scope of responsibility
+- Two-way door decisions
+- Tactical execution choices
+- When you're the accountable DRI (Directly Responsible Individual)
+
+**ESCALATE (Higher authority needed):**
+- One-way doors beyond your scope
+- Cross-org dependencies requiring senior alignment
+- Major resource commitments
+- Strategic pivots
+- Decisions that affect other teams' roadmaps
+
+**COLLABORATE (Input needed, but you decide):**
+- Cross-functional impact (need eng/design/GTM input)
+- Customer-facing changes (need CS/Support input)
+- Technical feasibility questions (need eng validation)
+- Go-to-market dependencies (need Sales/Marketing input)
+
+**DELEGATE (Someone else owns):**
+- Outside your expertise or domain
+- When someone else is the DRI
+- When team member has better context/judgment
+
+**Decision rights clarity:**
+```
+For any decision, clarify:
+- Who is the DRI (Directly Responsible Individual)?
+- Who must be consulted (input required)?
+- Who must be informed (FYI only)?
+- Who approves (if escalation needed)?
+- By when must this be decided?
+```
+
+---
+
+### **4. Disagree and Commit**
+
+**BEFORE DECISION:**
+- Encourage vigorous debate
+- Surface all concerns and objections
+- Pressure-test assumptions
+- Consider multiple perspectives
+- Make your disagreement clear
+
+**AFTER DECISION:**
+- Commit fully to execution
+- Support the decision publicly
+- Give it a real chance to work
+- Don't undermine with "I told you so" energy
+- Focus on making it successful
+
+**Framework:**
+```
+"I hear your concerns about [X]. Here's why I'm deciding [Y] anyway: [rationale].
+I need your commitment to make this work. Can I count on you?
+
+We'll revisit this in [timeframe] and check [success criteria].
+If I'm wrong, we'll adjust. If you're right, we'll learn from it."
+```
+
+---
+
+### **5. Decision Documentation Template**
+
+```markdown
+## Decision: [Clear, specific decision statement]
+**Date:** YYYY-MM-DD
+**Owner:** [Name of DRI]
+**Type:** One-way door | Two-way door
+**Status:** Proposed | Decided | Implemented | Reversed
+
+## Context
+[Why are we making this decision now? What changed?]
+
+## Options Considered
+1. **[Option A]**: [Description]
+   - Pros: [Benefits]
+   - Cons: [Drawbacks]
+
+2. **[Option B]**: [Description]
+   - Pros: [Benefits]
+   - Cons: [Drawbacks]
+
+3. **[Option C - Do Nothing]**: [Always consider]
+   - Pros: [Benefits]
+   - Cons: [Drawbacks]
+
+## Decision
+[What we're doing - be specific and unambiguous]
+
+## Rationale
+[Why this option? What principles/evidence drove this?]
+- Customer evidence: [What did we learn?]
+- Data supporting: [Metrics, research]
+- Strategic alignment: [How does this support vision/goals?]
+- Key tradeoff: [What are we optimizing for?]
+
+## Risks & Mitigations
+| Risk | Likelihood | Impact | Mitigation |
+|------|-----------|--------|------------|
+| [Risk 1] | High/Med/Low | High/Med/Low | [How we'll handle it] |
+| [Risk 2] | High/Med/Low | High/Med/Low | [How we'll handle it] |
+
+## Reversibility
+**How hard to reverse:** Easy | Medium | Hard | Irreversible
+**Cost to reverse:** [Time, money, trust impact]
+**Triggers for re-evaluation:**
+- [Condition 1: e.g., if adoption < 20% after 30 days]
+- [Condition 2: e.g., if customer churn increases > 5%]
+
+## Success Criteria
+**How will we know this was right?**
+- [Metric 1]: [Target] by [date]
+- [Metric 2]: [Target] by [date]
+- [Qualitative signal]: [What we'll observe]
+
+**Review date:** [When we'll formally assess this decision]
+
+## Stakeholders
+- **Decided:** [DRI who made the call]
+- **Consulted:** [Who provided input]
+- **Informed:** [Who needs to know]
+- **Disagreed but committed:** [Who disagreed but is supporting]
+```
+
+---
+
+### **6. Decision Velocity: Speed as a Competitive Advantage**
+
+**REDUCE DECISION LATENCY:**
+- Set decision deadlines: "We'll decide by Friday"
+- Time-box analysis: "Spend 2 hours on this, then decide"
+- Limit options: Max 3 options (status quo always one of them)
+- Parallel input-gathering: Don't wait sequentially for each stakeholder
+
+**ELIMINATE FAKE WORK:**
+- Don't create decks for decisions that could be docs
+- Don't schedule meetings for decisions that could be async
+- Don't gather data you won't use
+- Don't include stakeholders who don't add value
+
+**CREATE DECISION FORCING FUNCTIONS:**
+- External deadlines (customer commitments, launches)
+- Default decisions: "If we don't decide by X, the default is Y"
+- Escalation paths: "I'll decide by EOD unless you override"
+- Timeboxed collaboration: "We'll discuss for 30 min, then I'm calling it"
+
+**EMPOWER OTHERS TO DECIDE:**
+- Delegate two-way door decisions
+- Create clear decision authorities
+- Trust your team's judgment
+- Review outcomes, not decisions (manage through learning)
+
+---
+
+### **7. Learning from Decisions: Close the Loop**
+
+**REVIEW FRAMEWORK:**
+```
+DECISION REVIEW: [Decision Name]
+**Original decision date:** [Date]
+**Review date:** [Today]
+
+## Outcome Assessment
+**Did we achieve success criteria?**
+- [Metric 1]: Target [X], Actual [Y] → Met/Missed/Exceeded
+- [Metric 2]: Target [X], Actual [Y] → Met/Missed/Exceeded
+
+**What actually happened?**
+[Narrative: What resulted from this decision?]
+
+## What We Learned
+**What did we get right?**
+- [Insight 1]
+- [Insight 2]
+
+**What did we get wrong?**
+- [Assumption that didn't hold]
+- [Risk we underestimated]
+
+**What would we do differently?**
+- [Adjustment 1]
+- [Adjustment 2]
+
+## Update Beliefs
+**What does this teach us about future decisions?**
+- [Pattern or principle to apply going forward]
+
+## Action Items
+- [ ] [If we need to reverse/adjust the decision]
+- [ ] [If we need to double down]
+- [ ] [If we need to update our decision framework]
+```
+
+**SCHEDULE DECISION REVIEWS:**
+- For two-way doors: Review in 30-60 days
+- For one-way doors: Review in 90-180 days
+- Set calendar reminder when documenting decision
+- Make review non-negotiable (even when busy)
+
+---
+
+## Decision-Making Anti-Patterns
+
+1. **Analysis Paralysis:** Waiting for 100% certainty on reversible decisions
+2. **Committee Decision:** No clear DRI, everyone has veto power
+3. **Default to Status Quo:** Inaction is easier than action
+4. **Sunk Cost Thinking:** Continuing because of past investment
+5. **No Success Criteria:** Can't evaluate if decision was right
+6. **No Review Loop:** Decisions made but never evaluated
+7. **Premature Escalation:** Escalating decisions you should own
+8. **Undocumented Decisions:** Forgotten rationale, no learning
