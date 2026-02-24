@@ -1,0 +1,54 @@
+# AIPMOS Workspace Configuration
+# This file configures the AI Product Management Operating System for your workspace.
+# Customize the sections marked with [UPDATE THIS].
+
+version: "1.0.0"
+
+# Workspace identification
+workspace:
+  name: "[UPDATE THIS: Your Company] Product Management"
+  type: "product-management"
+
+# Path configuration (relative to workspace root)
+paths:
+  memory_bank: "🤖 AI/memory"
+  tasks_output: "📋 Tasks"
+  scripts: "🔧 Automation/scripts"
+  product_content: "📦 Products"
+  daily_plans: "🤖 AI/memory/daily-plans"
+  meeting_notes: "🏢 Company/meetings"
+
+# Context information for AI agents
+context:
+  company_name: "[UPDATE THIS: Your Company]"
+  primary_product: "[UPDATE THIS: Product 1]"
+  portfolio_products: ["[UPDATE THIS: Product 1]", "[UPDATE THIS: Product 2]"]
+  target_customers: "[UPDATE THIS: e.g., Enterprise (500-10,000 employees)]"
+
+# Integration settings
+integrations:
+  agileplace:
+    enabled: true
+    domain: "[UPDATE THIS: your-company].leankit.com"
+    user_ids: []
+
+  granola:
+    enabled: true
+
+  slack:
+    enabled: true
+
+  notion:
+    enabled: true
+
+# Memory Bank Maintenance
+memory_maintenance:
+  enabled: true
+  archive:
+    threshold_days: 90
+    archive_path: "memory-bank/archive"
+
+  bloat_prevention:
+    max_lines: 150
+    max_size_kb: 10
+    keep_recent_sessions: 10
