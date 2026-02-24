@@ -1,0 +1,120 @@
+# Ruler Configuration File
+# See https://ai.intellectronica.net/ruler for documentation.
+
+# Default agents to enable (Cursor and Claude Code)
+default_agents = ["cursor", "claude"]
+
+# Enable nested rule loading from nested .ruler directories
+# When enabled, ruler will search for and process .ruler directories throughout the project hierarchy
+nested = false
+
+# --- Agent Specific Configurations ---
+# You can enable/disable agents and override their default output paths here.
+# Use lowercase agent identifiers: amp, copilot, claude, codex, cursor, windsurf, cline, aider, kilocode
+
+[agents.cursor]
+enabled = true
+
+[agents.claude]
+enabled = true
+
+# --- MCP Servers ---
+# Define Model Context Protocol servers here. Two examples:
+# 1. A stdio server (local executable)
+# 2. A remote server (HTTP-based)
+
+# Fetch MCP Server - Web content fetching capabilities
+# Provides tools for fetching web pages and extracting content
+# Repository: https://github.com/modelcontextprotocol/servers/tree/main/src/fetch
+[mcp_servers.fetch]
+command = "uvx"
+args = ["mcp-server-fetch"]
+
+# Notion MCP Server - Official Notion API integration
+# Provides tools for creating, reading, updating Notion pages and databases
+# Repository: https://github.com/notionhq/notion-mcp-server
+# Setup: Get API key from https://www.notion.so/my-integrations
+[mcp_servers.notion]
+command = "npx"
+args = ["-y", "@notionhq/notion-mcp-server"]
+env = { NOTION_API_KEY = "YOUR_NOTION_API_KEY_HERE" }
+
+# EXA MCP Server - AI-powered web search and research
+# Tools: web_search_exa, get_code_context_exa, company_research_exa, deep_search_exa
+# Repository: https://github.com/exa-labs/exa-mcp-server
+# Setup: Get API key from https://exa.ai
+[mcp_servers.exa]
+url = "https://mcp.exa.ai/mcp?tools=web_search_exa,get_code_context_exa,company_research_exa,deep_search_exa"
+
+# --- Hooks ---
+# Hook system for injecting context at specific points
+
+[hooks.SessionStart]
+# Intent-Aware Command Suggestions
+additionalContext = """
+## Intent-Aware Command Suggestions
+
+When the user makes a request that could benefit from an AIPMOS command:
+
+1. Check if user explicitly invoked `/command` - if so, proceed directly
+2. Analyze user's intent - what are they trying to accomplish?
+3. Reference .claude/commands/COMMAND-REFERENCE.md for command intents
+4. If you find a strong match (confidence >70%):
+   - Suggest the command with brief explanation of why
+   - Offer "[Invoke /command] or [Continue conversation]"
+5. If uncertain or multiple valid options, continue normal conversation
+
+Remember: The goal is to be helpful, not pushy. If the user wants to just talk, that's perfectly valid. Only suggest when a command would clearly be more effective than conversation.
+
+**Command Reference Guide**: See .claude/commands/COMMAND-REFERENCE.md for detailed intent patterns for all 23 AIPMOS commands.
+"""
+
+[hooks.UserPromptSubmit]
+# Intent-Aware Command Suggestions (Same as SessionStart for continuity)
+additionalContext = """
+## Intent-Aware Command Suggestions
+
+Before responding to the user, analyze their request:
+
+1. **Check for explicit command invocation**: If user types `/command`, proceed directly
+2. **Analyze intent**: What is the user trying to accomplish?
+3. **Reference .claude/commands/COMMAND-REFERENCE.md**: Match user intent to command patterns
+4. **If strong match found** (confidence >70%):
+   - Suggest the command with brief explanation of why it's appropriate
+   - Offer: "[Invoke /command] or [Continue conversation]"
+5. **If uncertain or multiple valid options**: Continue with normal conversation
+
+**Suggestion Format**:
+💡 **Command Suggestion**
+Your request sounds like {intent}.
+Consider using **/{command}** for {what it does}.
+[Invoke /{command}] or [Continue conversation]
+
+**Available Commands Reference**:
+- /today (daily planning), /think (strategy), /synthesize (pattern analysis)
+- /spec (PRDs), /prioritize (ranking & triage), /decide (choices)
+- /discover (research), /align (stakeholders), /write (communication)
+- /research (studies), /measure (metrics), /compete (intelligence)
+- /learn (post-launch), /ship (launch planning), /mockup (UI designs)
+- /narrative (storytelling), /onboard (getting started), /bug-report (issues)
+- /critique (feedback), /price-intel (pricing), /granola (meeting notes)
+- /prototype (interactive mockups), /daily-brief (competitive news)
+"""
+
+# Alternative configurations (uncomment to use):
+# [mcp_servers.fetch_pip]
+# command = "python"
+# args = ["-m", "mcp_server_fetch"]
+
+# [mcp_servers.fetch_npx]
+# command = "npx"
+# args = ["-y", "@modelcontextprotocol/server-fetch"]
+
+# [mcp_servers.example_stdio]
+# command = "node"
+# args = ["scripts/your-mcp-server.js"]
+# env = { API_KEY = "replace_me" }
+
+# [mcp_servers.example_remote]
+# url = "https://api.example.com/mcp"
+# headers = { Authorization = "Bearer REPLACE_ME" }

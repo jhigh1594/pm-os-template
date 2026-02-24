@@ -1,0 +1,288 @@
+# Frameworks Library
+
+**Load this file when:** Selecting frameworks, learning when to abandon frameworks, or creating custom frameworks.
+
+---
+
+## Framework Selection Principles
+
+### **1. Match Framework to Purpose**
+
+| Purpose | Example Frameworks |
+|---------|-------------------|
+| **Strategy development** | Working Backwards, Strategy Kernel, Gibson DHM |
+| **Problem validation** | JTBD, Four Risks, Value Proposition Canvas |
+| **Solution exploration** | Lean Startup, Design Sprint |
+| **Communication** | BLUF, Pyramid Principle, SCQA |
+| **Decision-making** | One-Way/Two-Way Doors, RAPID, Pre-Mortem |
+| **Prioritization** | RICE, ICE, Value/Effort, Cost of Delay |
+| **Competitive analysis** | SWOT, Porter's 5 Forces, Moat Analysis |
+| **Metrics/measurement** | North Star, AARRR, HEART |
+
+---
+
+### **2. Match Framework to Audience**
+
+| Audience | Best Frameworks | Key Need |
+|----------|-----------------|----------|
+| **Executives** | BLUF, Pyramid Principle, OKRs | Concise, decision-focused |
+| **ICs/Engineers** | JTBD, User Story Mapping, Four Risks | Context-rich, implementation-focused |
+| **Cross-functional** | Before/After/Bridge, Value Prop Canvas | Visual, accessible |
+| **Stakeholders** | StoryBrand, Vision Narrative | Inspiring, strategically coherent |
+| **Customers** | JTBD (customer language), PAS, FAB | Benefit-focused, jargon-free |
+
+---
+
+### **3. Match Framework to Stage**
+
+| Stage | Best Frameworks | Why |
+|-------|-----------------|-----|
+| **0→1 Discovery** | Working Backwards, JTBD, Four Risks, Lean Startup | High uncertainty, need validation |
+| **Product-Market Fit** | Four-Fits, Retention Curve, Sean Ellis Test, North Star | Validate value, identify core loop |
+| **Scaling/Growth** | AARRR, Growth Loops, RICE/ICE, A/B Testing | Known value, optimize for scale |
+| **Mature/Platform** | Platform Thinking, Blue Ocean, Gibson DHM | Defensibility, moats, ecosystem |
+
+---
+
+### **4. Match Framework to Reversibility**
+
+| Decision Type | Frameworks | Process Rigor |
+|---------------|------------|---------------|
+| **One-Way Doors** | Strategy Kernel, Pre-Mortem, SWOT + Risk, Full Decision Doc | High - get to 90%+ |
+| **Two-Way Doors** | 70% rule, Quick hypothesis, Lightweight doc, Ship-and-learn | Low - decide fast |
+
+---
+
+## Strategy Frameworks
+
+### **Amazon Working Backwards (Press Release)**
+- **When:** New product/feature vision, 0→1 innovation
+- **Best for:** Forcing clarity on customer benefit and "why now"
+- **Output:** 1-page press release from the future
+- **Swap for:** Strategy Kernel when you need more analytical rigor
+
+### **Strategy Kernel (Rumelt: Diagnosis/Policy/Action)**
+- **When:** Complex strategic situations, unclear path forward
+- **Best for:** Breaking down ambiguous problems into actionable components
+- **Output:** Diagnosis (what's happening), Policy (approach), Action (coherent steps)
+- **Swap for:** Working Backwards when you need customer-focused vision
+
+### **Gibson DHM (Delight/Hard-to-copy/Margin)**
+- **When:** Mature products, competitive differentiation, defensibility
+- **Best for:** Building moats and sustainable competitive advantage
+- **Output:** Analysis of what delights users, can't be copied, drives margin
+- **Swap for:** Four-Fits when earlier stage
+
+### **Platform Thinking**
+- **When:** Building ecosystems, enabling third parties, network effects
+- **Best for:** Long-term value creation through ecosystem
+- **Output:** Platform strategy (what we build, what others build, how we enable)
+
+---
+
+## Discovery & Validation Frameworks
+
+### **Jobs-to-be-Done (JTBD)**
+- **When:** Understanding customer needs, discovery, problem validation
+- **Best for:** Uncovering the "why" behind user behavior
+- **Output:** Job statement, success criteria, current solutions, constraints
+- **Swap for:** Four Risks when you need broader validation coverage
+
+### **Four Risks (Value/Usability/Feasibility/Viability)**
+- **When:** Evaluating product ideas before building
+- **Best for:** Systematic de-risking in discovery
+- **Output:** Risk assessment + validation plan for each risk
+- **Sequence:** Start with highest risk (usually value)
+
+### **Lean Startup (Build-Measure-Learn)**
+- **When:** High uncertainty, need rapid validated learning
+- **Best for:** 0→1 exploration with minimal resources
+- **Output:** Hypothesis → MVP → Metrics → Learning → Pivot/Persevere
+
+### **Value Proposition Canvas**
+- **When:** Product positioning, market fit, customer development
+- **Best for:** Mapping customer jobs/pains/gains to product features
+- **Output:** Customer profile + Value map alignment
+
+---
+
+## Prioritization Frameworks
+
+### **RICE (Reach/Impact/Confidence/Effort)**
+- **When:** Many competing features, need objective ranking
+- **Best for:** Data-driven prioritization with multiple factors
+- **Output:** Scored list of initiatives
+- **Swap for:** ICE when you don't have reach data
+
+### **ICE (Impact/Confidence/Ease)**
+- **When:** Early stage, limited data, need simple prioritization
+- **Best for:** Quick scoring without perfect information
+- **Output:** Scored list based on judgment
+- **Swap for:** RICE when you have usage data
+
+### **Value vs. Effort (2×2 Matrix)**
+- **When:** Stakeholder alignment, visual prioritization
+- **Best for:** Showing tradeoffs visually, building consensus
+- **Output:** Quadrant map (quick wins, strategic bets, fill-ins, time sinks)
+- **Swap for:** RICE/ICE when you need numerical scoring
+
+### **Cost of Delay (CD3)**
+- **When:** Timing is critical, opportunity windows matter
+- **Best for:** Understanding urgency and sequencing
+- **Output:** Economic framework for prioritization
+
+### **Kano Model**
+- **When:** Understanding feature satisfaction vs. investment
+- **Best for:** Identifying delighters, must-haves, performance features
+- **Output:** Feature categorization (Basic, Performance, Delighters)
+
+### **Three Buckets (Adam Nash)**
+- **When:** Roadmap planning, balancing different types of work
+- **Best for:** Creating balanced roadmap
+- **Output:** Allocation across: (1) Metrics movers, (2) Customer requests, (3) Delight/Innovation
+- **Typical allocation:** 1/3 each, or weighted by company stage
+
+---
+
+## Communication Frameworks
+
+### **BLUF (Bottom Line Up Front)**
+- **When:** Executive communication, urgent decisions
+- **Best for:** Busy stakeholders who need the ask/decision first
+- **Output:** Decision/ask → Rationale → Details → Appendix
+
+### **Pyramid Principle (McKinsey)**
+- **When:** Complex arguments, multiple stakeholders, persuasion
+- **Best for:** Structuring logical, evidence-based communication
+- **Output:** Main conclusion → Supporting arguments → Evidence
+
+### **SCQA (Situation/Complication/Question/Answer)**
+- **When:** Context-setting is critical, unfamiliar topics
+- **Best for:** Leading audience through your thinking
+- **Output:** Set context → Identify problem → Pose question → Provide answer
+
+### **PAS (Problem/Agitation/Solution)**
+- **When:** Competitive positioning, urgent communication
+- **Best for:** Making cost of inaction clear
+- **Output:** Identify pain → Make cost explicit → Offer solution
+
+### **Before/After/Bridge**
+- **When:** Product launches, feature positioning
+- **Best for:** Showing value through contrast
+- **Output:** Current pain → Future state → Product as bridge
+
+---
+
+## Competitive Analysis Frameworks
+
+### **SWOT (Strengths/Weaknesses/Opportunities/Threats)**
+- **When:** Comprehensive competitive assessment
+- **Best for:** Broad view of internal and external factors
+- **Output:** 2×2 matrix of SWOT factors
+
+### **Porter's 5 Forces**
+- **When:** Industry analysis, understanding competitive dynamics
+- **Best for:** Market structure and competitive intensity
+- **Output:** Assessment of supplier/buyer power, substitutes, new entrants, rivalry
+
+### **Moat Analysis (7 Powers - Hamilton Helmer)**
+- **When:** Defensibility, sustainable competitive advantage
+- **Best for:** Understanding what makes position defensible
+- **Output:** Assessment of: Scale, Network, Brand, Switching Cost, Process, IP, Cornered Resource
+
+---
+
+## Decision Frameworks
+
+### **One-Way vs. Two-Way Doors (Bezos)**
+- **When:** Any decision, determining process rigor
+- **Best for:** Right-sizing decision process based on reversibility
+- **Output:** Classification + appropriate decision speed
+
+### **RAPID (Recommend/Agree/Perform/Input/Decide)**
+- **When:** Complex cross-functional decisions, unclear ownership
+- **Best for:** Clarifying who plays which role in decision
+- **Output:** Role assignment for decision process
+
+### **Pre-Mortem**
+- **When:** High-stakes decisions, one-way doors, major launches
+- **Best for:** Identifying risks before they happen
+- **Output:** "Assume we failed, what went wrong?" → Risk mitigation plan
+
+---
+
+## Metrics & Measurement Frameworks
+
+### **North Star Metric**
+- **When:** Aligning team on core value metric
+- **Best for:** Single metric that represents customer value delivered
+- **Output:** Primary metric + supporting inputs
+
+### **AARRR (Pirate Metrics)**
+- **When:** Growth focus, optimizing funnel
+- **Best for:** Understanding full customer lifecycle
+- **Output:** Metrics for Acquisition/Activation/Retention/Revenue/Referral
+
+### **HEART (Happiness/Engagement/Adoption/Retention/Task Success)**
+- **When:** User experience quality, product health
+- **Best for:** Broader view of product success beyond growth
+- **Output:** Balanced scorecard across 5 dimensions
+
+### **Reforge Four-Fits**
+- **When:** Comprehensive product-market fit assessment
+- **Best for:** Understanding where you are in journey to sustainable business
+- **Output:** Assessment of problem-solution, product-market, GTM, sustainable fit
+
+---
+
+## When to Abandon Frameworks
+
+**Abandon when:**
+- Framework creates more work than value
+- Reality doesn't fit the framework
+- Speed matters more than structure
+- You've internalized the thinking pattern
+- Team doesn't understand the framework
+- Framework optimizes for the wrong thing
+
+**How to abandon gracefully:**
+1. Extract the core insight - What was useful?
+2. Create simpler version - Can you get the benefit with less overhead?
+3. Document why you're abandoning - Learn for future selection
+4. Suggest alternative - Don't just abandon, offer better approach
+
+---
+
+## Framework Selection Cheatsheet
+
+```
+What's your purpose?
+├─ Strategy?
+│  ├─ 0→1 new product? → Working Backwards or Strategy Kernel
+│  ├─ Competitive advantage? → Gibson DHM or Moat Analysis
+│  └─ Long-term vision? → Vision Narrative or Platform Thinking
+│
+├─ Communication?
+│  ├─ To executives? → BLUF or Pyramid Principle
+│  ├─ To customers? → Before/After/Bridge or PAS
+│  ├─ To team? → Problem/Solution/Outcome
+│  └─ Stakeholder alignment? → StoryBrand or Vision Narrative
+│
+├─ Prioritization?
+│  ├─ Have usage data? → RICE
+│  ├─ Early stage/limited data? → ICE or Value/Effort
+│  ├─ Timing matters? → Cost of Delay
+│  ├─ Roadmap balance needed? → Three Buckets
+│  └─ Understanding satisfaction? → Kano Model
+│
+├─ Discovery/Validation?
+│  ├─ Problem understanding? → JTBD
+│  ├─ Pre-build validation? → Four Risks
+│  ├─ High uncertainty? → Lean Startup
+│  └─ Market positioning? → Value Proposition Canvas
+│
+└─ Decision-making?
+   ├─ Determine rigor? → One-Way vs Two-Way Doors
+   ├─ Clarify ownership? → RAPID
+   └─ Risk assessment? → Pre-Mortem
+```

@@ -9,13 +9,15 @@
 **First 3 Things**:
 1. Check `GOALS.md` for role, portfolio, current goals, and key stakeholders
 2. Check `📋 Tasks/today.md` for daily priorities and active work
-3. Check `.aipmos/memory-bank/memory.md` for current focus
+3. Check `🤖 AI/memory/memory.md` for current focus
 
 **Context**: See `GOALS.md` for role, portfolio, and current goals.
 
-**Common Commands**: `/today`, `/think`, `/granola`, `/compete` — see `.claude/commands/COMMAND-REFERENCE.md`
+**Common Commands**: `/today`, `/think`, `/brainstorm`, `/compete` — see `.claude/commands/COMMAND-REFERENCE.md`
 
 **Working principle**: Simplicity > Complexity. Shorter is almost always better. Plain language beats jargon. When in doubt, simplify.
+
+**Before any strategic decision or spec**: Braindump before structure — get raw thinking out first, then organize.
 
 ---
 
@@ -25,14 +27,14 @@ These rules define how to operate as a 10X Product Leader. Reference them proact
 
 | Rule | When to Reference |
 |------|-------------------|
-| **pm-operating-principles.mdc** | Default operating mode — Execution Bias, Ruthless Prioritization, Four Risks, Data-Informed decisions |
-| **mental-models.mdc** | Strategic thinking, investment decisions, system design — 20 models including ROI, Working Backwards, Flywheels |
-| **decision-framework.mdc** | Making or documenting decisions — One-Way vs Two-Way Doors, 70% Rule, Disagree and Commit |
-| **frameworks-as-tools.mdc** | Selecting PM frameworks — library by purpose, when to abandon frameworks |
-| **communication-standards.mdc** | Writing for specific audiences — Executives, ICs, Customers, Cross-functional stakeholders |
-| **product-sense.mdc** | Product critiques, trusting gut vs data, developing product intuition |
+| **pm-core.mdc** | DEFAULT - Always loaded — Core operating principles, quick references, conflict resolution |
+| **pm-mental-models.mdc** | Strategic thinking, investment decisions — Load on trigger |
+| **pm-decision-detail.mdc** | Decision documentation, reviews — Load on trigger |
+| **pm-frameworks.mdc** | Framework selection, when to abandon — Load on trigger |
+| **pm-communication.mdc** | Communication deep-dive, audience patterns — Load on trigger |
+| **pm-product-sense.mdc** | Product sense/quality, taste vs data — Load on trigger |
 
-**Default**: Follow `pm-operating-principles.mdc` unless a specific situation calls for another rule.
+**Default**: Follow `pm-core.mdc` always. Detail files load via MEMORY.md wake-on-trigger pattern.
 
 ---
 
@@ -48,8 +50,9 @@ These rules define how to operate as a 10X Product Leader. Reference them proact
 ├── 🎓 Product-Management/  # PM frameworks, mental models, strategy
 ├── 📋 Tasks/               # today.md, backlog.md, completed, archive
 ├── 📚 Knowledge/           # Reference, Research, People (stakeholder notes)
-├── .aipmos/memory-bank/    # AI context persistence (memory.md)
-└── .claude/                # Claude Code configuration
+├── 🤖 AI/memory/           # AI context (memory.md)
+├── .cursor/                # Cursor IDE (rules, commands)
+└── .ruler/                 # Ruler configuration
 ```
 
 ### Key Knowledge Sources
@@ -62,4 +65,10 @@ These rules define how to operate as a 10X Product Leader. Reference them proact
 
 ## Memory Bank
 
-Single unified context file: **`.aipmos/memory-bank/memory.md`**. Update when session focus or milestones change; use `/refresh-memory` to append session activity.
+Single unified context file: **`🤖 AI/memory/memory.md`**. Update when session focus or milestones change; use `/refresh-memory` to append session activity.
+
+---
+
+## Accumulated Wisdom
+
+See **`🤖 AI/patterns/learned-patterns.md`** for workspace conventions, past decisions, and patterns worth preserving.

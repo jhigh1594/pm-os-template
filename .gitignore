@@ -29,6 +29,7 @@ node_modules/
 *.key
 .env
 !.env.example
+.mcp.json
 
 # User-specific files that get created during install
 # (the .template versions are committed, not the final files)

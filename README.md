@@ -11,9 +11,8 @@ cd pm-os-template
 
 # Customize your workspace
 # Edit these files to add your context:
-# - GOALS.md         → Your role, goals, stakeholders
-# - .aipmos/environment → Your API keys
-# - .aipmos/memory-bank/memory.md → Your current focus
+# - GOALS.md           → Your role, goals, stakeholders
+# - 🤖 AI/memory/memory.md → Your current focus
 
 # Open in Claude Code
 claude
@@ -26,17 +25,18 @@ After cloning, run `/onboard` in Curosr or Claude Code to be guided through setu
 ### Required
 - [ ] **GOALS.md** - Add your name, role, company, products, and quarterly goals
 - [ ] **CLAUDE.md** - Update company name and product references
-- [ ] **.aipmos/memory-bank/memory.md** - Set your current focus
+- [ ] **🤖 AI/memory/memory.md** - Set your current focus
 
 ### Optional Integrations
-- [ ] **.aipmos/environment** - Add API keys (AgilePlace, Slack, Notion, etc.)
+- [ ] **.env** - Add API keys at project root
 - [ ] **.mcp.json** - Configure MCP servers
 
 ## What's Included
 
 ### AI Assistant Configuration
-- **20+ slash commands** for PM tasks (`/today`, `/think`, `/brainstorm`, `/compete`, etc.)
+- **35+ slash commands** for PM tasks (`/today`, `/think`, `/brainstorm`, `/compete`, etc.)
 - **6 PM rule files** defining how to operate as a 10X Product Leader
+- **Ruler integration** for multi-AI sync (Claude Code, Cursor, etc.)
 - **Automation scripts** for daily planning and meeting notes
 
 ### Workspace Structure
@@ -49,9 +49,25 @@ After cloning, run `/onboard` in Curosr or Claude Code to be guided through setu
 ├── 📚 Knowledge/         # Research and reference
 ├── 🏢 Company/           # Business context
 ├── 🔧 Automation/        # Scripts and tools
-├── .aipmos/              # AI memory and configuration
-└── .claude/              # Claude Code configuration
+├── 🤖 AI/                # AI memory and patterns
+│   ├── memory/           # Context persistence
+│   └── patterns/         # Learned patterns
+├── .claude/              # Claude Code configuration
+└── .ruler/               # Multi-AI sync (Ruler)
 ```
+
+### PM Rules System
+
+The rules system uses progressive disclosure:
+
+| Rule | Purpose |
+|------|---------|
+| `pm-core.mdc` | **Always loaded** - Quick references, conflict resolution |
+| `pm-mental-models.mdc` | Strategic thinking, investment decisions |
+| `pm-decision-detail.mdc` | Decision documentation, reviews |
+| `pm-frameworks.mdc` | Framework selection, when to abandon |
+| `pm-communication.mdc` | Audience patterns, stakeholder alignment |
+| `pm-product-sense.mdc` | Product critiques, taste development |
 
 ## Available Commands
 
@@ -67,10 +83,18 @@ After cloning, run `/onboard` in Curosr or Claude Code to be guided through setu
 | `/prioritize` | Prioritization framework |
 | `/onboard` | Workspace setup guide |
 
+## Ruler Integration
+
+This workspace uses [Ruler](https://github.com/jhigh1594/ruler) for multi-AI configuration sync:
+
+- Edit `.ruler/AGENTS.md` to update AI instructions
+- Run `ruler apply` to sync to Claude Code, Cursor, etc.
+- Keeps all AI tools reading from the same source of truth
+
 ## Security Notes
 
 **Never commit these files to version control:**
-- `.aipmos/environment` - Contains API keys
+- `.env` - Contains API keys
 - `.mcp.json` - Contains API keys
 
 Both are already in `.gitignore`.
