@@ -5,31 +5,48 @@ A complete AI-powered Product Management workspace that supercharges your PM wor
 ## Quick Start
 
 ```bash
-# Clone this template
+# 1. Clone this template
 git clone https://github.com/jhigh1594/pm-os-template.git
 cd pm-os-template
 
-# Customize your workspace
-# Edit these files to add your context:
-# - GOALS.md           → Your role, goals, stakeholders
-# - 🤖 AI/memory/memory.md → Your current focus
+# 2. Open in Claude Code or Cursor
+claude    # for Claude Code
+# or
+cursor .  # for Cursor IDE
 
-# Open in Claude Code
-claude
+# 3. Run the onboarding command
+/onboard
 ```
 
-## Setup Checklist
+That's it! The `/onboard` command will guide you through setting up your workspace.
 
-After cloning, run `/onboard` in Curosr or Claude Code to be guided through setup, or manually update:
+## What `/onboard` Does
+
+The `/onboard` command provides an interactive 30-60-90 day framework to:
+
+1. **Set up your context** — Customize GOALS.md with your role, products, and stakeholders
+2. **Configure your memory** — Update memory.md with your current focus and product context
+3. **Plan your first 30 days** — Get a structured learning plan for your new role/product
+4. **Identify quick wins** — Find opportunities to build credibility early
+
+Just run `/onboard` and answer the questions to get started.
+
+---
+
+## Manual Setup (Alternative)
+
+If you prefer to manually configure without `/onboard`, update these files:
 
 ### Required
-- [ ] **GOALS.md** - Add your name, role, company, products, and quarterly goals
-- [ ] **CLAUDE.md** - Update company name and product references
-- [ ] **🤖 AI/memory/memory.md** - Set your current focus
+- [ ] **GOALS.md** — Add your name, role, company, products, and quarterly goals
+- [ ] **CLAUDE.md** — Update company name and product references
+- [ ] **🤖 AI/memory/memory.md** — Set your current focus
 
 ### Optional Integrations
-- [ ] **.env** - Add API keys at project root
-- [ ] **.mcp.json** - Configure MCP servers
+- [ ] **.env** — Add API keys at project root (see `.env.example`)
+- [ ] **.mcp.json** — Configure MCP servers
+
+---
 
 ## What's Included
 
@@ -73,6 +90,7 @@ The rules system uses progressive disclosure:
 
 | Command | Purpose |
 |---------|---------|
+| `/onboard` | **START HERE** - Workspace setup guide |
 | `/today` | Daily planning workflow |
 | `/think` | Strategic thinking mode |
 | `/brainstorm` | Persona-based brainstorming |
@@ -81,7 +99,8 @@ The rules system uses progressive disclosure:
 | `/discover` | Customer discovery workflow |
 | `/spec` | Product spec writer |
 | `/prioritize` | Prioritization framework |
-| `/onboard` | Workspace setup guide |
+
+See `.claude/commands/COMMAND-REFERENCE.md` for the full list.
 
 ## Ruler Integration
 
