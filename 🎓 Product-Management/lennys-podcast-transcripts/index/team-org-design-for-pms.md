@@ -1,0 +1,37 @@
+# team-org-design-for-pms
+
+Role-based index for **Team & Org Design** - Sr. PM skill development
+
+Combines episodes from: hiring, team-building, organizational-design, management
+
+- [Arun Saigal](../episodes/arun-saigal/transcript.md)
+- [Camille Fournier](../episodes/camille-fournier/transcript.md)
+- [Casey Winters](../episodes/casey-winters/transcript.md)
+- [Chip Conley](../episodes/chip-conley/transcript.md)
+- [Christian Idiodi](../episodes/christian-idiodi/transcript.md)
+- [Elena Verna](../episodes/elena-verna-19/transcript.md)
+- [Eugene Wei](../episodes/eugene-wei/transcript.md)
+- [Eugene Xu](../episodes/eugene-xu/transcript.md)
+- [Gokul Rajaram](../episodes/gokul-rajaram/transcript.md)
+- [Gustav Söderström](../episodes/gustav-söderström/transcript.md)
+- [Hila Qu](../episodes/hila-qu/transcript.md)
+- [Ian McAllister](../episodes/ian-mcallister/transcript.md)
+- [Janna Bastow](../episodes/janna-bastow/transcript.md)
+- [Jerry Colonna](../episodes/jerry-colonna/transcript.md)
+- [John Cutler](../episodes/john-cutler/transcript.md)
+- [Jonathan Golden](../episodes/jonathan-golden/transcript.md)
+- [Julie Zhuo](../episodes/julie-zhuo/transcript.md)
+- [Lenny](../episodes/lenny/transcript.md)
+- [Marty Cagan](../episodes/marty-cagan/transcript.md)
+- [Matt Mochary](../episodes/matt-mochary/transcript.md)
+- [Mayur Kamat](../episodes/mayur-kamat/transcript.md)
+- [Michelle McCarthy](../episodes/michelle-mccarthy/transcript.md)
+- [Mike Mignano](../episodes/mike-mignano/transcript.md)
+- [Ooshma Garg](../episodes/ooshma-garg/transcript.md)
+- [Ruth Zapparoli](../episodes/ruth-zapparoli/transcript.md)
+- [Sahil Lavingia](../episodes/sahil-lavingia/transcript.md)
+- [Scott Belsky](../episodes/scott-belsky/transcript.md)
+- [Shishir Mehrotra](../episodes/shishir-mehrotra/transcript.md)
+- [Sunil Rajagopal](../episodes/sunil-rajagopal/transcript.md)
+- [Travis Lenkowski](../episodes/travis-lenkowski/transcript.md)
+- [Wes Kao](../episodes/wes-kao/transcript.md)
