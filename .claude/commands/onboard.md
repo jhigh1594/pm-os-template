@@ -1,406 +1,244 @@
-# Company Context Onboarding
+# PM-OS Workspace Onboarding
 
-You are helping me quickly onboard to a new company, product, or role by systematically learning the critical context.
-
-## Your Approach
-
-**The first 30-60-90 days set the trajectory for your entire tenure.** Great PMs ramp fast by asking great questions, building relationships, and shipping early wins.
-
-### The 30-60-90 Day Framework
-
-**Days 1-30: LEARN** (Understand the landscape)
-- Listen more than you talk
-- Ask questions, build context
-- Understand customers, product, team, strategy
-- Identify early quick wins
-
-**Days 31-60: CONTRIBUTE** (Build credibility)
-- Ship 1-2 small wins
-- Start influencing decisions
-- Deepen customer understanding
-- Form strong working relationships
-
-**Days 61-90: LEAD** (Drive outcomes)
-- Own and ship meaningful initiatives
-- Set strategic direction
-- Drive cross-functional alignment
-- Demonstrate full impact
+Set up your PM Operating System workspace by filling out the template skeleton with your context, then tackle your first task.
 
 ---
 
-## Phase 1: Days 1-30 (LEARN)
+## Overview
 
-**Goal**: Build comprehensive context fast through structured discovery.
+This command guides you through:
 
-### Week 1: Company & Product Foundations
-
-**Learn the Company**:
-- [ ] **Mission/Vision/Values**: What does the company stand for?
-- [ ] **Business Model**: How do we make money?
-- [ ] **Strategy**: Where are we going? What are the big bets?
-- [ ] **Metrics**: What numbers matter most? (North Star, KPIs)
-- [ ] **Competitive Landscape**: Who are we competing with? How are we differentiated?
-- [ ] **Team Structure**: Who does what? Who are the key decision makers?
-
-**Learn the Product**:
-- [ ] **Use the product** (spend 4+ hours as a customer)
-- [ ] **Product architecture** (how does it work technically?)
-- [ ] **Customer segments** (who uses this and why?)
-- [ ] **Core value proposition** (what problem do we solve?)
-- [ ] **Product metrics** (adoption, engagement, retention, revenue)
-- [ ] **Roadmap** (what's being built, what's planned?)
-
-**Key Questions to Ask**:
-1. What's the most important thing the company needs to achieve this year?
-2. What are the biggest challenges/risks we face?
-3. Who are our most successful customers and why do they love us?
-4. Who are our competitors and how are we different?
-5. What did the last PM do well? What could have been better?
-
-**Who to Meet** (schedule 30-min 1:1s):
-- [ ] Your manager (understand expectations, priorities, success criteria)
-- [ ] Cross-functional partners (Engineering lead, Design lead)
-- [ ] Peer PMs (learn from their experience)
-- [ ] Go-to-market (Sales, Marketing, Support leaders)
-- [ ] Leadership (CEO, Head of Product if accessible)
-
-### Week 2: Customer & Market Deep Dive
-
-**Talk to Customers** (5-10 interviews):
-- [ ] **Power users**: What makes them successful?
-- [ ] **New users**: How's the onboarding experience?
-- [ ] **Churned users**: Why did they leave?
-- [ ] **Target prospects**: Why haven't they bought yet?
-
-**Customer Interview Questions**:
-1. Tell me about your role and what you're trying to accomplish.
-2. How do you use [Product] today? Walk me through your workflow.
-3. What do you love about it? What frustrates you?
-4. If you could wave a magic wand and change one thing, what would it be?
-5. What alternatives did you consider? Why did you choose us?
-
-**Analyze the Market**:
-- [ ] Read analyst reports (Gartner, Forrester if available)
-- [ ] Review competitor products (sign up for trials, use them)
-- [ ] Read customer reviews on G2, Capterra (what do they say?)
-- [ ] Study industry trends (where is the market going?)
-
-### Week 3-4: Data & Systems Mastery
-
-**Master the Data**:
-- [ ] Set up analytics access (Mixpanel, Amplitude, Looker, etc.)
-- [ ] Review key dashboards (product metrics, funnels, cohorts)
-- [ ] Understand top funnels (where do users drop off?)
-- [ ] Analyze retention cohorts (are we getting better over time?)
-- [ ] Review support tickets (top complaints, feature requests)
-
-**Understand the Systems**:
-- [ ] Product development process (how do we build?)
-- [ ] Decision-making process (who decides what?)
-- [ ] Planning process (roadmap, sprint planning, OKRs)
-- [ ] Launch process (how do we ship features?)
-- [ ] Tools and workflows (Jira, Figma, Slack conventions, etc.)
-
-**Document What You're Learning**:
-Create a "Company Context" doc with:
-- Mission, strategy, business model
-- Customer segments and use cases
-- Product architecture and key metrics
-- Competitive landscape
-- Key people and decision-making
-- Top opportunities and challenges you've identified
+1. **Phase 1: Configure Your Context** — Fill out GOALS.md, memory.md, and CLAUDE.md with your company, role, and goals
+2. **Phase 2: Your First Task** — Pick something to work on and get started
 
 ---
 
-## Phase 2: Days 31-60 (CONTRIBUTE)
+## Phase 1: Configure Your Context
 
-**Goal**: Ship small wins and build credibility.
+Let's set up your workspace with your information.
 
-### Find Your Quick Wins
+### Step 1: Basic Information
 
-**Characteristics of good quick wins**:
-- ✅ Valuable to customers (not just busywork)
-- ✅ Shippable in 2-4 weeks (fast feedback)
-- ✅ Low risk (won't break anything critical)
-- ✅ Visible (stakeholders will notice)
-- ✅ Builds relationships (work with engineering, design, etc.)
+I need to understand your situation:
 
-**Examples of quick wins**:
-- Fix top usability issue identified in customer interviews
-- Ship small feature requested by multiple customers
-- Improve onboarding flow based on data analysis
-- Clean up confusing UI/copy
-- Create better documentation for confused users
-- Implement analytics to measure blind spot
+1. **Your name and role**: What's your title? (e.g., "Senior PM", "Product Director")
+2. **Your company**: Where do you work?
+3. **Your products**: What products do you own? (List 1-3)
+4. **Your manager**: Who do you report to?
 
-**How to find quick wins**:
-1. Review support tickets → What are top complaints?
-2. Talk to engineering → What "paper cut" bugs annoy everyone?
-3. Analyze data → What obvious drop-off could we fix?
-4. Ask sales/CS → What small feature would help close deals?
+### Step 2: Your Goals
 
-### Build Relationships
+Tell me about your current priorities:
 
-**Invest in 1:1s**:
-- [ ] Engineering team (understand their priorities, constraints)
-- [ ] Design (learn their process, collaboration style)
-- [ ] Data/Analytics (who can help with analysis?)
-- [ ] Sales/CS (what do they need from product?)
-- [ ] Marketing (how do they position the product?)
+1. **This quarter's goals**: What are you trying to accomplish in the next 3 months?
+2. **Current focus**: What's the most important thing you're working on right now?
+3. **Key stakeholders**: Who do you need to align with regularly?
 
-**Relationship-building tips**:
-- Ask how they like to work (communication preferences, meeting cadence)
-- Offer to help them (don't just extract value)
-- Follow through on commitments (build trust early)
-- Give credit generously (acknowledge contributions)
-- Be curious, not judgmental (especially about past decisions)
+### Step 3: Product Context
 
-### Start Contributing to Strategy
+For each product you own, tell me:
 
-**Bring fresh perspective**:
-- You have "beginner's mind" - use it
-- Question assumptions (respectfully)
-- Share what you're learning from customers
-- Propose ideas (even if they're rough)
-- Contribute to planning discussions
-
-**Don't**:
-- Criticize past decisions (you don't have full context yet)
-- Push major changes (earn trust first)
-- Assume you know better than people who've been here longer
+1. **What it does**: One-sentence description
+2. **Who it's for**: Your target customer/ICP
+3. **Key metrics**: What numbers matter most?
+4. **Current priorities**: What are you building/improving?
 
 ---
 
-## Phase 3: Days 61-90 (LEAD)
+## Output: Files I'll Update
 
-**Goal**: Own meaningful initiatives and drive impact.
+Based on your answers, I'll update these files:
 
-### Own a Meaningful Initiative
-
-**Characteristics of good 60-90 day initiatives**:
-- ✅ Strategic importance (aligned with company priorities)
-- ✅ Clear customer value (validated through discovery)
-- ✅ Shippable in 6-8 weeks (with team's capacity)
-- ✅ Demonstrates your skills (strategic thinking, execution, collaboration)
-
-**Example initiatives**:
-- Ship new feature that moves key metric
-- Launch improved onboarding that increases activation
-- Execute competitive response to market threat
-- Define and socialize product strategy for your area
-- Establish new process that improves team effectiveness
-
-### Demonstrate Full PM Skill Set
-
-**By day 90, you should have shown**:
-- ✅ **Customer insight**: Deep understanding of customer problems
-- ✅ **Strategic thinking**: Connect product decisions to business outcomes
-- ✅ **Execution**: Ship high-quality work on time
-- ✅ **Collaboration**: Work effectively across functions
-- ✅ **Communication**: Influence through clear, compelling communication
-- ✅ **Data-driven**: Use data to inform decisions and measure impact
-- ✅ **Leadership**: Drive alignment and inspire team
-
-### Reflect and Adjust
-
-**90-Day Self-Assessment**:
-1. What have I learned about the company, product, customers?
-2. What have I shipped? What impact did it have?
-3. What relationships have I built?
-4. Where am I adding the most value?
-5. Where do I need to grow or improve?
-6. What should I focus on in the next 90 days?
-
-**Get Feedback**:
-- [ ] Ask your manager for 90-day review
-- [ ] Ask peers and cross-functional partners for feedback
-- [ ] Reflect on what's working and what's not
-
----
-
-## Output Format
-
-I'll help you onboard by asking:
-
-1. **What's your situation?** (New company / New role / New product area)
-2. **How long have you been here?** (Day 1 / Week 2 / Month 2, etc.)
-3. **What do you want help with?** (Learning plan / Quick wins / Context doc / etc.)
-
-Then I'll provide:
-
-### Onboarding Plan
-
-**Current Phase**: [Days 1-30: LEARN / Days 31-60: CONTRIBUTE / Days 61-90: LEAD]
-
-**This Week's Focus**:
-[Top 3 priorities for this week]
-
-**Key Activities**:
-- [ ] [Activity 1 with rationale]
-- [ ] [Activity 2]
-- [ ] [Activity 3]
-
-### Questions to Ask
-
-**To understand the company**:
-1. [Question 1]
-2. [Question 2]
-3. [Question 3]
-
-**To understand customers**:
-1. [Question 1]
-2. [Question 2]
-
-**To understand the team**:
-1. [Question 1]
-2. [Question 2]
-
-### People to Meet
-
-**This week**:
-- [ ] [Name, Role] - **Ask about**: [Topic]
-- [ ] [Name, Role] - **Ask about**: [Topic]
-
-**Next 2 weeks**:
-- [ ] [Name, Role]
-- [ ] [Name, Role]
-
-### Quick Win Ideas
-
-**Based on what you've shared, here are potential quick wins**:
-1. **[Quick Win 1]**
-   - Why: [Customer value]
-   - Effort: [Time estimate]
-   - Impact: [Expected outcome]
-
-2. **[Quick Win 2]**
-   [repeat structure]
-
-### 30-60-90 Day Milestones
-
-**Day 30**:
-- ✅ [Milestone 1]
-- ✅ [Milestone 2]
-
-**Day 60**:
-- ✅ [Milestone 1]
-- ✅ [Milestone 2]
-
-**Day 90**:
-- ✅ [Milestone 1]
-- ✅ [Milestone 2]
-
----
-
-## Onboarding Templates
-
-### Template 1: Company Context Doc
-
+### GOALS.md
 ```markdown
-# [Company Name] Context
+# GOALS.md
 
-**Last Updated**: [Date]
+## Who I Am
 
-## Company Basics
-- **Mission**: [What we stand for]
-- **Vision**: [Where we're going]
-- **Strategy**: [How we'll get there]
-- **Business Model**: [How we make money]
-- **Key Metrics**: [North Star, KPIs]
+**[Your Name]** | [Your Role] | [Your Company] ([Product 1], [Product 2])
 
-## Product Overview
-- **What we build**: [Product description]
-- **Who we serve**: [Customer segments]
-- **Value proposition**: [Why customers choose us]
-- **Differentiation**: [How we're different from competitors]
+[Brief bio - what kind of PM are you? What energizes you?]
 
-## Market & Competition
-- **Market size**: [TAM/SAM/SOM if known]
-- **Key competitors**: [Top 3-5]
-- **Our positioning**: [How we position vs. competitors]
-- **Market trends**: [Where the market is going]
+**Core beliefs:** [Your core beliefs about product management]
 
-## Customers
-- **Primary segments**: [Who are our best customers?]
-- **Use cases**: [How do they use the product?]
-- **Top pain points**: [What do they struggle with?]
-- **Why they chose us**: [Our unique value]
+---
 
-## Team & Organization
-- **Key people**: [Decision makers, stakeholders]
-- **Team structure**: [How teams are organized]
-- **Decision-making**: [How decisions get made]
-- **Culture**: [How we work]
+## What I Own
 
-## Top Opportunities & Challenges
-- **Opportunities**: [Biggest opportunities I see]
-- **Challenges**: [Biggest risks/obstacles]
-- **My initial hypotheses**: [What I think we should focus on]
+| Product | Description | Key Metrics |
+|---------|-------------|-------------|
+| **[Product 1]** | [Description] | [Metrics] |
+| **[Product 2]** | [Description] | [Metrics] |
+
+---
+
+## Current Quarter Goals
+
+### Goal 1: [Goal Title]
+
+**Target:** [Specific outcome]
+
+**Key initiatives:**
+- [Initiative 1]
+- [Initiative 2]
+
+**Status:** 🟢 On track / 🟡 At risk / 🔴 Blocked
+
+---
+
+## Key Stakeholders
+
+| Name | Role | Relationship | Notes |
+|------|------|--------------|-------|
+| [Name] | [Role] | [Relationship] | [Communication preferences] |
 ```
 
-### Template 2: Customer Interview Summary
-
+### memory.md
 ```markdown
-# Customer Interviews Summary
+# Workspace Memory
 
-**Interviews Completed**: [Number]
-**Date Range**: [When you did these]
+## Current Focus
 
-## Key Themes
+**Role**: [Your role at company]
 
-**What's Working**:
-- [Theme 1] - *"Quote from customer"*
-- [Theme 2] - *"Quote"*
+**Product Vision**: [Your product vision]
 
-**What's Not Working**:
-- [Theme 1] - *"Quote"*
-- [Theme 2] - *"Quote"*
+**Active Task**: [What you're working on now]
 
-**Top Feature Requests**:
-1. [Request 1] - [# of customers who mentioned it]
-2. [Request 2] - [# of customers]
+**Recent Completed Work**:
+- [Recent accomplishment]
 
-**Competitive Insights**:
-- [What customers said about competitors]
+## Product Context
 
-**Recommended Actions**:
-1. [Action based on what you learned]
-2. [Action]
+### [Product Name]
+
+**What is [Product]**: [Description]
+
+**Value Proposition**: [Core value prop]
+
+**Core Differentiators**:
+- [Differentiator 1]
+- [Differentiator 2]
+
+**Target Market**: [ICP, market size]
+
+## Active Decisions
+
+**Strategic Questions**:
+1. [Question you're wrestling with]
+
+**Open Questions**:
+- [Things you need to figure out]
+
+---
+
+**Last Updated**: [Today's date]
+```
+
+### CLAUDE.md (Company References)
+I'll update any `[UPDATE THIS]` placeholders with your company info.
+
+---
+
+## Phase 2: Your First Task
+
+Now that your workspace is configured, let's pick something to work on.
+
+### Options
+
+Pick one:
+
+**A. Quick Win** — Something you can complete in 1-2 hours
+- Process your latest meeting notes (`/granola`)
+- Write a spec for a small feature (`/spec`)
+- Analyze competitor pricing (`/price-intel`)
+- Capture a pattern you've noticed (`/capture-pattern`)
+
+**B. Strategic Work** — Bigger thinking
+- Brainstorm solutions to a problem (`/brainstorm`)
+- Think through a strategic decision (`/think`)
+- Plan your week (`/today`)
+- Research a topic (`/research`)
+
+**C. Communication** — Stakeholder alignment
+- Draft a memo or update (`/write`)
+- Prepare for a presentation (`/narrative`)
+- Plan stakeholder alignment (`/align`)
+
+### How I'll Help
+
+Once you pick a task type, I'll:
+
+1. **Guide you through it** using the relevant command
+2. **Create the output** in the right location
+3. **Update your memory** with what we accomplished
+4. **Suggest next steps** based on what we learned
+
+---
+
+## Onboarding Flow
+
+```
+┌─────────────────────────────────────────────────────┐
+│  START: Tell me about yourself                      │
+│  (Name, role, company, products)                    │
+└─────────────────────┬───────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────┐
+│  PHASE 1: I update your files                       │
+│  ✓ GOALS.md — Your identity and goals               │
+│  ✓ memory.md — Your current context                 │
+│  ✓ CLAUDE.md — Company references                   │
+└─────────────────────┬───────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────┐
+│  PHASE 2: Pick your first task                      │
+│  A. Quick win (1-2 hrs)                             │
+│  B. Strategic work (deeper thinking)                │
+│  C. Communication (stakeholder alignment)           │
+└─────────────────────┬───────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────┐
+│  COMPLETE: Workspace ready, first task done         │
+│  → Run /today to plan your next session             │
+└─────────────────────────────────────────────────────┘
 ```
 
 ---
 
 ## Constraints
 
-- Don't try to change everything on day 1 (earn trust first)
-- Don't criticize past decisions without understanding full context
-- Don't skip talking to customers (they have the answers)
-- Don't work in isolation (build relationships early)
-- Don't wait to ship (find quick wins in first 30-60 days)
-- Don't assume you know better (you have fresh eyes, not perfect information)
-
-## Mental Models Applied
-
-- **Question Behind the Question**: What do I really need to learn here?
-- **Time Value of Shipping**: Ship small wins early to build credibility
-- **Feedback Loops**: Learn → Ship → Learn faster
-- **Working Backwards**: What does success look like at 90 days? Work back from there
-
-## Integration with Other Commands
-
-- Use **/research** to plan customer interview questions
-- Use **/think** to process what you're learning strategically
-- Use **/compete** to understand competitive landscape
-- Use **/decide** when prioritizing quick wins
-- Use **/write** to document your learning (context docs, summaries)
+- **Keep it simple**: Don't over-engineer the setup - you can always update later
+- **Start small**: Pick a task you can complete in one session
+- **Learn by doing**: The best way to learn PM-OS is to use it
+- **Iterate**: Your GOALS.md and memory.md are living documents - update them as you learn
 
 ---
 
-**Where are you in the onboarding process?**
+## After Onboarding
 
-Example requests:
-- "I'm starting a new PM role next week - create my 30-day plan"
-- "I'm 2 weeks in - help me identify quick wins"
-- "I'm day 45 - help me plan a meaningful initiative for days 60-90"
-- "Create a list of questions to ask in my first week"
-- "Help me synthesize what I've learned into a context doc"
+Once you're set up, here are your most useful commands:
+
+| Command | Purpose |
+|---------|---------|
+| `/today` | Daily planning workflow |
+| `/think` | Strategic thinking mode |
+| `/brainstorm` | Generate ideas with different perspectives |
+| `/spec` | Write product specs/PRDs |
+| `/granola` | Extract meeting notes |
+| `/compete` | Competitive intelligence |
+| `/refresh-memory` | Update your memory.md |
+
+---
+
+**Ready to set up your workspace?**
+
+Tell me:
+1. Your name and role
+2. Your company
+3. Your products
+4. Your current quarter goals (1-3)
+5. What you'd like to work on first
