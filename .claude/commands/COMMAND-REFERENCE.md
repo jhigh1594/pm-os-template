@@ -108,18 +108,78 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 
 ---
 
+### /planview-slides
+**User intent**: Create a hosted, animated, shareable Planview deck
+
+**When to suggest**:
+- "Build a deck I can send as a link"
+- "Create a hosted presentation"
+- "Make this a password-protected HTML deck"
+- "Set up a live deck with animations"
+- "Publish this presentation to the Vercel site"
+
+**NOT for**:
+- Editable PowerPoint deliverables (use /planview-deck)
+- Legacy PPTX workflows that require html2pptx output
+
+---
+
+### /planview-deck
+**User intent**: Create an editable PowerPoint deck
+
+**When to suggest**:
+- "I need a PPTX deck"
+- "Make this editable in PowerPoint"
+- "Use the corporate PowerPoint template"
+- "Build title slide + content slides for PPTX handoff"
+
+**NOT for**:
+- Hosted HTML decks (use /planview-slides)
+- Password-protected live share links
+
+---
+
+### /coach
+**User intent**: Review a PM artifact, score its quality, and improve PM judgment
+
+**Canonical behavior**:
+- `/coach` is the Claude wrapper over the shared `product-coach` skill
+- canonical skill path: `.claude/skills/product-coach/SKILL.md`
+
+**When to suggest**:
+- "Review this PRD" (for PRD decision-quality and spec readiness, prefer `/spec --review <path>`)
+- "Coach me on this roadmap narrative"
+- "Tell me what's weak in this decision memo"
+- "Give feedback on this product write-up"
+- "How do I improve this artifact?"
+- After `/spec`, `/think`, `/prioritize`, `/align`, `/critique`, or a `pm-copilot` deliverable when the user wants feedback instead of first-draft generation
+
+**Best modes**:
+- `doc` for specs, PRDs, one-pagers, and launch docs
+- `decision` for trade-off memos and strategic recommendations
+- `roadmap` for sequencing and roadmap narratives
+- `research` for synthesis, interview guides, and competitive analysis
+- `comms` for exec updates, launch messaging, and stakeholder docs
+
+**NOT for**:
+- Writing the first draft from scratch (use `/spec`, `/write`, or `pm-copilot`)
+- General brainstorming without an artifact to react to (use `/think` or `/brainstorm`)
+
+---
+
 ### /spec
-**User intent**: Create formal specifications, PRDs, documentation
+**User intent**: Create formal specifications, PRDs, documentation; or review existing PRDs for decision quality
 
 **Command syntax**:
 ```bash
-/spec [--type <format>] [--skip-discovery] [--save] [<feature-description>]
+/spec [--type <format>] [--skip-discovery] [--save] [--review <path>] [<feature-description>]
 ```
 
 **Arguments**:
-- `--type full|light|one-pager`: PRD format (default: `full`)
+- `--type full|light|one-pager|context-doc`: PRD format (default: `full`)
 - `--skip-discovery`: Skip Socratic questioning
 - `--save`: Save PRD to file
+- `--review <path>`: Review existing PRD for decision quality (no file edits unless asked)
 - `<feature-description>`: Initial feature/idea description
 
 **When to suggest**:
@@ -129,9 +189,13 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - "Specification for..."
 - "Write product requirements for..."
 - "Create technical spec..."
+- "Review this PRD" / "Score this spec" / "Make this PRD more actionable" — use `/spec --review <path>`
 - `/spec "Native Project Milestones in Roadmaps"` - with initial idea
 - `/spec --type light "Card blocking improvements"` - lightweight spec
 - `/spec --skip-discovery "API rate limiting"` - skip discovery phase
+- `/spec --review path/to/prd.md` - review existing PRD for quality
+
+**Spec vs coach**: `/spec --review` is specialized for PRD decision-quality and spec readiness (decision density, thresholds, non-goals, anti-patterns). `/coach` is for broader doc coaching across artifact types (roadmaps, memos, research). Use `/spec --review` when the focus is PRD-specific quality; use `/coach` for general feedback or non-PRD artifacts.
 
 **NOT for**:
 - Strategic thinking (use /think first)
@@ -197,12 +261,12 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - Daily task planning (use /today)
 - Strategic decisions (use /think or /decide)
 
-**Dual-Mode Note**: For complex prioritization requiring raw feedback processing, stakeholder communication, or strategic validation, use the **prioritization-craft skill** instead. The skill provides a 4-phase deep prioritization process (30-45 min) with triage, deduplication, categorization, multiple frameworks, and stakeholder communication packages.
+**Dual-Mode Note**: For complex prioritization requiring raw feedback processing, stakeholder communication, or strategic validation, use the **prioritization-craft skill** instead. It now starts by clarifying objective, horizon, and constraints, then turns that framing into a ranking and stakeholder-ready tradeoff call.
 
 ---
 
 ### prioritization-craft (Skill)
-**User intent**: Deep prioritization with stakeholder communication (30-45 min)
+**User intent**: Prioritization support ranging from quick ranking to deeper triage and stakeholder communication
 
 **When to suggest**:
 - "Triage 50 customer requests"
@@ -233,6 +297,23 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - Checking what changed (use /check-progress)
 - Daily planning (use /today)
 - Viewing memory content (read the file directly)
+
+---
+
+### /remember
+**User intent**: Search prior Claude Code conversations for chat-only context, decisions, or rationale
+
+**When to suggest**:
+- "What did we decide last time?"
+- "Search our previous conversations about..."
+- "What did we talk about last week?"
+- "Find the rationale from earlier sessions"
+- After automatic local recall is insufficient because the missing context lives in chat history
+
+**NOT for**:
+- Current workspace state already captured in `🤖 AI/memory/memory.md`
+- Repo-local document search that the cue-triggered hook can handle automatically
+- Updating memory files (use /refresh-memory or /capture-pattern)
 
 ---
 
@@ -283,7 +364,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - "What should I research about..."
 
 **For research EXECUTION** (actual data gathering, competitive analysis, web research):
-- Use the **research skill** (via Skill tool) - combines planning framework with automated execution using web search, content fetching, and workspace integrations
+- Use the **research skill** (via Skill tool) - starts by clarifying the decision and unknown, then delivers a concise evidence-based readout or expands into fuller research mode when needed
 
 **NOT for**:
 - Open-ended discovery (use /discover)
@@ -292,7 +373,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 
 **Command vs. Skill**:
 - `/research` command = Research planning framework (defines scope, methods, success criteria)
-- `research` skill = Research execution (fetches sources, analyzes content, synthesizes findings)
+- `research` skill = Research execution and synthesis (consultative framing first, deeper research when warranted)
 
 ---
 
@@ -346,6 +427,28 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 **NOT for**:
 - Post-launch analysis (use /learn)
 - Analyzing existing metrics (just analyze them)
+
+---
+
+### /okr-progress
+**User intent**: Analyze OKR progress, risk, and get actionable recommendations
+
+**Canonical source**: `.claude/prompts/okr-progress-analysis.md`
+
+**When to suggest**:
+- "Track my OKR progress"
+- "Analyze progress on my objectives"
+- "Evaluate this objective for the board"
+- "Which OKRs need attention?"
+- "What's blocking my OKRs?"
+- "OKR health check"
+- "Get one priority action for this week"
+
+**Behavior**: Prompts user for scope (portfolio vs single objective), date, and audience. Then runs analysis with problem-first ordering and one high-impact action.
+
+**NOT for**:
+- Writing new OKRs (use /think or okr-frameworks skill)
+- General metrics definition (use /measure)
 
 ---
 
@@ -552,6 +655,24 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 
 ---
 
+### /dex-improve
+**User intent**: Evolve the AI OS (hooks, skills, commands), align with **Claude Code**, **Claude Cowork**, and **Claude Desktop** updates, or audit capabilities vs this repo (and workflows outside git where relevant)
+
+**When to suggest**:
+- "What's new in Claude Code / Cowork / Desktop for this workspace?"
+- "How should we adopt [hooks / subagents / skills / MCP]?"
+- "Audit what we're using vs what Claude Code supports"
+- "Improve AIPMOS setup" / "upgrade my context engineering"
+- Workshop a concrete change to `.claude/`, `AGENTS.md`, or Cursor rules
+
+**NOT for**:
+- Scoring or amending individual skills (use /skill-review or skill-review skill)
+- One-line learnings and conventions (use /capture-pattern)
+- Teaching-style explanations of PM topics (use /learning-opportunity)
+- Product specs and strategy (use /spec, /think)
+
+---
+
 ### /granola
 **User intent**: Extract meeting insights from Granola
 
@@ -575,6 +696,34 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 
 ---
 
+### /ui-refine
+**User intent**: Implement UI and refine until it scores ≥9.3/10 on an objective rubric
+
+**Canonical source**: `/Users/jhigh/Planview Work/.claude/prompts/ui-refinement-loop.md`
+
+**When to suggest**:
+- "Refine this UI until it's polished"
+- "Implement this and iterate until it's good"
+- "Build this component with the quality loop"
+- "Run the UI refinement loop on..."
+- User wants iterative quality assurance on UI work
+- UI task that should meet a high quality bar
+
+**Command syntax**:
+```
+/ui-refine [task-description]
+/ui-refine [with file or selection attached]
+```
+
+**Behavior**: Read the canonical prompt, resolve task/stack/constraints from context, then implement → rubric → refine → repeat until aggregate ≥9.3 and no dimension <9. Max 5 iterations.
+
+**NOT for**:
+- Creating mockups from scratch (use /mockup)
+- Interactive prototypes (use /prototype)
+- Non-UI work
+
+---
+
 ## Quick Reference Table
 
 | User Says... | Suggest Command |
@@ -591,11 +740,13 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 | "Build roadmap with stakeholder comms" | prioritization-craft (skill) |
 | "Research customer needs" | /discover |
 | "Update memory with session" | /refresh-memory |
+| "Search our previous conversations" | /remember |
 | "Get stakeholder buy-in" | /align |
 | "Write executive brief" | /write |
 | "Generate Spec Brief from PRD" | /spec-brief |
 | "Validate this assumption" | /research |
 | "What metrics to track?" | /measure |
+| "Track my OKR progress" | /okr-progress |
 | "Analyze competitor X" | /compete |
 | "Daily competitive briefing" | /daily-brief |
 | "Help me brainstorm solutions" | /brainstorm |
@@ -603,6 +754,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 | "Post-launch learning" | /learn |
 | "Plan the launch" | /ship |
 | "Create a mockup" | /mockup |
+| "Refine this UI until polished" | /ui-refine |
 | "Strategic narrative" | /narrative |
 | "New to AIPMOS" | /onboard |
 | "Report a bug" | /bug-report |
@@ -610,12 +762,14 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 | "Pricing research" | /price-intel |
 | "Extract meeting notes" | /granola |
 | "Remember this decision" | /capture-pattern |
+| "What's new in Claude Code / Cowork / Desktop for us?" | /dex-improve |
+| "Audit our hooks and skills setup" | /dex-improve |
 | "Run QPR prep" | /workflow (e.g. @Workflows/qpr-prep/) |
 | "Weekly stakeholder update" | /workflow (e.g. @Workflows/weekly-stakeholder-update/) |
 
 **Dual-Mode Commands**: Some capabilities have both a quick command and a deep skill variant:
-- **/prioritize** (quick) vs **prioritization-craft skill** (deep): Quick scoring vs. comprehensive prioritization with triage, deduplication, and stakeholder communication
-- **/think** (quick) vs **strategic-thinking skill** (deep): Quick strategic framing vs. comprehensive 4-phase decision process
+- **/prioritize** (quick) vs **prioritization-craft skill** (expanded): Quick scoring vs. prioritization support that starts with outcome/constraint framing and can expand into deeper triage and stakeholder communication
+- **/think** (quick) vs **strategic-thinking skill** (expanded): Quick strategic framing vs. strategic decision support that starts consultatively, then makes the call and expands for high-stakes work
 
 ---
 
