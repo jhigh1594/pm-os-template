@@ -733,10 +733,10 @@ Priority Score = Impact (1-10) × Strategic Fit (1-10) × Confidence (1-10)
 - `/decide` - Go/no-go decision on [opportunity]
 
 **Memory Bank Updates:**
-- `memory-bank/synthesis/[YYYY-MM-DD]-[topic]-synthesis.md` - Store this synthesis report
-- `activeContext.md` - Update with current synthesis focus
+- `🤖 AI/synthesis/[YYYY-MM-DD]-[topic]-synthesis.md` - Store this synthesis report
+- `🤖 AI/memory/memory.md` - Update current focus or milestone context if the synthesis changes active priorities
 - `value-thesis.md` - Add validated beliefs from insights
-- `progress.md` - Track synthesis milestones
+- `🤖 AI/patterns/learned-patterns.md` - Capture only durable workflow or decision patterns that pass quality gates
 
 **Integration Points:**
 - **Granola MCP**: Fetch additional meeting transcripts for deeper synthesis
@@ -771,7 +771,7 @@ I'll start by asking clarifying questions:
 Then I'll guide you through all 3 phases, producing:
 
 ### Synthesis Report
-**Location**: `memory-bank/synthesis/[YYYY-MM-DD]-[topic]-synthesis.md`
+**Location**: `🤖 AI/synthesis/[YYYY-MM-DD]-[topic]-synthesis.md`
 **Naming**: ISO date, topic area, "synthesis"
 
 The report will contain all outputs from Phases 1-3 as detailed above.
@@ -1427,7 +1427,7 @@ Track over time with Continuous Discovery Pattern Mapping
 
 # Use insights to inform roadmap prioritization
 /prioritize "Q2 roadmap priorities using synthesis insights"
-# Reference: memory-bank/synthesis/2026-01-21-q1-feedback-synthesis.md
+# Reference: 🤖 AI/synthesis/2026-01-21-q1-feedback-synthesis.md
 ```
 
 **To /spec**
@@ -1559,23 +1559,23 @@ mcp__agileplace__create_card({
 
 ### Files to Update After Synthesis
 
-**memory-bank/synthesis/[YYYY-MM-DD]-[topic]-synthesis.md**
+**🤖 AI/synthesis/[YYYY-MM-DD]-[topic]-synthesis.md**
 - Primary synthesis report output
 - Full Phase 1-3 outputs
 - Insights, opportunities, validation tracker
 - Naming convention: ISO date, topic area, "synthesis"
 
-**memory-bank/activeContext.md**
+**🤖 AI/memory/memory.md**
 - Update "Current Focus" section with synthesis findings
 - Add "Recent Insights" from synthesis
 - Reference synthesis report for details
 
-**memory-bank/value-thesis.md**
+**🤖 AI/value-thesis.md**
 - Add validated beliefs from synthesis insights
 - Update "What We Believe" based on evidence
 - Track belief evolution over time
 
-**memory-bank/progress.md**
+**🤖 AI/memory/memory.md**
 - Log synthesis milestone completion
 - Track synthesis cadence (quarterly, annual)
 - Note decision impacts from synthesis
@@ -1583,14 +1583,14 @@ mcp__agileplace__create_card({
 **Example update pattern:**
 
 ```markdown
-<!-- In activeContext.md -->
+<!-- In 🤖 AI/memory/memory.md -->
 
 ## Current Focus
 
 **Synthesis Completed**: Q1 2026 Customer Feedback (Jan 21, 2026)
 - Analyzed 15 interviews, 142 tickets, 48 enhancement requests
 - Top insight: Proactive dependency risk management (Signal: 126)
-- See: memory-bank/synthesis/2026-01-21-q1-feedback-synthesis.md
+- See: 🤖 AI/synthesis/2026-01-21-q1-feedback-synthesis.md
 
 ## Recent Insights
 
@@ -1766,7 +1766,7 @@ Low Confidence → Research, validate, test assumptions
 
 **Clarifying questions asked:**
 1. What feedback are you synthesizing?
-   - **Answer**: 15 customer interviews (transcripts in memory-bank/interviews/)
+   - **Answer**: 15 customer interviews (transcripts in 🤖 AI/interviews/)
    - Time range: January 1 - March 15, 2026
    - Sources: Zoom transcripts, Granola meeting notes
 

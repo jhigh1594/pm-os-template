@@ -1,6 +1,6 @@
 ---
 name: positioning-craft
-description: Crafts product positioning using April Dunford's positioning framework. Use when defining target customers, choosing categories, identifying alternatives, or articulating differentiated value. Based on Obviously Awesome methodology.
+description: Use when defining product positioning, value propositions, or market category. Triggers: how do we position this, value proposition, target customer, market category, differentiate from competitors, positioning statement, Obviously Awesome, April Dunford.
 ---
 
 # Positioning Mastery
@@ -114,3 +114,11 @@ Claude uses this skill when:
 **On Competitors:**
 > "When you say 'we have no competitors,' customers hear 'there's no demand for what you do.'"
 
+## Self-Learning
+
+Before responding, read `LEARNED.md` in this skill directory when it exists and treat it as compact runtime guidance that sharpens this skill.
+
+Rules for self-improvement:
+- Keep `SKILL.md` human-owned; do not rewrite it directly from normal usage.
+- Propose broader instruction changes through the central skill-learning review queue.
+- Only promote specific, reusable, evidence-backed lessons into `LEARNED.md`.

@@ -1,77 +1,71 @@
-Check what's changed since the last memory update.
+Check what changed since the canonical memory files were last updated.
 
-This command shows deltas and activity since memory files were last updated, helping you decide what needs to be documented.
+This command compares current repo activity against:
+- `🤖 AI/memory/memory.md`
+- `🤖 AI/patterns/learned-patterns.md`
+
+Use it to decide whether to run `/refresh-memory`, `/capture-pattern`, or both.
 
 ## Execution
 
-Use Python to analyze progress:
+Run this with Bash:
 
-```python
-import sys
+```bash
+python3 - <<'PY'
+import sqlite3
+import subprocess
 from datetime import datetime, timedelta
 from pathlib import Path
-import subprocess
-import json
 
-sys.path.insert(0, 'scripts/automation')
-
-from session_tracking.session_tracker import (
-    SessionTracker,
-    cleanup_old_sessions,
-    get_current_git_branch,
-)
-
-workspace = Path('.')
-memory_bank = workspace / 'memory-bank'
-tracker = SessionTracker(workspace_root=workspace)
-
-# Get last update times for memory files
+workspace = Path(".")
 memory_files = {
-    'activeContext.md': memory_bank / 'activeContext.md',
-    'progress.md': memory_bank / 'progress.md',
-    'techContext.md': memory_bank / 'techContext.md',
-    'systemPatterns.md': memory_bank / 'systemPatterns.md',
+    "memory.md": workspace / "🤖 AI" / "memory" / "memory.md",
+    "learned-patterns.md": workspace / "🤖 AI" / "patterns" / "learned-patterns.md",
 }
 
 last_updates = {}
 for name, path in memory_files.items():
     if path.exists():
-        mtime = datetime.fromtimestamp(path.stat().st_mtime)
-        last_updates[name] = mtime
+        last_updates[name] = datetime.fromtimestamp(path.stat().st_mtime)
 
-# Find oldest update (baseline for "last memory update")
-if last_updates:
-    baseline = min(last_updates.values())
-else:
-    baseline = datetime.now() - timedelta(days=30)
+baseline = min(last_updates.values()) if last_updates else datetime.now() - timedelta(days=30)
 
-# Get git commits since baseline
-result = subprocess.run(
-    ['git', 'log', '--since', baseline.isoformat(), '--oneline', '--no-merges'],
+commits_result = subprocess.run(
+    ["git", "log", "--since", baseline.isoformat(), "--oneline", "--no-merges"],
     capture_output=True,
     text=True,
-    cwd=workspace
+    cwd=workspace,
+    check=False,
 )
-commits = result.stdout.strip().split('\n') if result.stdout.strip() else []
+commits = commits_result.stdout.strip().splitlines() if commits_result.stdout.strip() else []
 
-# Get current session activity (all events)
-all_events = tracker.load_events()
-recent_events = [e for e in all_events if e.timestamp > baseline]
-
-# Modified files since baseline
-result = subprocess.run(
-    ['git', 'diff', '--name-only', f'{{@{baseline.isoformat()}}}', 'HEAD'],
+files_result = subprocess.run(
+    ["git", "log", "--since", baseline.isoformat(), "--name-only", "--format="],
     capture_output=True,
     text=True,
-    cwd=workspace
+    cwd=workspace,
+    check=False,
 )
-modified_files = set(result.stdout.strip().split('\n')) if result.stdout.strip() else set()
+modified_files = sorted({line.strip() for line in files_result.stdout.splitlines() if line.strip()})
 
-# Build output
+events_db = workspace / "🤖 AI" / "events.db"
+event_summary = None
+if events_db.exists():
+    try:
+        conn = sqlite3.connect(events_db)
+        cur = conn.cursor()
+        cur.execute("select count(*) from events")
+        total_events = cur.fetchone()[0]
+        cur.execute("select count(*) from events where event_timestamp > ?", (baseline.isoformat(),))
+        recent_events = cur.fetchone()[0]
+        conn.close()
+        event_summary = (total_events, recent_events)
+    except sqlite3.Error:
+        event_summary = None
+
 print(f"## Progress Check: Changes since {baseline.strftime('%Y-%m-%d %H:%M')}")
 print()
 
-# Last updates
 print("### Memory File Updates")
 for name, mtime in sorted(last_updates.items(), key=lambda x: x[1]):
     age = (datetime.now() - mtime).days
@@ -79,7 +73,6 @@ for name, mtime in sorted(last_updates.items(), key=lambda x: x[1]):
     print(f"  {status} {name}: {mtime.strftime('%Y-%m-%d')} ({age}d ago)")
 print()
 
-# Recent commits
 if commits:
     print(f"### Git Commits ({len(commits)} since baseline)")
     for commit in commits[:10]:
@@ -88,60 +81,51 @@ if commits:
         print(f"  ... and {len(commits) - 10} more")
     print()
 
-# Session activity
-if recent_events:
-    print(f"### Session Activity ({len(recent_events)} events)")
-    for event in recent_events[:15]:
-        print(f"  • {event}")
-    if len(recent_events) > 15:
-        print(f"  ... and {len(recent_events) - 15} more")
+if event_summary:
+    print("### Observer Activity")
+    print(f"  • Total events recorded: {event_summary[0]}")
+    print(f"  • Events since baseline: {event_summary[1]}")
     print()
 
-# Modified memory-relevant files
-memory_relevant = [f for f in modified_files if any(
-    x in f for x in ['memory-bank/', 'Products/', 'PRDs/', '.claude/', 'scripts/automation']
-)]
-if memory_relevant:
-    print(f"### Modified Relevant Files ({len(memory_relevant)})")
-    for f in sorted(memory_relevant)[:20]:
-        print(f"  • {f}")
-    if len(memory_relevant) > 20:
-        print(f"  ... and {len(memory_relevant) - 20} more")
+relevant_files = [
+    f for f in modified_files
+    if any(marker in f for marker in ["🤖 AI/", ".claude/", ".cursor/", "🔧 Automation/", "Products/", "📦 Products/"])
+]
+if relevant_files:
+    print(f"### Modified Relevant Files ({len(relevant_files)})")
+    for path in relevant_files[:20]:
+        print(f"  • {path}")
+    if len(relevant_files) > 20:
+        print(f"  ... and {len(relevant_files) - 20} more")
     print()
+PY
 ```
-
-Run using Bash.
 
 ## Output Sections
 
-1. **Memory File Updates** - Last update time for each memory file with age indicators
-2. **Git Commits** - Commits since baseline (last memory update)
-3. **Session Activity** - Tracked events from current session
-4. **Modified Relevant Files** - Files changed that might affect memory
+1. **Memory File Updates** - Freshness of the canonical memory files
+2. **Git Commits** - Commits since the last memory baseline
+3. **Observer Activity** - Optional summary from `🤖 AI/events.db`
+4. **Modified Relevant Files** - Files that may warrant a memory update
 
 ## Status Indicators
 
-- ✓ = Fresh (< 7 days)
-- ⚠ = Aging (7-30 days)
-- ✗ = Stale (> 30 days)
+- `✓` = Fresh (< 7 days)
+- `⚠` = Aging (7-30 days)
+- `✗` = Stale (> 30 days)
 
 ## After Progress Check
 
 Ask the user:
 
-**"Based on this activity, which memory files need updates?**
+**"Based on this activity, should I update:**
+- `🤖 AI/memory/memory.md` for current focus or session summaries?
+- `🤖 AI/patterns/learned-patterns.md` for a durable pattern or decision?
 
-Common patterns:
-- **activeContext.md** - Update if priorities shifted or work completed
-- **progress.md** - Update if milestones reached or blockers resolved
-- **techContext.md** - Update if tools/infrastructure changed
-- **systemPatterns.md** - Update if new workflows established
-
-Would you like me to help update any of these files?"**
+If you want, I can run `/refresh-memory` or capture a pattern next."**
 
 ## Notes
 
-- Baseline = oldest memory file modification time
-- Shows both git history and session-tracker activity
-- Helps identify what documentation is overdue
-- Complements `/refresh-memory` (shows deltas vs. full reload)
+- Baseline = oldest canonical memory file modification time
+- Observer output is optional and should be treated as experimental
+- This command complements `/refresh-memory`

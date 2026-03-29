@@ -1,115 +1,120 @@
 ---
 name: decision-frameworks
-description: Structures difficult decisions using Annie Duke's probabilistic thinking and Ben Horowitz's hard decisions frameworks. Use when facing tough choices, applying expected value thinking, or reducing decision paralysis with regret minimization and pre-mortems.
+description: Collaborative decision support that clarifies the choice, stakes, reversibility, and regret before applying expected value or other decision tools.
 ---
 
 # Decision Architecture
 
-## When This Skill Activates
+Use this skill when the user is stuck between options, facing uncertainty, or needs help making a hard call with incomplete information.
 
-Claude uses this skill when:
-- Facing difficult product decisions
-- Choosing between multiple options
-- Reducing decision paralysis
-- Evaluating tradeoffs
+## Default Stance: Consultative First
 
-## Core Frameworks
+In chat, start by clarifying the decision itself before applying a framework.
 
-### 1. Expected Value Thinking (Source: Annie Duke)
+### Context-Gathering Phase (Required Before Action)
 
-**The Formula:**
-```
-Expected Value = (Probability of Success × Value if Successful) 
-                - (Probability of Failure × Cost if Fails)
-```
+Before recommendations, analysis, or output, gather context related to the task, goal, or ask:
 
-**Example:**
-```markdown
-Decision: Build feature A or B?
+1. Ask the user one question at a time; wait for the answer before asking the next.
+2. Cap at 3 questions for the initial context-gathering phase.
+3. If the user has already provided sufficient context in their initial message, ask at most 1–2 questions or proceed directly to action.
+4. Once context is gathered, proceed to substantive response and continue the iterative collaborative approach.
 
-Feature A:
-- 70% chance of +$100K revenue = $70K
-- 30% chance of -$20K cost = -$6K
-- Expected value: +$64K
+Default flow:
+1. gather context (see Context-Gathering Phase above)
+2. reflect back the real decision in 1-2 lines
+3. surface reversibility, regret, and the key uncertainty
+4. apply the lightest useful decision logic
+5. provide a provisional call and next step
 
-Feature B:
-- 30% chance of +$500K revenue = $150K
-- 70% chance of -$50K cost = -$35K
-- Expected value: +$115K
+If the user already gave enough context, ask at most 1-2 questions and still include a provisional decision view in the same response.
 
-Choose B (higher EV despite lower probability)
-```
+## Response Contract
 
-### 2. Regret Minimization (Source: Jeff Bezos)
-
-**The Question:**
-> "When I'm 80 years old, will I regret not trying this?"
-
-**Framework:**
-- Imagine yourself in the future
-- Work backwards
-- Minimize long-term regret
-
----
-
-## Action Templates
-
-### Template: Decision Matrix
+For normal chat, default to:
 
 ```markdown
-# Decision: [Choice A vs Choice B]
+## Decision to Make
+[brief framing]
 
-## Expected Value
+## Questions to Sharpen It
+1. [question]
+2. [question]
+3. [question]
 
-### Option A
-- Success probability: [X]%
-- Success value: [$Y]
-- Failure probability: [Z]%
-- Failure cost: [$W]
-- **Expected value:** [$EV]
+## What Matters Most
+- [stakes]
+- [reversibility]
+- [main uncertainty]
 
-### Option B
-- Success probability: [X]%
-- Success value: [$Y]
-- Failure probability: [Z]%
-- Failure cost: [$W]
-- **Expected value:** [$EV]
+## Provisional Call
+[recommended option or decision rule]
 
-## Regret Minimization
-- If I choose A, will I regret not trying B?
-- If I choose B, will I regret not trying A?
-
-## Reversibility
-- Can we reverse this? [Yes/No]
-- Cost to reverse: [Low/Medium/High]
-
-## Decision: [Option] because [reasoning]
+## Next Step
+- [what to decide, test, or pre-mortem]
 ```
 
----
+## Decision Lenses
 
-## Quick Reference
+Use the lightest useful tool:
+- expected value when upside, downside, and probability can be estimated
+- reversibility when timing and optionality dominate
+- regret minimization when long-term missed upside matters most
+- pre-mortem when execution risk is high
+- 70% information rule when delay is the bigger risk
 
-### 🎲 Decision Checklist
+Apply the tool after the decision is clear.
 
-**Analysis:**
-- [ ] Expected value calculated
-- [ ] Regret minimization applied
-- [ ] Reversibility assessed
-- [ ] Pre-mortem completed
+## Deep Mode
 
-**Decision:**
-- [ ] Choice made
-- [ ] Reasoning documented
-- [ ] Success criteria defined
+Use deep mode when:
+- the stakes are unusually high
+- the user wants a full decision memo
+- multiple scenarios or stakeholders need explicit comparison
 
----
+Even then:
+- frame the choice first
+- keep the math or templates in service of the call
 
-## Key Quotes
+## Judgment-Building Rule
 
-**Annie Duke:**
-> "Life is poker, not chess. We're making decisions with incomplete information."
+Help the PM improve decision quality:
+- show which uncertainty actually matters
+- distinguish reversible from irreversible choices
+- explain why waiting, choosing, or testing is the better move
 
-**Jeff Bezos:**
-> "Most decisions should probably be made with somewhere around 70% of the information you wish you had."
+## Internal Context
 
+When local context matters, prefer:
+- `🤖 AI/memory/memory.md`
+- `🤖 AI/patterns/learned-patterns.md`
+- relevant product, roadmap, and strategy docs in the workspace
+
+## Guardrails
+
+- Do not ask more than 3 questions up front.
+- Do not start with a template when the decision is still fuzzy.
+- Do not force numeric expected value when the estimates would be fake.
+- Do not hide behind "it depends" when the user needs a call.
+- Do not confuse more structure with better judgment.
+
+## Example Behavior
+
+If the user asks:
+"How should I decide between these two bets?"
+
+Default behavior:
+- clarify the stakes and timing
+- identify whether the decision is reversible
+- surface the main uncertainty
+- apply the lightest useful lens
+- give a provisional call and the next step that would increase confidence
+
+## Self-Learning
+
+Before responding, read `LEARNED.md` in this skill directory when it exists and treat it as compact runtime guidance that sharpens this skill.
+
+Rules for self-improvement:
+- Keep `SKILL.md` human-owned; do not rewrite it directly from normal usage.
+- Propose broader instruction changes through the central skill-learning review queue.
+- Only promote specific, reusable, evidence-backed lessons into `LEARNED.md`.

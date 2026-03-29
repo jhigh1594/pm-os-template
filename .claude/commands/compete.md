@@ -106,6 +106,29 @@ You are helping me gather, analyze, and synthesize competitive intelligence to i
    - Where should we avoid competition entirely?
 
 5. **Create Competitive Battlecards** (for sales/marketing):
+
+   **Standard battlecard output** uses `--output battlecard [competitor]`:
+
+   ```bash
+   /compete --output battlecard "Jira Align"
+   /compete --focus "ServiceNow" --output battlecard
+   ```
+
+   **Battlecard generation process:**
+   - Load `📚 Knowledge/Templates/battlecard-template.md` as the structure
+   - Populate all sections using the intelligence gathered in steps 1–4
+   - Label every claim with source tier and date: `[Tier 1 — Gartner MQ 2024-Q3]`, `[Tier 3 — Competitor website, 2024-11]`
+   - Flag low-confidence sections: `[LOW CONFIDENCE — verify before using in deal]`
+   - Be honest in "Their Real Strengths" — don't omit competitor advantages
+   - Output path: `📚 Knowledge/Market/battlecard-[competitor-slug].md`
+
+   **Update triggers** (from `/win-loss`):
+   - 3+ losses to same competitor in 90 days → full battlecard update recommended
+   - Specific claims surfaced in `/win-loss` Q4–Q5 → targeted section updates
+
+   > **Relationship note:** `/win-loss` feeds signal data that updates battlecard intelligence. When reps flag new competitor claims in deal interviews, route them as: "Update [section] in battlecard-[slug].md based on [deal name] loss analysis."
+
+   **Legacy inline format** (when `--output battlecard` is not specified):
    ```
    ## vs. [Competitor]
 

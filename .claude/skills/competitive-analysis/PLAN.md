@@ -14,7 +14,7 @@ The competitive-analysis skill enables **sustained, multi-turn competitive intel
 | **Iteration** | One-time assessment | Single research session | Ongoing competitive monitoring |
 | **Output** | Competitive brief, battlecard | Feature matrix, roadmap recs | Dossier + strategic battlecards |
 | **Use Case** | Quick competitive comparison | Product analysis for roadmap | Strategic competitive campaign |
-| **Tools** | Generic (WebFetch, Grep) | MCP (Playwright, Tavily, Context7) | Generic + Agent orchestration |
+| **Tools** | Generic (current browsing/search tools, Grep) | MCP (Playwright, Tavily, Context7) | Generic + Agent orchestration |
 
 ## When to Use competitive-analysis Skill
 
@@ -191,13 +191,18 @@ When conducting competitive intelligence, prioritize **product capability analys
   - Interface quality, UX patterns, information architecture
   - Onboarding flow and time-to-value assessment
   - Use `browser_snapshot` for UI structure, `take_screenshot` for evidence
-- **WebFetch** (20-30% of time): Deep product documentation extraction
+- **Current browsing/search tools** (20-30% of time): Deep product documentation extraction
 - **Tavily MCP** (15-20% of time): Customer feedback on functionality from reviews
 - **Context7 MCP** (10% of time): Integration ecosystem and technical capabilities
 
+**MCP Tool Fallbacks** (when primary tools unavailable):
+- **If Playwright unavailable**: Use the current browsing/search tools on product docs, help centers, and changelogs. Extract content from demo transcripts or product tours when possible. Flag in output: "Product intelligence from documentation only; no hands-on exploration performed."
+- **If Tavily unavailable**: Use the current browsing/search tools directly on review pages. Flag in output: "Review data from direct page fetch; no search synthesis."
+- **If Context7 unavailable**: Use the current browsing/search tools on integration marketplace pages and API docs. Proceed with available sources and note limitation.
+
 **Manual Research Capabilities (Other Intelligence Categories):**
 - Can **Read** existing competitive analysis files
-- Can **WebFetch** competitor websites, pricing pages, blog posts
+- Can use **current browsing/search tools** on competitor websites, pricing pages, and blog posts
 - Can **Grep** across files to track competitive changes over time
 - Can maintain competitive intelligence repository
 
@@ -366,6 +371,9 @@ For each major competitor, create sales-ready battlecard:
 
 ```markdown
 ## vs. [Competitor Name]
+
+**Last Updated**: [Date battlecard was created or revised]
+**Verified Against**: [Primary sources used — e.g., competitor pricing page, G2 reviews, product docs]
 
 ### When They Come Up
 [In what scenarios do we compete? Deal size, industry, use case]
@@ -578,7 +586,7 @@ For each major competitor, create sales-ready battlecard:
 ## Tools the Skill Can Use
 
 - **Read:** Access existing competitive analysis files, track changes over time
-- **WebFetch:** Pull competitor websites, pricing pages, blog posts, job listings
+- **Current browsing/search tools:** Pull competitor websites, pricing pages, blog posts, job listings
 - **Grep:** Search across competitive intelligence files for patterns and trends
 - **Glob:** Find all competitive intel on a specific competitor
 - **Write:** Generate battlecards, strategic assessments, intelligence summaries

@@ -13,7 +13,7 @@ Parse the command arguments in order:
 
 ## Execution
 
-Run the daily brief using the bash script at `./scripts/daily-brief/run.sh` (relative to workspace root) with the parsed arguments.
+Run the daily brief using the bash script at `/Users/jhigh/Planview Work/scripts/daily-brief/run.sh` with the parsed arguments.
 
 The script:
 - Changes to the daily-brief directory
@@ -156,7 +156,7 @@ Use dry run to:
 **Solution:**
 1. Ensure virtual environment is activated:
    ```bash
-   source ./scripts/venv/bin/activate
+   source /Users/jhigh/Planview\ Work/scripts/venv/bin/activate
    ```
 
 2. Install dependencies:
@@ -182,7 +182,7 @@ Use dry run to:
 2. The `run.sh` script should handle directory changes automatically
 3. If running Python directly, ensure you're in the daily-brief directory:
    ```bash
-   cd ./scripts/daily-brief
+   cd /Users/jhigh/Planview\ Work/scripts/daily-brief
    python daily_brief.py --mode standard
    ```
 
@@ -266,7 +266,7 @@ Use dry run to:
 
 ## Notes
 
-- The script uses Python from `./scripts/venv/bin/python` (relative to workspace root)
+- The script uses Python from `/Users/jhigh/Planview Work/scripts/venv/bin/python`
 - Environment variables are loaded from `.env.daily-brief` in the daily-brief directory
 - Logs are written to `logs/daily_brief_YYYYMMDD.log`
 - Metrics are stored in `metrics/` directory

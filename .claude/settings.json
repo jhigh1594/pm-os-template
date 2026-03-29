@@ -1,0 +1,74 @@
+{
+  "hooks": {
+    "InstructionsLoaded": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"/Users/jhigh/Planview Work\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/instruction_load_audit.py\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"/Users/jhigh/Planview Work\" && bash \".claude/hooks/session-start.sh\""
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"/Users/jhigh/Planview Work\" && .venv/bin/python \"🔧 Automation/scripts/hooks/session_end.py\" --workspace \"/Users/jhigh/Planview Work\" --python-cmd \".venv/bin/python\""
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"/Users/jhigh/Planview Work\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/compact_state.py\" capture"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"/Users/jhigh/Planview Work\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/continuation_cue.py\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"/Users/jhigh/Planview Work\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/learning_signal.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"/Users/jhigh/Planview Work\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/end_of_turn.py\""
+          }
+        ]
+      }
+    ]
+  }
+}

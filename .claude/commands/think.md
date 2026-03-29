@@ -88,6 +88,13 @@ Default mode: `explore`
 - Find gaps, risks, second-order effects
 - Ask: "What would I regret about this decision?"
 - Stress-test assumptions from multiple angles
+
+### ai-risk
+- AI product risk analysis mode
+- Load `📚 Knowledge/Frameworks/ai-product-risks.md` and run all four AI risk dimensions
+- Surface the highest-risk dimension as the primary strategic constraint
+- Output a risk checklist status with `[NEEDS INPUT]` flags for any unresolved items
+- Trigger: user asks about an AI feature, ML capability, probabilistic behavior, or model-powered product decision
 </mode_personas>
 
 <process>
@@ -107,34 +114,52 @@ Signal "**BRAINDUMP COMPLETE**" before proceeding.
 - What decision will this thinking actually inform?
 - Is this the real question, or a symptom of a deeper one?
 
-## Step 1: Name the Decision Type
+## Step 1: Reversibility Classification
+
+Before applying mental models, classify the decision's reversibility. This determines how much rigor to apply and whether to escalate to `/decide`.
+
+**Type 1 — One-Way Door** (hard to reverse):
+- Can't undo without significant cost: public commitments, deprecations, architectural pivots, pricing model changes, personnel decisions
+- Requires 90%+ confidence before acting
+- Handoff: "This is a Type 1 decision — send to `/decide` for full trade-off analysis before proceeding"
+
+**Type 2 — Two-Way Door** (reversible):
+- Can course-correct within a sprint, quarter, or next release cycle
+- Apply the 70% rule: enough information to act, bias toward learning
+- Proceed with analysis; log via `/decide` only if confidence is low or stakes are high
+
+**State explicitly:** "This is a Type [1/2] because [one sentence — what makes it [ir]reversible]."
+
+**If Type 1 is identified:** Pause analysis and recommend `/decide` for full treatment. Continuing to `/think` on a Type 1 without a structured decision process risks anchoring on the wrong frame.
+
+## Step 2: Name the Decision Type
 Clarify what we're actually deciding:
 - **Investment**: What should we build? Is this worth the resources?
 - **Positioning**: Where should we compete? What do we say no to?
 - **Diagnosis**: What's actually broken? What's causing this problem?
 - **Sizing**: Is this opportunity big enough to matter?
 
-## Step 2: Apply 2-3 Mental Models
+## Step 3: Apply 2-3 Mental Models
 Select based on decision type. Examples (not prescriptive):
 - Investment: ROI, Expected Value, DHM (Delight/Hard-to-copy/Margin-enhancing), Time Horizon
 - Diagnosis: Feedback Loops, Root Cause, Diminishing Returns, Five Whys
 - Positioning: Competitive Differentiation, Jobs-to-be-Done, Blast Radius
 - Don't force-fit models. Use what illuminates this specific situation.
 
-## Step 3: Frame from Multiple Perspectives
+## Step 4: Frame from Multiple Perspectives
 Analyze from at least 3 lenses:
 - **Customer**: JTBD, adoption friction, value perception, willingness to pay
 - **Business**: Economics, competitive dynamics, resource trade-offs, margin impact
 - **Technical**: Feasibility, platform implications, dependencies, tech debt
 - **Strategic**: Positioning, differentiation, timing, what this enables or forecloses
 
-## Step 4: Surface Critical Unknowns
+## Step 5: Surface Critical Unknowns
 Identify 2-3 things we most need to learn:
 - What assumption, if wrong, invalidates this approach?
 - What data would change the decision?
 - What do customers believe that we haven't validated?
 
-## Step 5: Recommend Next Steps
+## Step 6: Recommend Next Steps
 Propose 2-3 concrete actions:
 - What to validate first (and how)
 - Who to talk to
@@ -163,6 +188,11 @@ Propose 2-3 concrete actions:
 1. [Specific action with owner/timeline if known]
 2. [Specific action]
 3. [Specific action]
+
+### Coaching Handoff
+If the output needs quality review rather than more exploration, suggest:
+`/coach --mode decision` for trade-off and recommendation quality
+`/coach --mode roadmap` for sequencing and roadmap logic
 </output_format>
 
 <example>

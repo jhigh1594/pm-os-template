@@ -6,8 +6,8 @@ Check local sources first. Use external sources for methodology background or wh
 
 These files contain curated pricing knowledge specific to the workspace:
 
-- `./Product-Management/pricing/lennys-newsletter-art-and-science-of-pricing.md` — Lenny Rachitsky's synthesis of B2B SaaS pricing strategy, common mistakes, and practitioner advice
-- `./Product-Management/pricing/Pricing your AI product - Transcript.md` — Transcript covering AI-specific pricing models, cost structure considerations, and value capture for AI features
+- `/Users/jhigh/Planview Work/Product-Management/pricing/lennys-newsletter-art-and-science-of-pricing.md` — Lenny Rachitsky's synthesis of B2B SaaS pricing strategy, common mistakes, and practitioner advice
+- `/Users/jhigh/Planview Work/Product-Management/pricing/Pricing your AI product - Transcript.md` — Transcript covering AI-specific pricing models, cost structure considerations, and value capture for AI features
 
 ## External References (Methodology Background)
 

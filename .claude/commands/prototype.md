@@ -244,7 +244,7 @@ Before presenting the prompt, verify:
 - **Use `/spec`** → Extract user flows, requirements, constraints for PRD-based prototypes
 - **Use `/discover`** → Incorporate user research insights and pain points
 - **Use design-brief-template.md** → Source detailed design constraints and edge cases
-- **Store results** → Save generated prototypes to `memory-bank/prototypes/` for iteration
+- **Store results** → Save generated prototypes to `🤖 AI/prototypes/` for iteration
 
 ---
 

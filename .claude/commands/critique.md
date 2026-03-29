@@ -237,6 +237,7 @@ Questions:
 - Use **/compete** to compare against competitive products
 - Use **/think** to frame strategic implications of critique
 - Use **/spec** to document improvements based on critique
+- Use **`/coach --mode doc`** to turn critique into a scored revision plan for a PM artifact
 
 ---
 

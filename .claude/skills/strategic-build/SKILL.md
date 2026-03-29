@@ -1,6 +1,6 @@
 ---
 name: strategic-build
-description: Distinguishes strategic vs tactical work during development using Shreyas Doshi's frameworks and Marty Cagan's empowered teams principles. Use when making architectural decisions, choosing what to build, preventing "product theater", or applying the LNO framework (Leverage, Neutral, Overhead). Helps avoid feature factory and build work that compounds.
+description: Use when deciding what to build, evaluating if work is strategic, or preventing feature factory. Triggers: should I build this, is this worth it, LNO framework, leverage vs overhead, product theater, strategic vs tactical, architectural decision, feature request evaluation, what compounds.
 ---
 
 # Strategic Prototyping: Build What Matters
@@ -414,3 +414,11 @@ DECISION: Should I build this?
 - **references/marty-cagan-empowered.md** - Feature teams vs empowered teams
 - **references/strategic-vs-tactical.md** - Case studies and examples
 
+## Self-Learning
+
+Before responding, read `LEARNED.md` in this skill directory when it exists and treat it as compact runtime guidance that sharpens this skill.
+
+Rules for self-improvement:
+- Keep `SKILL.md` human-owned; do not rewrite it directly from normal usage.
+- Propose broader instruction changes through the central skill-learning review queue.
+- Only promote specific, reusable, evidence-backed lessons into `LEARNED.md`.

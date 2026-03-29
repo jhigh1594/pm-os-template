@@ -320,7 +320,7 @@ Score each 1-10:
 
 ### For RAW FEEDBACK MODE (Triage)
 
-**Location**: `memory-bank/triage/[YYYY-MM-DD]-[feature-area]-triage.md`
+**Location**: `🤖 AI/triage/[YYYY-MM-DD]-[feature-area]-triage.md`
 
 ```markdown
 # Feature Request Triage: [Feature Area]
@@ -585,6 +585,8 @@ Best,
 - **/spec** - Document top priority items as PRDs
 - **/measure** - Define success metrics for prioritized items
 - **/write** - Communicate prioritization decisions to stakeholders
+- **`/coach --mode decision`** - Review trade-off quality, assumptions, and recommendation strength after prioritization
+- **`/coach --mode roadmap`** - Review sequencing logic, portfolio balance, and roadmap narrative clarity
 
 ---
 

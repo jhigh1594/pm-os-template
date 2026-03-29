@@ -19,6 +19,13 @@ Featuring wisdom from 300+ episodes with Brian Chesky (Airbnb), Shreyas Doshi (S
 
 **Transform your AI coding assistant into a world-class product management partner.**
 
+## Workspace Additions
+
+This workspace adds local AIPMOS skill surfaces on top of the upstream PM skill library.
+
+Current local addition:
+- `product-coach` - artifact-centered PM coaching with preset-specific scorecards, growth-memory-aware feedback, and JSON output compatible with the AIPMOS coaching runtime
+
 ---
 
 ## 🎯 What Are Awesome PM Skills?
@@ -426,4 +433,3 @@ cd skills/lenny-pm-skills
 **Ready to build the most powerful AI PM products ever?**
 
 **Let's go. 🚀**
-

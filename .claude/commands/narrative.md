@@ -193,6 +193,25 @@ I'll ask clarifying questions first:
 3. **What's the core message?** (In one sentence, what do you want them to believe?)
 4. **What action do you want?** (What should they do after hearing this?)
 
+**After question 2 is answered — load the audience narrative guide:**
+
+Resolve the audience type and load the corresponding guide from `📚 Knowledge/Writing-Styles/`:
+
+| Audience Answer | Guide |
+|-----------------|-------|
+| Execs, Leadership, VP+ | `executive.md` |
+| Team, Cross-functional | `internal-team.md` |
+| Customers, Users | `customer.md` |
+| Investors, Board | `board-analyst.md` |
+| Analysts (Gartner, Forrester) | `board-analyst.md` |
+| Sales, SE | `sales-se.md` |
+
+Apply the guide's **Opening Logic** as the structural anchor for the narrative's opening — the first sentence or paragraph must follow the guide's sentence-1 rule.
+
+Apply the guide's **Structure Template** as a scaffold before selecting a narrative framework. The narrative framework (Hero's Journey, SCQA, etc.) layers on top of the audience structure, not the other way around.
+
+Note before drafting: "Narrative guide applied: [audience] — opening rule: [one sentence]"
+
 Then I'll provide:
 
 ### Recommended Framework

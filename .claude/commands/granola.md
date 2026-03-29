@@ -33,7 +33,41 @@ After execution completes, provide a summary including:
 - Number of meetings extracted
 - List of meeting titles with file paths
 - Any warnings or errors encountered
-- Output directory: `./🏢 Company/meetings/granola/` (relative to workspace root)
+- Output directory: `/Users/jhigh/Planview Work/🏢 Company/meetings/granola/`
+
+## Post-Meeting Intelligence
+
+After the Output Summary, automatically surface intelligence for each extracted meeting. If 0 meetings were extracted, skip this section entirely.
+
+For each meeting, present the following block — do not require a separate user prompt:
+
+```
+## Post-Meeting Intelligence: [Meeting Title]
+
+**Decisions made:**
+- [extracted from notes — or "None explicitly stated in notes"]
+
+**Action items:**
+- [Owner]: [Action] — [Date if stated]
+- (or "None explicitly stated in notes")
+
+**Stakeholder signals:**
+- [Name from participants]: [Any position shift, concern surfaced, or alignment signal]
+- (only include if something substantive was observable)
+
+**Knowledge/People/ candidates:**
+- [name].md: Suggest appending: "[one sentence of new context — their position, concern, or commitment]"
+- (only include for participants who have a file in 📚 Knowledge/People/)
+
+---
+Run `/follow-up --meeting "[title]"` to draft communications and update stakeholder files.
+```
+
+**Constraints:**
+- Intelligence is **presented, not applied** — no files are written without explicit user action or `/follow-up`
+- Do not fabricate decisions or action items — if notes are sparse, say so explicitly
+- Include Knowledge/People/ candidates only for participants with existing files in `📚 Knowledge/People/`
+- If multiple meetings were extracted, present one intelligence block per meeting
 
 ## Notes
 

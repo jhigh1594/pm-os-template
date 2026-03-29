@@ -86,8 +86,8 @@ You are helping me design pricing strategy, packaging, and value metrics for B2B
 
 ## Local Sources (Use First)
 
-- `./Product-Management/pricing/lennys-newsletter-art-and-science-of-pricing.md` (relative to workspace root)
-- `./Product-Management/pricing/Pricing your AI product - Transcript.md` (relative to workspace root)
+- `/Users/jhigh/Planview Work/Product-Management/pricing/lennys-newsletter-art-and-science-of-pricing.md`
+- `/Users/jhigh/Planview Work/Product-Management/pricing/Pricing your AI product - Transcript.md`
 
 ## Constraints
 

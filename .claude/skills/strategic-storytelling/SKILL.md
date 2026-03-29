@@ -1,6 +1,6 @@
 ---
 name: strategic-storytelling
-description: Crafts product narratives using Andy Raskin's strategic narrative structure and Nancy Duarte's presentation frameworks. Use when writing pitches, creating presentations, framing features as stories, or building compelling product narratives.
+description: Use when writing product pitches, presentations, or framing features as narratives. Triggers: product pitch, strategic narrative, Andy Raskin, presentation story, feature as story, five-act structure, compelling narrative.
 ---
 
 # Strategic Narrative
@@ -106,3 +106,11 @@ Claude uses this skill when:
 **Nancy Duarte:**
 > "The audience doesn't need to tune themselves to you—you need to tune your message to them."
 
+## Self-Learning
+
+Before responding, read `LEARNED.md` in this skill directory when it exists and treat it as compact runtime guidance that sharpens this skill.
+
+Rules for self-improvement:
+- Keep `SKILL.md` human-owned; do not rewrite it directly from normal usage.
+- Propose broader instruction changes through the central skill-learning review queue.
+- Only promote specific, reusable, evidence-backed lessons into `LEARNED.md`.

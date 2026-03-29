@@ -6,7 +6,7 @@ This file provides copy-paste templates for deliverables from the prioritization
 
 ## Output Format for RAW FEEDBACK MODE
 
-**Location**: `memory-bank/triage/[YYYY-MM-DD]-[feature-area]-triage.md`
+**Location**: `Docs/memos/[YYYY-MM-DD]-[feature-area]-triage.md`
 
 ```markdown
 # Feature Request Triage: [Feature Area]

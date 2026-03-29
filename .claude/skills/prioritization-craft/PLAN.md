@@ -231,11 +231,11 @@ After skill execution, verify:
 ## Output Locations
 
 ### For RAW FEEDBACK MODE
-- **Location**: `memory-bank/triage/[YYYY-MM-DD]-[feature-area]-triage.md`
+- **Location**: `Docs/memos/[YYYY-MM-DD]-[feature-area]-triage.md`
 - **Contents**: Full triage report with normalized requests, deduplication, categorization, scoring, roadmap, stakeholder comms
 
 ### For CLEAN LIST MODE
-- **Location**: User's choice or same triage directory
+- **Location**: User's choice or `Docs/memos/`
 - **Contents**: Prioritization analysis with scored items, force-ranked roadmap, stakeholder comms
 
 ---

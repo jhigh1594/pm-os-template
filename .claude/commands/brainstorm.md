@@ -45,7 +45,7 @@ Ask probing questions to understand:
 **Practice**: Use reflective listening ("So what I'm hearing is...") before each follow-up.
 
 ### Step 3: Load Persona(s)
-Read persona definition from `./Docs/brainstormers/<persona>.md` (relative to workspace root):
+Read persona definition from `/Users/jhigh/Planview Work/Docs/brainstormers/<persona>.md`:
 - `--as pm` → `pm-principal.md`
 - `--as designer` → `designer-senior.md`
 - `--as engineer` → `engineer-10x.md`
@@ -103,7 +103,7 @@ Generate a summary with:
 ```
 
 ### Step 6: Save (if `--save` flag)
-Write summary to `./Product-Management/brainstorms/YYYY-MM-DD-brainstorm-[topic].md` (relative to workspace root)
+Write summary to `/Users/jhigh/Planview Work/Product-Management/brainstorms/YYYY-MM-DD-brainstorm-[topic].md`
 
 **Filename pattern**: `YYYY-MM-DD-brainstorm-[slugified-topic].md`
 
@@ -135,6 +135,36 @@ Write summary to `./Product-Management/brainstorms/YYYY-MM-DD-brainstorm-[topic]
 - `/think` → Strategic ("Should we do this?")
 - `/brainstorm` → Tactical ("How might we do this?")
 - `/spec` → Formal ("Here's the PRD")
+
+### Step 7: Rich Contextual Handoff
+
+After generating the Structured Summary in Step 5, output this handoff block with actual values from the session:
+
+```markdown
+---
+## Brainstorm Complete
+
+**What we produced:**
+- Problem Statement: "{verbatim Problem Statement from summary}"
+- Angles explored: {N} perspectives — strongest signal: {dominant angle, e.g., "PM: customer ROI is unclear"}
+- Open questions: {N} unresolved (see Open Questions section above)
+- Consensus: {areas of agreement across PM/designer/engineer lenses, if --as all, or "N/A — single perspective"}
+
+**Context to carry forward:**
+- Core problem: "{Problem Statement — copy exact wording, this becomes /discover's starting frame}"
+- Evidence needed: {validation gaps identified across personas, e.g., "Customer interview data, competitive analysis, technical feasibility assessment"}
+- Emerging direction: {strongest solution signal from angles, or "None — discovery needed first"}
+
+**[NEEDS INPUT] count:** {N} open questions require validation before committing to solution
+
+**Next — run this:**
+```
+/discover "{Problem Statement}"
+```
+Carries your Problem Statement into discovery. Claude will use it as the starting frame for Phase 1.
+
+---
+```
 
 ---
 

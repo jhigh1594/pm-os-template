@@ -43,11 +43,11 @@ I'll ask clarifying questions first:
 Then I'll provide:
 
 ### Mockup File
-**Location**: `memory-bank/mockups/[feature-name].mockup.html`
+**Location**: `🤖 AI/mockups/[feature-name].mockup.html`
 **Naming**: kebab-case, descriptive, timestamped if iterations
 
 ### Style Guide (if new workflow)
-**Location**: `memory-bank/mockups/[project]-style-guide.html`
+**Location**: `🤖 AI/mockups/[project]-style-guide.html`
 **Contains**:
 - Color palette (primary, secondary, success, warning, error, neutral)
 - Typography (headings, body, code, captions)
@@ -56,7 +56,7 @@ Then I'll provide:
 - Icon library (emoji or SVG icon set)
 
 ### Design Decisions Log
-**Location**: `memory-bank/mockups/[feature-name]-decisions.md`
+**Location**: `🤖 AI/mockups/[feature-name]-decisions.md`
 **Contains**:
 - Pattern choices (why this layout, these colors, this flow)
 - Edge cases handled (how we designed for empty, error, loading, max data)

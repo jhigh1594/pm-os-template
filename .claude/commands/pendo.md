@@ -6,32 +6,6 @@ description: Query Pendo data and segments
 
 Quick access to Pendo analytics and segmentation data via the Pendo CLI.
 
-## Prerequisites
-
-The Pendo CLI must be installed before using this command.
-
-### Installation
-
-```bash
-# Clone the pendo-cli repository
-cd ~/
-git clone https://github.com/jhigh1594/pendo-cli.git
-
-# Configure credentials
-cd pendo-cli
-cp .env.example .env
-# Edit .env with your Pendo credentials
-
-# Install dependencies (if needed)
-pip install -r requirements.txt
-```
-
-### Required Credentials
-
-Add these to `~/pendo-cli/.env`:
-- `PENDO_SUBSCRIPTION_ID` - Your Pendo subscription ID
-- `PENDO_APP_ID` - Your Pendo app ID
-
 ## Usage
 
 `/pendo <action>`
@@ -58,9 +32,10 @@ Add these to `~/pendo-cli/.env`:
 # Shows account data from the last week
 ```
 
-## Troubleshooting
+## Configuration
 
-If the command fails:
-1. Verify pendo-cli is installed at `~/pendo-cli/`
-2. Check that `.env` exists with valid credentials
-3. Ensure Python dependencies are installed
+The Pendo CLI uses environment variables:
+- `PENDO_SUBSCRIPTION_ID` - Your Pendo subscription ID
+- `PENDO_APP_ID` - Your Pendo app ID
+
+These are loaded from `.env` in the pendo-cli directory.

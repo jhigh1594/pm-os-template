@@ -1,6 +1,6 @@
 ---
 name: design-first-dev
-description: Follows Airbnb's design-led development and Figma's craft quality standards. Use when building user-facing features, making UI/UX decisions, determining when details matter, or applying design system thinking. Guides when to move fast vs when quality creates moats. Based on Brian Chesky staying in every design detail and Dylan Field's craft philosophy.
+description: Use when building user-facing features, deciding craft level, or making UI/UX tradeoffs. Triggers: design before code, craft quality, when do details matter, prototype first, design system, loading states, empty states, move fast vs polish, Airbnb Figma standards.
 ---
 
 # Design-Led Development: Craft Quality Standards
@@ -439,3 +439,11 @@ For every user-facing feature:
 - **references/design-system-starter.md** - Quick start guide
 - **references/all-states-examples.md** - Loading, error, empty, success patterns
 
+## Self-Learning
+
+Before responding, read `LEARNED.md` in this skill directory when it exists and treat it as compact runtime guidance that sharpens this skill.
+
+Rules for self-improvement:
+- Keep `SKILL.md` human-owned; do not rewrite it directly from normal usage.
+- Propose broader instruction changes through the central skill-learning review queue.
+- Only promote specific, reusable, evidence-backed lessons into `LEARNED.md`.
