@@ -8,6 +8,12 @@
 > Curated by [Udi Menkes](https://linkedin.com/in/udimenkes) | [GenAI PM](https://genaipm.com)  
 > Based on transcripts from [ChatPRD](https://github.com/ChatPRD/lennys-podcast-transcripts)
 
+## Workspace Additions
+
+Local AIPMOS extension:
+- **`product-coach`** - artifact review and PM judgment-building skill aligned to `🤖 AI/coaching/scorecard-presets.yaml` and the AIPMOS coaching runtime
+- **`openrouter-imagegen`** - image generation via OpenRouter API (Gemini, Flux, etc.); use when `OPENROUTER_API_KEY` is available and image generation is requested
+
 ---
 
 ## 🏗️ BUILDER MODE (12 Skills)
@@ -340,4 +346,3 @@ strategy   culture   influence   career
 **Ready to build like the best PMs in the world? 🚀**
 
 Start with: **[zero-to-launch](zero-to-launch/SKILL.md)**
-

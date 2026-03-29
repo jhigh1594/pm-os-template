@@ -54,7 +54,7 @@ This file provides detailed, step-by-step instructions for each phase of the pri
 
 ### Historical Context Check
 
-- Search for previous prioritization decisions in `memory-bank/triage/` or similar
+- Search for previous prioritization decisions in `Docs/memos/`, relevant product folders, or similar
 - Reference past framework choices and rationale
 - Ask: "Last quarter we used RICE for roadmap planning—should we maintain consistency for comparability?"
 

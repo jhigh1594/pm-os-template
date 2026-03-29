@@ -282,7 +282,7 @@ THEN [error handling and user communication]
 
 **Example 2: Generate with explicit path**
 ```
-/spec-brief ./📦 Products/OKRs/features/bulk-import/full-prd.md (relative to workspace root)
+/spec-brief /Users/jhigh/Planview\ Work/📦 Products/OKRs/features/bulk-import/full-prd.md
 ```
 
 **Example 3: Interactive mode (no argument)**
@@ -300,3 +300,39 @@ Prompts: "Which PRD should I generate a Spec Brief from?"
 3. **Clarity:** Brief is concise (target: 2-3 pages max)
 4. **Actionability:** Implementation notes provide clear starting point
 5. **Testability:** All acceptance criteria use Gherkin format
+
+---
+
+## Rich Contextual Handoff
+
+After generating the Spec Brief, output this handoff block with actual values from the session:
+
+```markdown
+---
+## Engineering Handoff Complete
+
+**What we produced:**
+- SPEC_BRIEF.md: `{saved-path}`
+- Acceptance criteria: {N} Given/When/Then scenarios
+- Data model: {N} entities defined
+- API surface: {N} endpoints specified (if applicable)
+- Dependencies confirmed: {N} (see Dependencies section)
+
+**Context to carry forward:**
+- Feature: {feature name from PRD}
+- Critical dependency: {highest-risk dependency from PRD Dependencies section}
+- Open questions blocking dev: {N} (must resolve before sprint start)
+- Primary persona: {persona from Problem Statement}
+
+**[NEEDS INPUT] count:** {N} — engineering lead assignment and sprint target required
+
+**Next — run this:**
+```
+/ship --feature "{feature name}"
+```
+Plan the launch strategy and define the metrics baseline while the context is fresh.
+
+---
+```
+
+**Note:** The handoff carries the feature name, critical dependencies, and blocking questions forward so `/ship` doesn't start cold. The PM must resolve blocking questions before sprint planning.

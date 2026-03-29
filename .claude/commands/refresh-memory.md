@@ -1,4 +1,4 @@
-Update `memory-bank/memory.md` with session activity by running the memory updater script.
+Update `🤖 AI/memory/memory.md` with session activity by running the memory updater script.
 
 ## Command Arguments
 
@@ -10,7 +10,7 @@ Parse the command arguments in order:
 ## Execution
 
 Build the command based on arguments:
-- Base command: `python3 scripts/automation/memory_updater.py`
+- Base command: `python3 "🔧 Automation/scripts/memory_updater.py" --workspace "/Users/jhigh/Planview Work"`
 - If `dry_run` is `true`, add `--dry-run`
 
 Run the command using Bash.
@@ -18,11 +18,12 @@ Run the command using Bash.
 ## How It Works
 
 The `memory_updater.py` script:
-1. Reads session intent from `.aipmos/session-intent.json`
+1. Reads session intent from `🤖 AI/session-intent.json`
 2. Fetches git commits since session start
-3. Creates a formatted session entry
-4. Appends to memory.md in the correct location
-5. Runs memory maintainer to prevent bloat
+3. Falls back to `.specstory/history/` when session intent is empty
+4. Creates a formatted session entry
+5. Appends to memory.md in the correct location
+6. Runs memory maintainer to prevent bloat
 
 ---
 
@@ -44,7 +45,7 @@ Entries are added to memory.md in this format:
 
 ## Session Intent Setup
 
-The script reads from `.aipmos/session-intent.json`:
+The script reads from `🤖 AI/session-intent.json`:
 
 ```json
 {
@@ -56,8 +57,8 @@ The script reads from `.aipmos/session-intent.json`:
 
 Session intent is typically set via:
 - `/today` command (daily planning workflow)
-- Manual edit of `.aipmos/session-intent.json`
-- Future: Intent detection from conversational context
+- `set_intent.py`
+- Manual edit of `🤖 AI/session-intent.json`
 
 ---
 
@@ -77,6 +78,7 @@ After updating memory.md, the script automatically runs `memory_maintainer.py` t
 - End of work session (manual invocation)
 - Before `/check-progress` (to ensure current memory state)
 - After significant feature completion
+- Automatically at session end via `.claude/scripts/session-end.sh`
 
 **Complements**:
 - `/check-progress` - Shows deltas since last memory update
@@ -100,7 +102,7 @@ Typical workflow:
 Success message:
 ```
 ✅ Updated memory.md with session: Implement /brainstorm command...
-   File: ./memory-bank/memory.md (relative to workspace root)
+   File: /Users/jhigh/Planview Work/🤖 AI/memory/memory.md
    Commits: 5
 ```
 
@@ -109,6 +111,7 @@ Success message:
 ## Notes
 
 - If no session intent exists, falls back to git commits only
+- If session intent is empty, it may infer intent from recent `.specstory/history/` sessions
 - No commits = records as planning/research session
 - Entries are inserted after "Current Focus" section
 - "Last Updated" timestamp is automatically updated

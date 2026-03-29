@@ -1,6 +1,6 @@
 ---
 name: influence-craft
-description: Maps organizational power dynamics and builds influence without authority using Jeffrey Pfeffer's power frameworks. Use when getting buy-in for ideas, navigating company politics, managing up, or building coalitions across teams.
+description: Use when getting buy-in, navigating politics, or building influence without authority. Triggers: how do I get buy-in, manage up, company politics, influence without authority, build coalition, stakeholder alignment, power dynamics, Jeffrey Pfeffer.
 ---
 
 # Power & Influence
@@ -108,3 +108,11 @@ Claude uses this skill when:
 **On Building Influence:**
 > "The most successful people build their political capital before they need it."
 
+## Self-Learning
+
+Before responding, read `LEARNED.md` in this skill directory when it exists and treat it as compact runtime guidance that sharpens this skill.
+
+Rules for self-improvement:
+- Keep `SKILL.md` human-owned; do not rewrite it directly from normal usage.
+- Propose broader instruction changes through the central skill-learning review queue.
+- Only promote specific, reusable, evidence-backed lessons into `LEARNED.md`.

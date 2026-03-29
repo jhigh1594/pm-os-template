@@ -1,0 +1,287 @@
+# AgilePlace CLI Usage Rule
+
+**When to Apply**: Any time the user requests interaction with AgilePlace — creating cards, updating cards, fetching card details, listing cards from boards, managing lanes, planning increments, running reports, etc.
+
+## MANDATORY: Use AgilePlace CLI
+
+When the user asks to interact with AgilePlace, you MUST use the AgilePlace CLI rather than direct API calls or web automation.
+
+### CLI Location
+```
+🔧 Automation/scripts/agileplace_cli/
+```
+
+### Invocation
+
+**Preferred** (from within the scripts directory):
+```bash
+cd "🔧 Automation/scripts"
+python -m agileplace_cli.cli <command>
+```
+
+**Also works** (backward compatible):
+```bash
+cd "🔧 Automation/scripts"
+python agileplace_cli/cli.py <command>
+```
+
+**Or** (from workspace root, with PYTHONPATH):
+```bash
+PYTHONPATH="🔧 Automation/scripts" python "🔧 Automation/scripts/agileplace_cli/cli.py" <command>
+```
+
+## Available Commands (16 groups, 80+ commands)
+
+### Authentication (`auth`)
+```bash
+agileplace auth whoami              # Check current user / verify auth
+agileplace auth whoami --format table
+agileplace auth check               # Exit 0 if valid, 1 if not
+```
+
+### Boards (`boards`)
+```bash
+agileplace boards list [--search "name"] [--limit 50] [--format table]
+agileplace boards get <board_id> [--format summary]
+agileplace boards cards <board_id> [--lanes "id1,id2"] [--include-archived]
+agileplace boards create --title "Board" [--description "..."] [--level 2]
+agileplace boards archive <board_id>
+agileplace boards batch-archive <board_ids_csv>
+agileplace boards update <board_id> [--title] [--description]
+agileplace boards update-layout <board_id> --layout @layout.json
+agileplace boards get-custom-fields <board_id>
+agileplace boards update-custom-fields <board_id> --updates @fields.json
+agileplace boards export-history <board_id> [--out history.csv]
+```
+
+### Cards (`cards`)
+```bash
+agileplace cards mine [--limit 50] [--format table] [--card-status started] [--out file.json]
+agileplace cards get <card_id> [--format summary]
+agileplace cards search --search "text" [--board <id>] [--users "uid1,uid2"] [--lane-class "active"] [--include "customFields,dependencies"]
+agileplace cards create <board_id> --title "Title" [--description "md"] [--lane-id] [--card-type-id] [--planned-start YYYY-MM-DD] [--tags "tag1,tag2"] [--dry-run]
+agileplace cards update <card_id> [--title] [--description] [--priority normal|low|high|critical] [--card-type-id]
+agileplace cards delete <card_id>
+agileplace cards batch-delete <card_ids_csv>
+agileplace cards move --card-id <id> --lane-id <id>
+agileplace assign --card-ids "id1,id2" --user-ids "uid1,uid2"
+agileplace cards connect --parent <id> --children <id1,id2>
+agileplace cards dependency --cards <blocked> --depends-on <blocker> [--timing finishToStart]
+agileplace cards tasks <card_id> [--format table]
+agileplace cards get-custom-fields <card_id>
+agileplace cards set-custom-fields <card_id> --fields @fields.json
+agileplace cards list-ids <board_id>
+```
+
+### Card Types (`card-types`)
+```bash
+agileplace card-types list <board_id>
+agileplace card-types create <board_id> --name "Bug" [--color FF5733] [--is-card-type] [--is-task-type]
+agileplace card-types update <board_id> <type_id> [--name] [--color]
+agileplace card-types delete <board_id> <type_id>
+agileplace card-types batch-create <board_id> @types.json
+agileplace card-types batch-delete <board_id> <type_ids_csv>
+agileplace card-types setup <board_id> @types.json [--default-type "Story"] [--delete-stock]
+```
+
+### Lanes (`lanes`)
+```bash
+agileplace lanes list <board_id>
+agileplace lanes get-layout <board_id>
+agileplace lanes add <board_id> --title "Ready" --class-type backlog|active|archive [--parent <lane_id>] [--index 0] [--columns 1]
+agileplace lanes update <board_id> <lane_id> [--title] [--wip-limit 5] [--card-status notStarted]
+agileplace lanes remove <board_id> <lane_id> [--force]
+agileplace lanes move <board_id> <lane_id> [--new-parent <id>] [--new-index 0]
+agileplace lanes resize <board_id> <lane_id> <columns>
+agileplace lanes clone-layout <board_id> @layout.json
+```
+
+### Tags (`tags`)
+```bash
+agileplace tags add --card-id <id> --tags "tag1,tag2"
+agileplace tags remove --card-id <id> --tags "tag1"
+agileplace tags set --card-id <id> --tags "new1,new2"
+agileplace tags batch-add @updates.json
+```
+
+### Comments (`comments`)
+```bash
+agileplace comments create --card-id <id> --text "Comment text"
+agileplace comments list <card_id>
+agileplace comments update --card-id <id> --comment-id <id> --text "Updated"
+agileplace comments delete --card-id <id> --comment-id <id>
+agileplace comments batch-create @comments.json
+```
+
+### Attachments (`attachments`)
+```bash
+agileplace attachments list <card_id>
+agileplace attachments create --card-id <id> --file /path/to/file.pdf [--description "Spec"]
+agileplace attachments delete --card-id <id> --attachment-id <id>
+```
+
+### Automations (`automations`)
+```bash
+agileplace automations list <board_id>
+agileplace automations get <board_id> <automation_id>
+agileplace automations trigger-board <board_id> <event_name>
+agileplace automations trigger-card <card_id> <event_name>
+agileplace automations audit <board_id> <automation_id>
+```
+
+### Relationships (`relationships`)
+```bash
+agileplace relationships connect --parent-id <id> --child-ids <id1,id2>
+agileplace relationships get-children <card_id>
+agileplace relationships get <card_id>              # Full relationship map
+agileplace relationships delete-connections --card-id <id> --connections '{"children": [...]}'
+agileplace relationships dependency create --cards <id1> --depends-on <id2> [--timing]
+agileplace relationships dependency get <card_id>
+agileplace relationships dependency update --cards <id1> --depends-on <id2> --timing
+agileplace relationships dependency delete --cards <id1> --depends-on <id2>
+```
+
+### Hierarchy (`hierarchy`)
+```bash
+agileplace hierarchy create-epic <board_id> --epic @epic.json --features @features.json [--dry-run]
+```
+
+### Planning (`planning`)
+```bash
+agileplace planning series list
+agileplace planning series get <series_id>
+agileplace planning series create --title "PI Q1" [--payload @series.json]
+agileplace planning series update <series_id> @updates.json
+agileplace planning series delete <series_id>
+agileplace planning increment list <series_id>
+agileplace planning increment get <series_id> <increment_id>
+agileplace planning increment create <series_id> --title "Sprint 1"
+agileplace planning increment update <series_id> <increment_id> @updates.json
+agileplace planning increment delete <series_id> <increment_id>
+agileplace planning increment status <series_id> <increment_id> [--category]
+```
+
+### Reporting (`reporting`)
+```bash
+agileplace reporting throughput <board_id>
+agileplace reporting wip <board_id>
+agileplace reporting bottleneck <board_id>
+agileplace reporting card-stats <card_id>
+agileplace reporting card-activity <card_id>
+```
+
+### Scoring / WSJF (`scoring`)
+```bash
+agileplace scoring list-templates <board_id>
+agileplace scoring get-session <board_id>
+agileplace scoring set-session <board_id> --template-id <id> --card-ids "id1,id2"
+agileplace scoring update-score <board_id> <card_id> --score-total 10.5 [--scores @scores.json]
+agileplace scoring apply <board_id> [--card-ids "id1,id2"]
+agileplace scoring delete-scores <board_id> <card_ids_csv>
+```
+
+### Users (`users`)
+```bash
+agileplace users list [--limit 200]
+agileplace users get <user_id>
+agileplace users me [--format table]
+```
+
+### OKRs (`okr`)
+```bash
+agileplace okr list-objectives [--limit 200] [--scope-type Board|Portfolio|Program|Team]
+agileplace okr get-key-results <objective_id>
+```
+
+## Common Workflows
+
+### User Request: "Create an AgilePlace card for [feature]"
+1. Ask for board ID if not provided (or check common boards)
+2. Use: `agileplace cards create <board_id> --title "..." --description "..."`
+
+### User Request: "Update AgilePlace card [ID] with [details]"
+1. Use: `agileplace cards update <card_id> --title "..." --description "..."`
+
+### User Request: "Show me my AgilePlace cards"
+1. Use: `agileplace cards mine --format table`
+
+### User Request: "Get details about card [ID]"
+1. Use: `agileplace cards get <card_id> --format summary`
+2. For tasks: `agileplace cards tasks <card_id>`
+
+### User Request: "List boards" or "Find board [name]"
+1. Use: `agileplace boards list --search "name" --format table`
+
+### User Request: "Show me cards on board [ID]"
+1. Use: `agileplace boards cards <board_id> --format table`
+
+### User Request: "Search for cards containing [text]"
+1. Use: `agileplace cards search --search "text" --format table`
+2. Can filter by board: `--board <board_id>`
+3. Can include extra data: `--include "customFields,dependencies"`
+
+### User Request: "Find cards assigned to [user]"
+1. Use: `agileplace cards search --users <user_id> --format table`
+
+### User Request: "Move card [ID] to [lane]"
+1. Use: `agileplace cards move --card-id <id> --lane-id <id>`
+
+### User Request: "Add tags to card [ID]"
+1. Use: `agileplace tags add --card-id <id> --tags "tag1,tag2"`
+
+### User Request: "Comment on card [ID]"
+1. Use: `agileplace comments create --card-id <id> --text "Comment text"`
+
+### User Request: "Create an epic with features and stories"
+1. Prepare epic JSON and features JSON (see hierarchy create-epic)
+2. Use: `agileplace hierarchy create-epic <board_id> --epic @epic.json --features @features.json`
+
+### User Request: "Get board throughput report"
+1. Use: `agileplace reporting throughput <board_id>`
+
+### User Request: "List planning increments"
+1. Use: `agileplace planning series list` to find series
+2. Use: `agileplace planning increment list <series_id>` to see increments
+
+## Environment Configuration
+
+The CLI reads credentials from:
+1. `--env-file` option if specified
+2. `Automation/scripts/.env` (relative to cli.py)
+3. `.env` in current working directory
+
+Required environment variables:
+```
+AGILEPLACE_DOMAIN=https://planview.leankit.com
+AGILEPLACE_API_TOKEN=<token>
+```
+
+Optional (for OKR commands):
+```
+OKR_BASE_URL=https://api-us.okrs.planview.com
+OKR_CLIENT_ID=<oauth2-client-id>
+OKR_CLIENT_SECRET=<oauth2-client-secret>
+OKR_TOKEN=<direct-token>  # Alternative to OAuth2
+```
+
+## Error Handling
+
+If you get authentication errors:
+1. Check that `.env` file exists with valid credentials
+2. Run `agileplace auth whoami` to verify
+3. If token expired, user needs to regenerate from AgilePlace settings
+
+## Response Formats
+
+Most commands support `--format json` (default) or `--format table`:
+- **json**: Full API response, good for parsing
+- **table**: Human-readable summary
+
+## Notes
+
+- Description fields support markdown and are auto-converted to HTML
+- Card URLs follow pattern: `https://planview.leankit.com/card/<card_id>`
+- Board ID can be extracted from board URL (the alphanumeric string after `/board/`)
+- Complex payloads (batch operations, layouts, hierarchy) accept JSON files via `@file.json` syntax
+- Batch operations report per-item success/failure
+- Dry-run mode available on `cards create` and `hierarchy create-epic`

@@ -1,6 +1,6 @@
 ---
 name: ai-product-patterns
-description: Builds AI-native products using OpenAI's development philosophy and modern AI UX patterns. Use when integrating AI features, designing for model improvements, implementing evals as product specs, or creating AI-first experiences. Based on Kevin Weil (OpenAI CPO) on building for future models, hybrid approaches, and cost optimization.
+description: Use when integrating AI features, designing AI-first experiences, or optimizing AI products. Triggers: add AI to this, AI feature design, evals as specs, model improvements, AI cost optimization, hybrid AI approach, AI UX patterns, future model ready.
 ---
 
 # AI-Native Product Building
@@ -536,3 +536,11 @@ async function search(query) {
 - **references/hybrid-patterns.md** - AI + traditional code patterns
 - **references/ai-cost-optimization.md** - Cost reduction strategies
 
+## Self-Learning
+
+Before responding, read `LEARNED.md` in this skill directory when it exists and treat it as compact runtime guidance that sharpens this skill.
+
+Rules for self-improvement:
+- Keep `SKILL.md` human-owned; do not rewrite it directly from normal usage.
+- Propose broader instruction changes through the central skill-learning review queue.
+- Only promote specific, reusable, evidence-backed lessons into `LEARNED.md`.

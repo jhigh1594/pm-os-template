@@ -40,7 +40,7 @@ You are helping me transform customer complaints and issues into structured, act
 I'll ask clarifying questions **one at a time**, then provide:
 
 ### Bug Report
-**Location**: `memory-bank/bugs/[YYYY-MM-DD]-[P0/P1/P2/P3]-[short-description].md`
+**Location**: `🤖 AI/bugs/[YYYY-MM-DD]-[P0/P1/P2/P3]-[short-description].md`
 **Naming**: ISO date prefix, severity, descriptive kebab-case
 
 ```markdown

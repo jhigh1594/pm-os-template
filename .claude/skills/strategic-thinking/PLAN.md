@@ -126,7 +126,7 @@ The strategic-thinking skill enables **deep, multi-turn strategic exploration** 
 - **Read:** Access research files, customer interviews, competitive docs
 - **Grep:** Search for patterns across codebase
 - **Glob:** Find relevant files (strategy docs, research, data)
-- **WebFetch:** Pull market research, competitor info, industry trends
+- **Current browsing/search tools:** Pull market research, competitor info, industry trends
 - **Bash:** Run analytics queries if needed
 
 ## Dynamic Questioning Philosophy

@@ -1,80 +1,128 @@
 ---
 name: pricing-intelligence
-description: Design pricing strategy, packaging, and value metrics for B2B SaaS products with evidence-based pricing intelligence. Use when making pricing decisions, designing packaging tiers, selecting value metrics, planning WTP research, or setting discount policy.
+description: Use when making B2B SaaS pricing, packaging, or value metric decisions. Triggers: pricing strategy, packaging tiers, value metric, discounting, price increase, willingness to pay, freemium vs paid, migration pricing.
 ---
 
-# Pricing Intelligence (B2B SaaS)
+# Pricing Intelligence
 
-Help Jon design pricing strategy, packaging, and value metrics for B2B SaaS products with evidence-based pricing intelligence.
+Use this skill when the user is making a pricing, packaging, value metric, discounting, or migration decision for a B2B SaaS product.
 
-## When This Skill Activates
+## Default Stance: Consultative First
 
-Use this skill when Jon is:
-- Making a pricing decision (new product, reprice, packaging change)
-- Designing packaging tiers or add-on modules
-- Selecting or validating a value metric
-- Planning willingness-to-pay (WTP) research
-- Setting discount guardrails or approval policy
-- Analyzing competitor pricing models
-- Building a migration path for existing customers
-- Creating sales enablement for pricing conversations
+In chat, start by clarifying the pricing decision before jumping to a price point or tier design.
 
-## Core Workflow
+### Context-Gathering Phase (Required Before Action)
 
-Follow this 7-step process. Each step builds on the previous one, but Jon may enter at any step depending on what's already decided.
+Before recommendations, analysis, or output, gather context related to the task, goal, or ask:
 
-### Step 1: Clarify the Pricing Decision
-- New product vs. reprice vs. packaging change
-- Target segment(s), buyer persona(s), deal size band
-- Contract model (monthly/annual, seat/usage/hybrid)
-- Constraints (sales motion, procurement, churn risk, legal)
+1. Ask the user one question at a time; wait for the answer before asking the next.
+2. Cap at 3 questions for the initial context-gathering phase.
+3. If the user has already provided sufficient context in their initial message, ask at most 1–2 questions or proceed directly to action.
+4. Once context is gathered, proceed to substantive response and continue the iterative collaborative approach.
 
-### Step 2: Build the Value Hypothesis
-- Define the core job-to-be-done and value outcome
-- Translate value into a measurable ROI model
-- Identify the value metric that scales with customer value
+Default flow:
+1. gather context (see Context-Gathering Phase above)
+2. reflect back the pricing call in 1-2 lines
+3. surface the core value, willingness-to-pay, and risk assumptions
+4. give a provisional direction on packaging, metric, or pricing approach
+5. suggest the next collaborative step
 
-### Step 3: Pricing Intelligence Collection
-- **Competitors**: price model, packaging, fences, overage, enterprise deal patterns
-- **Customers**: WTP signals, budget ranges, procurement objections, value proof
-- **Sales/CS**: win/loss themes, discounting patterns, negotiation friction
-- **Product/Usage**: feature adoption, cost-to-serve, expansion levers
+If the user already supplied enough context, ask at most 1-2 questions and still provide a provisional recommendation in the same response.
 
-### Step 4: WTP Research Plan
-Pick 1-2 methods based on the decision context. See `wtp-research-methods.md` for detailed method guidance, sample questions, and selection criteria.
+## Response Contract
 
-### Step 5: Packaging Architecture
-Design tiers or modules with clear value fences. See `packaging-architecture.md` for patterns, anti-patterns, and design heuristics.
+For normal chat, default to:
 
-### Step 6: Price Point & Policy
-- Recommended list price band + rationale
-- Discount guardrails (floors, approval triggers)
-- Migration path for existing customers
+```markdown
+## Pricing Decision
+[brief framing]
 
-### Step 7: Validation & Rollout
-- Pilot pricing with design partners
-- Sales enablement: talk tracks, ROI calculator, objection handling
-- Experiment design and success metrics
+## Questions to Sharpen It
+1. [question]
+2. [question]
+3. [question]
 
-## Output
+## What Must Be True
+- [value assumption]
+- [buyer or market assumption]
+- [risk assumption]
 
-When producing deliverables, use the structured templates in `output-templates.md`. The six sections are:
-1. Pricing Brief
-2. Market & Competitive Scan
-3. WTP Research Plan
-4. Packaging Recommendation
-5. Price Point Recommendation
-6. Experiments & Next Steps
+## Provisional Direction
+[recommended pricing or packaging direction]
 
-## Constraints
+## Next Step
+- [research, modeling, pilot, or sales-enablement step]
+```
 
-- Do not invent market data, pricing, or competitor facts
-- Label assumptions and confidence levels explicitly
-- Keep outputs short and actionable (simplify, simplify, simplify)
-- Check local sources first before external research — see `sources.md`
+## Deep Mode
 
-## Entry Point
+Use deep mode when:
+- the user needs a full pricing brief, packaging architecture, or WTP plan
+- the change affects existing customers, migration, or sales policy
+- the decision is high stakes enough to justify structured research and modeling
 
-Start every pricing engagement with:
+For deeper work, load only what is needed from:
+- `wtp-research-methods.md`
+- `packaging-architecture.md`
+- `output-templates.md`
+- `sources.md`
 
-**What pricing decision are we making right now?**
+Even then:
+- lead with the pricing decision and assumptions
+- avoid turning the response into pricing theory
+
+## Pricing Lenses
+
+Use only the lenses that sharpen the call:
+- customer segment and buyer
+- value delivered and measurable ROI
+- value metric fit
+- willingness-to-pay signals
+- sales motion and procurement friction
+- migration, discounting, and churn risk
+
+## Judgment-Building Rule
+
+Help the PM improve pricing judgment by making the hidden logic visible:
+- explain why the value metric fits or fails
+- separate confidence from assumption
+- show what evidence would justify more aggressive pricing
+
+Keep the teaching concrete.
+
+## Internal Context
+
+Check local sources first, especially:
+- `🤖 AI/memory/memory.md`
+- `🤖 AI/patterns/learned-patterns.md`
+- relevant product, GTM, and competitive docs in the workspace
+
+When current external pricing information matters, use the current browsing/search tools available in the environment.
+
+## Guardrails
+
+- Do not recommend a price without clarifying the decision and segment.
+- Do not treat competitor prices as proof of willingness to pay.
+- Do not ask more than 3 questions up front.
+- Do not turn packaging work into abstract strategy without a next step.
+- Do not invent market data, pricing facts, or customer evidence.
+
+## Example Behavior
+
+If the user asks:
+"How should we think about packaging and pricing a new DPD capability?"
+
+Default behavior:
+- clarify the product, buyer, and commercial motion
+- surface the value and risk assumptions
+- offer a provisional packaging or metric direction
+- suggest the next model, pilot, or research step
+
+## Self-Learning
+
+Before responding, read `LEARNED.md` in this skill directory when it exists and treat it as compact runtime guidance that sharpens this skill.
+
+Rules for self-improvement:
+- Keep `SKILL.md` human-owned; do not rewrite it directly from normal usage.
+- Propose broader instruction changes through the central skill-learning review queue.
+- Only promote specific, reusable, evidence-backed lessons into `LEARNED.md`.

@@ -1,6 +1,6 @@
 ---
 name: exec-comms
-description: Drafts executive memos and stakeholder communications using Amazon's 6-pager structure, Stripe's memo format, and SCQA framework. Use when writing board updates, executive summaries, or strategic documents.
+description: Use when writing executive memos, board updates, or stakeholder communications. Triggers: executive memo, board update, 6-pager, BLUF, SCQA, stakeholder email, strategic document, exec summary, write for leadership.
 ---
 
 # Executive Communication
@@ -123,3 +123,11 @@ Claude uses this skill when:
 **On Executive Writing:**
 > "If you can't summarize it in 2 sentences, you don't understand it well enough."
 
+## Self-Learning
+
+Before responding, read `LEARNED.md` in this skill directory when it exists and treat it as compact runtime guidance that sharpens this skill.
+
+Rules for self-improvement:
+- Keep `SKILL.md` human-owned; do not rewrite it directly from normal usage.
+- Propose broader instruction changes through the central skill-learning review queue.
+- Only promote specific, reusable, evidence-backed lessons into `LEARNED.md`.

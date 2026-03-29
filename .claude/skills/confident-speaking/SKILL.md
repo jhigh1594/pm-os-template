@@ -103,3 +103,11 @@ NOW WHAT: "I propose we redesign onboarding this quarter"
 **Matt Abrahams:**
 > "Structure sets you free. When you have a framework, you can focus on connecting, not remembering."
 
+## Self-Learning
+
+Before responding, read `LEARNED.md` in this skill directory when it exists and treat it as compact runtime guidance that sharpens this skill.
+
+Rules for self-improvement:
+- Keep `SKILL.md` human-owned; do not rewrite it directly from normal usage.
+- Propose broader instruction changes through the central skill-learning review queue.
+- Only promote specific, reusable, evidence-backed lessons into `LEARNED.md`.

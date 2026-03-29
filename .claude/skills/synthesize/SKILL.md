@@ -1,6 +1,6 @@
 ---
 name: customer-feedback-synthesis
-description: Synthesize accumulated customer feedback (interviews, tickets, enhancement requests) into actionable insights using research-validated frameworks. Apply Thematic Analysis, Affinity Mapping, Jobs-to-be-Done, Signal vs Noise filtering to extract evidence-based patterns and prioritized opportunities. Use quarterly or for multi-source feedback analysis (10+ data points).
+description: Use when synthesizing customer feedback from multiple sources into actionable insights. Triggers: synthesize feedback, customer interviews analysis, support tickets patterns, enhancement requests, thematic analysis, JTBD from feedback, 10+ data points.
 ---
 
 # Customer Feedback Synthesis
@@ -283,3 +283,12 @@ After synthesis completes, update:
 **memory-bank/progress.md**
 - Log synthesis milestone completion
 - Track synthesis cadence (quarterly, annual)
+
+## Self-Learning
+
+Before responding, read `LEARNED.md` in this skill directory when it exists and treat it as compact runtime guidance that sharpens this skill.
+
+Rules for self-improvement:
+- Keep `SKILL.md` human-owned; do not rewrite it directly from normal usage.
+- Propose broader instruction changes through the central skill-learning review queue.
+- Only promote specific, reusable, evidence-backed lessons into `LEARNED.md`.

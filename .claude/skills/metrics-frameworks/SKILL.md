@@ -1,6 +1,6 @@
 ---
 name: metrics-frameworks
-description: Defines right metrics using North Star framework, AARRR, and leading vs lagging indicators. Use when choosing metrics, instrumenting products, creating dashboards, or distinguishing vanity metrics from actionable ones.
+description: Use when choosing metrics, instrumenting product, or creating dashboards. Triggers: what should we measure, North Star metric, key metrics, vanity vs actionable, AARRR, success metrics, analytics dashboard, leading vs lagging indicators.
 ---
 
 # Metrics That Matter
@@ -117,3 +117,11 @@ Claude uses this skill when:
 **Sean Ellis:**
 > "If you can't measure it, you can't improve it."
 
+## Self-Learning
+
+Before responding, read `LEARNED.md` in this skill directory when it exists and treat it as compact runtime guidance that sharpens this skill.
+
+Rules for self-improvement:
+- Keep `SKILL.md` human-owned; do not rewrite it directly from normal usage.
+- Propose broader instruction changes through the central skill-learning review queue.
+- Only promote specific, reusable, evidence-backed lessons into `LEARNED.md`.

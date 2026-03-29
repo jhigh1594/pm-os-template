@@ -1,270 +1,133 @@
 ---
 name: research
-description: Product research and competitive intelligence that plans AND executes research projects. Use for competitive analysis, customer insights, market trends, validation research, and analyst research.
+description: Use when needing evidence, validation, or grounded read on market, competitor, or product idea. Triggers: research this, validate assumption, market research, competitor research, evidence for decision, what do we know about.
 ---
 
 # Research
 
-Product research and competitive intelligence that plans AND executes research projects.
+Use this skill when the user needs evidence, outside validation, or a grounded read on a market, competitor, customer problem, or product idea.
 
-**Trigger when user asks:**
-- "Research [competitor/feature/topic]"
-- "Competitive analysis on..."
-- "What are customers saying about..."
-- "Market trends for..."
-- "Validate this hypothesis..."
-- "Investigate [topic] across competitors"
+## Default Stance: Consultative First
 
-Use this skill when the user needs:
-- Competitive analysis (features, positioning, pricing, messaging)
-- Customer insight research (reviews, forums, support patterns)
-- Market trend research (industry shifts, emerging patterns)
-- Validation research (testing hypotheses with real data)
-- Analyst research (synthesizing reports, market sizing)
+In chat, start by clarifying what decision the research should support and what unknown matters most.
 
----
+### Context-Gathering Phase (Required Before Action)
 
-## Skill Overview
+Before recommendations, analysis, or output, gather context related to the task, goal, or ask:
 
-This skill combines systematic research planning with automated execution using web search, content fetching, and workspace integrations.
+1. Ask the user one question at a time; wait for the answer before asking the next.
+2. Cap at 3 questions for the initial context-gathering phase.
+3. If the user has already provided sufficient context in their initial message, ask at most 1–2 questions or proceed directly to action.
+4. Once context is gathered, proceed to substantive response and continue the iterative collaborative approach.
 
-**Two-phase approach:**
-1. **Planning Phase**: Apply Four Risks Framework, define scope, select methods
-2. **Execution Phase**: Fetch sources, analyze content, synthesize findings
+Default flow:
+1. gather context (see Context-Gathering Phase above)
+2. reflect back the research brief in 1-2 lines
+3. gather the smallest high-signal source set that can answer it
+4. synthesize findings into a provisional readout
+5. suggest the next research or decision step
 
----
+If the user already gave enough context, ask at most 1-2 questions and still provide a provisional read in the same response.
 
-## Phase 1: Planning
+## Response Contract
 
-Before executing research, establish the research plan with the user:
-
-### Step 1: Understand What We're Learning
-
-Identify the research type:
-- **Discovery**: What problems do customers have? (Open-ended exploration)
-- **Validation**: Will customers use/buy this solution? (Testing hypotheses)
-- **Optimization**: How can we improve this existing feature? (Iterative improvement)
-- **Measurement**: Is this feature working? (Post-launch learning)
-
-### Step 2: Apply Four Risks Framework
-
-Assess which risks to investigate first:
-
-| Risk | Question | Priority |
-|------|----------|----------|
-| **Value Risk** | Will customers find this valuable? | 🔴 Always first |
-| **Usability Risk** | Can customers figure out how to use it? | 🟡 Second |
-| **Feasibility Risk** | Can we build this with our technology/resources? | 🟢 Technical |
-| **Viability Risk** | Does this work for our business model? | 🟢 Business |
-
-**Rule**: Always validate Value Risk first. The best-built product that solves the wrong problem is worthless.
-
-### Step 3: Define Research Scope
-
-Present to user for confirmation:
-
-```
-**Research Scope:**
-- **Data sources**: [Competitor sites, G2/Capterra, analyst reports, internal data, etc.]
-- **Search strategy**: [Keywords, competitors, sources]
-- **Time period**: [What timeframe to analyze]
-- **Key questions**:
-  1. [Question 1]
-  2. [Question 2]
-  3. [Question 3]
-
-**Success Criteria:**
-- Move forward if: [What signals validate our hypothesis]
-- Pivot if: [What would indicate we're wrong]
-- Stop if: [What would kill this idea]
-```
-
-Get user approval before proceeding to execution.
-
----
-
-## Phase 2: Execution
-
-### Step 4: Execute Research Using Tools
-
-Based on approved research plan, use appropriate tools:
-
-**For Competitive Analysis:**
-```
-1. Use web-search-prime to find competitor sites and positioning
-2. Use webReader to fetch and analyze competitor pages
-3. Use web-search-prime to find G2/Capterra reviews
-4. Synthesize: feature gaps, positioning differences, pricing patterns
-```
-
-**For Customer Insights:**
-```
-1. Use web-search-prime to find customer reviews (G2, Capterra, TrustRadius)
-2. Use webReader to extract review content
-3. Use web-search-prime to find forum discussions (Reddit, industry forums)
-4. Synthesize: pain points, desired outcomes, patterns
-```
-
-**For Market Trends:**
-```
-1. Use web-search-prime with recent time filters
-2. Search for industry reports, analyst insights
-3. Look for LinkedIn job postings (reveal roadmap direction)
-4. Synthesize: emerging patterns, shifts, signals
-```
-
-**For Internal Data:**
-```
-1. Use @notion to search for customer research notes
-2. Use @granola to search relevant meeting transcripts
-3. Use @obsidian-vault for knowledge base references
-4. Synthesize: internal findings, prior decisions, context
-```
-
-### Step 5: Apply Grounded Research Guardrails
-
-**CRITICAL**: Throughout execution, enforce these principles:
-
-1. **Curate Your Source Universe**
-   - ✅ SEC filings, earnings calls, annual reports
-   - ✅ Gartner, Forrester, IDC reports (not vendor-sponsored)
-   - ✅ G2, Capterra, TrustRadius reviews
-   - ✅ Reddit, forums (customer voice)
-   - ✅ Internal: support tickets, sales CRM notes, win/loss analysis
-   - ❌ Vendor marketing sites (use only for positioning analysis)
-   - ❌ Press releases (use only for factual events, not claims)
-
-2. **Time Bounds Required**
-   - Always specify: "Data from [timeframe] - [current date]"
-   - Flag when information may be outdated
-
-3. **Traceability Mandate**
-   - Include direct quotes with attribution
-   - Note pattern frequency ("Mentioned in 7 of 10 reviews")
-   - Label source types: `[Customer Review]`, `[Analyst Report]`, `[Vendor Marketing]`
-
-4. **Explicit Uncertainty Handling**
-   - If information is unclear: "Unable to determine from available sources"
-   - DO NOT interpolate or extrapolate beyond source data
-
-5. **Fact vs. Interpretation Layers**
-   - **Factual Events**: Product launches, pricing changes, executive changes, funding
-   - **Observed Patterns**: Themes from reviews, trends in reports
-   - **Strategic Interpretation**: What these mean (clearly labeled)
-
-6. **Verification Before Decision**
-   - For roadmap-influencing insights: "Exact sources: [list]"
-   - Flag low-confidence: "Single-source finding - requires verification"
-
----
-
-## Phase 3: Synthesis
-
-### Step 6: Deliver Research Findings
-
-Present findings in this format:
+For normal chat, default to:
 
 ```markdown
-# Research Findings: [Title]
+## Decision This Research Supports
+[brief framing]
 
-**Research Date**: [Date]
-**Data Period**: [Timeframe covered]
-**Sources Analyzed**: [Number and type of sources]
+## Questions to Sharpen It
+1. [question]
+2. [question]
+3. [question]
 
----
+## Most Important Unknown
+[what we need to learn]
 
-## Executive Summary
+## Provisional Read
+[main finding or current take]
 
-[2-3 sentence summary of key findings and recommendation]
-
-**Recommendation**: Move forward / Pivot / Stop
-
----
-
-## Patterns Identified
-
-### Pattern 1: [Pattern name]
-- **Evidence**: [Direct quotes from sources with attribution]
-- **Frequency**: [How often mentioned]
-- **Sources**: [Source list]
-
-### Pattern 2: [Pattern name]
-- **Evidence**: [Direct quotes from sources with attribution]
-- **Frequency**: [How often mentioned]
-- **Sources**: [Source list]
-
----
-
-## Competitive Gaps
-
-What competitors are missing:
-1. [Gap 1] - [Source attribution]
-2. [Gap 2] - [Source attribution]
-
-Opportunity for differentiation:
-- [Opportunity description]
-
----
-
-## Signals & Trends
-
-Emerging patterns detected:
-- [Signal 1] - [Source and date]
-- [Signal 2] - [Source and date]
-
----
-
-## Risk Assessment Updates
-
-| Risk | Before | After | Key Findings |
-|------|--------|-------|--------------|
-| Value Risk | [Level] | [Level] | [What we learned] |
-| Usability Risk | [Level] | [Level] | [What we learned] |
-| Feasibility Risk | [Level] | [Level] | [What we learned] |
-| Viability Risk | [Level] | [Level] | [What we learned] |
-
----
-
-## Sources
-
-**Primary Sources Analyzed:**
-- [Source 1] - [URL] - [Date accessed]
-- [Source 2] - [URL] - [Date accessed]
-
-**Confidence Level:**
-- ☐ High (multiple independent sources, recent data)
-- ☐ Medium (2-3 sources, some corroboration)
-- ☐ Low (single source or limited corroboration)
-
-**Open Questions:**
-- [What we still need to learn]
+## Confidence / Next Step
+- [what feels solid]
+- [what still needs verification]
 ```
 
----
+Include sources when the response relies on external evidence.
 
-## Constraints & Pitfalls
+## Full Research Mode
 
-**Avoid:**
-- Don't skip validation before building expensive things
-- Don't confuse feature parity with customer value
-- Don't research forever (diminishing returns after 5-8 sources)
-- Don't only research known competitors (seek emerging/indirect)
-- Don't copy features without understanding the customer problem
-- Don't ignore qualitative insights for only quantitative data
+Switch to full research mode when:
+- the user explicitly asks for comprehensive research
+- the decision is high stakes or expensive
+- the source set is large and needs structured synthesis
+- the output needs to become a memo, brief, or reusable artifact
 
-**Remember:**
-- Confidence determines speed vs. quality (low confidence = fast, cheap research)
-- Time value of shipping (2 weeks research + small test > 6 months research)
-- Diminishing returns (patterns repeat after 5-8 sources)
-- Expected value (research reduces uncertainty, improving outcomes)
+Even then:
+- lead with the decision, unknown, and current answer
+- expand only into the evidence needed to support the recommendation
 
----
+## Research Lenses
 
-## Tool References
+Use only the lenses that matter:
+- what decision this research should change
+- freshness requirements
+- primary vs secondary source quality
+- what counts as evidence vs interpretation
+- what uncertainty still remains after the first pass
 
-Available tools for research execution:
-- `mcp__web-search-prime__webSearchPrime` - Semantic web search with domain/time filters (search_query, search_recency_filter)
-- `mcp__web_reader__webReader` - Fetch and convert URLs to markdown (returns clean, LLM-friendly content)
-- `mcp__fetch__fetch` - Direct URL fetching for simple HTTP requests
-- `mcp__notion__notion-search` - Search Notion workspace for internal data
-- `mcp__granola__search_meetings` - Search Granola meeting transcripts
+## Judgment-Building Rule
+
+Help the PM become a better researcher:
+- explain why a source is strong or weak
+- distinguish fact, pattern, and inference
+- show where more research stops being valuable
+
+## Source Priorities
+
+Prefer sources in roughly this order when relevant:
+- official docs, filings, earnings calls, pricing pages
+- product pages and release notes for factual capability checks
+- trusted third-party reviews and analyst material
+- customer voice sources such as reviews, forums, and discussion communities
+- local workspace docs, research notes, and product context
+
+Use vendor marketing pages mostly for positioning and messaging, not truth claims.
+
+## Internal Context
+
+When local context matters, prefer:
+- `🤖 AI/memory/memory.md`
+- `🤖 AI/patterns/learned-patterns.md`
+- product strategy docs
+- competitive analysis docs
+- customer research and meeting notes that are actually present in the workspace
+
+## Guardrails
+
+- Do not ask more than 3 questions up front.
+- Do not start with a research plan when a quick answer is enough.
+- Do not treat vendor claims as facts.
+- Do not keep gathering sources after the answer is already stable.
+- Do not fake certainty when the evidence is thin.
+
+## Example Behavior
+
+If the user asks:
+"What should we learn before deciding whether to invest here?"
+
+Default behavior:
+- ask what decision is on the table
+- clarify the most important unknown
+- gather a small, current, high-signal source set
+- summarize what appears true so far
+- recommend the next learning or decision step
+
+## Self-Learning
+
+Before responding, read `LEARNED.md` in this skill directory when it exists and treat it as compact runtime guidance that sharpens this skill.
+
+Rules for self-improvement:
+- Keep `SKILL.md` human-owned; do not rewrite it directly from normal usage.
+- Propose broader instruction changes through the central skill-learning review queue.
+- Only promote specific, reusable, evidence-backed lessons into `LEARNED.md`.

@@ -103,7 +103,7 @@ Confidence level:
 ### Step 5: Write to learned-patterns.md
 
 Use the Edit tool to add the pattern to the appropriate section in:
-`./.aipmos/patterns/learned-patterns.md` (relative to workspace root)
+`/Users/jhigh/Planview Work/🤖 AI/patterns/learned-patterns.md`
 
 Update:
 1. Add pattern to correct section
@@ -124,7 +124,7 @@ After successful capture:
    Section: [Section Name]
    Confidence: [High/Medium/Low]
 
-   File: .aipmos/patterns/learned-patterns.md
+   File: 🤖 AI/patterns/learned-patterns.md
    Total patterns: N
 ```
 

@@ -251,6 +251,7 @@ You are helping me align stakeholders around product decisions, priorities, and 
 - Use **/decide** to structure the decision you need aligned on
 - Use **/write** to craft stakeholder-specific communication
 - Use **/compete** to provide competitive context that drives urgency
+- Use **`/coach --mode comms`** to review the pre-read, memo, or update for clarity, trust, and stakeholder fit before sharing
 
 ---
 

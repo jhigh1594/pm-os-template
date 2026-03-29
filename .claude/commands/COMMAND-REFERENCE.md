@@ -44,6 +44,10 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - "Positioning for..."
 - Complex decision framing
 
+**New modes added**:
+- **AI product risk analysis**: Automatically triggered when topic involves AI features — loads `📚 Knowledge/Frameworks/ai-product-risks.md` and runs four dimensions (quality, reliability, trust, adoption risk)
+- **Reversibility classification**: Every analysis now opens with Type 1 (one-way door) vs. Type 2 (two-way door) classification — determines rigor level applied
+
 **NOT for**:
 - Writing a spec document (use /spec)
 - Daily task planning (use /today)
@@ -98,9 +102,9 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - "Synthesize customer research from meetings"
 - "Run the workflow for..."
 
-**How to invoke**: Point at the workflow folder; e.g. "Let's run the QPR prep workflow @Workflows/qpr-prep/" or "Do the weekly update @Workflows/weekly-stakeholder-update/". Claude reads that workflow's CLAUDE.md and workflow.md and follows the step guide.
+**How to invoke**: Point at the workflow folder; e.g. "Let's run the QPR prep workflow @Workflows/qpr-prep/" or "Do the weekly update @Workflows/weekly-stakeholder-update/". Claude reads that workflow's CLAUDE.md and workflow.md and follows the step guide. See also the **Idea-to-Delivery Lifecycle** section and the **Workflows** section in this reference.
 
-**Available workflows**: `📁 Workflows/qpr-prep/`, `📁 Workflows/weekly-stakeholder-update/`, `📁 Workflows/customer-research-synthesis/`
+**Available workflows**: `📁 Workflows/metrics-health-check/`, `📁 Workflows/qpr-prep/`, `📁 Workflows/weekly-stakeholder-update/`, `📁 Workflows/customer-research-synthesis/`
 
 **NOT for**:
 - One-off tasks (use /today or project folder)
@@ -197,10 +201,68 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 
 **Spec vs coach**: `/spec --review` is specialized for PRD decision-quality and spec readiness (decision density, thresholds, non-goals, anti-patterns). `/coach` is for broader doc coaching across artifact types (roadmaps, memos, research). Use `/spec --review` when the focus is PRD-specific quality; use `/coach` for general feedback or non-PRD artifacts.
 
-**NOT for**:
-- Strategic thinking (use /think first)
-- Problem discovery (use /discover first)
-- Quick documentation (use /write)
+---
+
+### /roadmap
+**User intent**: Create a quarterly roadmap document with themes, now/next/later sequencing, confidence levels
+
+**Command syntax**:
+```bash
+/roadmap --product <name> --quarter <Q> [--format now-next-later|timeline|themes] [--save]
+```
+
+**When to suggest**:
+- "Create a Q[N] roadmap for [product]"
+- "Document our roadmap themes"
+- "Now/next/later plan"
+- "Quarterly roadmap with explicit exclusions"
+- After `/think` and `/prioritize` when ready to commit to a quarterly plan
+
+**Output**: 6-section roadmap (Strategic Themes, Now/Next/Later, Key Bets, What We're NOT Doing, Open Questions, Success Criteria)
+
+**NOT for**: Strategic prioritization (use `/think` or `/prioritize` first), OKR tracking (use `/okr-progress`)
+
+---
+
+### /design-brief
+**User intent**: Generate a designer-ready design brief from an approved PRD
+
+**Command syntax**:
+```bash
+/design-brief --prd <path> [--save] [<feature-description>]
+```
+
+**When to suggest**:
+- "Generate a design brief from [PRD path]"
+- "Create a design brief for [feature]"
+- "Prep the designer handoff"
+- After `/spec` with a designer being engaged
+- "Scaffold design brief from this PRD"
+
+**Output**: 7-section design brief (Header → Problem → Solution → Design Direction → Deliverables → Before Starting Design → Success Criteria)
+
+**NOT for**: Writing the PRD (use `/spec` first), creating mockups (use `/mockup`), tech specs (use `/spec-brief`)
+
+---
+
+### /story
+**User intent**: Generate Epic → Feature → Story hierarchy from an approved PRD; optionally push to AgilePlace
+
+**Command syntax**:
+```bash
+/story --prd <path> [--board <board_id>] [--dry-run] [--save-only] [<description>]
+```
+
+**When to suggest**:
+- "Break this PRD into stories"
+- "Generate AgilePlace cards from this PRD"
+- "Create the backlog for [feature]"
+- "Story breakdown for [prd-path]"
+- After `/spec` when ready to create development backlog
+
+**Output**: 1 Epic + 3-7 Features + Stories with Gherkin-lite acceptance criteria; optional AgilePlace CLI push
+
+**NOT for**: Writing the PRD (use `/spec` first), single card creation (use AgilePlace CLI directly), Gherkin spec (use `/spec-brief`)
 
 ---
 
@@ -318,7 +380,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 ---
 
 ### /decide
-**User intent**: Make a specific choice between options
+**User intent**: Make a specific choice between options; document the decision for future retrospection
 
 **When to suggest**:
 - "Should we do X or Y?"
@@ -326,6 +388,11 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - "Go/no-go decision for..."
 - "Choose option A or B"
 - "Make a decision on..."
+
+**Decision journaling** (auto-offered after every decision):
+- Generates a compact journal entry (outcome, key tradeoffs, reasoning, confidence)
+- Offers to append to `📚 Knowledge/decisions/decision-journal.md`
+- Purpose: `/weekly-review` retrospects on past decisions to close the "were we right?" loop
 
 **NOT for**:
 - Strategic framing (use /think first)
@@ -335,7 +402,12 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 ---
 
 ### /discover
-**User intent**: Problem exploration and customer research
+**User intent**: Problem exploration, customer research, and buying committee mapping
+
+**Command syntax**:
+```bash
+/discover [--problem "<statement>"] [--phase <1-4>] [--skip-framing] [--mode external]
+```
 
 **When to suggest**:
 - "I need to understand the problem space"
@@ -344,6 +416,13 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - "Validate problem assumptions"
 - "Customer research on..."
 - "Explore the opportunity in..."
+- "Map the buying committee at [account]"
+- "External discovery for [customer/account]" — use `--mode external`
+
+**External mode** (`--mode external`):
+- Activates Buying Committee Mapping (Step 1.5) before Phase 1
+- Maps five enterprise roles: Economic Buyer, Champion, IT/Security, Daily User, Influencer
+- Use when doing discovery on new accounts or expansion opportunities where internal champion ≠ entire buying committee
 
 **NOT for**:
 - Writing specs (use /spec after discovery)
@@ -396,20 +475,33 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 ---
 
 ### /write
-**User intent**: Draft communication or documentation
+**User intent**: Draft PM stakeholder communications with type-specific structure and skill routing
+
+**Command syntax**:
+```bash
+/write [--type <format>] [--to <name>] [<what-to-write>]
+```
+
+**Communication types** (auto-detected if not specified):
+- `exec` — Executive update (BLUF opening, max 1 page, loads `exec-comms` skill)
+- `follow-up` — Post-meeting decisions communicated (loads structured format; prefer `/follow-up` if you have a granola file)
+- `ask` — Stakeholder ask/approval request (WIIFM framing, explicit ask, loads `influence-craft` skill)
+- `announcement` — Broad team or customer communication (loads `elite-copywriter` skill)
 
 **When to suggest**:
-- "Draft an email to..."
-- "Write executive summary for..."
+- "Draft an email to [exec]..."
+- "Write executive update for..."
 - "Create announcement for..."
-- "Draft customer communication..."
-- "Write a blog post about..."
-- "Stakeholder update on..."
+- "Draft an ask to [stakeholder]..."
+- "Write a stakeholder update on..."
+- "Draft exec comms for..."
+
+**Stakeholder-aware**: If `--to` names a person with a `Knowledge/People/[name].md` file, reads it before drafting and tailors communication to their known priorities.
 
 **NOT for**:
-- Strategic analysis (analyze first)
-- Full PRD creation (use /spec)
-- Technical specifications
+- Post-meeting decision extraction (use `/follow-up` with a granola file)
+- Full PRD creation (use `/spec`)
+- Strategic analysis (analyze first with `/think`)
 
 ---
 
@@ -453,7 +545,12 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 ---
 
 ### /compete
-**User intent**: Competitive intelligence and analysis
+**User intent**: Competitive intelligence and analysis; competitive battlecard generation
+
+**Command syntax**:
+```bash
+/compete [--output battlecard] [--focus <competitor>] [<description>]
+```
 
 **When to suggest**:
 - "Analyze [competitor]"
@@ -462,10 +559,50 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - "Market positioning vs..."
 - "Competitive matrix for..."
 - "Intelligence on [competitor]"
+- "Generate a battlecard for [competitor]"
+- "Build a battlecard for sales"
+- After 3+ losses to same competitor (pattern alert from `/win-loss`)
+
+**Battlecard mode** (`--output battlecard`):
+- Loads `📚 Knowledge/Templates/battlecard-template.md` as structure
+- Sources intelligence from deal interviews, signals, and research
+- Output: `📚 Knowledge/Market/battlecard-[competitor-slug].md`
+- Update triggers: `/win-loss` flags specific competitor claims for targeted section updates
 
 **NOT for**:
 - Daily competitive briefs (use /daily-brief)
 - Pricing research (use /price-intel)
+- Deal-specific win/loss interviews (use /win-loss)
+
+---
+
+### /win-loss
+**User intent**: Structured deal analysis — extract root cause from wins, losses, and no-decisions
+
+**Command syntax**:
+```bash
+/win-loss [--outcome <win|loss|no-decision>] [--competitor <name>] [<deal-context>]
+```
+
+**When to suggest**:
+- "Analyze this deal loss"
+- "Win/loss analysis on [account]"
+- "We lost to [competitor] — understand why"
+- "Post-mortem on [deal]"
+- "Extract learnings from [deal]"
+- "What did we learn from the [account] win?"
+- After a deal closes (win, loss, or no-decision)
+
+**Output**: 8-question structured interview → signal extraction → battlecard implication check → win/loss record + pattern detection
+
+**Feeds into**:
+- `📚 Knowledge/Research/signals-YYYY-MM.md` via `/signal --source sales`
+- `/compete --output battlecard` when 3+ losses to same competitor
+- `/prep` champion briefing mode (win/loss learnings inform equipping strategies)
+
+**NOT for**:
+- General competitive research (use /compete)
+- Customer discovery interviews (use /discover)
 
 ---
 
@@ -673,13 +810,120 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 
 ---
 
+### /weekly-review
+**User intent**: End-of-week PM calibration — decision retrospective, signal check, relationship health, next-week priorities
+
+**Command syntax**:
+```bash
+/weekly-review [--week <YYYY-MM-DD of Monday>]
+```
+
+**When to suggest**:
+- "Let's do the weekly review"
+- "End of week PM review"
+- "How did this week go?"
+- "Set up next week's priorities"
+- "Review decisions I made this week"
+- Friday afternoon or Monday morning reorientation
+
+**Five sections**: OKR progress check (delegates to `/okr-progress`) → Signal capture review → Decision retrospective (from decision journal) → Relationship health (K/P files) → Next-week priorities
+
+**Core principle**: Calibration ritual, not status report — asks: Are we making good decisions? Capturing signal? Seeing the right people?
+
+**Source files read**:
+- `📚 Knowledge/decisions/decision-journal.md` — decision retrospective
+- `📚 Knowledge/People/` — relationship health
+- `📋 Tasks/today.md` + `GOALS.md` — next-week priority setting
+
+**NOT for**:
+- Daily planning (use /today)
+- OKR-specific deep analysis (use /okr-progress)
+- Post-meeting extraction (use /granola)
+
+---
+
+### /prep
+**User intent**: Pre-meeting preparation — agenda, decisions to make, stakeholder positions, talking points
+
+**Command syntax**:
+```bash
+/prep [--meeting <title>] [--people <names>] [--goal <goal>] [<description>]
+```
+
+**When to suggest**:
+- "Prep me for my meeting with [person]"
+- "Help me prepare for the [sync]"
+- "What decisions do I need to make in this meeting?"
+- "I have a meeting with [person] today — help me get ready"
+- Before any high-stakes meeting where decisions or alignment is needed
+
+**Output**: 7-section prep package (My Goal → Context Brief → Decisions to Make → Agenda → Anticipated Objections → Talking Points → Questions I Need Answered) + stress-test offer
+
+**Champion Briefing mode** (auto-activates for external customer meetings):
+- Triggers when attendee is an external customer champion meeting their exec/renewal/PI planning
+- Replaces standard 7-section format with a 5-section champion equipping brief
+- Goal: give the champion the story, data, and objection responses to sell internally without you in the room
+
+**NOT for**: Post-meeting extraction (use `/granola`), full stakeholder strategy (use `/align`)
+
+---
+
 ### /granola
-**User intent**: Extract meeting insights from Granola
+**User intent**: Extract meeting insights from Granola and surface post-meeting intelligence
 
 **When to suggest**:
 - "Extract meeting notes..."
 - "Summarize meeting from..."
 - "Action items from meeting..."
+- "Pull yesterday's meetings"
+
+**Behavior**: After extraction, automatically surfaces decisions made, action items, stakeholder signals, and `Knowledge/People/` update candidates for each meeting. Nothing is written automatically — intelligence is presented and user confirms via `/follow-up`.
+
+**NOT for**: Drafting follow-up communications (use `/follow-up`), full stakeholder strategy (use `/align`)
+
+---
+
+### /follow-up
+**User intent**: Draft post-meeting communications and update stakeholder context from a meeting
+
+**Command syntax**:
+```bash
+/follow-up [--meeting <title-or-path>] [--type <format>] [--people <names>]
+```
+
+**When to suggest**:
+- "Send follow-up from [meeting]"
+- "Communicate what we decided in..."
+- "Draft action items from today's sync"
+- "Update the team on what was decided"
+- After `/granola` surfaces "Run `/follow-up --meeting [title]`"
+- Any time decisions from a meeting need to be communicated
+
+**Output**: Structured follow-up (Decision / Action Items / Still Open) + `Knowledge/People/` update prompts for all participants with existing files
+
+**NOT for**: Full post-meeting extraction (use `/granola` first), broader stakeholder strategy (use `/align`), pre-meeting prep (use `/prep`)
+
+---
+
+### /signal
+**User intent**: Capture a customer signal at the moment it occurs — from any source
+
+**Command syntax**:
+```bash
+/signal [--source <type>] [--product <name>] [<raw-signal>]
+```
+
+**When to suggest**:
+- "Log a customer signal"
+- "Customer said X on a call"
+- "Heard from [customer] that..."
+- "Support ticket pattern I want to capture"
+- "Add this to the signal file"
+- Any time a customer insight occurs that shouldn't be lost before synthesis
+
+**Output**: Structured atomic nugget (source, signal verbatim, ICP fit, strength, routing to relevant initiative) + optional append to `Knowledge/Research/signals-YYYY-MM.md`
+
+**NOT for**: Full synthesis (use `/synthesize` when 10+ signals accumulated), post-meeting extraction (use `/granola`), competitive intelligence (use `/compete`)
 
 ---
 
@@ -721,6 +965,41 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - Creating mockups from scratch (use /mockup)
 - Interactive prototypes (use /prototype)
 - Non-UI work
+
+---
+
+## Idea-to-Delivery Lifecycle
+
+The canonical PM lifecycle. Each step produces outputs carried forward via rich contextual handoffs — context is not reconstructed manually at each transition.
+
+| Step | Command | Produces | Carries Into |
+|------|---------|----------|-------------|
+| 1. Ideation | `/brainstorm` | Problem Statement, key angles | `/discover` |
+| 2. Discovery | `/discover` | Validated Opportunity Statement, SOM sizing | `/spec --type one-pager` |
+| 3. One-Pager | `/spec --type one-pager` | Solution hypothesis, stakeholder draft | `/spec --type full` |
+| 4. PRD | `/spec --type full` | Approved PRD: capabilities, metrics, risks, personas | `/design-brief` + `/story` |
+| 5. Design Brief | `/design-brief` | 7-section brief, screen inventory | Designer kickoff |
+| 6. Story Breakdown | `/story` | AgilePlace Epic/Feature/Stories with ACs | `/spec-brief` |
+| 7. Dev Handoff | `/spec-brief` | Gherkin ACs, data model, API contract | `/ship` |
+| 8. Launch | `/ship` | Launch plan, communications, metrics baseline | `/learn` |
+| 9. Learning | `/learn` | Iteration priorities, validated evidence | `/brainstorm` or `/spec` |
+
+**Entry points**: You don't need to start at Step 1. Look at what already exists in `📦 Products/{product}/initiatives/{feature-slug}/` to determine where you are.
+
+**Cross-session state**: Initiative folders are the workflow state indicator. If you see a `story-breakdown.md` but no `design-brief.md`, story breakdown ran before design handoff — flag this to the PM as an ordering issue. The presence of `SPEC_BRIEF.md` means dev handoff is complete; absence of it alongside a story breakdown indicates a gap.
+
+---
+
+## Workflows
+
+Repeatable cadence playbooks — distinct from the idea-to-delivery lifecycle. Each workflow lives in `📁 Workflows/[name]/` with CLAUDE.md (context) + workflow.md (step guide). Invoke by pointing Claude at the folder: "Run @Workflows/metrics-health-check/".
+
+| Workflow | Purpose | Cadence |
+|----------|---------|---------|
+| `metrics-health-check` | Pendo + OKR + PRD targets → health check + action | Weekly |
+| `qpr-prep` | Quarterly deck + trade-off narrative for exec review | Quarterly |
+| `weekly-stakeholder-update` | Red/yellow/green status update, under 500 words | Weekly |
+| `customer-research-synthesis` | Granola notes → persistent research themes in Knowledge/ | Ongoing |
 
 ---
 
@@ -766,6 +1045,27 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 | "Audit our hooks and skills setup" | /dex-improve |
 | "Run QPR prep" | /workflow (e.g. @Workflows/qpr-prep/) |
 | "Weekly stakeholder update" | /workflow (e.g. @Workflows/weekly-stakeholder-update/) |
+| "Generate design brief from PRD" | /design-brief |
+| "Break this PRD into stories" | /story |
+| "Create a Q2 roadmap document" | /roadmap |
+| "Prep me for my meeting with..." | /prep |
+| "Equip my champion before their exec review" | /prep (champion briefing mode) |
+| "Log a customer signal" | /signal |
+| "Customer said X on a call" | /signal |
+| "Heard from [customer] that..." | /signal |
+| "Send follow-up from meeting" | /follow-up |
+| "Communicate what we decided" | /follow-up |
+| "Draft exec update" | /write --type exec |
+| "Draft an ask to [stakeholder]" | /write --type ask |
+| "Analyze this deal loss" | /win-loss |
+| "Win/loss analysis on [account]" | /win-loss |
+| "We lost to [competitor] — why?" | /win-loss --outcome loss --competitor |
+| "Generate a battlecard for [competitor]" | /compete --output battlecard |
+| "External discovery at [account]" | /discover --mode external |
+| "Map the buying committee at [account]" | /discover --mode external |
+| "Weekly PM review" | /weekly-review |
+| "End of week review" | /weekly-review |
+| "Review my decisions this week" | /weekly-review |
 
 **Dual-Mode Commands**: Some capabilities have both a quick command and a deep skill variant:
 - **/prioritize** (quick) vs **prioritization-craft skill** (expanded): Quick scoring vs. prioritization support that starts with outcome/constraint framing and can expand into deeper triage and stakeholder communication
