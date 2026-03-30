@@ -536,6 +536,21 @@ async function search(query) {
 - **references/hybrid-patterns.md** - AI + traditional code patterns
 - **references/ai-cost-optimization.md** - Cost reduction strategies
 
+---
+## 🎯 Quality Gate: Evaluative Judgment
+
+After producing implementation templates or pattern recommendations, include this gate before closing:
+
+**Before we lock this in:**
+
+> "For the three strongest claims in the pattern or recommendation above: which are evidence (data/direct observation from real products), which are inferences (conclusions drawn from evidence), and which are assertions (believed without traceable support)? Which category does most of the important work in this recommendation?"
+
+_(This is the reasoning step that separates applied pattern recognition from pattern cargo-culting. AI product patterns degrade fast — grounding in evidence vs. assertion determines whether this guidance ages well.)_
+
+**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+
+---
+
 ## Self-Learning
 
 Before responding, read `LEARNED.md` in this skill directory when it exists and treat it as compact runtime guidance that sharpens this skill.

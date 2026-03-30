@@ -79,6 +79,46 @@ Follow this sequence unless the user explicitly asks for a narrower sub-task.
 - Use the smallest template that fits the ask.
 - Pull from `references/templates.md`.
 
+## Business Model Constraint Check
+
+After forming the ICP hypothesis (step 2 of the Default Workflow), check four business model fit signals before producing positioning assets. These are validation questions, not blockers — but if any signals are red, they need to be surfaced before writing positioning that assumes the ICP is viable.
+
+**Check 1: Revenue Model Fit**
+Does this segment's buying behavior align with Planview's current pricing model?
+- Enterprise seat-based pricing requires a champion with authority over seat budgets
+- If the ICP's buying motion is PLG or bottom-up, Planview's sales-led motion may not reach them
+- Signal: Has this segment historically closed through the same motion as other wins?
+
+**Check 2: CS Capacity Implication**
+Does serving this ICP at scale create CS overhead not anticipated in current capacity planning?
+- Complex ICPs (high onboarding need, low product maturity) increase CS cost-to-serve
+- If CS capacity is already constrained, an ICP that requires intensive hand-holding creates a scaling problem
+- Signal: Are there support or onboarding signals about this segment in the workspace?
+
+**Check 3: Sales Motion Fit**
+Can Planview's current sales motion reach this ICP?
+- Enterprise field sales vs. PLG vs. partner channels have different reach profiles
+- If the ICP is mid-market but Planview's AEs are enterprise-focused, even a great ICP choice has a GTM gap
+- Signal: Are there examples of this segment in the current customer base — and how were they acquired?
+
+**Check 4: Competitive Risk of Narrowing**
+If we position for this ICP, which competitors can follow us there and which can't?
+- Narrowing to a segment where a well-resourced competitor has equal or better fit is a positioning trap
+- The best ICP choice has some combination of: competitor weakness in the segment, switching cost for existing customers, product moat that doesn't translate easily
+- Signal: What do the battlecards say about how competitors serve this segment?
+
+**Output format for this check** (add to ICP hypothesis section in assets):
+```
+## Business Model Fit Signals
+- Revenue model: [Go/Watch/Flag] — [one line]
+- CS capacity: [Go/Watch/Flag] — [one line]
+- Sales motion: [Go/Watch/Flag] — [one line]
+- Competitive defensibility: [Go/Watch/Flag] — [one line]
+```
+If any dimension is "Flag": note it prominently and recommend resolving before investing in full positioning asset creation.
+
+---
+
 ## Output Contract
 
 Default to producing the following when enough context exists:

@@ -189,6 +189,19 @@ Propose 2-3 concrete actions:
 2. [Specific action]
 3. [Specific action]
 
+---
+## 🎯 Quality Gate: Strategic Framing
+
+**Before we lock this in:**
+
+> "Walk the strategy stack from the top: company mission → product strategy → this roadmap/decision. At which layer does the chain feel weakest or unconnected? If any layer is missing, you may be sequencing features rather than building toward something."
+
+_(This is the reasoning step that separates strategic analysis from a well-structured opinion. The weakest link in the stack is the most important output of this thinking session.)_
+
+**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+
+---
+
 ### Coaching Handoff
 If the output needs quality review rather than more exploration, suggest:
 `/coach --mode decision` for trade-off and recommendation quality

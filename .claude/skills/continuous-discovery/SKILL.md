@@ -535,6 +535,19 @@ Interview < Survey < Prototype < Concierge < Build
 **Remember:** Continuous discovery isn't a phase. It's a habit. The product trio that talks to customers weekly makes better product decisions.
 
 ---
+## 🎯 Quality Gate: Discovery / Assumption Testing
+
+When this skill produces a recommendation, opportunity framing, or assumption test plan, include this gate before closing:
+
+**Before we lock this in:**
+
+> "Is the customer insight behind this based on stories — specific customers, specific moments, specific behaviors you observed — or on opinions — things customers told you they want when asked directly? Opinions are fast to collect and unreliable. Stories are slow to collect and durable. Which type of evidence is this built on, and what would it take to upgrade the weakest evidence?"
+
+_(Teresa Torres: "Don't ask customers what to build. Test assumptions about what will work." This gate enforces that distinction at every output.)_
+
+**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+
+---
 
 **Guest:** Teresa Torres  
 **Book:** Continuous Discovery Habits (2021)  

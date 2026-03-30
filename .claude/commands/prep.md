@@ -84,6 +84,30 @@ Surface this in the Context Brief. Don't silently use stale context as if it's c
 
 If `Knowledge/People/[name].md` doesn't exist for someone, note: "⚠️ No context file for [name] — add basic notes to `Knowledge/People/[name].md` for better prep"
 
+### Step 2.5: Product Knowledge Check
+
+**Trigger**: Activate when ANY of these conditions are true:
+- `--goal` contains "demo", "walk-through", "trial review", "product deep-dive", "product review"
+- Any attendee in `--people` is an external customer (not a Planview employee)
+- The meeting description includes product evaluation, onboarding, or support escalation context
+
+**When triggered**, run these two checks:
+
+**Check 1: Demo Guide Currency**
+Look in `📚 Knowledge/Systems-and-Processes/` for any demo guide for the relevant product:
+- If a guide exists created within the last 30 days → Surface it: "✅ Demo guide found: `[path]` — created [date]. Surfacing Competitive Awareness section if relevant."
+- If no guide exists or the most recent is >30 days old → Add to Context Gaps: "⚠️ No current demo guide found for [product] — consider `/demo-prep --product [name]` before this meeting to prepare a fresh guide."
+
+**Check 2: Competitive Context**
+If a competitor is mentioned in the People file or meeting description:
+- Check for `📚 Knowledge/Market/battlecard-[competitor-slug].md`
+- If found → Add to Talking Points: "Competitive awareness for [competitor] available — see battlecard for key differentiators."
+- If not found → Add to Context Gaps: "⚠️ No battlecard found for [competitor] — consider `/compete [competitor]` to build positioning."
+
+Surface both findings in the prep package under a **Product Knowledge** subsection in the Context Brief (Section 2). Don't block the rest of the prep — this is a flag, not a gate.
+
+---
+
 ### Step 3: Generate 7-Section Prep Package
 
 **Section 1: My Goal** (One sentence)

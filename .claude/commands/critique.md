@@ -125,6 +125,19 @@ Questions:
 
 **Overall Rating**: ⭐⭐⭐⭐☆
 
+---
+## 🎯 Quality Gate: Evaluative Judgment
+
+**Before we lock this in:**
+
+> "What would this look like if it were genuinely excellent, not just adequate? Name one specific change that moves this from 'good enough' to 'something the team would be proud of in a year.' If you can't name it, you may not have a clear enough mental model of excellent in this domain."
+
+_(This is the reasoning step that separates a critique from a calibration. The bar-raising answer is the most valuable output of any critique.)_
+
+**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+
+---
+
 ### Detailed Analysis
 
 **🎯 What's Working (Strengths)**:

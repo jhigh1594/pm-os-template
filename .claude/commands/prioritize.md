@@ -438,6 +438,17 @@ Score each 1-10:
 ```
 
 ---
+## 🎯 Quality Gate: Judgment / Tradeoffs
+
+**Before we lock this in:**
+
+> "What is this prioritization saying no to — not just the alternatives you scored lower, but the types of problems and customers you're de-prioritizing by going in this direction? Who loses in this tradeoff, and is that the right call?"
+
+_(This is the reasoning step that separates a scored list from a strategic choice. If you can't name what's being traded away, you haven't finished prioritizing.)_
+
+**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+
+---
 
 ## OPTIONAL: Stakeholder Communication
 

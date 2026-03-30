@@ -53,6 +53,19 @@ For normal chat, default to:
 - [decision, validation, or draft to create together]
 ```
 
+---
+## 🎯 Quality Gate: Strategic Framing
+
+After producing the substantive response above, include this gate before closing:
+
+**Before we lock this in:**
+
+> "Why does this order or direction create leverage that a different one would not? What does each step unlock — capability, learning, or market position — that makes the next step possible? If the answer is 'we start with the most important thing,' you've described a to-do list, not a strategy."
+
+_(This is the reasoning step that separates a well-structured view from a strategic one. Sequencing logic — why this, why now, in this order — is the output that matters most.)_
+
+**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+
 The questions should feel diagnostic, not theatrical. Ask only what improves the quality of the call.
 
 ## Deep Mode

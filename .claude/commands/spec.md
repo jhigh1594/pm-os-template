@@ -26,7 +26,7 @@ You are helping me write a clear, complete product specification that enables th
 ## Command Syntax
 
 ```bash
-/spec [--type <format>] [--skip-discovery] [--save] [--review <path>] [<feature-description>]
+/spec [--type <format>] [--skip-discovery] [--save] [--review <path>] [--biz-case] [<feature-description>]
 ```
 
 **Arguments**:
@@ -38,6 +38,7 @@ You are helping me write a clear, complete product specification that enables th
 - `--skip-discovery`: Skip Socratic questioning and generate draft immediately
 - `--save`: Save completed PRD to file
 - `--review <path>`: Review an existing PRD for decision quality (no file edits unless asked)
+- `--biz-case`: Auto-include Business Case section (required for `full`, optional for `light`)
 - `<feature-description>`: Initial description of the feature or idea (optional—can provide interactively)
 
 **Examples**:
@@ -148,6 +149,19 @@ For new PRDs, follow the Socratic questioning process. Use the same context-gath
 - User has provided comprehensive, well-researched input with clear evidence
 
 ### Step 2: Generate PRD Draft
+
+**Business Case Check** (for `--type full` or `--biz-case` flag):
+
+After generating the draft, check whether it includes a Business Case section:
+- **If missing from a full PRD**: "⚠️ Full PRDs should include a Business Case section. Run `/biz-case --mode review [path]` after saving, or confirm to generate inline."
+- **If confirmed**: Generate using the `business-reasoning` skill 6-element template:
+  1. Strategic rationale — why this aligns with Planview's current direction
+  2. Revenue impact hypothesis — mechanism (new logo / expansion / retention) + Conservative/Expected cases
+  3. Customer segment — ICP segment, persona file reference if available, rough segment size
+  4. Cost-to-build estimate — Small / Medium / Large (PM estimate, requires engineering validation)
+  5. Opportunity cost — what we're NOT building to build this (name it explicitly)
+  6. Go/no-go criteria — specific, observable threshold that would change the recommendation
+- **For `--type light` with `--biz-case`**: Generate a condensed Business Case (strategic rationale + revenue mechanism + go/no-go criteria only)
 
 **Read `prd-template.md` and follow its structure exactly** (for `full`, `light`, `one-pager`).
 **Read `context-doc-guide.md`** for `context-doc` format.

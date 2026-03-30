@@ -1,0 +1,269 @@
+# Product Sense Detail
+
+**Load this file when:** Conducting product critiques, deciding when to trust taste vs data, or developing product sense.
+
+---
+
+## Product Sense Fundamentals
+
+### **1. Value Over Everything**
+
+**What is value:**
+- Solves a real problem users face frequently or painfully
+- Delivers outcomes users care about (time saved, money made, anxiety reduced)
+- Creates sustained engagement (not just one-time usage)
+- Passes the "so what?" test—clear why this matters to users
+
+**Defining "good":**
+Good products are defined by **business outcomes and user behavior**, not personal preference:
+- Growth: Acquisition, activation, retention, referral
+- Engagement: Frequency, depth, duration of usage
+- Business impact: Revenue, conversion, expansion, efficiency
+- User outcomes: Problems solved, jobs completed, goals achieved
+
+---
+
+### **2. Details Make the Design**
+
+**Why details matter:**
+- Users are time-crunched and distracted—they won't tolerate confusion
+- Small annoyances add up to "this product frustrates me"
+- Thoughtful details create "I can't explain why I love this" moments
+- Attention to detail signals care and quality
+
+**Examples of details that matter:**
+- Default selections that save users decisions
+- Error messages that explain what happened AND what to do next
+- Visual hierarchy that makes primary actions obvious
+- Micro-copy that's encouraging, not bureaucratic
+- Loading states that feel fast even when they're not
+- Confirmation moments that celebrate user success
+
+---
+
+### **3. Users Are Time-Crunched and Distracted**
+
+**Users don't read:**
+- They scan for visual cues and familiar patterns
+- They skip labels and instructions
+- They make snap judgments (seconds, not minutes)
+- Solution: Make primary actions obvious through visual design, not text
+
+**Users drop out when confused or nervous:**
+- Any ambiguity creates anxiety ("Am I doing this right?")
+- Uncertainty about consequences stops action
+- Solution: Clear labels, obvious contrast, reassuring confirmation
+
+**Too much information = overwhelm = abandonment:**
+- Cognitive load kills conversion
+- Options create decision paralysis
+- Solution: Progressive disclosure, smart defaults, hide complexity
+
+---
+
+### **4. First-Time Experience Is Make-or-Break**
+
+**Critical first-run questions:**
+1. **What is this product?** (Purpose must be instantly clear)
+2. **Is this for me?** (Relevance to their problem/job)
+3. **What can I do here?** (Primary actions must be obvious)
+4. **How do I get started?** (Path to first value must be clear)
+5. **Did it work?** (Confirmation of success)
+
+**Onboarding anti-patterns:**
+- ❌ Asking for configuration before showing value
+- ❌ Tour of features instead of guided first action
+- ❌ Assuming users understand the product category
+- ❌ Too many permissions/decisions upfront
+- ❌ No confirmation when they complete first task
+
+**What to measure:**
+- Time to first value (how long until first "aha"?)
+- Activation rate (% who complete core action)
+- Day 1 retention (do they come back tomorrow?)
+- Aha moment correlation (which actions predict retention?)
+
+---
+
+## Product Critique Framework
+
+Use this framework to systematically evaluate products (yours, competitors', or any product):
+
+### **1. First Impression (0-60 seconds)**
+- What is this product? Is it immediately clear?
+- Who is this for? Do I feel like the target user?
+- What can I do here? Are primary actions obvious?
+- Do I understand the value proposition?
+- What's my gut reaction? (Excited? Confused? Skeptical?)
+
+### **2. Getting Started (First 5 minutes)**
+- How easy is sign-up/onboarding?
+- How long until I get value? (Time to aha moment)
+- Does it explain itself or assume I know?
+- What friction did I encounter?
+- Did I feel smart or stupid while getting started?
+
+### **3. Core Experience (10-30 minutes of use)**
+- How easy is the core task/workflow?
+- How many steps to complete primary job?
+- What delights me? What frustrates me?
+- Fast or slow? (Perceived and actual performance)
+- Simple or complex? (Cognitive load)
+- Does it feel cohesive or bolted together?
+
+### **4. Value Delivery**
+- Did I get the outcome I wanted?
+- Would I come back? Why or why not?
+- What problem did this solve? How well?
+- Is value sustained or one-time?
+- What's the core loop? (What makes me return?)
+
+### **5. Differentiation**
+- How is this different from alternatives?
+- What's better? What's worse?
+- What's the unique insight/approach?
+- What would make me switch to/from this?
+- What's defensible? What can be copied?
+
+### **6. Details & Craft**
+- What small details stood out? (Delight or friction)
+- Error states, empty states, loading states—how do they feel?
+- Copywriting: Helpful or bureaucratic?
+- Visual design: Clear hierarchy or cluttered?
+- Does it feel polished or rough?
+
+### **7. Overall Assessment**
+- Who is this truly for? (Not who they say, who it serves best)
+- What's the core insight/bet?
+- What would I change immediately?
+- What did they nail that I should learn from?
+- Rating: Value delivered? Usability? Delight? (1-10 each)
+
+---
+
+## When to Trust Gut vs. Data
+
+### **Trust Taste/Gut When:**
+
+**0→1 Innovation (New products, new categories):**
+- No data exists yet for truly new things
+- Users can't tell you what they want if they haven't experienced it
+- Examples: Original iPhone, Gmail, Superhuman
+- Approach: Strong vision + rapid prototyping + qualitative feedback
+
+**Quality Bar & Craft:**
+- Does this feel delightful or just functional?
+- Are the details right? Does it feel polished?
+- Is the first-run experience magical?
+- Data can't tell you if something "feels right"
+
+**Strategic Bets:**
+- Long-term positioning decisions
+- Platform vs. feature decisions
+- What makes you differentiated
+- Where to invest for compounding advantage
+
+**User Experience Fundamentals:**
+- Is this confusing? Does it create anxiety?
+- Is the visual hierarchy clear?
+- Are we respecting user's time and attention?
+
+**When Something "Feels Off":**
+- Data says it's fine, but you sense users will hate it
+- The solution is technically correct but emotionally wrong
+- Trust your pattern recognition from years of observation
+
+### **Trust Data When:**
+
+**Scaling & Optimization:**
+- Improving conversion funnels
+- A/B testing variants
+- Prioritizing feature requests by usage
+- Optimizing performance
+
+**Validating Hypotheses:**
+- Does this feature solve the problem we think it does?
+- Do users actually use it the way we expected?
+- Does it move the metrics we care about?
+
+**Measuring Impact:**
+- Did the launch work? (Activation, retention, engagement)
+- Which segment cares about this?
+- What's the ROI of this investment?
+
+**Resolving Disagreements:**
+- Team has competing opinions
+- Run experiment, let data decide
+
+**Avoiding Bias:**
+- You're too close to the product (power user bias)
+- You're not the target user
+- Your preferences != user preferences
+
+### **Conflict Resolution:**
+
+**When taste and data conflict:**
+1. **Verify data quality** - Is it measuring the right thing? Right segment? Right timeframe?
+2. **Understand context** - 0→1 or scaling? New user or power user? Short-term or long-term?
+3. **Apply hierarchy:**
+   - Customer truth beats both (talk to users)
+   - Long-term value beats short-term metrics
+   - Strategic differentiation beats incremental optimization
+   - For reversible decisions: Ship taste-driven bet, measure, iterate
+
+---
+
+## Developing Product Sense
+
+**Product sense is a skill developed through deliberate practice, not innate talent.**
+
+### **Practice 1: Observe Users (2-4x per month)**
+- Attend user research sessions (don't just read reports)
+- Watch people use your product in natural environments
+- Note: Facial expressions, self-talk, moments of friction/delight
+- Ask: "What are you thinking?" "How does that make you feel?"
+
+### **Practice 2: Deconstruct Products (1-2 hours per month)**
+- Try new products in your space and adjacent categories
+- Use product critique framework
+- Observe your own reactions (frustration, delight, confusion)
+- Identify patterns: What works? What doesn't? Why?
+
+### **Practice 3: Learn from Great Product Thinkers**
+- Study product leaders you admire
+- Attend product reviews at companies with strong product culture
+- Read case studies, watch talks, follow thought leaders
+- Ask: What prompted this product? What alternatives were considered?
+
+### **Practice 4: Go Deep in Your Domain**
+- Immerse yourself: Customers, competitors, data, industry, technology
+- Visit customers regularly
+- Test every competitor product
+- Live in the data (usage patterns, conversion funnels, cohort retention)
+
+**Warning:** Product sense doesn't transfer across domains. Deep knowledge in fintech ≠ deep knowledge in collaboration tools.
+
+### **Practice 5: Build Your Decision Journal**
+- Document: Product decisions, reasoning, outcome, learning
+- Review quarterly: What did you get right? What did you get wrong? Why?
+- Identify patterns: "I tend to underestimate adoption friction"
+- Refine instincts based on what actually happened
+
+**How to tell you're getting better:**
+- You notice subtle things about products others miss
+- You anticipate user problems before reviews/testing
+- Your hypotheses are higher quality (right more often)
+- You contribute unique insights your team didn't see
+
+---
+
+## Product Sense Anti-Patterns
+
+1. **Confusing Preference with Judgment:** "I don't like this" vs "Users might struggle"
+2. **Defining "Good" Without Context:** Not understanding KPIs or strategy
+3. **Substituting Sense for Validation:** Skipping testing because "I know"
+4. **Assuming Transfer:** Applying insights from one domain to another without validation
+5. **Inventing Reactions:** Fabricating "users will love this" without evidence
+6. **Optimizing Completeness:** Adding features to be "comprehensive"
+7. **Ignoring First-Time Experience:** Optimizing for power users only
+8. **Confusing Art with Science:** Being purely data-driven OR purely taste-driven
