@@ -64,7 +64,7 @@ After producing the substantive response above, include this gate before closing
 
 _(This is the reasoning step that separates a well-structured view from a strategic one. Sequencing logic — why this, why now, in this order — is the output that matters most.)_
 
-**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+**Auto-saving to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md` — append this entry now. No prompt needed.
 
 The questions should feel diagnostic, not theatrical. Ask only what improves the quality of the call.
 

@@ -144,6 +144,22 @@ I'll update any `[UPDATE THIS]` placeholders with your company info.
 
 Now that your workspace is configured, let's pick something to work on.
 
+**The Idea-to-Delivery Lifecycle** — every task in AIPMOS fits one of these steps:
+
+| Step | Command | You're here when… |
+|---|---|---|
+| 1. Ideation | `/brainstorm` | Exploring a problem or idea |
+| 2. Discovery | `/discover` | Validating customer problems |
+| 3. One-Pager | `/spec --type one-pager` | Building early stakeholder alignment |
+| 4. PRD | `/spec --type full` | Ready to specify the solution |
+| 5. Design Brief | `/design-brief` | Handing off to design |
+| 6. Story Breakdown | `/story` | Creating the dev backlog |
+| 7. Dev Handoff | `/spec-brief` | Engineering needs implementation spec |
+| 8. Launch | `/ship` | Ready to ship |
+| 9. Learning | `/learn` | Post-launch iteration |
+
+Pick your first task based on where your current initiative sits in this lifecycle. If you're not sure, start at Step 2.
+
 ### Options
 
 Pick one:

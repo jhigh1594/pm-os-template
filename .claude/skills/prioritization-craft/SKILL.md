@@ -69,6 +69,33 @@ Even then:
 - clarify the objective and constraint first
 - keep the ranking and rationale concise
 
+### Triage Structure for Raw Feedback (T1–T5)
+
+When the input is verbatim quotes, tickets, interviews, or requests from multiple sources, run these preprocessing steps before prioritizing:
+
+**T1 – Gather and Preserve**
+- Collect from all sources (interviews, tickets, sales, internal)
+- Preserve verbatim language — don't paraphrase
+- Count frequency: 1 request = noise, 3–5 = weak signal, 10+ = strong signal
+- Identify requester segment and influence level
+
+**T2 – Summarize and Normalize**
+- One-sentence summary per request capturing the essence
+- Map to underlying problem (the job, not the solution)
+- Assess frequency and business impact
+
+**T3 – Deduplicate by Problem**
+- Group requests solving the same underlying problem
+- Template: `[Problem Theme] → [Request A, B, C] → [Consolidated Problem Statement]`
+- Flag conflicts where customers want opposite things
+
+**T4 – Categorize**
+- Assign each group: theme, requester type, strategic fit, type of work
+- Use categorization to surface patterns before scoring
+
+**T5 – Transition to Prioritization**
+- Once deduplicated, hand off the consolidated problem list to the normal prioritization flow above
+
 ## Prioritization Lenses
 
 Use only the lenses needed for the decision:

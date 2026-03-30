@@ -72,6 +72,7 @@ Examples: "Consistently overconfident on Type 2 reversibility" / "Underestimated
 ## Step 1.5: Growth Signal Synthesis (~5 min)
 
 **Read `📚 Knowledge/Growth/growth-signals-[current-month].md`** (e.g., `growth-signals-2026-03.md`).
+_(For cross-month pattern analysis — which failure modes recur across quarters — run `/growth-review` separately.)_
 
 **If file has entries**, surface patterns:
 - Count entries by archetype type

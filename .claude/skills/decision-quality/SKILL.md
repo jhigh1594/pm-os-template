@@ -238,7 +238,38 @@ I believe [customer action] drives [business outcome] because [mechanism]
 **Success Criteria**: [How we'll measure this in 1/3/6 months]
 
 ### Decision Log Entry
-[Pre-formatted decision log you can copy to docs]
+
+After completing the analysis above, auto-generate this compact journal entry:
+
+```
+---
+**Decision:** [One sentence — what was decided]
+**Date:** [today's date YYYY-MM-DD]
+**Type:** Type 1 (one-way door) | Type 2 (two-way door)
+**Reversibility cost:** [High | Medium | Low] — [one sentence why]
+**Confidence at decision time:** [70% | 80% | 90%+]
+**Options considered:** [brief label for each option surfaced in analysis]
+**Chosen:** [option selected]
+**Rationale (30 words max):** [core reason, key tradeoff made]
+**Riskiest assumption:** [what must be true for this to work]
+**Success criteria:** [specific threshold — not a direction — for how we'll know we were right]
+**Review date:** [YYYY-MM-DD — 30 days out for Type 2, 90 days out for Type 1]
+**Outcome:**
+**What we learned:**
+---
+```
+
+**Review date rule:**
+- Type 2 (two-way door): today + 30 days
+- Type 1 (one-way door): today + 90 days
+
+**Auto-saving to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md` — append the coaching quality gate now. No prompt needed.
+
+**Before appending to the journal:** Display the entry and ask: "Append this decision to your journal? (y/n)"
+
+If confirmed, append to `📚 Knowledge/decisions/decision-journal.md` below the `<!-- New entries appended below this line -->` comment.
+
+> **Principle**: Undocumented decisions are unlearned decisions. The journal closes the loop between "what we chose" and "were we right."
 
 ---
 

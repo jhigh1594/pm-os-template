@@ -1,37 +1,18 @@
-# Prioritization & Triage Framework
+# Prioritization Framework
 
-You are helping me make high-quality prioritization decisions using structured frameworks and strategic thinking. This command handles both **clean prioritization** (you have a list of items to sequence) and **triage** (you have raw customer feedback to process).
+You are helping me make high-quality prioritization decisions using structured frameworks and strategic thinking. This command scores and sequences a **prepared list** of items.
+
+> For raw customer feedback, support tickets, or multi-source triage, use the **`prioritization-craft` skill** instead — it runs the full T1–T5 preprocessing before ranking.
 
 ## Your Approach
 
 **Great prioritization is about saying NO more than saying YES.** Every yes to one thing is saying no to 10 other things.
 
-### Adaptive Workflow Detection
-
-This command adapts based on what you provide:
-
-```
-┌─ RAW FEEDBACK MODE (Triage)
-│  Input: Verbatim quotes, support tickets, interview notes,
-│        sales requests, multiple sources
-│  → Run full triage preprocessing
-│  → Deduplicate by problem (not solution)
-│  → Categorize and analyze patterns
-│  → Then prioritize
-│
-└─ CLEAN LIST MODE (Prioritize)
-   Input: Prepared list of items, features, initiatives
-   → Skip to framework selection
-   → Prioritize directly
-```
-
 ## Step 1: Clarify the Request
 
 I'll ask these questions to understand your situation:
 
-1. **Input Type**: Are you starting with **raw feedback** (quotes, tickets, interviews, requests from multiple sources) or a **prepared list** of items to prioritize?
-
-2. **What are you prioritizing?**
+1. **What are you prioritizing?**
    - **Roadmap** (quarterly/annual): Themes and initiatives
    - **Sprint/Release** (weekly/monthly): Specific features and bugs
    - **Features** (within a project): Capabilities for V1 vs. later
@@ -51,80 +32,6 @@ I'll ask these questions to understand your situation:
    - **Cost of Delay/WSJF** - Time-to-market critical
 
 6. **Include stakeholder communication?** (Optional) Add messaging templates for telling requesters YES or NO
-
----
-
-## RAW FEEDBACK MODE (Triage)
-
-*Use this section when input is raw customer feedback, tickets, interviews, or requests from multiple sources.*
-
-### Step T1: Gather and Preserve
-
-**Collect from multiple sources**:
-- Customer interviews, support tickets, sales requests, internal teams
-- **Preserve verbatim language** (don't paraphrase, quote directly)
-- **Count frequency** ("one is noise, ten is signal")
-- **Identify requesters** (customer segment, stakeholder role, influence level)
-
-### Step T2: Summarize and Normalize
-
-For each request:
-- **One-sentence summary** capturing the essence
-- **Map to underlying problem** (not solution - what job are they trying to do?)
-- **Assess frequency** (how many times requested, by how many different people)
-- **Estimate impact** (who benefits, how much value, business impact)
-
-**Frequency Signal**:
-- 1 request = Noise (anecdote, investigate if compelling)
-- 3-5 requests = Weak signal (pattern emerging, worth exploring)
-- 10+ requests = Strong signal (clear need, prioritize)
-
-### Step T3: Deduplicate
-
-Group related requests that are solving the same problem:
-
-```
-**Group 1: [Problem Theme]**
-- [Request A] - "[Verbatim quote]"
-- [Request B] - "[Verbatim quote]"
-- [Request C] - "[Verbatim quote]"
-**Consolidated Problem**: [One clear problem statement]
-**Pattern**: [Insight about what customers really need]
-```
-
-**Identify conflicts**:
-- Some customers want X, others want opposite Y
-- Flag for stakeholder resolution
-
-### Step T4: Categorize
-
-**By Theme**: Analytics, collaboration, integration, performance, etc.
-
-**By Requester Type**:
-- ICP Customers (Enterprise, 500-10k employees)
-- Non-ICP Customers (SMB, <500 employees)
-- Internal (Sales/Support/Exec)
-- Stakeholders
-
-**By Strategic Fit**:
-- Aligned with strategy
-- Adjacent to strategy
-- Off-strategy
-
-**By Type of Work**:
-- New feature, enhancement, bug fix, tech debt, infrastructure
-
-### Step T5: Transition to Prioritization
-
-After triage preprocessing, continue to **Step 2: Choose Framework** below.
-
----
-
-## CLEAN LIST MODE (Prioritize)
-
-*Use this section when you have a prepared list of items to sequence.*
-
-Skip directly to **Step 2: Choose Framework** below.
 
 ---
 
@@ -446,7 +353,7 @@ Score each 1-10:
 
 _(This is the reasoning step that separates a scored list from a strategic choice. If you can't name what's being traded away, you haven't finished prioritizing.)_
 
-**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+**Auto-saving to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md` — append this entry now. No prompt needed.
 
 ---
 

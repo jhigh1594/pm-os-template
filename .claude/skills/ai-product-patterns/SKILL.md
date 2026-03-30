@@ -547,7 +547,7 @@ After producing implementation templates or pattern recommendations, include thi
 
 _(This is the reasoning step that separates applied pattern recognition from pattern cargo-culting. AI product patterns degrade fast — grounding in evidence vs. assertion determines whether this guidance ages well.)_
 
-**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+**Auto-saving to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md` — append this entry now. No prompt needed.
 
 ---
 

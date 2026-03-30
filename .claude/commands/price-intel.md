@@ -55,7 +55,7 @@ You are helping me design pricing strategy, packaging, and value metrics for B2B
 
 _(These are the reasoning steps that separate a pricing hypothesis from a pricing strategy. Both must be answerable before the brief is final.)_
 
-**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+**Auto-saving to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md` — append this entry now. No prompt needed.
 
 ---
 

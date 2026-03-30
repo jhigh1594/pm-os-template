@@ -128,7 +128,7 @@ After producing the business case output above, include this gate before closing
 
 _(This is the reasoning step that separates a business case from a strategic rationale statement. The weakest link in the value mechanism chain is what Finance will challenge first.)_
 
-**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+**Auto-saving to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md` — append this entry now. No prompt needed.
 
 ---
 

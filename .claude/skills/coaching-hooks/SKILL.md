@@ -25,14 +25,14 @@ Use this structure in every command/skill that invokes a coaching hook:
 
 _(This is the reasoning step that separates a good [output] from a great one.)_
 
-**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+**Auto-saving to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md` — append this entry now. No prompt needed.
 ```
 
 ---
 
 ## Growth Signal Output Schema
 
-Each saved response becomes one entry in the monthly accumulation file:
+Each gate response is auto-saved as one entry in the monthly accumulation file (no user confirmation required):
 
 ```
 ---
@@ -181,7 +181,7 @@ Each command or skill that invokes a coaching hook includes a closing section fo
 
 _(This is the reasoning step that separates a good [output type] from a great one.)_
 
-**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+**Auto-saving to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md` — append this entry now. No prompt needed.
 ```
 
 The prompt text lives in this file — commands reference the archetype, not the prompt text. When the coaching philosophy evolves, edit this file; all commands benefit automatically.
