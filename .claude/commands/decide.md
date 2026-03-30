@@ -65,6 +65,19 @@ After completing the decision-quality skill analysis, generate a compact journal
 - Type 2 (two-way door): today + 30 days
 - Type 1 (one-way door): today + 90 days
 
+---
+## 🎯 Quality Gate: Judgment / Tradeoffs
+
+**Before we lock this in:**
+
+> "The choice you just made implies something about your product strategy. What does choosing this over the alternative say about what you believe drives value for customers? If someone read only your prioritization decisions for the last quarter, what strategy would they infer?"
+
+_(This is the reasoning step that separates a documented decision from a learned one. Your answer here is the output — not a prerequisite to it.)_
+
+**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+
+---
+
 **Before appending:** Display the entry and ask: "Append this decision to your journal? (y/n)"
 
 If confirmed, append to `📚 Knowledge/decisions/decision-journal.md` below the `<!-- New entries appended below this line by /decide -->` comment.

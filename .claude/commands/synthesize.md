@@ -1985,4 +1985,31 @@ Enterprise Agile teams managing 10+ teams struggle with proactive dependency coo
 
 ---
 
+## Persona Sync Check
+
+After generating all synthesis outputs above, always run this check before closing the session:
+
+**Scan synthesis findings against existing persona files** in `📦 Products/[product]/product-context/`:
+
+```
+## Persona Sync Check
+
+Based on the synthesis above:
+
+**Persona updates flagged:**
+- [Persona name in 📦 Products/[product]/product-context/]: [Synthesis finding that is new, contradicts, or adds to this persona — cite the theme and evidence count]
+- (List only personas with direct, theme-level evidence from this synthesis — not speculative connections)
+
+**Recommendation:**
+If 2+ personas have flagged updates, run:
+`/persona-sync --product [name] --period [YYYY-MM]`
+to flow these synthesis findings back into your persona files and keep ICP documentation current.
+
+If no updates surfaced: "No persona updates surfaced from this synthesis."
+```
+
+**Constraint**: Always close every synthesis with this check — even if the answer is "no updates." The habit matters more than the finding.
+
+---
+
 **End of /synthesize command**

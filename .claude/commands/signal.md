@@ -49,12 +49,16 @@ The fatal flaw: waiting until the end of the week to write up signals. By then, 
 | `renewal` | From a CS renewal review (existing customer, renewal context) | High | Elevated urgency; default signal type: pain or competitive |
 | `cs-escalation` | From an at-risk account escalation | High | High strength by default; near-term routing required |
 | `expansion` | From an upsell or expansion conversation | High | Route to value-chain gaps; default type: request or behavior |
+| `analyst` | From an analyst report, briefing, or analyst firm publication (Gartner, Forrester, IDC, etc.) | Medium | Standard; flag for `/persona-sync` and `/synthesize` to fold into persona validation — analyst signals represent market-level evidence, not single-customer evidence |
+| `market` | From a market-wide signal — earnings calls, industry conference announcements, adjacent market moves, job posting patterns as demand signals | Low | Low by default; elevate to Medium if it directly contradicts an existing Planview strategic assumption or ICP definition |
 
 **B2B revenue-source routing rules:**
 - `--source sales` → Flag as deal signal; offer to also run `/win-loss` if competitive signals surface
 - `--source renewal` → Add note: "⚠️ Renewal-context signal — elevated urgency; review against active renewal accounts"
 - `--source cs-escalation` → Override strength to High; add: "⚠️ At-risk account signal — near-term routing to relevant initiative"
 - `--source expansion` → Note expansion opportunity; route to value-chain gaps in product area
+- `--source analyst` → Flag with: "Analyst signal — cross-reference with `📦 Products/[product]/product-context/`. Does this confirm or challenge the ICP definition? Consider routing to `/persona-sync` if it directly affects a persona attribute."
+- `--source market` → Flag with: "Market signal — low direct ICP fit but may shift strategic context. Elevate to Medium strength if it contradicts an existing strategic assumption. Consider routing to `/think` if it challenges a foundational strategic bet."
 
 **Examples**:
 ```bash
@@ -122,6 +126,22 @@ Output one of:
 - **New territory**: "This signal doesn't map to any open initiative — candidate for next `/synthesize` session"
 
 **Monthly signals file**: Suggest appending to `📚 Knowledge/Research/signals-[YYYY-MM].md` (rolling monthly file — create if it doesn't exist for this month).
+
+### Step 2.5: Persona Impact Check
+
+After routing the signal (Step 2), check whether this signal directly informs a persona attribute in `📦 Products/[product]/product-context/`.
+
+**If the signal validates, contradicts, or adds to a persona attribute**:
+> "📝 Persona touchpoint: this signal is relevant to the **[persona name]** persona in `📦 Products/[product]/product-context/[file].md`. Consider adding to `/persona-sync` queue — run `/persona-sync --product [name]` after 3+ signals accumulate for this persona."
+
+**If no matching persona exists for this segment**:
+> "No persona defined for this segment — if this pattern repeats (3+ signals), it's a candidate for a new persona via the `b2b-icp-positioning-craft` skill."
+
+**If source is `analyst` or `market`**: Cross-reference with existing ICP definitions — analyst and market signals represent market-level evidence. If the signal challenges a key ICP assumption, elevate the note: "⚠️ This analyst/market signal may affect ICP definition — flag for `/persona-sync`."
+
+This step is **non-blocking** — it's a suggestion, not a required action. The signal is saved regardless.
+
+---
 
 ### Step 3: Confirm and Append
 

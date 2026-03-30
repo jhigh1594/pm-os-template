@@ -10,6 +10,9 @@ Parse the command arguments in order:
 2. **Delivery** (optional, default: `both`): `email`, `slack`, or `both`
 3. **Skip Storage** (optional, default: `false`): `true` to skip historical storage (useful for testing)
 4. **Dry Run** (optional, default: `false`): `true` to simulate delivery without actually sending (useful for testing)
+5. **Industry** (optional flag, default: `false`): `--industry` to append broader market intelligence signals
+
+**`--industry` flag**: When present, after the standard brief output, append an **Industry Signals** section pulling 2-3 broader market signals beyond direct competitor activity — analyst coverage updates, adjacent market moves, enterprise software earnings signals. Uses the source hierarchy from the `industry-intelligence` skill (Tier 1 sources labeled High confidence; Tier 3 labeled Low). For deeper coverage: `/industry-brief`.
 
 ## Execution
 

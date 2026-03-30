@@ -57,10 +57,30 @@ Before querying data, answer:
 | Exported data | Spreadsheet | `tool-patterns.md` |
 
 ### Step 4: Tell the Story
-Match output to audience:
-- **Executives**: Business impact, one insight per slide, action-oriented
-- **Product Teams**: Methodology, segments, follow-up hypotheses
-- **Sales/CS**: Account-level insights, at-risk signals, expansion opportunities
+Match output to audience — and always consider which audience would act on this finding before choosing the format:
+- **Executives**: Business impact, one insight per slide, action-oriented — use `/data-story --audience exec` for BLUF format
+- **Product Teams**: Methodology, segments, follow-up hypotheses — use `/data-story --audience product` for narrative arc format
+- **Sales/CS**: Account-level insights, at-risk signals, expansion opportunities — use `/data-story --audience sales|cs` for quotable proof points or account briefs
+
+**Audience packaging**: After completing any substantive analysis, ask: "Which audience needs to act on this?" If the answer isn't "the PM alone," offer to route via `/data-story --audience [type]` to format it for that audience.
+
+### Step 4.5: Proactive Monitoring — What Else I Noticed
+
+At the end of any analysis, apply the "What would I want to know that I wasn't asked?" lens:
+
+```
+Proactive checks (flag any that apply):
+- Metric drift: Is any metric 2+ standard deviations from the prior 30-day baseline?
+  → If yes: surface it as "Unexpected movement detected: [metric] moved [N]% vs. baseline"
+- Cohort divergence: Are newer cohorts behaving differently from older cohorts?
+  → If yes: surface as "Cohort shift: [description] — may indicate impact from [recent change]"
+- Account concentration risk: Is the top 5 account share of usage changing?
+  → If rising: surface as "Concentration risk increasing — [top accounts] represent [X]% of usage"
+- Feature adoption plateau: Is any feature adoption curve that was growing now flat (30+ days)?
+  → If yes: surface as "Adoption plateau detected: [feature] — worth investigating"
+```
+
+Output proactive observations at end of any analysis in a **"What else I noticed"** section. Keep it brief — one sentence per observation + a suggested next action. If nothing notable detected, skip this section (don't say "nothing found" — just omit it).
 
 ---
 

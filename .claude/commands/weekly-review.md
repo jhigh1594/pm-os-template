@@ -69,6 +69,31 @@ Examples: "Consistently overconfident on Type 2 reversibility" / "Underestimated
 
 ---
 
+## Step 1.5: Growth Signal Synthesis (~5 min)
+
+**Read `📚 Knowledge/Growth/growth-signals-[current-month].md`** (e.g., `growth-signals-2026-03.md`).
+
+**If file has entries**, surface patterns:
+- Count entries by archetype type
+- Identify any archetype appearing 3+ times: flag as a **development theme**
+- Surface the most recent response for each archetype
+
+**Report:**
+```
+**GROWTH SIGNALS**
+This month: N entries | Archetypes: [list with counts]
+Development theme: [archetype with 3+ entries, or "No dominant theme yet"]
+Most recent insight: "[quote from most recent entry, 1 sentence]"
+```
+
+**Pattern coaching** (after 5+ entries exist):
+Surface: "Looking at your last 5 growth signals — [pattern observation, e.g., 'your strategy-coherence responses consistently identify the gap at the company mission layer' or 'assumption-visibility responses show strong identification but weak test design']."
+
+**If file is empty or doesn't exist yet:**
+State: "No growth signals captured this month yet. Quality gates in `/decide`, `/think`, `/brainstorm`, `/discover`, `/prioritize`, `/critique`, and `/price-intel` generate entries when you respond to the coaching questions."
+
+---
+
 ## Step 2: Signal Review (~5 min)
 
 Scan `📚 Knowledge/Research/signals-[current-month].md` for signals captured this week.

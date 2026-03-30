@@ -176,11 +176,25 @@ After drafting the Opportunity Statement, score the evidence:
 - Value Risk status: [Validated = customers confirmed they have this problem and it matters / Uncertain = mixed signals / Not yet tested = no direct validation]
 ```
 
+---
+## 🎯 Quality Gate: Discovery / Assumption Testing
+
+**Before we advance to Phase 2:**
+
+> "Name the three highest-risk assumptions — not technical risks, but customer behavior assumptions — in the Opportunity Statement above. For each: how confident are you it's true, what is the cheapest test that would change your confidence, and at what confidence level would you stop or pivot?"
+
+_(This is the reasoning step that separates a validated opportunity from a conviction-based one. Assumptions that can't be named can't be tested.)_
+
+**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+
+---
+
 **Phase 1 complete?** Check before advancing:
 - [ ] Opportunity Statement drafted
 - [ ] Evidence confidence scored
 - [ ] SOM sizing done (even rough)
 - [ ] Workarounds/alternatives identified
+- [ ] Top 3 customer behavior assumptions named (quality gate above)
 
 Advance to Phase 2 when all items are checked or the user explicitly requests to proceed.
 

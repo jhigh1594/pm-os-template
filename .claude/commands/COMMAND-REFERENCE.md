@@ -1003,6 +1003,167 @@ Repeatable cadence playbooks — distinct from the idea-to-delivery lifecycle. E
 
 ---
 
+### /product-depth
+**User intent**: Build deep operational knowledge of a product — for demo preparation, change awareness, or support signal mapping
+
+**Command syntax**:
+```bash
+/product-depth [--product <name>] [--mode demo|changelog|confusion]
+```
+
+**When to suggest**:
+- "I need demo background on [product]"
+- "Where do customers get confused with [product]?"
+- "What changed in [product] recently?"
+- "I'm demoing [product] next week"
+- "Product deep dive on [product]"
+- "Help me know [product] better before my call"
+- "What are the top use cases for [product]?"
+
+**NOT for**:
+- Full demo guide preparation for a specific customer (use `/demo-prep`)
+- Competitive product knowledge (use `/compete`)
+
+---
+
+### /demo-prep
+**User intent**: Create a complete demo guide for a specific product and audience — story arc, feature spotlights, competitive awareness, demo traps
+
+**Command syntax**:
+```bash
+/demo-prep [--product <name>] [--persona <type>] [--duration <minutes>] [--scenario <description>]
+```
+
+**When to suggest**:
+- "Prepare a demo guide for [product]"
+- "I'm demoing [product] to [persona]"
+- "Help me prepare for a customer demo"
+- "Demo guide for [product]"
+- "I have a demo next [day] — help me prep it"
+- "What should I show in my [product] demo?"
+
+**NOT for**:
+- General product knowledge building (use `/product-depth`)
+- Pre-meeting prep without a demo component (use `/prep`)
+
+---
+
+### /biz-case
+**User intent**: Build or pressure-test business reasoning — financial model, cross-functional tradeoffs, stakeholder perspectives, or Business Case section in a spec
+
+**Command syntax**:
+```bash
+/biz-case [--mode model|tradeoff|perspective|review] [--feature <name>]
+```
+
+**When to suggest**:
+- "Build a business case for [feature/initiative]"
+- "What's the ARR impact of [feature]?"
+- "How does CS/Sales/Finance think about [idea]?"
+- "Cross-functional tradeoff analysis for [feature]"
+- "What will Finance say about [proposal]?"
+- "Revenue model for [initiative]"
+- "What's the cost-to-serve implication of [feature]?"
+- "Help me think through the business model"
+
+**NOT for**:
+- Full spec writing (use `/spec`)
+- Strategic framing without financial grounding (use `/think`)
+
+---
+
+### /data-story
+**User intent**: Package existing data or analysis for a specific audience — executive, product, sales, or customer success
+
+**Command syntax**:
+```bash
+/data-story [--audience exec|product|sales|cs] [--source <analysis or finding>]
+```
+
+**When to suggest**:
+- "Turn this finding into a story for [exec|sales|CS]"
+- "Package this data for leadership"
+- "How do I communicate this Pendo finding to [audience]?"
+- "Make this exec-ready"
+- "I have this data — help me present it to [person]"
+- "Translate this analysis for the sales team"
+- "What's the CS-facing version of this insight?"
+
+**NOT for**:
+- Running the analysis itself (use `/pendo` or the b2b-data-analyst skill)
+- Writing formal documents (use `/write`)
+
+---
+
+### /persona-sync
+**User intent**: Close the signal-to-persona feedback loop — surface how recent signals should update persona files, with evidence-based thresholds and explicit confirmation
+
+**Command syntax**:
+```bash
+/persona-sync [--persona <name>] [--signals-window <days>]
+```
+
+**When to suggest**:
+- "Update our personas from recent signals"
+- "Do my signals change the persona?"
+- "Persona refresh based on what we've learned"
+- "How has the [RTE|VP Eng|PMO] persona changed?"
+- "Signal-to-persona alignment check"
+- "Are our personas still accurate?"
+
+**NOT for**:
+- Adding individual signals (use `/signal`)
+- Auditing customer knowledge coverage (use `/customer-knowledge-audit`)
+
+---
+
+### /customer-knowledge-audit
+**User intent**: Score the depth and health of customer knowledge across 5 dimensions — coverage, recency, depth, breadth, and action-linkage
+
+**Command syntax**:
+```bash
+/customer-knowledge-audit [--depth quick|full] [--persona <name>]
+```
+
+**When to suggest**:
+- "How well do I know my customers?"
+- "Where are my customer knowledge gaps?"
+- "Blind spots on [persona] or customers generally?"
+- "Audit my customer understanding"
+- "Customer knowledge score"
+- "Which personas am I weakest on?"
+- "Am I using customer evidence in my decisions?"
+
+**NOT for**:
+- Signal capture (use `/signal`)
+- Persona updates from signals (use `/persona-sync`)
+
+---
+
+### /industry-brief
+**User intent**: Run a market intelligence scan — analyst coverage, adjacent market moves, earnings signals, or job posting demand patterns
+
+**Command syntax**:
+```bash
+/industry-brief [--mode analyst|market|earnings|jobs] [--save]
+```
+
+**When to suggest**:
+- "What are analysts saying about [SPM|agile planning|our market]?"
+- "Industry trends in agile planning"
+- "Gartner or Forrester on our market"
+- "Adjacent market moves we should watch"
+- "Enterprise software earnings signals"
+- "Broader market scan"
+- "What's happening in the industry?"
+- "Job posting signals for [role/capability]"
+
+**NOT for**:
+- Direct competitor pricing (use `/price-intel`)
+- Head-to-head competitive battlecards (use `/compete`)
+
+---
+
 ## Quick Reference Table
 
 | User Says... | Suggest Command |
@@ -1066,6 +1227,21 @@ Repeatable cadence playbooks — distinct from the idea-to-delivery lifecycle. E
 | "Weekly PM review" | /weekly-review |
 | "End of week review" | /weekly-review |
 | "Review my decisions this week" | /weekly-review |
+| "Demo background on [product]" | /product-depth |
+| "What changed in [product] recently?" | /product-depth --mode changelog |
+| "Where do customers get confused with [product]?" | /product-depth --mode confusion |
+| "Prepare a demo guide for [product]" | /demo-prep |
+| "I'm demoing [product] to [persona]" | /demo-prep |
+| "Build a business case for [feature]" | /biz-case |
+| "What will Finance/CS/Sales say about this?" | /biz-case --mode perspective |
+| "Package this data for leadership" | /data-story --audience exec |
+| "Translate this analysis for sales" | /data-story --audience sales |
+| "Update our personas from recent signals" | /persona-sync |
+| "Are our personas still accurate?" | /persona-sync |
+| "How well do I know my customers?" | /customer-knowledge-audit |
+| "Where are my customer knowledge gaps?" | /customer-knowledge-audit --depth quick |
+| "What are analysts saying about our market?" | /industry-brief --mode analyst |
+| "Broader market scan" | /industry-brief |
 
 **Dual-Mode Commands**: Some capabilities have both a quick command and a deep skill variant:
 - **/prioritize** (quick) vs **prioritization-craft skill** (expanded): Quick scoring vs. prioritization support that starts with outcome/constraint framing and can expand into deeper triage and stakeholder communication

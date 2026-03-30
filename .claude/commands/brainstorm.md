@@ -102,6 +102,19 @@ Generate a summary with:
 3. [Action 3]
 ```
 
+---
+## 🎯 Quality Gate: Generative Thinking
+
+**Before we lock this in:**
+
+> "How many distinct approaches did you consider? Name two meaningfully different alternatives to the direction you've chosen, and what would you need to believe to prefer each over your current choice?"
+
+_(This is the reasoning step that separates a brainstorm from a commitment. If two alternatives don't exist, discovery will solve for a solution you prefer rather than a problem customers have.)_
+
+**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+
+---
+
 ### Step 6: Save (if `--save` flag)
 Write summary to `/Users/jhigh/Planview Work/Product-Management/brainstorms/YYYY-MM-DD-brainstorm-[topic].md`
 

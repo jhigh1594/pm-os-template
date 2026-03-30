@@ -42,6 +42,23 @@ You are helping me design pricing strategy, packaging, and value metrics for B2B
    - Sales enablement: talk tracks, ROI calculator, objection handling
    - Experiment design and success metrics
 
+---
+## 🎯 Quality Gate: Financial Reasoning + Competitive Intelligence
+
+**Before we lock this in — two questions:**
+
+**1. Value mechanism trace:**
+> "Trace the financial logic explicitly: this pricing/packaging change → what customer behavior changes → what metric moves → what revenue or cost impact follows → over what time horizon → at what confidence. At which step is your confidence lowest, and what would increase it?"
+
+**2. Differentiation stress test:**
+> "If a customer asked why they should pay this price versus a competitor's, what would you say that isn't a feature comparison? What is the underlying value bet your product makes that the competitor isn't pricing for?"
+
+_(These are the reasoning steps that separate a pricing hypothesis from a pricing strategy. Both must be answerable before the brief is final.)_
+
+**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+
+---
+
 ## Output Format
 
 ### Pricing Brief

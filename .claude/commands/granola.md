@@ -59,6 +59,11 @@ For each meeting, present the following block — do not require a separate user
 - [name].md: Suggest appending: "[one sentence of new context — their position, concern, or commitment]"
 - (only include for participants who have a file in 📚 Knowledge/People/)
 
+**Product signals:**
+- [Feature/capability]: [Customer reaction — confusion, resonance, surprise, or gap request]
+- (Include only when meeting involved product demo, onboarding review, support escalation, or customer product walk-through)
+- Route confusion signals: suggest `/signal --source [call|support] --product [name] "[signal]"` for each one
+
 ---
 Run `/follow-up --meeting "[title]"` to draft communications and update stakeholder files.
 ```
@@ -67,6 +72,7 @@ Run `/follow-up --meeting "[title]"` to draft communications and update stakehol
 - Intelligence is **presented, not applied** — no files are written without explicit user action or `/follow-up`
 - Do not fabricate decisions or action items — if notes are sparse, say so explicitly
 - Include Knowledge/People/ candidates only for participants with existing files in `📚 Knowledge/People/`
+- Product signals surfaced **only when meeting context involves direct product interaction** — don't invent signals from non-product meetings
 - If multiple meetings were extracted, present one intelligence block per meeting
 
 ## Notes
