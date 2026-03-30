@@ -51,27 +51,8 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 **NOT for**:
 - Writing a spec document (use /spec)
 - Daily task planning (use /today)
-- Making a specific decision (use /decide)
+- Making a specific decision (use `decision-quality` skill)
 - Research interviews (use /discover)
-
----
-
-### /synthesize
-**User intent**: Pattern analysis across multiple data sources
-
-**When to suggest**:
-- "Find patterns in..."
-- "Synthesize customer feedback"
-- "Analyze these interviews/tickets"
-- "What patterns do you see in..."
-- "Consolidate these requests"
-- "Cross-source analysis of..."
-- "Pull together insights from multiple sources"
-
-**NOT for**:
-- Planning research (use /discover)
-- Real-time prioritization/triage (use /prioritize)
-- Single document analysis (read it directly)
 
 ---
 
@@ -143,34 +124,6 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 
 ---
 
-### /coach
-**User intent**: Review a PM artifact, score its quality, and improve PM judgment
-
-**Canonical behavior**:
-- `/coach` is the Claude wrapper over the shared `product-coach` skill
-- canonical skill path: `.claude/skills/product-coach/SKILL.md`
-
-**When to suggest**:
-- "Review this PRD" (for PRD decision-quality and spec readiness, prefer `/spec --review <path>`)
-- "Coach me on this roadmap narrative"
-- "Tell me what's weak in this decision memo"
-- "Give feedback on this product write-up"
-- "How do I improve this artifact?"
-- After `/spec`, `/think`, `/prioritize`, `/align`, `/critique`, or a `pm-copilot` deliverable when the user wants feedback instead of first-draft generation
-
-**Best modes**:
-- `doc` for specs, PRDs, one-pagers, and launch docs
-- `decision` for trade-off memos and strategic recommendations
-- `roadmap` for sequencing and roadmap narratives
-- `research` for synthesis, interview guides, and competitive analysis
-- `comms` for exec updates, launch messaging, and stakeholder docs
-
-**NOT for**:
-- Writing the first draft from scratch (use `/spec`, `/write`, or `pm-copilot`)
-- General brainstorming without an artifact to react to (use `/think` or `/brainstorm`)
-
----
-
 ### /spec
 **User intent**: Create formal specifications, PRDs, documentation; or review existing PRDs for decision quality
 
@@ -199,7 +152,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - `/spec --skip-discovery "API rate limiting"` - skip discovery phase
 - `/spec --review path/to/prd.md` - review existing PRD for quality
 
-**Spec vs coach**: `/spec --review` is specialized for PRD decision-quality and spec readiness (decision density, thresholds, non-goals, anti-patterns). `/coach` is for broader doc coaching across artifact types (roadmaps, memos, research). Use `/spec --review` when the focus is PRD-specific quality; use `/coach` for general feedback or non-PRD artifacts.
+**Spec vs product-coach skill**: `/spec --review` is specialized for PRD decision-quality and spec readiness (decision density, thresholds, non-goals, anti-patterns). The `product-coach` skill is for broader doc coaching across artifact types (roadmaps, memos, research). Use `/spec --review` when the focus is PRD-specific quality; use the `product-coach` skill for general feedback or non-PRD artifacts.
 
 ---
 
@@ -321,7 +274,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - Stakeholder communication needed (use **prioritization-craft skill**)
 - Complex triage needed (use **prioritization-craft skill**)
 - Daily task planning (use /today)
-- Strategic decisions (use /think or /decide)
+- Strategic decisions (use /think or `decision-quality` skill)
 
 **Dual-Mode Note**: For complex prioritization requiring raw feedback processing, stakeholder communication, or strategic validation, use the **prioritization-craft skill** instead. It now starts by clarifying objective, horizon, and constraints, then turns that framing into a ranking and stakeholder-ready tradeoff call.
 
@@ -356,9 +309,29 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - Before running /check-progress
 
 **NOT for**:
-- Checking what changed (use /check-progress)
+- Checking what changed (use /memory-health)
 - Daily planning (use /today)
 - Viewing memory content (read the file directly)
+
+---
+
+### /memory-health
+**User intent**: Combined memory system diagnostic — is my memory stale and what should I do about it?
+
+**When to suggest**:
+- "Is my memory system up to date?"
+- "Check my memory health"
+- "What changed since I last updated my memory?"
+- "Do I need to run /refresh-memory?"
+- Weekly maintenance cadence
+- Before starting a new session after a break
+
+**Replaces**: Running `/check-progress` then `/memory-audit` separately. Combines activity delta (git commits, file changes since last update) + structural health audit (TTL violations, line count warnings) into one output ending with **one specific recommended action**.
+
+**NOT for**:
+- Actually updating memory (use /refresh-memory)
+- Capturing new patterns (use /capture-pattern)
+- Running the full Python audit in detail (use memory_maintainer.py directly)
 
 ---
 
@@ -378,26 +351,6 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - Updating memory files (use /refresh-memory or /capture-pattern)
 
 ---
-
-### /decide
-**User intent**: Make a specific choice between options; document the decision for future retrospection
-
-**When to suggest**:
-- "Should we do X or Y?"
-- "Help me decide between..."
-- "Go/no-go decision for..."
-- "Choose option A or B"
-- "Make a decision on..."
-
-**Decision journaling** (auto-offered after every decision):
-- Generates a compact journal entry (outcome, key tradeoffs, reasoning, confidence)
-- Offers to append to `📚 Knowledge/decisions/decision-journal.md`
-- Purpose: `/weekly-review` retrospects on past decisions to close the "were we right?" loop
-
-**NOT for**:
-- Strategic framing (use /think first)
-- Prioritization (use /prioritize)
-- Research validation (use /discover or /research)
 
 ---
 
@@ -427,7 +380,9 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 **NOT for**:
 - Writing specs (use /spec after discovery)
 - Detailed research planning (use /research)
-- Synthesizing existing data (use /synthesize)
+- Synthesizing existing data (use `synthesize` skill)
+
+**Command vs. Skill**: `/discover` command = structured 4-phase workflow with evidence gates, argument-driven handoff, and explicit phase progression (use when you want a guided discovery process). `discovery` skill = consultative advisor that helps you clarify *what* to learn and *which method* to use next (use in chat when you're not sure how to frame the discovery, or when the full 4-phase workflow is more than the situation needs).
 
 ---
 
@@ -447,7 +402,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 
 **NOT for**:
 - Open-ended discovery (use /discover)
-- Synthesizing findings (use /synthesize after research)
+- Synthesizing findings (use `synthesize` skill after research)
 - Daily planning (use /today)
 
 **Command vs. Skill**:
@@ -469,7 +424,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 
 **NOT for**:
 - Just drafting communication (use /write)
-- Making the decision yourself (use /decide)
+- Making the decision yourself (use `decision-quality` skill)
 - Technical analysis
 
 ---
@@ -545,11 +500,11 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 ---
 
 ### /compete
-**User intent**: Competitive intelligence and analysis; competitive battlecard generation
+**User intent**: All competitive intelligence — single competitor deep dive, landscape scan, or battlecard
 
 **Command syntax**:
 ```bash
-/compete [--output battlecard] [--focus <competitor>] [<description>]
+/compete [--mode landscape] [--output battlecard] [--focus <competitor>] [<description>]
 ```
 
 **When to suggest**:
@@ -561,13 +516,29 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - "Intelligence on [competitor]"
 - "Generate a battlecard for [competitor]"
 - "Build a battlecard for sales"
+- "Map the market landscape" → use `--mode landscape`
+- "Who are all our competitors?" → use `--mode landscape`
 - After 3+ losses to same competitor (pattern alert from `/win-loss`)
+
+**Routing map:**
+```
+I need to understand a specific competitor     → /compete [--focus name]
+I need a sales battlecard                      → /compete --output battlecard
+I need to scan the full market landscape       → /compete --mode landscape
+I need analyst/earnings trend analysis         → /daily-brief --industry
+I need pricing competitive research            → /price-intel
+```
 
 **Battlecard mode** (`--output battlecard`):
 - Loads `📚 Knowledge/Templates/battlecard-template.md` as structure
 - Sources intelligence from deal interviews, signals, and research
 - Output: `📚 Knowledge/Market/battlecard-[competitor-slug].md`
 - Update triggers: `/win-loss` flags specific competitor claims for targeted section updates
+
+**Landscape mode** (`--mode landscape`):
+- Auto-identifies 5 direct + 2–3 indirect competitors
+- Produces comparison matrix and positioning map
+- Use when you don't know which competitors to analyze
 
 **NOT for**:
 - Daily competitive briefs (use /daily-brief)
@@ -637,7 +608,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - Strategic "should we do this" questions (use /think)
 - Formal specification writing (use /spec)
 - Customer research interviews (use /discover)
-- Making a specific decision (use /decide)
+- Making a specific decision (use `decision-quality` skill)
 
 ---
 
@@ -774,7 +745,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 ---
 
 ### /capture-pattern
-**User intent**: Capture semantic learning to accumulated wisdom file
+**User intent**: Capture semantic learning to accumulated wisdom file (real-time or batch from sessions)
 
 **When to suggest**:
 - "Remember this decision..."
@@ -784,6 +755,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - After completing a substantial feature or decision
 - When you notice a workspace-specific convention
 - After making a mistake that wasted time
+- "Extract patterns from recent sessions" → use `--from-sessions [days]` (default 7)
 
 **NOT for**:
 - Current state updates (use /refresh-memory)
@@ -839,6 +811,27 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - Daily planning (use /today)
 - OKR-specific deep analysis (use /okr-progress)
 - Post-meeting extraction (use /granola)
+- Cross-month growth signal synthesis (use /growth-review)
+
+---
+
+### /growth-review
+**User intent**: Cross-month growth signal synthesis — surface repeating PM reasoning patterns across quarters
+
+**When to suggest**:
+- "What failure modes keep showing up in my work?"
+- "Show me my growth patterns over time"
+- "What coaching themes are recurring?"
+- "Quarterly PM development review"
+- "What am I consistently getting wrong?"
+
+**Distinct from `/weekly-review`**: `/weekly-review` Step 1.5 covers the *current month* only. `/growth-review` aggregates across N months (default: 3) to find patterns that are invisible in a single month.
+
+**Output**: Repeating pattern tags (3+ entries) with verbatim quotes, coverage gaps (archetypes with no entries), and one concrete behavior change to focus on.
+
+**NOT for**:
+- Current-month synthesis (use /weekly-review Step 1.5)
+- Runs without growth signal files populated
 
 ---
 
@@ -923,7 +916,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 
 **Output**: Structured atomic nugget (source, signal verbatim, ICP fit, strength, routing to relevant initiative) + optional append to `Knowledge/Research/signals-YYYY-MM.md`
 
-**NOT for**: Full synthesis (use `/synthesize` when 10+ signals accumulated), post-meeting extraction (use `/granola`), competitive intelligence (use `/compete`)
+**NOT for**: Full synthesis (use `synthesize` skill when 10+ signals accumulated), post-meeting extraction (use `/granola`), competitive intelligence (use `/compete`)
 
 ---
 
@@ -1164,15 +1157,31 @@ Repeatable cadence playbooks — distinct from the idea-to-delivery lifecycle. E
 
 ---
 
+## Intelligence Command Routing
+
+When you need competitive or market intelligence, use this map:
+
+| I need to… | Use |
+|---|---|
+| Monitor what's happening in my market today | `/daily-brief` |
+| Deep-dive on a specific competitor or generate a battlecard | `/compete [--focus name] [--output battlecard]` |
+| Analyze a deal we won, lost, or didn't close | `/win-loss` |
+| Research pricing strategy or competitor pricing | `/price-intel` |
+| Scan analyst/earnings/market signals (beyond competitors) | `/daily-brief --industry` (quick) or `/industry-brief` (deep) |
+
+**Rule**: Start with `/daily-brief` for ongoing awareness. Escalate to `/compete` when you need depth on a specific competitor. `/win-loss` after every deal close.
+
+---
+
 ## Quick Reference Table
 
 | User Says... | Suggest Command |
 |--------------|-----------------|
 | "What should I work on today?" | /today |
 | "Figure out our Q1 OKRs" | /think |
-| "Should we do X or Y?" | /decide |
+| "Should we do X or Y?" | decision-quality skill |
 | "Write a spec for feature X" | /spec |
-| "Find patterns in customer feedback" | /synthesize |
+| "Find patterns in customer feedback" | synthesize skill |
 | "Score these 5 features" | /prioritize (command) |
 | "Rank my Q2 sprint" | /prioritize (command) |
 | "Triage 50 customer requests" | prioritization-craft (skill) |

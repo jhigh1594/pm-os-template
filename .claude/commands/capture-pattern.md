@@ -18,9 +18,13 @@ Invoke this command when you notice:
 
 Parse the command arguments:
 1. **Type** (optional): `decision`, `convention`, `mistake`, `pattern`, `tool`
-   - If not provided, ask user to select
+   - If not provided, ask user to select (unless `--from-sessions` is used)
 2. **Description** (optional): Brief description of the pattern
    - If not provided, prompt for details
+3. **`--from-sessions [days]`** (optional): Batch mode — extract patterns from recent sessions
+   - Default: last 7 days
+   - Use `--days N` or `--from-sessions N` interchangeably
+   - Skips interactive type selection; reads sessions and extracts candidates automatically
 
 ---
 
@@ -184,6 +188,35 @@ Confidence: High
 
 > ✅ Pattern captured: Don't Create Presentations from Scratch
 ```
+
+---
+
+---
+
+## Batch Mode (`--from-sessions [days]`)
+
+When invoked with `--from-sessions` (or `--days N`), skip interactive capture and instead extract patterns from recent session history.
+
+**Usage:**
+```
+/capture-pattern --from-sessions        # Review last 7 days
+/capture-pattern --from-sessions 14     # Review last 14 days
+/capture-pattern --days 30              # Review last 30 days
+```
+
+**Batch extraction steps:**
+
+1. **List sessions:** Find files in `.specstory/history/` modified within the date range
+2. **Read and extract candidates:** For each session, identify:
+   - Repeated workflows or tool sequences worth formalizing
+   - Problems solved that are worth remembering
+   - Decisions made with reasoning worth preserving
+   - Workspace conventions reinforced or discovered
+3. **Apply quality gates:** Filter each candidate through all 4 gates (Actionable, Specific, Durable, Non-obvious). Discard any that fail a gate.
+4. **Append survivors:** Add passing patterns to the correct section of `🤖 AI/patterns/learned-patterns.md`
+5. **Update validation log:** Add a batch-extraction entry at the bottom of `learned-patterns.md` with date and count
+
+**Note on sessions:** Active sessions live in `.specstory/history/` — that is the source to use.
 
 ---
 

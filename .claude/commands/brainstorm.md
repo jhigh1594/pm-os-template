@@ -111,7 +111,7 @@ Generate a summary with:
 
 _(This is the reasoning step that separates a brainstorm from a commitment. If two alternatives don't exist, discovery will solve for a solution you prefer rather than a problem customers have.)_
 
-**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+**Auto-saving to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md` — append this entry now. No prompt needed.
 
 ---
 

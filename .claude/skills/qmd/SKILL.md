@@ -161,23 +161,29 @@ qmd query "meetings" --collections-ignore tasks
 
 ## MCP Tools
 
-If MCP server is configured (`qmd mcp`):
+Configured via `.mcp.json` (`qmd mcp`). Tools as of v2.x:
 
-| Tool | Purpose |
-|------|---------|
-| `qmd_search` | Fast BM25 keyword search |
-| `qmd_vector_search` | Semantic vector search |
-| `qmd_deep_search` | Hybrid with expansion + reranking |
-| `qmd_get` | Retrieve document by path or docid |
-| `qmd_multi_get` | Retrieve multiple by glob/list |
-| `qmd_status` | Index health and collection info |
+| Tool | Parameters | Purpose |
+|------|-----------|---------|
+| `query` | `searches[]` (required), `intent`, `collections`, `limit`, `minScore`, `candidateLimit` | Hybrid search — returns ranked snippets. Primary tool. |
+| `get` | `file` (required), `fromLine`, `maxLines` | Full document by path or docid. Use after `query` identifies the file. |
+| `multi_get` | `pattern` (required), `maxBytes`, `maxLines` | Batch retrieval by glob or comma-separated list |
+| `status` | *(none)* | Index health, collection info, model status |
+
+**Note**: `qmd_search`, `qmd_vector_search`, `qmd_deep_search` were removed in v1.1.0. Use `query` with typed sub-queries instead.
+
+**Agent best practices:**
+- Always include `intent` to disambiguate queries across the full pipeline
+- Set `minScore: 0.5` to drop noise before reranking
+- Lower `candidateLimit` (e.g. 10) if only top results matter (default 30, reduces token cost)
+- Use `get` with `maxLines` when you only need part of a document
 
 ## Performance
 
 - **Keyword search**: < 100ms
 - **Vector search**: ~500ms (first query warms model)
-- **Hybrid + rerank**: ~1-2s
-- Models stay loaded in memory after first use
+- **Hybrid + rerank**: ~4-5s (Qwen3-Reranker)
+- **HTTP daemon mode**: Models stay loaded across sessions (recommended for repeated use)
 
 ## Setup
 

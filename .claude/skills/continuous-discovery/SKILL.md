@@ -545,7 +545,7 @@ When this skill produces a recommendation, opportunity framing, or assumption te
 
 _(Teresa Torres: "Don't ask customers what to build. Test assumptions about what will work." This gate enforces that distinction at every output.)_
 
-**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+**Auto-saving to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md` — append this entry now. No prompt needed.
 
 ---
 

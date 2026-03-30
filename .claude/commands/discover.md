@@ -185,7 +185,7 @@ After drafting the Opportunity Statement, score the evidence:
 
 _(This is the reasoning step that separates a validated opportunity from a conviction-based one. Assumptions that can't be named can't be tested.)_
 
-**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+**Auto-saving to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md` — append this entry now. No prompt needed.
 
 ---
 

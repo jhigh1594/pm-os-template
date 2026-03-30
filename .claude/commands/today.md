@@ -145,6 +145,17 @@ Show the user the completed today.md. Ask TWO questions:
 1. **"What's on your mind today? What additional priorities or focus areas (beyond what you carried forward)?"**
 2. **"Which of the Top 3 priorities (or other overdue items) do you want to carry over or complete today — if any?"**
 
+### Step 4.5: Surface Lifecycle Position
+
+Scan `📦 Products/*/initiatives/*/` for any initiative folders. For each active initiative found, check which lifecycle artifacts exist (brainstorm summary, opportunity statement, one-pager, PRD, design brief, story breakdown, SPEC_BRIEF.md, launch plan, learn notes) and infer the current step.
+
+**Output** (inline, compact — do not create a separate section):
+
+> **Lifecycle**: [Initiative name] is at Step [N] — [step name]. Next: `[command]`
+
+If no initiative folders exist: skip this step silently.
+If multiple initiatives: show the most recently modified one only.
+
 ### Step 5: Incorporate New User Input
 1. Read their response
 2. Update `📋 Tasks/today.md` by appending to "## 🧠 What's On My Mind Today" section

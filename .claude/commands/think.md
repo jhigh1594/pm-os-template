@@ -198,7 +198,7 @@ Propose 2-3 concrete actions:
 
 _(This is the reasoning step that separates strategic analysis from a well-structured opinion. The weakest link in the stack is the most important output of this thinking session.)_
 
-**Save this response to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`? [y/n]
+**Auto-saving to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md` — append this entry now. No prompt needed.
 
 ---
 

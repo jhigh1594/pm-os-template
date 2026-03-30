@@ -32,6 +32,30 @@ You are helping me gather, analyze, and synthesize competitive intelligence to i
 6. **Explicit Anti-Hallucination Instruction**:
    - "DO NOT fabricate feature names, pricing numbers, dates, or capabilities. If information is not available in the sources, say so explicitly."
 
+## Modes
+
+### Default Mode (single or known competitor set)
+Analyze the competitor(s) you provide. Runs full structure: positioning, capabilities, strengths/weaknesses, strategic opportunities, battlecard.
+
+### `--mode landscape` (broad market scan)
+Auto-identify the competitive landscape before analyzing. Run when you need to map the full market, not just analyze known competitors.
+
+```bash
+/compete --mode landscape "enterprise work management"
+/compete --mode landscape AgilePlace
+```
+
+**Landscape mode adds Step 0:**
+
+1. Identify 5 direct competitors (same category, same buyer)
+2. Identify 2–3 indirect competitors (different approach, same job-to-be-done)
+3. Note 1–2 emerging/disruptive players if relevant
+4. Then proceed with full analysis for each
+
+Landscape mode outputs include a **positioning map** showing where each competitor clusters by buyer type and value proposition.
+
+---
+
 ## Your Approach
 
 1. **Identify What We Need to Know**:
