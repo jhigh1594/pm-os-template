@@ -1,3 +1,6 @@
+---
+description: Run the dex improve workflow
+---
 # Dex-Improve Wrapper
 
 **Usage:** `/dex-improve` or `/dex-improve "idea or question"`

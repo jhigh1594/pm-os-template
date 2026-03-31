@@ -1,3 +1,6 @@
+---
+description: Run the granola workflow
+---
 Extract yesterday's meetings from Granola and save them as markdown files.
 
 ## Command Arguments

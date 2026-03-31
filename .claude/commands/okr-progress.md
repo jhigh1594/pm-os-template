@@ -1,3 +1,6 @@
+---
+description: Run the okr progress workflow
+---
 # /okr-progress — OKR Progress Analysis
 
 Run OKR progress and risk analysis (portfolio or single-objective). Collects template variables from the user before executing.

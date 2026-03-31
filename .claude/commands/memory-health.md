@@ -1,3 +1,6 @@
+---
+description: Run the memory health workflow
+---
 # /memory-health — Memory System Health Check
 
 Combined diagnostic replacing `/check-progress` + `/memory-audit`. Surfaces what changed since the last memory update (activity delta) AND runs the Python structural health audit — in one command, ending with one concrete recommended action.

@@ -1,3 +1,6 @@
+---
+description: Run the planview slides workflow
+---
 # /planview-slides - Create Hosted Planview Slidev Decks
 
 Use this command when the deliverable should be a **hosted, animated, shareable HTML deck**.

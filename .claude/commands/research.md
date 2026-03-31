@@ -1,3 +1,6 @@
+---
+description: Run the research workflow
+---
 # Product Research & Discovery Assistant
 
 Design targeted validation studies and customer research plans. Produces a structured research plan with scope, screener, and interview guide calibrated to the specific opportunity being validated.

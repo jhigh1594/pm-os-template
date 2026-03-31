@@ -1,3 +1,6 @@
+---
+description: Run the brainstorm workflow
+---
 # /brainstorm - Persona-Based Thinking Partner
 
 **Purpose**: Tactical/pre-PRD brainstorming with expert personas to explore product ideas through distinct lenses.

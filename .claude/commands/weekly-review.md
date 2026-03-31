@@ -1,3 +1,6 @@
+---
+description: Run the weekly review workflow
+---
 # Weekly PM Review
 
 **Usage:** `/weekly-review [--week <YYYY-MM-DD of Monday>]`

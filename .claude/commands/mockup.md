@@ -1,3 +1,6 @@
+---
+description: Run the mockup workflow
+---
 # UI Mockup Generator
 
 You are helping me create visual HTML/CSS mockups that bring product concepts to life for stakeholder alignment and user testing.

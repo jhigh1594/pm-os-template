@@ -1,3 +1,6 @@
+---
+description: Run the price intel workflow
+---
 # Pricing Intelligence Assistant (B2B SaaS)
 
 You are helping me design pricing strategy, packaging, and value metrics for B2B SaaS products with evidence-based pricing intelligence.

@@ -1,3 +1,6 @@
+---
+description: Run the COMMAND REFERENCE workflow
+---
 # AIPMOS Command Reference for Intent Detection
 
 This guide helps AI assistants understand when to suggest specific AIPMOS commands based on user intent. Use this to match natural language requests to the most appropriate command.

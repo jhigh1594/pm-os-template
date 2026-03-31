@@ -1,3 +1,6 @@
+---
+description: Run the search workflow
+---
 # Search the Planview Workspace
 
 Search across all product strategy, competitive intelligence, PM frameworks, and AI patterns using QMD local semantic search.

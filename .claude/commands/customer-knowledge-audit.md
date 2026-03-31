@@ -1,3 +1,6 @@
+---
+description: Run the customer knowledge audit workflow
+---
 # Customer Knowledge Audit
 
 Diagnose the PM's current state of customer knowledge across five dimensions — coverage, recency, depth, breadth, and action — then recommend the specific investments needed to close identified blind spots.

@@ -1,3 +1,6 @@
+---
+description: Run the critique workflow
+---
 # Product Critique Framework
 
 **Usage:** `/critique [--mode <1-4>] [product-or-feature]`

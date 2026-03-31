@@ -1,3 +1,6 @@
+---
+description: Run the onboard workflow
+---
 # PM-OS Workspace Onboarding
 
 Set up your PM Operating System workspace by filling out the template skeleton with your context, then tackle your first task.

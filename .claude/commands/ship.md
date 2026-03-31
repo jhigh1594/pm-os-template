@@ -1,3 +1,6 @@
+---
+description: Run the ship workflow
+---
 # Launch Planning & Execution
 
 You are helping me plan and execute a successful product launch that maximizes adoption and impact.

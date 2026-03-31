@@ -1,3 +1,6 @@
+---
+description: Run the think workflow
+---
 # Strategic Thinking Partner
 
 **Usage:** `/think [mode=explore|challenge|verify] [your question]`

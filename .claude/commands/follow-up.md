@@ -1,3 +1,6 @@
+---
+description: Run the follow up workflow
+---
 # Meeting Follow-Up Generator
 
 Transform a meeting into communicated decisions, tracked action items, and updated stakeholder context — closing the post-meeting dead zone.

@@ -1,3 +1,6 @@
+---
+description: Run the design brief workflow
+---
 # Design Brief Generator
 
 Generate a designer-ready design brief from an approved PRD.

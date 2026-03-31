@@ -1,3 +1,6 @@
+---
+description: Run the demo prep workflow
+---
 # Demo Prep
 
 Generate a customer-ready demo guide for a specific product, persona, and scenario. Translates deep product knowledge into a structured narrative with a clear story arc, feature spotlights, competitive awareness, discovery questions, and traps to avoid.

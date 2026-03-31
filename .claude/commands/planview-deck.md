@@ -1,3 +1,6 @@
+---
+description: Run the planview deck workflow
+---
 # /planview-deck - Create Editable PowerPoint Decks
 
 Use this command when the deliverable must be an **editable PPTX**.

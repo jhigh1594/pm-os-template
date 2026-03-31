@@ -1,3 +1,6 @@
+---
+description: Run the story workflow
+---
 # Story Breakdown Generator
 
 Generate an Epic → Feature → Story hierarchy from an approved PRD, optionally push to AgilePlace.

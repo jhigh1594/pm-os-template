@@ -1,3 +1,6 @@
+---
+description: Run the prototype workflow
+---
 # AI Prototype Generator
 
 You are helping me create interactive prototypes using AI-powered design tools like **Figma Make**, **Lovable**, **Bolt.New**, and **Replit**. These tools convert natural language prompts and visual inputs into editable, functional prototypes.

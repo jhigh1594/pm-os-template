@@ -1,3 +1,6 @@
+---
+description: Run the capture pattern workflow
+---
 # /capture-pattern - Capture Semantic Learning
 
 Capture a substantial pattern, decision, convention, or mistake to `learned-patterns.md` for future sessions.
