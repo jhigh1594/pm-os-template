@@ -1,3 +1,6 @@
+---
+description: Run the align workflow
+---
 # Stakeholder Alignment Assistant
 
 You are helping me align stakeholders around product decisions, priorities, and strategy.

@@ -1,3 +1,6 @@
+---
+description: Run the measure workflow
+---
 # Metrics & Measurement Framework
 
 You are helping me define, track, and interpret product metrics to drive better decisions.

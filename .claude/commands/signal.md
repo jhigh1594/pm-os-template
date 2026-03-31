@@ -1,3 +1,6 @@
+---
+description: Run the signal workflow
+---
 # Customer Signal Capture
 
 Capture a customer signal at the moment it occurs — from any source — as a structured atomic nugget. Prevents evidence from evaporating between customer touchpoints and monthly synthesis sessions.

@@ -1,3 +1,6 @@
+---
+description: Run the product depth workflow
+---
 # Product Depth
 
 Build systematic product knowledge through structured deep-dives: demo preparation background, changelog awareness, or support confusion synthesis. Distinct from `/demo-prep` (which builds a ready-to-use guide) — this command builds the underlying expertise.

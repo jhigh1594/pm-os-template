@@ -1,3 +1,6 @@
+---
+description: Run the persona sync workflow
+---
 # Persona Sync
 
 Close the signal-to-persona feedback loop. Reads accumulated signals from `signals-YYYY-MM.md`, compares against current persona files, and proposes evidence-based updates — surfacing validations, contradictions, and documented gaps. No persona changes without explicit user confirmation.

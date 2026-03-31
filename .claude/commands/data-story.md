@@ -1,3 +1,6 @@
+---
+description: Run the data story workflow
+---
 # Data Story
 
 Package an existing analysis into an audience-ready narrative. Transforms raw findings, Pendo data, or usage metrics into the specific format each audience needs — executive BLUF, product narrative arc, sales proof points, or CS account specifics.

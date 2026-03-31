@@ -1,3 +1,6 @@
+---
+description: Run the discover workflow
+---
 # Product Discovery Workflow
 
 Guide through a structured product discovery process to identify and validate customer problems worth solving.

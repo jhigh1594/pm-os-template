@@ -1,3 +1,6 @@
+---
+description: Run the growth review workflow
+---
 # /growth-review — Cross-Month Growth Signal Synthesis
 
 Surface repeating PM reasoning patterns across months by aggregating growth signals beyond what `/weekly-review` Step 1.5 covers (current month only).

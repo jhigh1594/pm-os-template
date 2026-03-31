@@ -1,3 +1,6 @@
+---
+description: Run the memory audit workflow
+---
 Run a health audit of the workspace memory system. Check for TTL violations, stale memory files, line count warnings, and structural issues.
 
 ## Steps

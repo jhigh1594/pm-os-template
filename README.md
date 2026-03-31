@@ -25,9 +25,9 @@ That's it! The `/onboard` command will guide you through setting up your workspa
 The `/onboard` command provides an interactive 30-60-90 day framework to:
 
 1. **Set up your context** — Customize GOALS.md with your role, products, and stakeholders
-2. **Configure your memory** — Update memory.md with your current focus and product context
-3. **Plan your first 30 days** — Get a structured learning plan for your new role/product
-4. **Identify quick wins** — Find opportunities to build credibility early
+2. **Configure your task tracker** — Choose from Jira, Linear, Asana, GitHub Issues, or AgilePlace
+3. **Set up your memory** — Update memory.md with your current focus and product context
+4. **Plan your first 30 days** — Get a structured learning plan for your new role/product
 
 Just run `/onboard` and answer the questions to get started.
 
@@ -45,14 +45,16 @@ If you prefer to manually configure without `/onboard`, update these files:
 ### Optional Integrations
 - [ ] **.env** — Add API keys at project root (see `.env.example`)
 - [ ] **.mcp.json** — Configure MCP servers
+- [ ] **🔧 Automation/scripts/today_cmd/config.yaml** — Set task tracker type and credentials
 
 ---
 
 ## What's Included
 
 ### AI Assistant Configuration
-- **35+ slash commands** for PM tasks (`/today`, `/think`, `/brainstorm`, `/compete`, etc.)
-- **6 PM rule files** defining how to operate as a 10X Product Leader
+- **54 slash commands** for PM tasks (`/today`, `/think`, `/brainstorm`, `/compete`, etc.)
+- **7 PM rule files** defining how to operate as a 10X Product Leader
+- **59 installable skills** via the skills library (`/spec`, `/discover`, `/design-brief`, etc.)
 - **Ruler integration** for multi-AI sync (Claude Code, Cursor, etc.)
 - **Automation scripts** for daily planning and meeting notes
 
@@ -65,11 +67,18 @@ If you prefer to manually configure without `/onboard`, update these files:
 ├── 📋 Tasks/             # Daily planning and backlog
 ├── 📚 Knowledge/         # Research and reference
 ├── 🏢 Company/           # Business context
+├── 📊 Analytics/         # Data and dashboards
 ├── 🔧 Automation/        # Scripts and tools
+├── 📝 Docs/              # Memos and documentation
+├── 📽️ Presentations/    # Corporate deck templates
+├── 🚀 Prototypes/        # Interactive mockups
 ├── 🤖 AI/                # AI memory and patterns
 │   ├── memory/           # Context persistence
 │   └── patterns/         # Learned patterns
 ├── .claude/              # Claude Code configuration
+│   ├── commands/         # 54 slash commands
+│   ├── rules/            # 7 PM rule files
+│   └── skills/           # 59 installable skills
 └── .ruler/               # Multi-AI sync (Ruler)
 ```
 
@@ -79,19 +88,53 @@ The rules system uses progressive disclosure:
 
 | Rule | Purpose |
 |------|---------|
-| `pm-core.mdc` | **Always loaded** - Quick references, conflict resolution |
-| `pm-mental-models.mdc` | Strategic thinking, investment decisions |
-| `pm-decision-detail.mdc` | Decision documentation, reviews |
-| `pm-frameworks.mdc` | Framework selection, when to abandon |
-| `pm-communication.mdc` | Audience patterns, stakeholder alignment |
-| `pm-product-sense.mdc` | Product critiques, taste development |
+| `pm-operating-principles.mdc` | **Always loaded** - Core operating principles, quick references |
+| `mental-models.mdc` | Strategic thinking, investment decisions |
+| `decision-framework.mdc` | Decision documentation, reviews |
+| `frameworks-as-tools.mdc` | Framework selection, when to abandon |
+| `communication-standards.mdc` | Audience patterns, stakeholder alignment |
+| `product-sense.mdc` | Product critiques, taste development |
+| `agileplace-cli.mdc` | Task tracker CLI integration |
+
+### `/today` Daily Workflow
+
+The `/today` command runs an automated daily planning workflow:
+
+1. **Backup** yesterday's plan → `yesterday.md`
+2. **Collect** data from your task tracker, meetings (Granola), RSS feeds, and weekly priorities
+3. **Analyze** using LLM synthesis to surface insights and commitments
+4. **Interactive triage** — carry forward, complete, or archive yesterday's items
+5. **Generate** your daily plan with Top 3 Priorities, insights, and one-step-better recommendations
+
+**Configurable task tracker** — supports multiple backends:
+- **stub** (demo mode with example tasks)
+- **AgilePlace**, **Jira**, **Linear**, **Asana**, **GitHub Issues**
+- **Custom** — write your own collector
+
+Configure via `🔧 Automation/scripts/today_cmd/config.yaml` or during first `/today` run.
+
+### Skills Library
+
+59 installable skills covering the full PM spectrum:
+
+| Category | Examples |
+|----------|----------|
+| **Product Strategy** | `/strategic-thinking`, `/positioning-craft`, `/business-reasoning` |
+| **Discovery** | `/discovery`, `/continuous-discovery`, `/customer-knowledge-audit` |
+| **Execution** | `/execution-delivery`, `/ship-decisions`, `/mvp` |
+| **AI Product** | `/ai-product-patterns`, `/ai-startup-building`, `/dex-improve` |
+| **Communication** | `/strategic-storytelling`, `/confident-speaking`, `/exec-comms` |
+| **Growth** | `/growth-embedded`, `/pricing-intelligence`, `/metrics-frameworks` |
+| **Leadership** | `/stakeholder-craft`, `/influence-craft`, `/culture-craft` |
+
+Skills live in `.claude/skills/` — see `SKILLS-INDEX.md` for the full catalog.
 
 ## Available Commands
 
 | Command | Purpose |
 |---------|---------|
 | `/onboard` | **START HERE** - Workspace setup guide |
-| `/today` | Daily planning workflow |
+| `/today` | Daily planning workflow with task tracker integration |
 | `/think` | Strategic thinking mode |
 | `/brainstorm` | Persona-based brainstorming |
 | `/compete` | Competitive intelligence |
@@ -99,8 +142,12 @@ The rules system uses progressive disclosure:
 | `/discover` | Customer discovery workflow |
 | `/spec` | Product spec writer |
 | `/prioritize` | Prioritization framework |
+| `/research` | Deep research synthesis |
+| `/narrative` | Strategic storytelling |
+| `/ship` | Launch planning |
+| `/learn` | Post-launch learning |
 
-See `.claude/commands/COMMAND-REFERENCE.md` for the full list.
+See `.claude/commands/COMMAND-REFERENCE.md` for the full list of 54 commands.
 
 ## Ruler Integration
 
@@ -110,21 +157,33 @@ This workspace uses [Ruler](https://github.com/jhigh1594/ruler) for multi-AI con
 - Run `ruler apply` to sync to Claude Code, Cursor, etc.
 - Keeps all AI tools reading from the same source of truth
 
+### MCP Server Templates
+
+The `.ruler/ruler.toml` includes pre-configured MCP servers:
+- **Fetch** — Web content fetching
+- **Notion** — Notion workspace integration
+- **EXA** — AI-powered web search and research
+
+Uncomment and configure the ones you need.
+
 ## Security Notes
 
 **Never commit these files to version control:**
 - `.env` - Contains API keys
 - `.mcp.json` - Contains API keys
+- `config.yaml` with real credentials (use the template version)
 
-Both are already in `.gitignore`.
+All are already in `.gitignore`.
 
 ## Customization
 
 This is your workspace. Make it yours:
 - Add your own commands in `.claude/commands/`
-- Add your PM frameworks in `Product-Management/`
-- Add your product docs in `Products/`
-- Customize the automation scripts in `Automation/`
+- Install skills from the library in `.claude/skills/`
+- Add your PM frameworks in `🎓 Product-Management/`
+- Add your product docs in `📦 Products/`
+- Customize the automation scripts in `🔧 Automation/`
+- Add your own task tracker collector in `🔧 Automation/scripts/today_cmd/collectors/`
 
 ---
 

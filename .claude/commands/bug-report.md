@@ -1,3 +1,6 @@
+---
+description: Run the bug report workflow
+---
 # Bug Report Generator
 
 You are helping me transform customer complaints and issues into structured, actionable bug reports that enable efficient resolution.

@@ -1,3 +1,6 @@
+---
+description: Run the remember workflow
+---
 # /remember - Search Conversation History
 
 Search past Claude Code conversations for discussions, decisions, and patterns using the episodic-memory skill.

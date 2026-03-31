@@ -1,3 +1,6 @@
+---
+description: Run the spec workflow
+---
 # Product Spec (PRD) Writer
 
 You are helping me write a clear, complete product specification that enables the team to build the right thing.

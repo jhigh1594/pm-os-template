@@ -1,3 +1,6 @@
+---
+description: Run the prep workflow
+---
 # Meeting Prep Generator
 
 Prepare for stakeholder meetings with structured context, decisions, and talking points.

@@ -1,3 +1,6 @@
+---
+description: Score and sequence a prepared list of items using structured prioritization frameworks
+---
 # Prioritization Framework
 
 You are helping me make high-quality prioritization decisions using structured frameworks and strategic thinking. This command scores and sequences a **prepared list** of items.

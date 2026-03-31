@@ -1,3 +1,6 @@
+---
+description: Run the roadmap workflow
+---
 # Roadmap Generator
 
 Create a quarterly roadmap document with themes, now/next/later sequencing, and explicit exclusions.

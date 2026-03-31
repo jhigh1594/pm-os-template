@@ -1,3 +1,6 @@
+---
+description: Run the daily brief workflow
+---
 Execute the daily competitive intelligence briefing system.
 
 ## Command Arguments

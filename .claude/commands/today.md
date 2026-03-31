@@ -1,4 +1,21 @@
-Execute the /today daily planning workflow (AgilePlace only).
+---
+description: Run the today workflow
+---
+Execute the /today daily planning workflow (Task Tracker only).
+
+## First-Run Setup
+
+**If `config.yaml` has `task_tracker.type: stub` or no `task_tracker` section**, run setup first:
+
+Ask the user: "What task/project management tool do you use to track your daily work?"
+Options: Jira / Linear / Asana / GitHub Issues / Monday.com / Something else / None yet
+
+Based on their answer:
+1. Update `config.yaml` task_tracker section with their selection
+2. If they have a tool, prompt for any needed credentials (API key, domain, etc.)
+3. If "None yet", keep `type: stub` for demo purposes
+
+Then continue with the normal workflow.
 
 ## Command Arguments
 

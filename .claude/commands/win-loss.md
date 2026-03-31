@@ -1,3 +1,6 @@
+---
+description: Run the win loss workflow
+---
 # Win/Loss Analysis
 
 **Usage:** `/win-loss [--outcome <win|loss|no-decision>] [--competitor <name>] [<deal-context>]`

@@ -1,3 +1,6 @@
+---
+description: Run the industry brief workflow
+---
 # Industry Brief
 
 Scan the broader market landscape beyond direct competitors — analyst coverage, adjacent market moves, enterprise software earnings signals, and job posting demand indicators. Activates the `industry-intelligence` skill for structured analysis with source hierarchy enforcement.

@@ -1,3 +1,6 @@
+---
+description: Run the check progress workflow
+---
 Check what changed since the canonical memory files were last updated.
 
 This command compares current repo activity against:

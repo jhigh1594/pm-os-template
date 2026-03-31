@@ -1,3 +1,6 @@
+---
+description: Run the templates workflow
+---
 # Template Finder
 
 **What this does:** Routes you to the right template/framework based on what you're trying to create.

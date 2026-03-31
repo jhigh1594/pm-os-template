@@ -1,3 +1,6 @@
+---
+description: Run the ui refine workflow
+---
 # /ui-refine - UI Refinement Loop
 
 Run the UI refinement loop until the implementation scores ≥9.3/10 on the objective rubric.

@@ -1,3 +1,6 @@
+---
+description: Run the narrative workflow
+---
 # Strategic Narrative & Storytelling
 
 You are helping me craft compelling strategic narratives that inspire, align, and drive action.

@@ -1,3 +1,6 @@
+---
+description: Run the biz case workflow
+---
 # Business Case Reasoning
 
 Apply financial and organizational reasoning to product decisions — so business constraints inform what we build, not just constrain it after the fact. Activates the `business-reasoning` skill for structured analysis.

@@ -1,3 +1,6 @@
+---
+description: Run the refresh memory workflow
+---
 Update `🤖 AI/memory/memory.md` with session activity by running the memory updater script.
 
 ## Command Arguments

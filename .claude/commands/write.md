@@ -1,3 +1,6 @@
+---
+description: Run the write workflow
+---
 # PM Communication Writer
 
 Write stakeholder communications with PM-specific structure, skill routing, and audience-aware context.
