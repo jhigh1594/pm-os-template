@@ -36,7 +36,7 @@ After execution completes, provide a summary including:
 - Number of meetings extracted
 - List of meeting titles with file paths
 - Any warnings or errors encountered
-- Output directory: `/Users/jhigh/Planview Work/🏢 Company/meetings/granola/`
+- Output directory: `/Users/jhigh/workspace/🏢 Company/meetings/granola/`
 
 ## Post-Meeting Intelligence
 

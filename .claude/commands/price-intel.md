@@ -106,8 +106,8 @@ _(These are the reasoning steps that separate a pricing hypothesis from a pricin
 
 ## Local Sources (Use First)
 
-- `/Users/jhigh/Planview Work/Product-Management/pricing/lennys-newsletter-art-and-science-of-pricing.md`
-- `/Users/jhigh/Planview Work/Product-Management/pricing/Pricing your AI product - Transcript.md`
+- `/Users/jhigh/workspace/Product-Management/pricing/lennys-newsletter-art-and-science-of-pricing.md`
+- `/Users/jhigh/workspace/Product-Management/pricing/Pricing your AI product - Transcript.md`
 
 ## Constraints
 

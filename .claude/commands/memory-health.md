@@ -38,7 +38,7 @@ import subprocess
 from datetime import datetime, timedelta
 from pathlib import Path
 
-workspace = Path("/Users/jhigh/Planview Work")
+workspace = Path(os.getcwd())
 memory_files = {
     "memory.md": workspace / "🤖 AI" / "memory" / "memory.md",
     "learned-patterns.md": workspace / "🤖 AI" / "patterns" / "learned-patterns.md",
@@ -93,7 +93,7 @@ if relevant_files:
 ### Step 2: Structural Health Audit
 
 ```bash
-cd "/Users/jhigh/Planview Work/🔧 Automation/scripts" && python memory_maintainer.py --audit --workspace "/Users/jhigh/Planview Work"
+cd "🔧 Automation/scripts" cd "/Users/jhigh/workspace/🔧 Automation/scripts" && python memory_maintainer.py --audit --workspace "/Users/jhigh/workspace"cd "/Users/jhigh/workspace/🔧 Automation/scripts" && python memory_maintainer.py --audit --workspace "/Users/jhigh/workspace" python memory_maintainer.py --audit --workspace "$(pwd)"
 ```
 
 ### Step 3: Synthesized Recommendation

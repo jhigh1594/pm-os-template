@@ -1,17 +1,17 @@
 ---
 name: qmd
-description: Search Planview workspace using QMD local semantic search. Use when user asks to: find PRDs, search competitive intel, look up product decisions, find PM frameworks, search AI patterns, query markdown docs, or find past work on a topic.
+description: Search your workspace using QMD local semantic search. Use when user asks to: find PRDs, search competitive intel, look up product decisions, find PM frameworks, search AI patterns, query markdown docs, or find past work on a topic.
 license: MIT
 compatibility: Requires qmd CLI. Install via `npm install -g @tobilu/qmd`.
 metadata:
-  author: tobi (upstream), jhigh (Planview customization)
-  version: "2.0.0-planview"
+  author: tobi (upstream)
+  version: "2.0.0"
 allowed-tools: Bash(qmd:*), mcp__qmd__*
 ---
 
-# QMD - Planview Workspace Search
+# QMD - Workspace Search
 
-Local semantic search engine for the Planview PM workspace. Combines BM25 keyword search, vector embeddings, and LLM re-ranking—running completely offline.
+Local semantic search engine for your PM workspace. Combines BM25 keyword search, vector embeddings, and LLM re-ranking—running completely offline.
 
 ## When to Use This Skill
 
@@ -256,7 +256,7 @@ qmd query "episodic memory implementation decisions"
 ## See Also
 
 - Upstream docs: https://github.com/tobi/qmd
-- Planview integration plan: `.checkpoints/qmd-integration-plan.md`
+- QMD integration plan: `.checkpoints/qmd-integration-plan.md`
 - `/search` command for workspace-specific queries
 
 ## Self-Learning

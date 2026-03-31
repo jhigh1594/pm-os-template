@@ -84,9 +84,9 @@ Follow this sequence unless the user explicitly asks for a narrower sub-task.
 After forming the ICP hypothesis (step 2 of the Default Workflow), check four business model fit signals before producing positioning assets. These are validation questions, not blockers — but if any signals are red, they need to be surfaced before writing positioning that assumes the ICP is viable.
 
 **Check 1: Revenue Model Fit**
-Does this segment's buying behavior align with Planview's current pricing model?
+Does this segment's buying behavior align with the company's current pricing model?
 - Enterprise seat-based pricing requires a champion with authority over seat budgets
-- If the ICP's buying motion is PLG or bottom-up, Planview's sales-led motion may not reach them
+- If the ICP's buying motion is PLG or bottom-up, a sales-led motion may not reach them
 - Signal: Has this segment historically closed through the same motion as other wins?
 
 **Check 2: CS Capacity Implication**
@@ -96,9 +96,9 @@ Does serving this ICP at scale create CS overhead not anticipated in current cap
 - Signal: Are there support or onboarding signals about this segment in the workspace?
 
 **Check 3: Sales Motion Fit**
-Can Planview's current sales motion reach this ICP?
+Can the company's current sales motion reach this ICP?
 - Enterprise field sales vs. PLG vs. partner channels have different reach profiles
-- If the ICP is mid-market but Planview's AEs are enterprise-focused, even a great ICP choice has a GTM gap
+- If the ICP is mid-market but the company's AEs are enterprise-focused, even a great ICP choice has a GTM gap
 - Signal: Are there examples of this segment in the current customer base — and how were they acquired?
 
 **Check 4: Competitive Risk of Narrowing**

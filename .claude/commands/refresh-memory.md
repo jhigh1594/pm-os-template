@@ -13,7 +13,7 @@ Parse the command arguments in order:
 ## Execution
 
 Build the command based on arguments:
-- Base command: `python3 "🔧 Automation/scripts/memory_updater.py" --workspace "/Users/jhigh/Planview Work"`
+- Base command: `python3 "🔧 Automation/scripts/memory_updater.py" --workspace "/Users/jhigh/workspace"`
 - If `dry_run` is `true`, add `--dry-run`
 
 Run the command using Bash.
@@ -105,7 +105,7 @@ Typical workflow:
 Success message:
 ```
 ✅ Updated memory.md with session: Implement /brainstorm command...
-   File: /Users/jhigh/Planview Work/🤖 AI/memory/memory.md
+   File: /Users/jhigh/workspace/🤖 AI/memory/memory.md
    Commits: 5
 ```
 

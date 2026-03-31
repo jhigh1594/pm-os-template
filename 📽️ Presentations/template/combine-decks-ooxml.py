@@ -108,7 +108,7 @@ def add_content_type(ct_xml, slide_num):
 def combine_presentations(title_path, content_path, output_path):
     """Combine title slide with content slides using OOXML manipulation."""
 
-    temp_dir = '/tmp/planview-deck/combine-temp'
+    temp_dir = '/tmp/pm-os-deck/combine-temp'
     title_dir = os.path.join(temp_dir, 'title')
     content_dir = os.path.join(temp_dir, 'content')
 

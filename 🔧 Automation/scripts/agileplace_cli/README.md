@@ -16,7 +16,7 @@ pip install httpx typer python-dotenv markdown
 Create a `.env` file in `Automation/scripts/` with:
 
 ```env
-AGILEPLACE_DOMAIN=https://planview.leankit.com
+AGILEPLACE_DOMAIN=https://your-instance.leankit.com
 AGILEPLACE_API_TOKEN=your_api_token_here
 ```
 
@@ -232,7 +232,7 @@ Options:
 
 ```bash
 python cli.py cards create 1234567890 \
-  --title "Feature: Global Attributes for Planview Products" \
+  --title "Feature: Global Attributes for Your Products" \
   --description "
 ## Problem Statement
 Enterprise customers need consistent custom fields across products.
@@ -290,6 +290,6 @@ When AI coding agents need to interact with AgilePlace:
 2. **Check auth first** - run `auth whoami` to verify credentials
 3. **Use table format** - for human-readable output
 4. **Use json format** - for programmatic parsing
-5. **Card URLs** - follow pattern `https://planview.leankit.com/card/<id>`
+5. **Card URLs** - follow pattern `https://your-instance.leankit.com/card/<id>`
 
 See `.claude/rules/agileplace-cli.mdc` for agent-specific instructions.

@@ -20,5 +20,5 @@ Slide decks, presentation templates, and visual assets.
 
 ## Tools
 
-- Use `/planview-deck` command for branded presentations
+- Use `/deck` command for branded presentations (customize to match your brand)
 - html2pptx workflow for precise alignment

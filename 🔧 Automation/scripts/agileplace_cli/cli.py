@@ -426,7 +426,7 @@ def cards_get(
             preview = desc_clean[:200] + "..." if len(desc_clean) > 200 else desc_clean
             typer.echo(f"\nDescription:\n{preview}")
 
-        typer.echo(f"\nURL: https://planview.leankit.com/card/{card_id}")
+        typer.echo(f"\nURL: https://your-agileplace-instance.leankit.com/card/{card_id}")
     else:
         typer.echo(json.dumps(result, indent=2))
 
@@ -533,7 +533,7 @@ def cards_create(
     except httpx.HTTPError as exc:
         raise typer.BadParameter(f"Create card failed: {exc}") from exc
     card_id = result.get("id")
-    typer.echo(f"Created card {card_id}: https://planview.leankit.com/card/{card_id}")
+    typer.echo(f"Created card {card_id}: https://your-agileplace-instance.leankit.com/card/{card_id}")
 
 
 @CARDS_APP.command("update")
@@ -559,7 +559,7 @@ def cards_update(
         client.patch(f"/io/card/{card_id}", patches)
     except httpx.HTTPError as exc:
         raise typer.BadParameter(f"Update card failed: {exc}") from exc
-    typer.echo(f"Updated card {card_id}: https://planview.leankit.com/card/{card_id}")
+    typer.echo(f"Updated card {card_id}: https://your-agileplace-instance.leankit.com/card/{card_id}")
 
 
 @CARDS_APP.command("tasks")

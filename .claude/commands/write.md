@@ -173,7 +173,7 @@ Tailored to: [name + one sentence of context used]
 
 ## Quick Reference for PM Context
 
-When applicable, draw from Planview/AgilePlace context:
+When applicable, draw from Company/AgilePlace context:
 
 **ICP:** Enterprise (500–10,000+ employees), Financial Services, Insurance, Logistics, Manufacturing, Technology
 **Products:** AgilePlace, OKRs, Roadmaps, DPD

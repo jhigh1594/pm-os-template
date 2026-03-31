@@ -252,13 +252,13 @@ The CLI reads credentials from:
 
 Required environment variables:
 ```
-AGILEPLACE_DOMAIN=https://planview.leankit.com
+AGILEPLACE_DOMAIN=https://your-instance.leankit.com
 AGILEPLACE_API_TOKEN=<token>
 ```
 
 Optional (for OKR commands):
 ```
-OKR_BASE_URL=https://api-us.okrs.planview.com
+OKR_BASE_URL=https://api-us.okrs.your-instance.com
 OKR_CLIENT_ID=<oauth2-client-id>
 OKR_CLIENT_SECRET=<oauth2-client-secret>
 OKR_TOKEN=<direct-token>  # Alternative to OAuth2
@@ -280,7 +280,7 @@ Most commands support `--format json` (default) or `--format table`:
 ## Notes
 
 - Description fields support markdown and are auto-converted to HTML
-- Card URLs follow pattern: `https://planview.leankit.com/card/<card_id>`
+- Card URLs follow pattern: `https://your-instance.leankit.com/card/<card_id>`
 - Board ID can be extracted from board URL (the alphanumeric string after `/board/`)
 - Complex payloads (batch operations, layouts, hierarchy) accept JSON files via `@file.json` syntax
 - Batch operations report per-item success/failure

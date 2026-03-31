@@ -1,6 +1,6 @@
 # UI Refinement Loop System Prompt
 
-Planview Work workspace: iterative UI implementation with objective scoring until ≥9.3/10. User provides only the task; stack and design constraints are predefined for this repo.
+your PM workspace: iterative UI implementation with objective scoring until ≥9.3/10. User provides only the task; stack and design constraints are predefined for this repo.
 
 ---
 

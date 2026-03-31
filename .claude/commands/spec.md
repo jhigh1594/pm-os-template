@@ -60,7 +60,7 @@ You are helping me write a clear, complete product specification that enables th
 
 ## Template References
 
-This command uses two core templates located in `/Users/jhigh/Planview Work/📝 Docs/templates/`:
+This command uses two core templates located in `/Users/jhigh/workspace/📝 Docs/templates/`:
 
 1. **`prd-template.md`** - The PRD structure to follow for `full`, `light`, and `one-pager` formats
 2. **`socratic-questioning.md`** - The discovery questioning framework
@@ -158,7 +158,7 @@ For new PRDs, follow the Socratic questioning process. Use the same context-gath
 After generating the draft, check whether it includes a Business Case section:
 - **If missing from a full PRD**: "⚠️ Full PRDs should include a Business Case section. Run `/biz-case --mode review [path]` after saving, or confirm to generate inline."
 - **If confirmed**: Generate using the `business-reasoning` skill 6-element template:
-  1. Strategic rationale — why this aligns with Planview's current direction
+  1. Strategic rationale — why this aligns with Company's current direction
   2. Revenue impact hypothesis — mechanism (new logo / expansion / retention) + Conservative/Expected cases
   3. Customer segment — ICP segment, persona file reference if available, rough segment size
   4. Cost-to-build estimate — Small / Medium / Large (PM estimate, requires engineering validation)
@@ -263,7 +263,7 @@ Surface any `[NEEDS INPUT]` as open questions that must be resolved before spec 
 
 If the `--save` flag was provided:
 1. Generate a slugified filename from the feature description (e.g., "OKR Multi-Parent Support" → `okr-multi-parent-support-prd.md`)
-2. Save to `/Users/jhigh/Planview Work/📦 Products/{product}/initiatives/{feature-slug}/`
+2. Save to `/Users/jhigh/workspace/📦 Products/{product}/initiatives/{feature-slug}/`
 3. Confirm the file location to the user
 
 **Filename pattern**: `{slugified-feature}-prd.md`

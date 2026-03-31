@@ -110,7 +110,7 @@ Confidence level:
 ### Step 5: Write to learned-patterns.md
 
 Use the Edit tool to add the pattern to the appropriate section in:
-`/Users/jhigh/Planview Work/🤖 AI/patterns/learned-patterns.md`
+`/Users/jhigh/workspace/🤖 AI/patterns/learned-patterns.md`
 
 Update:
 1. Add pattern to correct section
@@ -152,10 +152,10 @@ Confidence: Medium
 
 ### Example 2: Capture a Convention
 ```
-/capture-pattern convention "Planview Corporate Template"
+/capture-pattern convention "Company Corporate Template"
 
 Pattern: Always use corporate template for presentations
-Context: Any Planview slide deck
+Context: Any Company slide deck
 Why: Saves 1-2 hours, brand consistency, marketing-approved
 Confidence: High
 ```

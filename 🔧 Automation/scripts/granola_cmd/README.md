@@ -28,25 +28,25 @@ bash "🔧 Automation/scripts/granola_cmd/install.sh"
 
 This will:
 
-- Create `~/Library/LaunchAgents/com.planview.granola_cmd.plist`
-- Set WorkingDirectory to `…/Planview Work/🔧 Automation/scripts`
+- Create `~/Library/LaunchAgents/com.pm-os.granola_cmd.plist`
+- Set WorkingDirectory to `…/your-workspace/🔧 Automation/scripts`
 - Use workspace `.venv/bin/python3` if present
-- Log to `Planview Work/.logs/granola_cmd_stdout.log` and `granola_cmd_stderr.log`
+- Log to `your-workspace/.logs/granola_cmd_stdout.log` and `granola_cmd_stderr.log`
 - Load the agent so it runs at 23:59 daily
 
 ### Uninstall
 
 ```bash
-launchctl unload ~/Library/LaunchAgents/com.planview.granola_cmd.plist
-rm ~/Library/LaunchAgents/com.planview.granola_cmd.plist
+launchctl unload ~/Library/LaunchAgents/com.pm-os.granola_cmd.plist
+rm ~/Library/LaunchAgents/com.pm-os.granola_cmd.plist
 ```
 
 ### Check status
 
 ```bash
-launchctl list | grep planview.granola
-# If installed: shows com.planview.granola_cmd with PID 0 when idle
+launchctl list | grep pm-os.granola
+# If installed: shows com.pm-os.granola_cmd with PID 0 when idle
 # If missing: no line
 ```
 
-Logs after a run: `Planview Work/.logs/granola_cmd_*.log`.
+Logs after a run: `your-workspace/.logs/granola_cmd_*.log`.

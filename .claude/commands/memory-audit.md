@@ -7,7 +7,7 @@ Run a health audit of the workspace memory system. Check for TTL violations, sta
 
 1. Run the memory maintainer audit:
    ```bash
-   cd "/Users/jhigh/Planview Work/🔧 Automation/scripts" && python memory_maintainer.py --audit --workspace "/Users/jhigh/Planview Work"
+   cd "/Users/jhigh/workspace/🔧 Automation/scripts" && python memory_maintainer.py --audit --workspace "/Users/jhigh/workspace"
    ```
 
 2. Display the health report output to the user.

@@ -252,7 +252,7 @@ After presenting the model, offer:
 ```markdown
 ## Business Case
 
-**Strategic rationale:** [1-2 sentences — why this aligns with Planview's current direction. Cite Q1 OKRs or product strategy if applicable. This is context, not the case itself.]
+**Strategic rationale:** [1-2 sentences — why this aligns with your product's current direction. Cite Q1 OKRs or product strategy if applicable. This is context, not the case itself.]
 
 **Revenue impact hypothesis:** [How this moves ARR or reduces churn — label as PM estimate; specify mechanism: new logo | expansion | retention]
 - Conservative case: [X% adoption × Y accounts × Z ARR/account = $ARR impact]
@@ -288,7 +288,7 @@ If confirmed: draft only the missing sections, present them for review before ap
 - **Perspective mode is about understanding reasoning**, not characterizing functions as obstacles — frame functionally, not as adversaries
 - **No precision theater** — a rough estimate with labeled assumptions is more useful than a false-precision spreadsheet model. Three buckets (conservative/expected/upside) are better than a 40-row model.
 - **Business Case sections in PRDs must include go/no-go criteria** — otherwise they're strategic rationale statements, not business cases
-- **Never assume what other functions care about** without grounding in Planview-specific context — check `📚 Knowledge/People/[name].md` files for actual stakeholder context before making claims about specific individuals
+- **Never assume what other functions care about** without grounding in Company-specific context — check `📚 Knowledge/People/[name].md` files for actual stakeholder context before making claims about specific individuals
 
 ---
 

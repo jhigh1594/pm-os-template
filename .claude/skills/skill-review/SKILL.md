@@ -28,7 +28,7 @@ Present a concise table:
 |-------|-------|--------|----------|---------------|
 | `product-coach` | 4.1/5 | success | no change | None |
 | `research` | 2.8/5 | retry_loop | SKILL.md rewrite | Review |
-| `planview-deck` | 3.1/5 | tool_error | LEARNED-only | Promote lesson |
+| `sample-deck` | 3.1/5 | tool_error | LEARNED-only | Promote lesson |
 
 Focus on skills with `recommended_action` of `SKILL.md rewrite` or `LEARNED-only` first.
 

@@ -7,7 +7,7 @@ Run OKR progress and risk analysis (portfolio or single-objective). Collects tem
 
 ## Canonical Source
 
-**Read and follow:** `/Users/jhigh/Planview Work/.claude/prompts/okr-progress-analysis.md`
+**Read and follow:** `/Users/jhigh/workspace/.claude/prompts/okr-progress-analysis.md`
 
 The prompt defines the templatized analysis logic, output format, and run-time variable collection.
 

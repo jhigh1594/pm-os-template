@@ -5,7 +5,7 @@ updated: "2026-01-29"
 product_focus: "Roadmaps"
 difficulty_level: "Intermediate"
 time_investment: "4 hours"
-author: "Planview PM Team"
+author: "PM Team"
 related_paths:
   - "stakeholder-communication.md"
   - "okrs-alignment.md"
@@ -14,7 +14,7 @@ episodes_count: 8
 
 # Roadmap Strategy - Learning Path
 
-> Curated episodes from Lenny's Podcast with applications to Planview Roadmaps
+> Curated episodes from Lenny's Podcast with applications to roadmap planning
 
 ## Learning Objectives
 
@@ -92,7 +92,7 @@ After completing this learning path, you will be able to:
 
 **Discussion Questions**:
 1. How would you integrate RICE into the Roadmaps product workflow without overwhelming enterprise users?
-2. What strategic buckets make sense for typical Planview customers (e.g., "strategic initiatives," "customer commitments," "technical debt")?
+2. What strategic buckets make sense for typical enterprise customers (e.g., "strategic initiatives," "customer commitments," "technical debt")?
 
 ---
 
@@ -281,7 +281,7 @@ After completing this learning path, you will be able to:
 ### Theme 1: Great Roadmaps Are Stories, Not Backlogs
 **What the experts agree on**: Every guest emphasized that a roadmap isn't a list of features—it's a narrative about how you'll win. Ken Norton's "strategic narrative" framework, Elena Verna's vision-strategy-roadmap hierarchy, and Ian McAllister's emphasis on storytelling all point to the same truth: stakeholders buy into stories, not backlogs.
 
-**Application to Planview Roadmaps**:
+**Application Roadmaps**:
 - The product should enable narrative-driven roadmaps, not just Gantt charts
 - Strategic themes and business outcomes should be first-class, not afterthoughts
 - Roadmap sharing should look like a business presentation, not a project plan
@@ -294,7 +294,7 @@ After completing this learning path, you will be able to:
 ### Theme 2: Tradeoffs Must Be Explicit, Not Implicit
 **What the experts agree on**: Maggie Crowley, Shreyas Doshi, and Gibson Biddle all highlighted that the biggest prioritization mistake is hiding tradeoffs. When you say "yes" to everything, you're saying "no" to everything—just implicitly. Great PMs make opportunity costs visible.
 
-**Application to Planview Roadmaps**:
+**Application Roadmaps**:
 - Support "what-if" scenarios that show what slips when new items are added
 - Track requested-by attribution to show whose pet project is delaying what
 - Enable "priority 1 only" views to force tough choices
@@ -307,7 +307,7 @@ After completing this learning path, you will be able to:
 ### Theme 3: Strategy > Tactics, But Tactics > Nothing
 **What the experts agree on**: Ian McAllister's 50/30/20 rule (50% strategic, 30% tactical, 20% team building) revealed that most PMs have this backwards. Shreyas Doshi's "three levels of product work" and Elena Verna's vision-strategy-roadmap framework all reinforce that strategic thinking drives better roadmaps—but Jason Shah's batch-processing tactics show you still need execution.
 
-**Application to Planview Roadmaps**:
+**Application Roadmaps**:
 - Enable "strategic view" that hides tactical noise
 - Support executive-friendly roadmaps with business outcomes
 - Include tactical workflows for request triage and batch processing
@@ -379,7 +379,7 @@ After completing this learning path, you will be able to:
 
 **Last Reviewed**: 2026-01-29
 **Next Review Date**: 2026-07-29
-**Reviewer**: Planview PM Team
+**Reviewer**: PM Team
 
 **Change Log**:
 - 2026-01-29: Initial creation with 8 curated episodes

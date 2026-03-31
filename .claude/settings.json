@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"/Users/jhigh/Planview Work\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/instruction_load_audit.py\""
+            "command": "cd \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/instruction_load_audit.py\""
           }
         ]
       }
@@ -15,7 +15,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"/Users/jhigh/Planview Work\" && bash \".claude/hooks/session-start.sh\""
+            "command": "cd \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\" && bash \".claude/hooks/session-start.sh\""
           }
         ]
       }
@@ -25,7 +25,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"/Users/jhigh/Planview Work\" && .venv/bin/python \"🔧 Automation/scripts/hooks/session_end.py\" --workspace \"/Users/jhigh/Planview Work\" --python-cmd \".venv/bin/python\""
+            "command": "cd \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\" && .venv/bin/python \"🔧 Automation/scripts/hooks/session_end.py\" --workspace \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\" --python-cmd \".venv/bin/python\""
           }
         ]
       }
@@ -35,7 +35,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"/Users/jhigh/Planview Work\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/compact_state.py\" capture"
+            "command": "cd \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/compact_state.py\" capture"
           }
         ]
       }
@@ -45,7 +45,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"/Users/jhigh/Planview Work\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/continuation_cue.py\""
+            "command": "cd \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/continuation_cue.py\""
           }
         ]
       }
@@ -55,7 +55,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"/Users/jhigh/Planview Work\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/learning_signal.py\""
+            "command": "cd \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/learning_signal.py\""
           }
         ]
       }
@@ -65,7 +65,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"/Users/jhigh/Planview Work\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/end_of_turn.py\""
+            "command": "cd \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/end_of_turn.py\""
           }
         ]
       }

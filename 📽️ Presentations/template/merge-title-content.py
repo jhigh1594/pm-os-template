@@ -8,7 +8,7 @@ Usage:
     python merge-title-content.py <title_pptx> <content_pptx> <output_pptx>
 
 Example:
-    python merge-title-content.py /tmp/planview-deck/with-title.pptx /tmp/planview-deck/content.pptx /tmp/planview-deck/final.pptx
+    python merge-title-content.py /tmp/pm-os-deck/with-title.pptx /tmp/pm-os-deck/content.pptx /tmp/pm-os-deck/final.pptx
 """
 
 import sys

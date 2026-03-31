@@ -46,9 +46,7 @@ _Workspace-specific patterns that aren't obvious to newcomers_
 
 > **Format**: Pattern → Context → Why → Confidence
 
-### Planview Presentations Always Start with Corporate Template
-**Pattern**: Use `/Users/jhigh/Library/Mobile Documents/com~apple~CloudDocs/Planview Corporate Template-2025.pptx` for all presentations
-**Context**: Any slide deck creation for Planview (internal or external)
+**Context**: Any slide deck creation 
 **Why**: Ensures brand consistency, saves 1-2 hours on formatting per deck, pre-approved by marketing
 **Confidence**: High (reinforced 5x)
 
@@ -125,7 +123,6 @@ _Patterns are semantically validated based on session learnings_
 | Date | Pattern | Change | Reason |
 |------|---------|--------|--------|
 | 2026-02-17 | Semantic Pattern Capture System | Added | First decision captured - new system design |
-| 2026-02-17 | Planview Corporate Template | Added | High-value convention from memory.md |
 | 2026-02-17 | Documentation Convention | Added | PRDs vs Memos distinction |
 | 2026-02-17 | AIPMOS Memory Structure | Added | Single-file system understanding |
 | 2026-02-17 | File created | Initial structure | Starting fresh |

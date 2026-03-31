@@ -96,8 +96,8 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 
 ---
 
-### /planview-slides
-**User intent**: Create a hosted, animated, shareable Planview deck
+### /slides
+**User intent**: Create a hosted, animated, shareable Company deck
 
 **When to suggest**:
 - "Build a deck I can send as a link"
@@ -107,12 +107,12 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - "Publish this presentation to the Vercel site"
 
 **NOT for**:
-- Editable PowerPoint deliverables (use /planview-deck)
+- Editable PowerPoint deliverables (use /deck)
 - Legacy PPTX workflows that require html2pptx output
 
 ---
 
-### /planview-deck
+### /deck
 **User intent**: Create an editable PowerPoint deck
 
 **When to suggest**:
@@ -122,7 +122,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - "Build title slide + content slides for PPTX handoff"
 
 **NOT for**:
-- Hosted HTML decks (use /planview-slides)
+- Hosted HTML decks (use /slides)
 - Password-protected live share links
 
 ---
@@ -703,13 +703,26 @@ I need pricing competitive research            → /price-intel
 ---
 
 ### /onboard
-**User intent**: New user onboarding and orientation
+**User intent**: New user onboarding — portable PM-OS setup (job-to-job)
+
+**Portability**: **Durable** (Step 1 — craft, working style, how the human plans) vs **tenant** (Steps 2–4 — company, products, keys, tracker). On a new job, refresh durable + strategy content and re-wire tracker and env.
+
+**Flow (4 steps only — no fifth onboarding phase)**:
+1. Role, company, quarter outcomes, stakeholders, **working preferences** → `GOALS.md`, `🤖 AI/memory/memory.md`
+2. Initiatives / success signals in repo → `📦 Products/.../initiatives/` as needed; observable goals
+3. **`/today`** wiring → `🔧 Automation/scripts/today_cmd/config.yaml` (`task_tracker`, `profile.owner_names`, optional Slack)
+4. Keys and connectors → `.env` / `.env.example` (`GOOGLE_API_KEY`, **`GENAIPM_EMAIL`** for mandatory One Step Better in `/today`, optional Granola/Slack); validate with **`/today dry`**, then **`/today`** daily
+
+**Lifecycle after onboarding** (not part of `/onboard`): idea-to-delivery table is in `.claude/commands/onboard.md` — `/brainstorm` through `/learn` when there is a real initiative.
+
+**Ruler**: If the repo uses Ruler, prefer `.ruler/AGENTS.md` + `ruler apply` over hand-editing generated `CLAUDE.md`.
 
 **When to suggest**:
-- "New to AIPMOS - help me get started"
-- "How do I use these commands?"
-- "Getting started with..."
-- "Introduction to..."
+- "New to AIPMOS" / help getting started
+- Cloning or forking **pm-os-template**, new machine, **new job**, re-seeding the workspace
+- "How do I use these commands?" / setting up the daily loop
+
+**Full command body**: `.claude/commands/onboard.md` — **Cursor** mirror: `.cursor/commands/onboard.md`
 
 ---
 
@@ -939,7 +952,7 @@ I need pricing competitive research            → /price-intel
 ### /ui-refine
 **User intent**: Implement UI and refine until it scores ≥9.3/10 on an objective rubric
 
-**Canonical source**: `/Users/jhigh/Planview Work/.claude/prompts/ui-refinement-loop.md`
+**Canonical source**: `/Users/jhigh/workspace/.claude/prompts/ui-refinement-loop.md`
 
 **When to suggest**:
 - "Refine this UI until it's polished"

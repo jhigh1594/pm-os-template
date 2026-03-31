@@ -121,40 +121,49 @@ Read `📋 Tasks/today.md` and analyze the data to generate:
 - Note patterns (batching opportunities, very overdue items, dependencies)
 - Surface blockers or risks
 
-### Step 2b: One Step Better AI PM
+### Step 2b: One Step Better AI PM (MANDATORY — never skip)
 
-After analyzing the task data, invoke the `/one-step-better-ai-pm` skill to fetch the latest AI PM improvement recommendation:
+Every `/today` run **must** execute this step before updating `today.md`. Do not treat GenAI PM / One Step Better as optional: the "## 🚀 One Step Better" section must always contain a completed block (not an empty placeholder).
 
-1. **Run Phases 1-3** of the skill (fetch briefs, build repo profile, match and rank)
-2. **Extract the #1 recommended improvement** from the skill output
+Read and follow `.claude/skills/menkesu-awesome-pm-skills-one-step-better-ai-pm/SKILL.md` (Phases 1–3 only; never Phase 4 apply from `/today`).
+
+After analyzing the task data:
+
+1. **Run Phases 1–3** of the skill (fetch briefs, build repo profile, match and rank). If `GENAIPM_EMAIL` is unset and the skill requires it, **prompt once** for the subscriber email and continue (or document that the user must set `GENAIPM_EMAIL` in `.env` and re-run).
+2. **Extract the #1 recommended improvement** from the skill output (or the best available ranked item).
 3. **Format the recommendation** for the "🚀 One Step Better" section:
 
 ```markdown
 ### Recommended Improvement
 
 **[Brief title]**
-- **Why it matters**: [Relevance to current Planview work - connect to DPD, AIPMOS, or active initiatives]
+- **Why it matters**: [Relevance to current Company work — connect to GOALS, active initiatives, or repo]
 - **What to do**: [Concrete action the user can take]
 - **Files affected**: [List specific files or "N/A - process improvement"]
 - **Time estimate**: [e.g., "15-20 minutes"]
 
 ### Recently Applied
-- [Check `.one-step-better/history.json` for last 2-3 improvements and list them]
+- [Check `.one-step-better/history.json` for last 2-3 improvements and list them; if file missing, omit this subsection only]
 ```
 
-4. **Replace the placeholder** `<!-- Claude populates this with /one-step-better-ai-pm recommendations -->` with the formatted content
+4. **Replace the placeholder** `<!-- Claude populates this with /one-step-better-ai-pm recommendations -->` with the formatted content.
+
+**Failure and edge cases (section still required):**
+
+- Do **not** proceed to Step 3 until "## 🚀 One Step Better" has real content. If the GenAI PM API returns 401 or fails after retry, populate the section with a short **structured fallback**: what failed, that a free subscription is at https://genaipm.com, set `GENAIPM_EMAIL`, re-run `/today`. Same if fetch returns no briefs: state that explicitly and suggest checking tomorrow — still using the same markdown headings so the section is never blank.
+- If briefs exist but **no item scores as relevant**, follow the skill: say so honestly in **Recommended Improvement** and give one low-confidence or tooling-adjacent takeaway rather than leaving the section empty.
+- Do **not** auto-apply (Phase 4) from `/today` — the user reviews and decides.
 
 **Important:**
-- Do NOT proceed to Phase 4 (apply) automatically — the user reviews and decides
-- If the GenAI PM API fails or returns no relevant items, leave the placeholder with a note: "*No recommendations available today — check back tomorrow*"
-- Gracefully handle missing `history.json` (just skip the "Recently Applied" subsection)
+
+- Skipping Step 2b or shipping an empty One Step Better block **invalidates** the `/today` run.
 
 ### Step 3: Update today.md
 Replace the placeholder comments in `📋 Tasks/today.md`:
 - Replace "## 🧠 What's On My Mind Today" section with carried-forward focus areas (if any)
 - Replace `<!-- Claude/Cursor populates this with analysis -->` with actual Top 3 Priorities
 - **MANDATORY:** Replace `<!-- Claude/Cursor populates this with insights -->` with actual Ideas & Considerations. Never leave this section empty. Include: patterns across tasks, process notes, staleness/blocker observations, or strategic connections.
-- **One Step Better:** Replace the placeholder in "## 🚀 One Step Better" with the formatted recommendation from Step 2b
+- **One Step Better (mandatory):** Replace the placeholder in "## 🚀 One Step Better" with the formatted recommendation from Step 2b — never leave this section as the HTML comment placeholder
 
 ### Step 4: Display and Ask User
 Show the user the completed today.md. Ask TWO questions:
@@ -186,7 +195,7 @@ Provide a concise summary showing:
 - Items carried forward from yesterday
 - Items moved to completed.md
 - Key alignment notes between user's focus and task list
-- One Step Better recommendation (brief title only — full details in today.md)
+- One Step Better recommendation (brief title only — full details in today.md; always include — note if fallback was used due to API)
 
 ## Output Summary
 
@@ -196,4 +205,4 @@ After execution completes, provide a summary including:
 - Overdue count
 - Top 3 priorities (with reasoning)
 - Key insights from analysis
-- One Step Better recommendation (if available)
+- One Step Better recommendation (title always; say if GenAI PM was unavailable and fallback text was written)

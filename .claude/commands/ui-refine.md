@@ -7,7 +7,7 @@ Run the UI refinement loop until the implementation scores ≥9.3/10 on the obje
 
 ## Canonical Source
 
-**Read and follow:** `/Users/jhigh/Planview Work/.claude/prompts/ui-refinement-loop.md`
+**Read and follow:** `/Users/jhigh/workspace/.claude/prompts/ui-refinement-loop.md`
 
 The prompt defines refinement-loop mode, scoring rubric, and output format. This command invokes that behavior.
 

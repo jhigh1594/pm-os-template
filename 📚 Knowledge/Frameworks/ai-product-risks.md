@@ -101,7 +101,7 @@ Run: "Can a customer in financial services or insurance deploy this feature and 
 
 ### B2B-Specific Concern
 
-Financial services and insurance customers (a significant part of Planview's ICP) require auditability and opt-out capability for AI features that affect staffing, capacity, or risk decisions. A feature that doesn't support audit trails will fail their procurement review or trigger retroactive remediation. Build for auditability from the start.
+Financial services and insurance customers (a significant part of the target ICP) require auditability and opt-out capability for AI features that affect staffing, capacity, or risk decisions. A feature that doesn't support audit trails will fail their procurement review or trigger retroactive remediation. Build for auditability from the start.
 
 **Design pattern:** Maintain an immutable log of AI outputs with timestamps, confidence scores, and human override decisions. Make it exportable.
 
