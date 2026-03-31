@@ -91,7 +91,7 @@ If `Knowledge/People/[name].md` doesn't exist for someone, note: "⚠️ No cont
 
 **Trigger**: Activate when ANY of these conditions are true:
 - `--goal` contains "demo", "walk-through", "trial review", "product deep-dive", "product review"
-- Any attendee in `--people` is an external customer (not a Planview employee)
+- Any attendee in `--people` is an external customer (not a Company employee)
 - The meeting description includes product evaluation, onboarding, or support escalation context
 
 **When triggered**, run these two checks:
@@ -173,8 +173,8 @@ Specific questions (not open-ended topics):
 ### Step 3.5: Champion Briefing Mode (External Customer Meetings)
 
 **Trigger conditions — activate this mode when ALL of these are true:**
-1. At least one attendee in `--people` is an external customer (not a Planview employee)
-2. Their `Knowledge/People/[name].md` file indicates a champion relationship (they advocate internally for AgilePlace/Planview)
+1. At least one attendee in `--people` is an external customer (not a Company employee)
+2. Their `Knowledge/People/[name].md` file indicates a champion relationship (they advocate internally for AgilePlace/Company)
 3. The meeting context suggests they will be acting on your behalf internally (exec review, steering committee, PI planning, renewal discussion)
 
 **When this mode activates:** Replace the standard 7-section format with the Champion Briefing format below. The goal is not to inform the champion — it's to **equip** them.

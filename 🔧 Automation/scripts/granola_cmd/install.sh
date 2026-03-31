@@ -6,7 +6,7 @@ set -e
 # Configuration (use 🔧 Automation/scripts; workspace root has emoji-prefixed dirs)
 WORK_DIR="{{WORKSPACE_PATH}}"
 SCRIPT_DIR="${WORK_DIR}/🔧 Automation/scripts"
-PLIST_PATH="$HOME/Library/LaunchAgents/com.planview.granola_cmd.plist"
+PLIST_PATH="$HOME/Library/LaunchAgents/com.pm-os.granola_cmd.plist"
 LOGS_DIR="${WORK_DIR}/.logs"
 
 # Ensure logs directory exists
@@ -25,7 +25,7 @@ cat > "$PLIST_PATH" << EOF
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.planview.granola_cmd</string>
+    <string>com.pm-os.granola_cmd</string>
 
     <key>ProgramArguments</key>
     <array>

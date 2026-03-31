@@ -6,7 +6,7 @@
 
 This directory contains curated learning paths that synthesize insights from 300+ Lenny's Podcast episodes and apply them to **core Sr. PM competencies** that are portable across any product or company.
 
-**Key Change (January 2026)**: These paths are now **role-based** rather than product-focused. Instead of learning about "AgilePlace" or "OKRs," you'll develop portable skills like strategic thinking, leadership, customer discovery, team design, and prioritization—skills that advance your career whether you're at Planview or anywhere else.
+**Key Change (January 2026)**: These paths are now **role-based** rather than product-focused. Instead of learning about "AgilePlace" or "OKRs," you'll develop portable skills like strategic thinking, leadership, customer discovery, team design, and prioritization—skills that advance your career whether you're at any company.
 
 Each learning path is designed to be:
 - **Portable**: Skills that apply across any B2B SaaS product or role
@@ -195,4 +195,4 @@ Lenny's Podcast features interviews with world-class product leaders from compan
 ---
 
 *Last Updated: January 29, 2026*
-*Maintained by: Planview PM Team*
+*Maintained by: PM Team*

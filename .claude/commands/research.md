@@ -107,7 +107,7 @@ State the prescription explicitly: "Given [Low/Medium/High] evidence confidence,
 
 If `--opportunity` was provided, generate a study plan directly calibrated to it — do not ask generic framing questions. The output should include:
 
-**ICP-calibrated screener** (Planview ICP: Enterprise 500-10K+ employees, Financial Services, Insurance, Logistics, Manufacturing, Technology):
+**ICP-calibrated screener** (Company ICP: Enterprise 500-10K+ employees, Financial Services, Insurance, Logistics, Manufacturing, Technology):
 ```
 Screener criteria:
 - Company size: [500+ employees / 10K+ employees for enterprise-grade]

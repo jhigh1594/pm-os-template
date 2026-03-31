@@ -1,8 +1,8 @@
 /**
- * Planview HTML-to-PPTX Workflow Script
+ * HTML-to-PPTX Workflow Script
  *
  * This script demonstrates the recommended workflow for creating
- * Planview presentations using HTML templates and html2pptx.
+ * presentations using HTML templates and html2pptx.
  *
  * USAGE:
  *   node html2pptx-workflow.js
@@ -28,12 +28,12 @@ const path = require('path');
 const TEMPLATES_DIR = __dirname;
 const HTML_TEMPLATES = path.join(TEMPLATES_DIR, 'html-templates');
 
-// Planview logo path (use /tmp to avoid emoji path encoding issues)
-const LOGO_PATH = path.join(TEMPLATES_DIR, 'planview-logo.png');
-const LOGO_TMP_PATH = '/tmp/planview-logo.png';
+// Company logo path (use /tmp to avoid emoji path encoding issues)
+const LOGO_PATH = path.join(TEMPLATES_DIR, 'company-logo.png');
+const LOGO_TMP_PATH = '/tmp/company-logo.png';
 
 /**
- * Copy Planview logo to /tmp for use in HTML slides.
+ * Copy company logo to /tmp for use in HTML slides.
  * This avoids path encoding issues with emoji characters in the workspace path.
  * Call this before processing any HTML slides.
  */
@@ -45,7 +45,7 @@ function ensureLogoAvailable() {
 }
 
 /**
- * Create a Planview presentation from HTML slides.
+ * Create a presentation from HTML slides.
  *
  * @param {Object} options - Presentation options
  * @param {string} options.title - Presentation title
@@ -62,9 +62,9 @@ async function createPresentation(options) {
 
   // Create presentation with 16:9 layout
   const pptx = new pptxgen();
-  pptx.author = author || 'Planview';
-  pptx.title = title || 'Planview Presentation';
-  pptx.company = 'Planview, Inc.';
+  pptx.author = author || 'Company';
+  pptx.title = title || 'Presentation';
+  pptx.company = 'Company';
   pptx.layout = 'LAYOUT_16x9';
 
   // Process each HTML file
@@ -112,7 +112,7 @@ function loadTemplate(templateName, replacements) {
  * @returns {string} Absolute path to saved file
  */
 function saveHtmlSlide(htmlContent, filename) {
-  const tmpDir = '/tmp/planview-slides';
+  const tmpDir = '/tmp/slides';
   if (!fs.existsSync(tmpDir)) {
     fs.mkdirSync(tmpDir, { recursive: true });
   }
@@ -153,10 +153,10 @@ async function example() {
   const slidePath = saveHtmlSlide(html, 'example-slide.html');
 
   await createPresentation({
-    title: 'Example Planview Deck',
-    author: 'Planview Product Management',
+    title: 'Example Deck',
+    author: 'Product Management',
     htmlFiles: [slidePath],
-    outputPath: '/tmp/planview-example.pptx'
+    outputPath: '/tmp/example.pptx'
   });
 }
 

@@ -57,7 +57,7 @@ Feature → Support ticket reduction (fewer "how do I?" questions)
 
 ---
 
-### 2. Cross-Functional Incentive Map (Planview Context)
+### 2. Cross-Functional Incentive Map (Product Context)
 
 Each function has distinct metrics, fears, and ask patterns. Knowing their incentive structure lets the PM pre-empt objections:
 
@@ -102,7 +102,7 @@ Standard 6-element structure for PRD Business Case sections:
 ```markdown
 ## Business Case
 
-**Strategic rationale:** [1-2 sentences — why this aligns with Planview's current direction; cite Q1 OKRs or product strategy if applicable]
+**Strategic rationale:** [1-2 sentences — why this aligns with your product's current direction; cite your OKRs or product strategy if applicable]
 
 **Revenue impact hypothesis:** [How this moves ARR or reduces churn — label as PM estimate; specify mechanism: new logo / expansion / retention]
 - Conservative case: [X% adoption × Y accounts × Z ARR/account = $ARR impact]
@@ -161,7 +161,7 @@ When this skill activates for financial reasoning:
 ## Guardrails
 
 - **Label all financial estimates** as PM model estimates requiring Finance validation — never present modeled numbers as validated data
-- **Never assume what other functions care about** without grounding in Planview-specific context (check `📚 Knowledge/People/[name].md` files for actual stakeholder context)
+- **Never assume what other functions care about** without grounding in your product context (check stakeholder docs for actual stakeholder context)
 - **Cross-functional perspective is about understanding reasoning**, not characterizing functions as obstacles
 - **No precision theater** — a rough estimate with labeled assumptions is more useful than a false-precision spreadsheet model
 - **Business Case sections in PRDs must include go/no-go criteria** — otherwise they're strategic rationale statements, not business cases

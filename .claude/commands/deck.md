@@ -1,11 +1,11 @@
 ---
-description: Run the planview deck workflow
+description: Run the deck workflow
 ---
-# /planview-deck - Create Editable PowerPoint Decks
+# /deck - Create Editable PowerPoint Decks
 
 Use this command when the deliverable must be an **editable PPTX**.
 
-This command is now the **PowerPoint-only** path. For hosted, animated, shareable decks, use `/planview-slides`.
+This command is now the **PowerPoint-only** path. For hosted, animated, shareable decks, use `/slides`.
 
 ## What this command is for
 
@@ -19,13 +19,13 @@ This command is now the **PowerPoint-only** path. For hosted, animated, shareabl
 - password-protected share links
 - live animated presentations on Vercel
 
-Those now belong to `/planview-slides`.
+Those now belong to `/slides`.
 
 ## Required reads
 
 Before building a PPTX deck, read:
 
-1. `📽️ Presentations/template/PLANVIEW-DESIGN-SYSTEM.md`
+1. `📽️ Presentations/template/DESIGN-SYSTEM.md`
 2. `/Users/jhigh/.claude/skills/pptx/html2pptx.md`
 
 ## PPTX workflow
@@ -38,11 +38,11 @@ Before building a PPTX deck, read:
 
 ## Key paths
 
-- Design system: `📽️ Presentations/template/PLANVIEW-DESIGN-SYSTEM.md`
+- Design system: `📽️ Presentations/template/DESIGN-SYSTEM.md`
 - Workflow helper: `📽️ Presentations/template/html2pptx-workflow.js`
 - Title template: `📽️ Presentations/template/title-slide-only.pptx`
 
 ## Decision rule
 
-- Hosted, animated, password-protected deck: `/planview-slides`
-- Editable PowerPoint deliverable: `/planview-deck`
+- Hosted, animated, password-protected deck: `/slides`
+- Editable PowerPoint deliverable: `/deck`

@@ -1,11 +1,11 @@
 /**
- * Planview PPTX Builder Module
+ * Product PPTX Builder Module
  *
- * Direct pptxgenjs wrapper implementing the Planview Design System.
+ * Direct pptxgenjs wrapper implementing the Product Design System.
  * Eliminates need for html2pptx abstraction layer.
  *
  * @version 2.0.0
- * @see PLANVIEW-DESIGN-SYSTEM.md for design specifications
+ * @see DESIGN-SYSTEM.md for design specifications
  */
 
 const pptxgen = require('pptxgenjs');
@@ -18,7 +18,7 @@ const path = require('path');
 const COLORS = {
   // Primary
   DARK_SLATE: '0F172A',
-  PLANVIEW_RED: 'E2251B',
+  ACCENT_RED: 'E2251B',
   DEEP_RED: 'C00000',
   NAVY_BLUE: '002060',
   BODY_TEXT: '334155',
@@ -108,7 +108,7 @@ function registerFonts(pptx) {
 // ============================================================================
 
 /**
- * Create a new Planview-styled presentation.
+ * Create a new presentation with product styling.
  *
  * @param {Object} options - Presentation options
  * @param {string} options.title - Presentation title (for metadata)
@@ -119,17 +119,17 @@ function createPresentation(options = {}) {
   const pptx = new pptxgen();
 
   // Set presentation properties
-  pptx.author = options.author || 'Planview';
-  pptx.title = options.title || 'Planview Presentation';
-  pptx.company = 'Planview, Inc.';
+  pptx.author = options.author || 'Company';
+  pptx.title = options.title || 'Presentation';
+  pptx.company = 'Company';
 
   // Set default layout to 16:9
   pptx.defineLayout({
-    name: 'PLANVIEW_16x9',
+    name: 'CUSTOM_16x9',
     width: SIZES.SLIDE_WIDTH,
     height: SIZES.SLIDE_HEIGHT
   });
-  pptx.layout = 'PLANVIEW_16x9';
+  pptx.layout = 'CUSTOM_16x9';
 
   // Register fonts
   registerFonts(pptx);
@@ -142,7 +142,7 @@ function createPresentation(options = {}) {
 // ============================================================================
 
 /**
- * Create a slide with default Planview styling (light gray background).
+ * Create a slide with default styling (light gray background).
  *
  * @param {PPTX} pptx - The presentation instance
  * @param {string} masterName - Optional master slide name
@@ -175,8 +175,8 @@ function addTitleSlide(pptx, options = {}) {
   // White background
   slide.background = { color: COLORS.WHITE };
 
-  // Planview wordmark at top (simplified - just text)
-  slide.addText('PLANVIEW', {
+  // Company wordmark at top (simplified - just text)
+  slide.addText('COMPANY', {
     x: 0,
     y: 1.5,  // Centered vertically
     w: SIZES.SLIDE_WIDTH,
@@ -184,7 +184,7 @@ function addTitleSlide(pptx, options = {}) {
     fontSize: 14,
     fontFace: FONTS.PRIMARY,
     bold: true,
-    color: COLORS.PLANVIEW_RED,
+    color: COLORS.ACCENT_RED,
     align: 'center',
   });
 
@@ -233,7 +233,7 @@ function addTitleSlide(pptx, options = {}) {
   }
 
   // Footer with confidentiality
-  const footerText = date ? `Planview Confidential // ${date}` : 'Planview Confidential';
+  const footerText = date ? `Confidential // ${date}` : 'Confidential';
   slide.addText(footerText, {
     x: SIZES.MARGIN,
     y: SIZES.SLIDE_HEIGHT - 0.25,
@@ -245,8 +245,8 @@ function addTitleSlide(pptx, options = {}) {
     align: 'right',
   });
 
-  // Planview logo in bottom-right (stored in template directory)
-  const logoPath = path.join(__dirname, 'planview-logo.png');
+  // Company logo in bottom-right (stored in template directory)
+  const logoPath = path.join(__dirname, 'company-logo.png');
   try {
     slide.addImage({
       path: logoPath,
@@ -256,7 +256,7 @@ function addTitleSlide(pptx, options = {}) {
       h: 0.167,
     });
   } catch (e) {
-    console.warn('Could not add Planview logo to title slide:', e.message);
+    console.warn('Could not add company logo to title slide:', e.message);
   }
 
   return slide;
@@ -310,7 +310,7 @@ function addHeader(slide, title, tagline = '') {
       fontSize: 9,
       fontFace: FONTS.PRIMARY,
       bold: true,
-      color: COLORS.PLANVIEW_RED,
+      color: COLORS.ACCENT_RED,
       valign: 'top',
     });
   }
@@ -319,14 +319,14 @@ function addHeader(slide, title, tagline = '') {
 }
 
 /**
- * Add the standard footer to a slide with Planview logo.
+ * Add the standard footer to a slide with company logo.
  *
  * @param {Slide} slide - The slide to add footer to
- * @param {string} text - Footer text (defaults to "Planview Confidential")
+ * @param {string} text - Footer text (defaults to "Confidential")
  * @param {Object} options - Optional settings
  * @param {boolean} options.includeLogo - Whether to include logo (default: true)
  */
-function addFooter(slide, text = 'Planview Confidential', options = {}) {
+function addFooter(slide, text = 'Confidential', options = {}) {
   const { includeLogo = true } = options;
 
   // Footer text on the left
@@ -341,9 +341,9 @@ function addFooter(slide, text = 'Planview Confidential', options = {}) {
     valign: 'bottom',
   });
 
-  // Planview logo in bottom-right (stored in template directory)
+  // Company logo in bottom-right (stored in template directory)
   if (includeLogo) {
-    const logoPath = path.join(__dirname, 'planview-logo.png');
+    const logoPath = path.join(__dirname, 'company-logo.png');
     try {
       slide.addImage({
         path: logoPath,
@@ -354,7 +354,7 @@ function addFooter(slide, text = 'Planview Confidential', options = {}) {
       });
     } catch (e) {
       // If logo fails to load, continue without it
-      console.warn('Could not add Planview logo:', e.message);
+      console.warn('Could not add company logo:', e.message);
     }
   }
 }
@@ -658,8 +658,8 @@ function addDifferentiatorsBox(slide, title, items, y) {
     y,
     w: 0.056,
     h: boxH,
-    fill: { color: COLORS.PLANVIEW_RED },
-    line: { color: COLORS.PLANVIEW_RED },
+    fill: { color: COLORS.ACCENT_RED },
+    line: { color: COLORS.ACCENT_RED },
   });
 
   // Title
@@ -727,7 +727,7 @@ function addPivotBox(slide, label, text, y) {
     fontSize: 8,
     fontFace: FONTS.PRIMARY,
     bold: true,
-    color: COLORS.PLANVIEW_RED,
+    color: COLORS.ACCENT_RED,
     valign: 'top',
   });
 
@@ -753,13 +753,13 @@ function addPivotBox(slide, label, text, y) {
  * Add a feature comparison table.
  *
  * @param {Slide} slide - The slide
- * @param {Object[]} rows - Array of {capability, planview, targetprocess, talktrack}
+ * @param {Object[]} rows - Array of {capability, product, targetprocess, talktrack}
  * @param {number} startY - Y position to start
  */
 function addComparisonTable(slide, rows, startY = 0.833) {
   const cols = {
     capability: { w: 2.5, x: SIZES.MARGIN },
-    planview: { w: 0.8, x: SIZES.MARGIN + 2.5 },
+    product: { w: 0.8, x: SIZES.MARGIN + 2.5 },
     targetprocess: { w: 0.8, x: SIZES.MARGIN + 3.3 },
     talktrack: { w: 3.1, x: SIZES.MARGIN + 4.1 },
   };
@@ -779,7 +779,7 @@ function addComparisonTable(slide, rows, startY = 0.833) {
 
   const headerOpts = { fontSize: 8, fontFace: FONTS.PRIMARY, bold: true, color: COLORS.WHITE, align: 'center', valign: 'middle' };
   slide.addText('Capability', { ...headerOpts, x: cols.capability.x, y: startY, w: cols.capability.w, h: rowH });
-  slide.addText('DPD', { ...headerOpts, x: cols.planview.x, y: startY, w: cols.planview.w, h: rowH });
+  slide.addText('DPD', { ...headerOpts, x: cols.product.x, y: startY, w: cols.product.w, h: rowH });
   slide.addText('TP', { ...headerOpts, x: cols.targetprocess.x, y: startY, w: cols.targetprocess.w, h: rowH });
   slide.addText('Talk Track', { ...headerOpts, x: cols.talktrack.x, y: startY, w: cols.talktrack.w, h: rowH });
 
@@ -810,15 +810,15 @@ function addComparisonTable(slide, rows, startY = 0.833) {
       valign: 'middle',
     });
 
-    // Planview score
-    slide.addText(row.planview, {
-      x: cols.planview.x,
+    // Product score
+    slide.addText(row.product, {
+      x: cols.product.x,
       y: rowY,
-      w: cols.planview.w,
+      w: cols.product.w,
       h: rowH,
       fontSize: 12,
       fontFace: FONTS.PRIMARY,
-      color: row.planview.includes('✓✓') ? COLORS.GREEN : row.planview.includes('⚠') ? COLORS.GOLD : COLORS.BODY_TEXT,
+      color: row.product.includes('✓✓') ? COLORS.GREEN : row.product.includes('⚠') ? COLORS.GOLD : COLORS.BODY_TEXT,
       align: 'center',
       valign: 'middle',
     });

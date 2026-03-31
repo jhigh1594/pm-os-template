@@ -5,7 +5,7 @@ updated: "YYYY-MM-DD"
 product_focus: "AgilePlace|OKRs|Roadmaps|DPD|General"
 difficulty_level: "Beginner|Intermediate|Advanced"
 time_investment: "X hours"
-author: "Planview PM Team"
+author: "PM Team"
 related_paths:
   - "path-to-related-learning-path.md"
   - "another-related-path.md"
@@ -14,7 +14,7 @@ episodes_count: X
 
 # [TOPIC] - Learning Path
 
-> Curated episodes from Lenny's Podcast with applications to Planview products
+> Curated episodes from Lenny's Podcast with applications to your products
 
 ## Learning Objectives
 
@@ -45,12 +45,12 @@ After completing this learning path, you will be able to:
 - `XX:YY` - [Section topic]
 
 **Key Insights**:
-1. [Insight 1 with application to Planview products]
-2. [Insight 2 with application to Planview products]
-3. [Insight 3 with application to Planview products]
+1. [Insight 1 with application to your products]
+2. [Insight 2 with application to your products]
+3. [Insight 3 with application to your products]
 
 **Application to [Product]**:
-> How to apply this insight in your daily work as a Planview PM
+> How to apply this insight in your daily work as a PM
 
 **Discussion Questions**:
 1. [Question to consider after listening]
@@ -69,12 +69,12 @@ After completing this learning path, you will be able to:
 - `XX:YY` - [Section topic]
 
 **Key Insights**:
-1. [Insight 1 with application to Planview products]
-2. [Insight 2 with application to Planview products]
-3. [Insight 3 with application to Planview products]
+1. [Insight 1 with application to your products]
+2. [Insight 2 with application to your products]
+3. [Insight 3 with application to your products]
 
 **Application to [Product]**:
-> How to apply this insight in your daily work as a Planview PM
+> How to apply this insight in your daily work as a PM
 
 **Discussion Questions**:
 1. [Question to consider after listening]
@@ -87,7 +87,7 @@ After completing this learning path, you will be able to:
 ### Theme 1: [Theme Name]
 **What the experts agree on**: [Common pattern across episodes]
 
-**Application to Planview**:
+**Application**:
 - [How this applies to AgilePlace/OKRs/Roadmaps/DPD]
 - [Specific actions to take]
 
@@ -99,7 +99,7 @@ After completing this learning path, you will be able to:
 ### Theme 2: [Theme Name]
 **What the experts agree on**: [Common pattern across episodes]
 
-**Application to Planview**:
+**Application**:
 - [How this applies to AgilePlace/OKRs/Roadmaps/DPD]
 - [Specific actions to take]
 

@@ -327,12 +327,12 @@
 
 ---
 
-## Personal Context for Planview PM Work
+## Personal Context 
 
 ### Relevance to AgilePlace Product Strategy
 
 **AI-Native Transformation**:
-- This conversation reinforces the need for Planview PMs to get hands-on with AI tools
+- This conversation reinforces the need for PMs to get hands-on with AI tools
 - AgilePlace roadmap should incorporate AI-powered features that change user behavior
 - Consider how AI agents could replace manual workflows in enterprise agile planning
 
@@ -353,7 +353,7 @@
 - Consider PM + Analytics capability (SQL, data visualization, ML basics)
 - Maintain customer interview discipline even as execution tools improve
 
-### Application to Planview Culture
+### Application to Product Culture
 
 **Experimentation Mindset**:
 - Adopt DoorDash-style hypothesis-driven development
@@ -377,7 +377,7 @@
 
 ## Related Resources
 - **YouTube Video**: https://www.youtube.com/watch?v=VPpOtwUesnk
-- **Transcript Location**: `/Users/jhigh/Planview Work/youtube-transcript-final.txt`
+- **Transcript Location**: `./youtube-transcript-final.txt`
 - **Gokul's Contact**:
   - Twitter/X: @gokulr
   - LinkedIn: Gokul Rajaram

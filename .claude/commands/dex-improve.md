@@ -23,7 +23,7 @@ Plan output (Mode 1 — after Jon confirms):
 When `/dex-improve` is invoked:
 
 1. Delegate to the `dex-improve` skill behavior (three modes: workshop, what's new, full audit).
-2. Use Planview paths from the skill; do not use Dex vault paths (`System/`, `06-Resources/`, etc.).
+2. Use workspace paths from the skill; do not use Dex vault paths (`System/`, `06-Resources/`, etc.).
 3. For Mode 2, read and update `🤖 AI/aipmos/platform-state.json` (per surface).
 4. For Mode 1, write plan files only after requirements are confirmed and Jon approves.
 

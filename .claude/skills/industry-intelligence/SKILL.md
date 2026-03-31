@@ -5,7 +5,7 @@ description: Use when reasoning about industry trends, analyst coverage, adjacen
 
 # Industry Intelligence
 
-Understand the market forces shaping Planview's competitive context — beyond direct competitors to industry trends, analyst signals, adjacent market moves, and demand shifts.
+Understand the market forces shaping your product's competitive context — beyond direct competitors to industry trends, analyst signals, adjacent market moves, and demand shifts.
 
 ## When This Skill Activates
 
@@ -14,7 +14,7 @@ Use this skill when:
 - PM is preparing for an analyst briefing or inquiry call
 - PM is evaluating whether an adjacent market move threatens or creates opportunity
 - PM is looking for strategic context beyond direct competitor positioning
-- PM needs to understand what analysts evaluate in Planview's market
+- PM needs to understand what analysts evaluate in your market
 - PM is preparing a strategic narrative that requires market framing
 
 ## Default Stance: Consultative + Source-Qualified
@@ -37,11 +37,11 @@ Use this hierarchy to qualify and weight all intelligence sources:
 
 ---
 
-### 2. Key Quadrants/Waves to Track (Planview Context)
+### 2. Key Quadrants/Waves to Track (Product Context)
 
 | Report | Relevance | Renewal Cadence |
 |--------|-----------|----------------|
-| Gartner Magic Quadrant for Strategic Portfolio Management | Direct — Planview appears; customers reference in evaluations | Annual |
+| Gartner Magic Quadrant for Strategic Portfolio Management | Direct — customers appear; customers reference in evaluations | Annual |
 | Forrester Wave for Enterprise Agile Planning | Direct — AgilePlace positioning | ~18 months |
 | Gartner Market Guide for Project and Portfolio Management | Broader category context | Annual |
 | IDC MarketScape for PPM | Alternative analyst perspective | Annual |
@@ -55,22 +55,22 @@ Use this hierarchy to qualify and weight all intelligence sources:
 
 ### 3. Adjacent Market Threat Assessment
 
-When an adjacent market player shows signs of entering Planview's space:
+When an adjacent market player shows signs of entering your space:
 
 ```
 Step 1: Entry Path Analysis
 → What capability gap do they need to close to compete?
 → How long would it take to close that gap?
-→ Do they have the enterprise sales motion to win in Planview's target segment?
+→ Do they have the enterprise sales motion to win in your target segment?
 
 Step 2: Customer Job Overlap
-→ Do their customers have the same JTBD as Planview's customers?
+→ Do their customers have the same JTBD as your customers?
 → Is there meaningful workflow overlap that creates switching opportunity?
 → Are there "dual users" — people who use both products at the same company?
 
 Step 3: Switching Cost Comparison
 → If this adjacent player enters, what would make a customer prefer them?
-→ What is Planview's defensible moat in this scenario?
+→ What is your defensible moat in this scenario?
 → Is the moat data network effects, workflow integration, or switching cost alone?
 ```
 
@@ -82,7 +82,7 @@ Non-obvious signals that indicate market demand shifts:
 
 | Signal Type | What to Look For | Why It Matters |
 |-------------|-----------------|----------------|
-| **Job posting surge** | "Head of Portfolio Management", "Agile Program Manager", "OKR Program Lead" surges at target companies | Leading indicator of organizational investment in Planview's value space |
+| **Job posting surge** | "Head of Portfolio Management", "Agile Program Manager", "OKR Program Lead" surges at target companies | Leading indicator of organizational investment in your value space |
 | **Earnings call language** | When large enterprise software companies start using specific terms (e.g., "portfolio intelligence", "connected planning") | Indicates category framing is shifting; buyer vocabulary will follow |
 | **Conference agenda shifts** | When Agile Alliance, PMI, or Gartner conferences add new tracks or remove old ones | Leading indicator of practitioner community direction change |
 | **Customer job changes** | Former AgilePlace champions moving to new companies | Expansion signal — champions carry product preference to new employers |
@@ -104,11 +104,11 @@ When this skill activates, default to:
 **Key finding:**
 [Concise summary of what the signal reveals]
 
-**So what for Planview:**
+**So what for the company:**
 [1-2 sentences on the strategic implication — what should change or be validated]
 
 **Validates or challenges:**
-[Does this confirm existing Planview strategy, or surface a tension worth investigating?]
+[Does this confirm existing company strategy, or surface a tension worth investigating?]
 
 **Confidence:** [High / Medium / Low — based on source tier]
 

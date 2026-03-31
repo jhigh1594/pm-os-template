@@ -5,7 +5,7 @@ updated: "2026-01-29"
 product_focus: "All"
 difficulty_level: "Beginner"
 time_investment: "3 hours"
-author: "Planview PM Team"
+author: "PM Team"
 related_paths:
   - "roadmap-strategy.md"
   - "enterprise-execution.md"
@@ -14,7 +14,7 @@ episodes_count: 6
 
 # Stakeholder Communication - Learning Path
 
-> Curated episodes from Lenny's Podcast with applications to all Planview products
+> Curated episodes from Lenny's Podcast with applications to all your products
 
 ## Learning Objectives
 
@@ -53,15 +53,15 @@ After completing this learning path, you will be able to:
 2. **Ruinous Empathy**: When you "care" but don't challenge, you let stakeholders make bad decisions because you're avoiding conflict. This ruins trust long-term.
 3. **Upward Feedback is Hardest**: Giving feedback to executives is scary but necessary. Frame it as "here's how I can help you achieve your goals" rather than "you're doing this wrong."
 
-**Application to Planview Products**:
-> Stakeholder communication is cross-cutting for all Planview products:
+**Application Products**:
+> Stakeholder communication is cross-cutting for all your products:
 > - Enable transparent work visibility (stakeholders see progress without PM updates)
 > - Provide "tradeoff explanation" templates for difficult conversations
 > - Support "stakeholder commentary" features that don't disrupt team workflow
 > - Include executive-friendly dashboards (strategic progress, not tactical noise)
 
 **Discussion Questions**:
-1. How would Planview products help PMs practice "care personally, challenge directly" with stakeholders?
+1. How would your products help PMs practice "care personally, challenge directly" with stakeholders?
 2. What "upward feedback" features would help PMs have honest conversations with executives?
 
 ---
@@ -83,7 +83,7 @@ After completing this learning path, you will be able to:
 2. **Under-Promise, Over-Deliver**: It's a cliché because it works. But most PMs do the opposite—over-promise to please stakeholders, then miss deadlines. Set realistic timelines, then hit them early.
 3. **Bad News First**: When you have bad news, share it immediately. Waiting makes it worse. Stakelers trust PMs who are transparent about problems.
 
-**Application to Planview Products**:
+**Application Products**:
 > Trust-building features should be built into all products:
 > - Provide delivery date forecasting with confidence intervals (not just dates)
 > - Enable "bad news early" workflows (flag risks before they become fires)
@@ -91,7 +91,7 @@ After completing this learning path, you will be able to:
 > - Include stakeholder satisfaction metrics (NPS on PM communication)
 
 **Discussion Questions**:
-1. How would Planview products help PMs "under-promise, over-deliver" consistently?
+1. How would your products help PMs "under-promise, over-deliver" consistently?
 2. What "bad news early" features would help PMs build trust through transparency?
 
 ---
@@ -113,7 +113,7 @@ After completing this learning path, you will be able to:
 2. **One Slide, One Idea**: Complex slides confuse. One clear message per slide, supported by data. Remove everything that doesn't support the main point.
 3. **Tough Questions Are Good**: When executives ask tough questions, it means they're engaged. Prepare for tough questions in advance, and don't get defensive.
 
-**Application to Planview Products**:
+**Application Products**:
 > Executive communication is a key use case for Roadmaps and DPD:
 > - Auto-generate executive summaries from roadmap data
 > - Provide "one slide, one idea" templates for roadmap presentations
@@ -121,7 +121,7 @@ After completing this learning path, you will be able to:
 > - Enable strategic views (themes, outcomes) vs. tactical views (features, dates)
 
 **Discussion Questions**:
-1. How would Planview products help PMs create BLUF-style executive summaries?
+1. How would your products help PMs create BLUF-style executive summaries?
 2. What "Q&A prep" features would help PMs anticipate and prepare for tough executive questions?
 
 ---
@@ -143,15 +143,15 @@ After completing this learning path, you will be able to:
 2. **Data-Driven Rejection**: "I'd love to help, but based on our prioritization framework (RICE, cost of delay), this scores a 2. Want me to reconsider the framework or find another sponsor?"
 3. **Not Now ≠ Never**: "This isn't the right time, but let's revisit next quarter when we re-prioritize." Keeps the door open without committing.
 
-**Application to Planview Products**:
-> Saying no is a core PM workflow that Planview should support:
+**Application Products**:
+> Saying no is a core PM workflow that your product should support:
 > - Enable "what-if" scenarios (if we add X, what slips?)
 > - Provide prioritization framework integrations (RICE, cost of delay)
 - Include "not now" workflows with review reminders
 > - Make opportunity costs visible (this delays X, Y, Z)
 
 **Discussion Questions**:
-1. How would Planview products make the "yes, but" conversation easy and data-driven?
+1. How would your products make the "yes, but" conversation easy and data-driven?
 2. What "opportunity cost" visualizations would help stakeholders understand tradeoffs?
 
 ---
@@ -173,7 +173,7 @@ After completing this learning path, you will be able to:
 2. **Disagreement = Ambiguity**: When stakeholders disagree, it usually means the problem is under-specified. Clarify the decision criteria first, then decide.
 3. **Coalitions Over Consensus**: You'll never get everyone to agree. Build a coalition of key stakeholders who support your approach, then move forward. Consensus is the enemy of speed.
 
-**Application to Planview Products**:
+**Application Products**:
 > Stakeholder management should be built into Roadmaps and DPD:
 > - Enable stakeholder mapping (influence/interest grids)
 > - Provide decision-criteria templates (how we'll decide)
@@ -181,7 +181,7 @@ After completing this learning path, you will be able to:
 > - Include stakeholder alignment metrics (who's on board, who's not)
 
 **Discussion Questions**:
-1. How would Planview products help PMs map and prioritize stakeholders?
+1. How would your products help PMs map and prioritize stakeholders?
 2. What "coalition-building" features would help PMs gather support without endless meetings?
 
 ---
@@ -203,7 +203,7 @@ After completing this learning path, you will be able to:
 2. **Stories Win Arguments**: Data convinces minds, stories win hearts. When you need alignment, tell a story about the customer, the problem, the solution. Make stakeholders feel it.
 3. **Relationship Capital**: Invest in relationships before you need them. Coffee chats, hallway conversations, helping others—this builds the influence capital you draw on later.
 
-**Application to Planview Products**:
+**Application Products**:
 > Influence without authority is a daily PM challenge:
 > - Enable customer story repositories (videos, quotes, use cases)
 > - Provide "stakeholder relationship" tracking (when you last touched base)
@@ -211,7 +211,7 @@ After completing this learning path, you will be able to:
 > - Support social features (thank you notes, appreciation) for relationship building
 
 **Discussion Questions**:
-1. How would Planview products help PMs build and use customer stories to influence stakeholders?
+1. How would your products help PMs build and use customer stories to influence stakeholders?
 2. What "relationship capital" features would help PMs maintain stakeholder connections?
 
 ---
@@ -221,7 +221,7 @@ After completing this learning path, you will be able to:
 ### Theme 1: Trust Beats Technique Every Time
 **What the experts agree on**: Wes Kao's trust equation, Kim Scott's radical candor, and Boz's authenticity all emphasize that stakeholder communication isn't about techniques—it's about trust. Frameworks help, but they're secondary to genuine relationships and transparency.
 
-**Application to Planview Products**:
+**Application Products**:
 - Transparency features (stakeholders see work without PM updates)
 - Consistency tracking (commitments made vs. kept)
 - Relationship tools (stakeholder touch tracking, appreciation)
@@ -235,7 +235,7 @@ After completing this learning path, you will be able to:
 ### Theme 2: Explicit Tradeoffs Beat Hidden Compromises
 **What the experts agree on**: Upasna Gautam's "yes, but" framework, Jules Walter's conflict resolution advice, and Kim Scott's challenge-directly principle all point to the same truth: great PMs make tradeoffs explicit, don't hide them.
 
-**Application to Planview Products**:
+**Application Products**:
 - "What-if" scenario modeling (if we add X, what slips?)
 - Opportunity cost visualization (this delays Y and Z)
 - Prioritization framework integrations (let the framework say no)
@@ -249,7 +249,7 @@ After completing this learning path, you will be able to:
 ### Theme 3: Executive Communication Requires Simplification
 **What the experts agree on**: Nancy Duarte's BLUF approach, Wes Kao's under-promise guidance, and Jules Walter's coalition-building all reinforce that executives need simplicity, not detail. Great PMs translate complexity into clear, actionable insights.
 
-**Application to Planview Products**:
+**Application Products**:
 - Executive summary auto-generation from roadmap data
 - Strategic views (themes, outcomes) vs. tactical views (features, dates)
 - One-slide, one-idea presentation templates
@@ -321,7 +321,7 @@ After completing this learning path, you will be able to:
 
 **Last Reviewed**: 2026-01-29
 **Next Review Date**: 2026-07-29
-**Reviewer**: Planview PM Team
+**Reviewer**: PM Team
 
 **Change Log**:
 - 2026-01-29: Initial creation with 6 curated episodes

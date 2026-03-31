@@ -174,7 +174,7 @@ Write to the same directory as the PRD:
 If `--board` is provided and neither `--dry-run` nor `--save-only`:
 
 ```bash
-cd "/Users/jhigh/Planview Work/🔧 Automation/scripts" && \
+cd "/Users/jhigh/workspace/🔧 Automation/scripts" && \
 python -m agileplace_cli hierarchy create-epic <board_id> \
   --epic @<prd-dir>/epic.json \
   --features @<prd-dir>/features.json

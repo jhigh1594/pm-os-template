@@ -5,7 +5,7 @@ updated: "2026-01-29"
 product_focus: "General"
 difficulty_level: "Intermediate"
 time_investment: "4 hours"
-author: "Planview PM Team"
+author: "PM Team"
 related_paths:
   - "product-strategy.md"
   - "product-leadership.md"
@@ -351,7 +351,7 @@ After completing this learning path, you will be able to:
 
 **Last Reviewed**: 2026-01-29
 **Next Review Date**: 2026-07-29
-**Reviewer**: Planview PM Team
+**Reviewer**: PM Team
 
 **Change Log**:
 - 2026-01-29: Initial creation with 7 curated episodes focused on prioritization and decision making

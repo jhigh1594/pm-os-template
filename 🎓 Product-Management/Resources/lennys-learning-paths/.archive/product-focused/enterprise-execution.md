@@ -5,7 +5,7 @@ updated: "2026-01-29"
 product_focus: "AgilePlace"
 difficulty_level: "Advanced"
 time_investment: "5 hours"
-author: "Planview PM Team"
+author: "PM Team"
 related_paths:
   - "dependency-management.md"
   - "stakeholder-communication.md"
@@ -443,7 +443,7 @@ After completing this learning path, you will be able to:
 
 **Last Reviewed**: 2026-01-29
 **Next Review Date**: 2026-07-29
-**Reviewer**: Planview PM Team
+**Reviewer**: PM Team
 
 **Change Log**:
 - 2026-01-29: Initial creation with 10 curated episodes

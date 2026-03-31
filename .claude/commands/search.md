@@ -1,7 +1,7 @@
 ---
 description: Run the search workflow
 ---
-# Search the Planview Workspace
+# Search the workspacespace
 
 Search across all product strategy, competitive intelligence, PM frameworks, and AI patterns using QMD local semantic search.
 
@@ -43,7 +43,7 @@ All runs completely offline—no API calls, data stays local.
 ```
 /search "Productboard portfolio management capabilities"
 /search "Competitive differentiation for DPD"
-/search "Targetprocess vs Planview DPD"
+/search "Targetprocess vs DPD"
 ```
 
 ### Product Decisions

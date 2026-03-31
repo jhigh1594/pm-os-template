@@ -5,7 +5,7 @@ updated: "2026-01-29"
 product_focus: "OKRs"
 difficulty_level: "Intermediate"
 time_investment: "4 hours"
-author: "Planview PM Team"
+author: "PM Team"
 related_paths:
   - "roadmap-strategy.md"
   - "stakeholder-communication.md"
@@ -14,7 +14,7 @@ episodes_count: 8
 
 # OKRs Alignment - Learning Path
 
-> Curated episodes from Lenny's Podcast with applications to Planview OKRs
+> Curated episodes from Lenny's Podcast with applications to OKRs
 
 ## Learning Objectives
 
@@ -55,7 +55,7 @@ After completing this learning path, you will be able to:
 3. **Celebrations Matter**: Christina's contrarian take—start with Friday celebrations before you even start OKRs. Teams that celebrate small wins build the muscle of goal-setting naturally.
 
 **Application to OKRs Product**:
-> Planview OKRs should help teams avoid the failure modes Christina identifies:
+> OKRs should help teams avoid the failure modes Christina identifies:
 > - Enforce OKR limits (3-5 objectives, 3-5 KRs each) to prevent "OKR bloat"
 > - Separate OKRs from performance reviews (explicit UI guidance)
 > - Enable bottom-up OKR drafting with top-down alignment
@@ -85,7 +85,7 @@ After completing this learning path, you will be able to:
 3. **Scoring is Nuanced**: 0.7 is "achieved most of it," 1.0 is "nailed it," but 0.4-0.6 is "learned something important." OKRs are not pass/fail—they're directional.
 
 **Application to OKRs Product**:
-> Scaling OKRs from 10 people to 10,000 is a core use case for Planview:
+> Scaling OKRs from 10 people to 10,000 is a core use case :
 > - Support cascading OKR hierarchies with clear parent-child relationships
 > - Enable OKR templates that roll out from successful pilots
 > - Build scoring guidance into the product (not just raw numbers)
@@ -115,7 +115,7 @@ After completing this learning path, you will be able to:
 3. **Missed OKRs = Data**: When a team misses an OKR, the question isn't "who failed?" It's "what did we learn about our capabilities, our market, our assumptions?"
 
 **Application to OKRs Product**:
-> Planview OKRs must support healthy goal-setting cultures:
+> OKRs must support healthy goal-setting cultures:
 > - Default settings should separate OKRs from performance reviews
 > - Include "learnings" fields for missed OKRs (not just "we failed")
 > - Provide OKR retrospective templates: "What did we learn? What would we do differently?"
@@ -175,7 +175,7 @@ After completing this learning path, you will be able to:
 3. **Qualitative KRs**: Not everything important is easily measurable. "Qualitative evidence of belief" is valid—e.g., "We have customer testimonials confirming X hypothesis."
 
 **Application to OKRs Product**:
-> Planview OKRs should support outcome-focused goal-setting:
+> OKRs should support outcome-focused goal-setting:
 > - Provide key result templates for outcomes (not just outputs)
 > - Include leading/lagging indicator tagging
 > - Enable qualitative evidence (customer quotes, screenshots) alongside metrics
@@ -235,7 +235,7 @@ After completing this learning path, you will be able to:
 3. **Process Balance**: Start centralized (templates, guidance), then decentralize as teams mature. Don't let every team reinvent OKRs from scratch.
 
 **Application to OKRs Product**:
-> Planview OKRs must handle enterprise-scale complexity:
+> OKRs must handle enterprise-scale complexity:
 > - Support permission-based OKR visibility (team, function, company)
 > - Enable single-owner OKRs with multi-team contribution
 > - Provide centralized templates with decentralized autonomy
@@ -282,7 +282,7 @@ After completing this learning path, you will be able to:
 ### Theme 1: OKRs Are Learning Tools, Not Performance Review Weapons
 **What the experts agree on**: Every guest emphasized that OKRs fail when tied to compensation or performance reviews. Christina Wodtke's "dead on arrival" warning, Ravi Mehta's "weaponized OKRs" critique, and Annie Pearl's separation of OKRs from performance all point to the same truth: ambitious goal-setting requires psychological safety.
 
-**Application to Planview OKRs**:
+**Application OKRs**:
 - Default configuration should separate OKRs from performance reviews
 - Include "learnings" fields for missed OKRs
 - Provide retrospective templates that celebrate learning, not just achievement
@@ -296,7 +296,7 @@ After completing this learning path, you will be able to:
 ### Theme 2: OKRs Must Connect to Work, Not Exist as Wishful Thinking
 **What the experts agree on**: Lane Shackleton's OKR-to-roadmap connection, Itamar Gilad's outcome-focused key results, and Varun Parmar's weekly check-ins all reinforce that OKRs without execution are just aspirations. The best OKR processes drive work and track progress continuously.
 
-**Application to Planview OKRs**:
+**Application OKRs**:
 - Enable direct linking to AgilePlace cards and Roadmaps initiatives
 - Support weekly check-in workflows with progress tracking
 - Provide leading/lagging indicator tracking
@@ -310,7 +310,7 @@ After completing this learning path, you will be able to:
 ### Theme 3: Healthy OKR Cadence > Rigorous OKR Process
 **What the experts agree on**: Christina Wodtke's celebration-first approach, Varun Parmar's red-yellow-green health scoring, and Ray Cao's "start centralized, then decentralize" guidance all suggest that the rhythm of OKRs matters more than the precision. Great OKR processes are lightweight, consistent, and focused on learning.
 
-**Application to Planview OKRs**:
+**Application OKRs**:
 - Support weekly check-in templates that take 15 minutes, not hours
 - Enable quick health scoring (red/yellow/green) separate from detailed metrics
 - Provide centralized templates that teams can adapt
@@ -383,7 +383,7 @@ After completing this learning path, you will be able to:
 
 **Last Reviewed**: 2026-01-29
 **Next Review Date**: 2026-07-29
-**Reviewer**: Planview PM Team
+**Reviewer**: PM Team
 
 **Change Log**:
 - 2026-01-29: Initial creation with 8 curated episodes

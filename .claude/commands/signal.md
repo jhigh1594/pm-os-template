@@ -53,7 +53,7 @@ The fatal flaw: waiting until the end of the week to write up signals. By then, 
 | `cs-escalation` | From an at-risk account escalation | High | High strength by default; near-term routing required |
 | `expansion` | From an upsell or expansion conversation | High | Route to value-chain gaps; default type: request or behavior |
 | `analyst` | From an analyst report, briefing, or analyst firm publication (Gartner, Forrester, IDC, etc.) | Medium | Standard; flag for `/persona-sync` and `/synthesize` to fold into persona validation — analyst signals represent market-level evidence, not single-customer evidence |
-| `market` | From a market-wide signal — earnings calls, industry conference announcements, adjacent market moves, job posting patterns as demand signals | Low | Low by default; elevate to Medium if it directly contradicts an existing Planview strategic assumption or ICP definition |
+| `market` | From a market-wide signal — earnings calls, industry conference announcements, adjacent market moves, job posting patterns as demand signals | Low | Low by default; elevate to Medium if it directly contradicts an existing Company strategic assumption or ICP definition |
 
 **B2B revenue-source routing rules:**
 - `--source sales` → Flag as deal signal; offer to also run `/win-loss` if competitive signals surface

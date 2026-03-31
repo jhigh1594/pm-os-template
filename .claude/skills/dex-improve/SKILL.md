@@ -6,7 +6,7 @@ description: |
   "improve my AIPMOS", "capability audit", "upgrade hooks/skills", "platform evolution for this workspace"
 ---
 
-# Dex-Improve (Planview AIPMOS)
+# Dex-Improve (PM-OS)
 
 Design partner for evolving this workspace's AI operating system: release awareness across **Claude Code**, **Claude Cowork**, and **Claude Desktop**, plus implementation planning and capability gaps.
 
@@ -17,7 +17,7 @@ Design partner for evolving this workspace's AI operating system: release awaren
 Three modes:
 
 1. **Workshop an idea** — Shape a fuzzy improvement into a concrete plan tied to this repo.
-2. **What's new?** — Compare recent releases for **Claude Code**, **Claude Cowork**, and **Claude Desktop** to `🤖 AI/aipmos/platform-state.json` and suggest adoptions for Planview AIPMOS (and Jon’s workflows where the repo is not the whole story).
+2. **What's new?** — Compare recent releases for **Claude Code**, **Claude Cowork**, and **Claude Desktop** to `🤖 AI/aipmos/platform-state.json` and suggest adoptions for PM-OS (and Jon’s workflows where the repo is not the whole story).
 3. **Full audit** — Inventory what is configured (`.claude/`, Cursor rules, Codex surfaces) vs common Claude Code capabilities; optionally contrast with how Jon uses Cowork / Desktop outside the repo.
 
 **When to use**
@@ -99,7 +99,7 @@ If Jon already provided an idea in the message, skip to Mode 1.
 
 Check: overlap with existing commands/skills; patterns to reuse.
 
-### Phase 3: Capability Match (Planview)
+### Phase 3: Capability Match
 
 Map requirement patterns to surfaces. Prefer **documented** platform features only; do not assume Codex hooks that do not exist.
 

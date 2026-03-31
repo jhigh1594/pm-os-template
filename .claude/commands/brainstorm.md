@@ -48,7 +48,7 @@ Ask probing questions to understand:
 **Practice**: Use reflective listening ("So what I'm hearing is...") before each follow-up.
 
 ### Step 3: Load Persona(s)
-Read persona definition from `/Users/jhigh/Planview Work/Docs/brainstormers/<persona>.md`:
+Read persona definition from `./brainstormers/<persona>.md`:
 - `--as pm` → `pm-principal.md`
 - `--as designer` → `designer-senior.md`
 - `--as engineer` → `engineer-10x.md`
@@ -119,7 +119,7 @@ _(This is the reasoning step that separates a brainstorm from a commitment. If t
 ---
 
 ### Step 6: Save (if `--save` flag)
-Write summary to `/Users/jhigh/Planview Work/Product-Management/brainstorms/YYYY-MM-DD-brainstorm-[topic].md`
+Write summary to `./brainstorms/YYYY-MM-DD-brainstorm-[topic].md`
 
 **Filename pattern**: `YYYY-MM-DD-brainstorm-[slugified-topic].md`
 
