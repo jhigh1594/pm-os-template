@@ -707,7 +707,7 @@ I need pricing competitive research            → /price-intel
 
 **Portability**: **Durable** (Step 1 — craft, working style, how the human plans) vs **tenant** (Steps 2–4 — company, products, keys, tracker). On a new job, refresh durable + strategy content and re-wire tracker and env.
 
-**Flow (4 steps only — no fifth onboarding phase)**:
+**Flow (4 steps only — no fifth onboarding phase)** — **one question per assistant turn**; after each step’s Q&A, write that step’s outputs; full ordered lists in `.claude/commands/onboard.md`:
 1. Role, company, quarter outcomes, stakeholders, **working preferences** → `GOALS.md`, `🤖 AI/memory/memory.md`
 2. Initiatives / success signals in repo → `📦 Products/.../initiatives/` as needed; observable goals
 3. **`/today`** wiring → `🔧 Automation/scripts/today_cmd/config.yaml` (`task_tracker`, `profile.owner_names`, optional Slack)
