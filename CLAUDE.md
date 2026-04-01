@@ -72,3 +72,13 @@ Single unified context file: **`🤖 AI/memory/memory.md`**. Update when session
 ## Accumulated Wisdom
 
 See **`🤖 AI/patterns/learned-patterns.md`** for workspace conventions, past decisions, and patterns worth preserving.
+
+### Self-Improving Knowledge System
+
+**Knowledge router**: `📚 Knowledge/INDEX.md` — read this first to decide which domain subfolder to load rather than listing all files.
+
+**Hypothesis tracking**: Domain-level unvalidated beliefs live in:
+- `📚 Knowledge/Growth/hypotheses.md`
+- `📚 Knowledge/Market/hypotheses.md`
+
+Add a hypothesis when you observe a pattern but don't have 3+ confirmations yet. Promote to `🤖 AI/patterns/learned-patterns.md` at 3 confirmations using the 4 quality gates: Actionable, Specific, Durable, Non-obvious.

@@ -9,11 +9,10 @@ Implements three-layer defense against memory bloat:
 """
 
 import argparse
-import json
 import re
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
-from typing import Optional
+from typing import Dict, List, Optional
 
 
 class MemoryMaintainer:
@@ -178,11 +177,82 @@ class MemoryMaintainer:
         self.archive_file.write_text(summarized)
         return True
 
-    def check_and_maintain(self) -> dict:
-        """Check memory health and perform maintenance if needed.
+    # Memory decay classes (for documentation/tooling reference):
+    #   ephemeral  — review within 1 week  (session-specific learnings)
+    #   session    — review within 1 month (project state, active decisions)
+    #   project    — review within 3 months (feedback, preferences, tools)
+    #   permanent  — no expiry             (user profile, core working style)
 
-        Returns: Dictionary with maintenance results
+    def _parse_frontmatter(self, text: str) -> Dict[str, str]:
+        """Parse YAML frontmatter from a markdown file (stdlib only).
+
+        Expects content between the first pair of '---' delimiters.
+        Returns a dict of key: value pairs found in the frontmatter block.
         """
+        lines = text.splitlines()
+        if not lines or lines[0].strip() != "---":
+            return {}
+        fields: Dict[str, str] = {}
+        for line in lines[1:]:
+            stripped = line.strip()
+            if stripped == "---":
+                break
+            if ":" in stripped:
+                key, _, value = stripped.partition(":")
+                fields[key.strip()] = value.strip()
+        return fields
+
+    def check_ttl_violations(self) -> List[dict]:
+        """Check auto-memory files for missing or overdue review_by dates.
+
+        Scans the Claude Code project auto-memory directory for .md files
+        (excluding MEMORY.md), reads YAML frontmatter, and reports files whose
+        review_by date is missing or already past today.
+
+        The auto-memory directory is derived from the workspace path using the
+        same encoding Claude Code uses: replace '/' with '-'.
+
+        Returns:
+            List of dicts with keys: file, issue ("overdue" | "missing"), review_by
+        """
+        encoded_path = str(self.workspace).replace("/", "-")
+        auto_memory_dir = Path.home() / ".claude" / "projects" / encoded_path / "memory"
+        violations: List[dict] = []
+        today = date.today()
+
+        if not auto_memory_dir.exists():
+            return violations
+
+        for md_file in sorted(auto_memory_dir.glob("*.md")):
+            if md_file.name.upper() == "MEMORY.MD":
+                continue
+            try:
+                text = md_file.read_text(encoding="utf-8")
+            except OSError:
+                continue
+
+            fields = self._parse_frontmatter(text)
+            review_by_str: Optional[str] = fields.get("review_by") or None
+
+            if review_by_str is None:
+                violations.append({"file": md_file.name, "issue": "missing", "review_by": None})
+            else:
+                try:
+                    review_by_date = datetime.strptime(review_by_str, "%Y-%m-%d").date()
+                    if review_by_date < today:
+                        violations.append(
+                            {"file": md_file.name, "issue": "overdue", "review_by": review_by_str}
+                        )
+                except ValueError:
+                    # Unparseable date — treat as missing
+                    violations.append(
+                        {"file": md_file.name, "issue": "missing", "review_by": review_by_str}
+                    )
+
+        return violations
+
+    def evaluate_health(self) -> Dict[str, object]:
+        """Inspect memory health without modifying files."""
         line_count = self.count_lines()
         size_kb = self.get_file_size_kb()
         session_count = 0
@@ -193,23 +263,42 @@ class MemoryMaintainer:
             session_count = self.count_sessions(content)
             session_lines = self.count_session_lines(content)
 
-        result = {
+        exceeded_limits: List[str] = []
+        if session_lines > self.MAX_SESSION_LINES:
+            exceeded_limits.append(f"session lines ({session_lines}/{self.MAX_SESSION_LINES})")
+        if line_count > self.MAX_LINES:
+            exceeded_limits.append(f"total lines ({line_count}/{self.MAX_LINES})")
+        if size_kb > (self.MAX_SIZE_BYTES / 1024):
+            exceeded_limits.append(
+                f"file size ({size_kb:.2f} KB/{self.MAX_SIZE_BYTES / 1024:.2f} KB)"
+            )
+
+        ttl_check = self.check_ttl_violations()
+
+        return {
             "line_count": line_count,
             "session_lines": session_lines,
             "size_kb": round(size_kb, 2),
             "session_count": session_count,
-            "action_taken": "none"
+            "action_taken": "none",
+            "limits_exceeded": exceeded_limits,
+            "ttl_violations": ttl_check,
+            "stale_memory_count": len(ttl_check),
         }
 
+    def check_and_maintain(self) -> dict:
+        """Check memory health and perform maintenance if needed.
+
+        Returns: Dictionary with maintenance results
+        """
+        result = self.evaluate_health()
+
         # Check hard limits (prioritize session_lines over total lines)
-        if session_lines > self.MAX_SESSION_LINES or line_count > self.MAX_LINES or size_kb > (self.MAX_SIZE_BYTES / 1024):
+        if result["limits_exceeded"]:
             archived = self.archive_old_sessions()
             if archived > 0:
+                result = self.evaluate_health()
                 result["action_taken"] = f"archived {archived} session(s)"
-                # Re-check after archiving
-                result["line_count"] = self.count_lines()
-                result["size_kb"] = round(self.get_file_size_kb(), 2)
-                result["session_count"] = self.count_sessions(self.memory_file.read_text())
 
         # Check if archive needs summarization
         if self.archive_file.exists():
@@ -220,16 +309,19 @@ class MemoryMaintainer:
 
         return result
 
-    def health_status(self) -> str:
-        """Get human-readable health status."""
-        result = self.check_and_maintain()
+    def health_status(self, result: Dict[str, object]) -> str:
+        """Get human-readable health status from evaluated results."""
         status = f"Memory Status: {result['line_count']} lines ({result['session_lines']} session), {result['size_kb']} KB, {result['session_count']} session{'s' if result['session_count'] != 1 else ''}"
 
         if result["action_taken"] != "none":
             status += f"\n✅ Action: {result['action_taken']}"
+        elif result["limits_exceeded"]:
+            status += "\n⚠️  Limits exceeded: " + ", ".join(result["limits_exceeded"])
         # Use session_lines for warning (better metric than total lines)
         elif result["session_lines"] > self.MAX_SESSION_LINES * 0.8:
             status += f"\n⚠️  Approaching session limit ({result['session_lines']}/{self.MAX_SESSION_LINES} session lines)"
+        elif result["size_kb"] > ((self.MAX_SIZE_BYTES / 1024) * 0.9):
+            status += f"\n⚠️  Approaching file size limit ({result['size_kb']:.2f}/{self.MAX_SIZE_BYTES / 1024:.2f} KB)"
         elif result["line_count"] > self.MAX_LINES * 0.9:
             status += f"\n⚠️  Approaching file limit ({result['line_count']}/{self.MAX_LINES} total lines)"
         else:
@@ -238,12 +330,80 @@ class MemoryMaintainer:
         return status
 
 
+def _print_audit_report(maintainer: "MemoryMaintainer", result: Dict[str, object]) -> None:
+    """Print a human-readable memory health report to stdout."""
+    today_str = date.today().isoformat()
+    print(f"## Memory Health Report — {today_str}")
+    print()
+
+    # Memory file stats
+    memory_path = maintainer.memory_file
+    line_count = result["line_count"]
+    max_lines = maintainer.MAX_LINES
+    print(f"Memory file: {memory_path} ({line_count} lines / {max_lines} max)")
+
+    # Session / archive counts
+    session_count = result["session_count"]
+    archive_sessions = 0
+    if maintainer.archive_file.exists():
+        archive_sessions = maintainer.count_sessions(maintainer.archive_file.read_text())
+    print(f"Sessions: {session_count} recent, {archive_sessions} archived")
+
+    # Stale memory files
+    stale_count = result["stale_memory_count"]
+    print(f"Stale memory files: {stale_count}")
+    print()
+
+    # TTL violations
+    ttl_violations = result["ttl_violations"]
+    print("TTL Violations:")
+    if ttl_violations:
+        for v in ttl_violations:
+            if v["issue"] == "overdue":
+                print(f"  - {v['file']}: overdue (review_by: {v['review_by']})")
+            else:
+                review_info = f" (current value: {v['review_by']})" if v["review_by"] else ""
+                print(f"  - {v['file']}: missing review_by field{review_info}")
+    else:
+        print("  (none)")
+    print()
+
+    # Recommendations
+    recommendations: List[str] = []
+    if stale_count > 0:
+        recommendations.append(f"Update review_by dates in {stale_count} memory file{'s' if stale_count != 1 else ''}")
+
+    line_pct = line_count / maintainer.MAX_LINES if maintainer.MAX_LINES else 0
+    if line_pct >= 0.9:
+        recommendations.append(
+            f"memory.md is at {line_pct:.0%} of line limit — consider trimming"
+        )
+
+    session_lines = result["session_lines"]
+    session_pct = session_lines / maintainer.MAX_SESSION_LINES if maintainer.MAX_SESSION_LINES else 0
+    if session_pct >= 0.8 and line_pct < 0.9:
+        recommendations.append(
+            f"Session lines at {session_pct:.0%} of limit ({session_lines}/{maintainer.MAX_SESSION_LINES}) — consider archiving"
+        )
+
+    if result["limits_exceeded"]:
+        recommendations.append("Run without --audit to auto-maintain: limits are currently exceeded")
+
+    print("Recommendations:")
+    if recommendations:
+        for rec in recommendations:
+            print(f"  - {rec}")
+    else:
+        print("  Memory system is healthy. No action needed.")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Maintain memory.md size")
     parser.add_argument("--workspace", type=Path, default=Path.cwd(), help="Workspace root")
     parser.add_argument("--check-only", action="store_true", help="Check status without making changes")
     parser.add_argument("--force-archive", action="store_true", help="Force archival of old sessions")
     parser.add_argument("--force-summarize", action="store_true", help="Force archive summarization")
+    parser.add_argument("--audit", action="store_true", help="Print a human-readable memory health report")
     args = parser.parse_args()
 
     maintainer = MemoryMaintainer(args.workspace)
@@ -260,13 +420,18 @@ def main():
             print("ℹ️  Archive not large enough to summarize")
         return 0
 
+    if args.audit:
+        result = maintainer.evaluate_health()
+        _print_audit_report(maintainer, result)
+        return 0
+
     if args.check_only:
-        print(maintainer.health_status())
+        print(maintainer.health_status(maintainer.evaluate_health()))
         return 0
 
     # Default: check and maintain
     result = maintainer.check_and_maintain()
-    print(maintainer.health_status())
+    print(maintainer.health_status(result))
     return 0
 
 
