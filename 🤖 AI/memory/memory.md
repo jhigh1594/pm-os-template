@@ -2,27 +2,32 @@
 
 ## Current Focus
 
-**Role**: [UPDATE THIS: Your role and company]
-
-**Product Vision**: [UPDATE THIS: Your product vision]
-
-**Active Task**: [UPDATE THIS: What you're working on now]
+**Role**: Senior AI Product Manager @ ServiceNow
+**Product Vision**: Amplify effectiveness through the Customer Success Platform (CSP), shipping fast and iterating with simplicity.
+**Active Task**: Driving strategy on `📦 Products/CSP/initiatives/Onboarding` to codify the 30-60-90 plan and define success signals for 60-day material impact.
 
 **Recent Completed Work**:
-- [UPDATE THIS: Recent accomplishments]
+- Initialized PM-OS Workspace and defined working profile.
+- Scaffolded Onboarding initiative workspace.
+
+## Working Preferences
+
+**Energy drivers**: Building automations/frameworks that multiply impact, strategic positioning/competitive analysis, real customer discovery, clear jargon-free communication, shipping.
+**Energy drains**: Process for process sake, manual repetitive tasks, complexity that doesn't add value, meetings without decisions, stakeholder misalignment surfacing late.
+**Agent Guidelines**:
+- Simplicity beats complexity; execution beats endless planning.
+- If you can't explain it simply contextually, rethink it.
+- Never add unnecessary process or manual repetitive tasks.
 
 ## Product Context
 
-### [UPDATE THIS: Your Product Name]
+### Customer Success Platform (CSP)
 
-**What is [Product]**: [UPDATE THIS: Product description]
-
-**Value Proposition**: [UPDATE THIS: Core value prop]
-
+**What is CSP**: ServiceNow's Customer Success Platform.
+**Value Proposition**: TBD
 **Core Differentiators**:
-- [UPDATE THIS: Key differentiators]
-
-**Target Market**: [UPDATE THIS: ICP, market size, etc.]
+- TBD
+**Target Market**: SNOW Customer Success environment.
 
 ## Technical Notes
 
@@ -64,21 +69,22 @@ Available: Notion, Figma, GitHub, Browser Automation, Web Search, Claude Mem, Gr
 ## Active Decisions
 
 **Strategic Questions**:
-1. [UPDATE THIS: Your strategic questions]
+1. What is the highest leverage feature or automation to execute on within the next 60 days to prove material impact?
 
 **Open Questions**:
-- [UPDATE THIS: Questions you're tracking]
+- None active at this stage.
 
 ## Known Gaps
 
 **Baseline Metrics Needed**:
-- [UPDATE THIS: Metrics you need to gather]
+- Metrics measuring CEG Internal Tech and CSP usage/success.
 
 **Documentation Gaps**:
-- [UPDATE THIS: Docs that need to be written]
+- Need context gathering on CSP ecosystem.
+- Need baseline of current tech stack overhead.
 
 ---
 
-**Last Updated**: [DATE]
+**Last Updated**: 2026-04-01
 **Purpose**: Single unified memory file for AI context across sessions
 **Location**: `🤖 AI/memory/memory.md`
