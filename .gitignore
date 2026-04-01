@@ -23,6 +23,10 @@ node_modules/
 # Logs
 *.log
 .logs/
+.claude/logs/
+
+# Runtime cache
+.cache/
 
 # Secrets - these should NEVER be committed
 # (included for safety, though template doesn't have real secrets)
