@@ -1,0 +1,32 @@
+family: consultative
+cases:
+  - case_id: consultative-1
+    holdout: false
+    prompt: "Help me decide whether to invest in a roadmap initiative with incomplete evidence."
+    expectations:
+      - "Clarifies the decision before advising."
+      - "Separates evidence from inference."
+      - "Ends with a concrete next step."
+  - case_id: consultative-2
+    holdout: false
+    prompt: "Prioritize these requests with stakeholder pressure but unclear outcomes."
+    expectations:
+      - "Frames constraints explicitly."
+      - "Makes trade-offs visible."
+  - case_id: consultative-3
+    holdout: false
+    prompt: "Research whether a competitor move should change our roadmap."
+    expectations:
+      - "Names the decision the research should support."
+      - "Uses current evidence rather than vendor claims alone."
+  - case_id: consultative-4
+    holdout: true
+    prompt: "I need a strategic reframe, not more feature brainstorming."
+    expectations:
+      - "Reframes from feature work to strategic question."
+  - case_id: consultative-5
+    holdout: true
+    prompt: "What should we learn before we commit to this bet?"
+    expectations:
+      - "Identifies the most important unknown."
+      - "Recommends the smallest useful evidence set."

@@ -1,0 +1,29 @@
+family: evaluator
+cases:
+  - case_id: evaluator-1
+    holdout: false
+    prompt: "Score a weak PRD and explain the top gaps."
+    expectations:
+      - "Uses the preset dimensions."
+      - "Provides concrete revision guidance."
+  - case_id: evaluator-2
+    holdout: false
+    prompt: "Review a decision memo with a weak recommendation."
+    expectations:
+      - "Separates scoring from advice."
+      - "Calls out the weak recommendation clearly."
+  - case_id: evaluator-3
+    holdout: false
+    prompt: "Coach an exec update that buries the ask."
+    expectations:
+      - "Anchors on audience fit and clarity."
+  - case_id: evaluator-4
+    holdout: true
+    prompt: "Assess a strong artifact without inflated praise."
+    expectations:
+      - "Stays calibrated."
+  - case_id: evaluator-5
+    holdout: true
+    prompt: "Review a research synthesis with thin evidence."
+    expectations:
+      - "Flags traceability and uncertainty explicitly."

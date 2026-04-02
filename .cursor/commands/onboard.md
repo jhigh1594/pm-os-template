@@ -12,19 +12,23 @@ Portable setup: **Jon’s context first**, then **wire the repo** so `/today` an
 
 **Tenant (this job):** company, products, stakeholders, keys, task tracker — Steps 2–4. Next role: refresh Step 1–2 and re-run Step 3–4.
 
-## The four steps
+## Interaction mode
+
+**One question per assistant turn** — never dump a whole step’s survey in one message. After the last question in a step, **produce that step’s file outputs**, then start the next step. Full ordered question lists: `.claude/commands/onboard.md`.
+
+## The four steps (summary)
 
 **1 — Role, company, goals, working preferences**  
-Discover in one pass; produce `GOALS.md` and `🤖 AI/memory/memory.md` (include **Working preferences**). No full ICP deep-dive here — use `/discover` or product folders later.
+Sequential Q&A → `GOALS.md` and `🤖 AI/memory/memory.md` (include **Working preferences**). No full ICP deep-dive here — use `/discover` or product folders later.
 
 **2 — Strategy in the workspace**  
-Initiatives default: `📦 Products/<product>/initiatives/<initiative>/`. One active initiative to anchor week one; success signals for the quarter. Tighten goals to be observable; update memory with active initiative and open questions.
+Initiatives path, one active initiative, quarter success signals → scaffold/tighten repo + memory.
 
 **3 — Daily loop: `/today` + task source of truth**  
 Configure `🔧 Automation/scripts/today_cmd/config.yaml`: `task_tracker`, `profile.owner_names`, optional Slack. Stub + example tasks if no tracker yet. Document env vars for the chosen adapter (`.env` only).
 
 **4 — Connectors and first closed loop**  
-`GOOGLE_API_KEY` (LLM parts of `/today`), **`GENAIPM_EMAIL`** (mandatory **One Step Better** in `/today` — see `.claude/skills/menkesu-awesome-pm-skills-one-step-better-ai-pm/`, https://genaipm.com). Granola / Slack as needed. Align `.env` / `.env.example`; run **`/today dry`** when ready.
+`GOOGLE_API_KEY`, **`GENAIPM_EMAIL`** (mandatory **One Step Better** in `/today` — see `.claude/skills/menkesu-awesome-pm-skills-one-step-better-ai-pm/`, https://genaipm.com). Granola / Slack as needed. Align `.env` / `.env.example`; run **`/today dry`** when ready.
 
 **Done:** confirm all four steps, then use **`/today`** daily.
 
@@ -36,6 +40,6 @@ Idea-to-delivery lifecycle (`/brainstorm` → `/discover` → `/spec` → … �
 
 ## Agent handoff
 
-Start Step 1 with the Step 1 discovery block in **one** message. Complete each step’s outputs before moving on. After Step 4, give a short checklist and point Jon to **`/today`**.
+Start with **Step 1, question 1** only (see full spec). One question per message; write step outputs after each step’s questions; end with a checklist and **`/today`**.
 
 **Full spec:** `.claude/commands/onboard.md`
