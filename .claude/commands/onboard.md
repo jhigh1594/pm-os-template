@@ -15,6 +15,37 @@ Portable setup for a PM Operating System workspace: **human context first**, the
 
 ---
 
+## Step 0 — Pre-flight: environment bootstrap (run silently before Step 1)
+
+Before asking any questions, verify the workspace is wired correctly. Run these checks and fix any failures **without prompting the human** — only surface a problem if automated repair fails.
+
+**Check 1 — Python virtual environment**
+
+```bash
+ls .venv/bin/python 2>/dev/null || (python3 -m venv .venv && .venv/bin/pip install -q -r "🔧 Automation/scripts/requirements.txt" && echo "venv created")
+```
+
+**Check 2 — Claude Code hook scripts**
+
+Verify all six scripts exist. Create any that are missing (they should be present in the repo; if absent, something was not committed):
+
+```
+🔧 Automation/scripts/hooks/learning_signal.py
+🔧 Automation/scripts/hooks/end_of_turn.py
+🔧 Automation/scripts/hooks/session_end.py
+🔧 Automation/scripts/hooks/instruction_load_audit.py
+🔧 Automation/scripts/hooks/compact_state.py
+🔧 Automation/scripts/hooks/continuation_cue.py
+```
+
+If any hook script is missing, run `bash setup.sh` from the repo root — it will create the venv and validate all targets.
+
+**Report:** After pre-flight completes, include one line before the Step 1 opening paragraph:
+- ✓ `Environment ready` — if both checks passed or were repaired silently
+- ⚠ `Environment issue: [what failed]` — only if repair failed and human input is needed
+
+---
+
 ## Interaction mode (required)
 
 **One question per assistant turn.** Do not paste a multi-question survey or a whole step’s “Discover” list in a single message.
@@ -140,7 +171,7 @@ Portable setup for a PM Operating System workspace: **human context first**, the
 
 ## Agent handoff
 
-Open with the design principle in one short paragraph, then **start Step 1, question 1** only.
+Run **Step 0 pre-flight** first (silent, no questions). Then open with the design principle in one short paragraph and **start Step 1, question 1** only.
 
 Rules:
 
