@@ -1,6 +1,6 @@
 ---
 name: jtbd-building
-description: Builds features based on Jobs-to-be-Done theory using Bob Moesta's frameworks. Use when designing features, identifying customer jobs, understanding push/pull forces, or uncovering hidden needs beyond stated feature requests.
+description: Applies Jobs-to-be-Done theory using Bob Moesta's frameworks to understand why customers really use, buy, or switch products. Use when asking why customers choose us over alternatives, what they're really trying to accomplish (beyond stated feature requests), why someone would switch to or from a product, what's driving the buying decision, or when a feature request feels like a symptom of a deeper need. Triggers: why do customers use us, why do customers buy this, what are they really trying to do, why would someone switch, what's the real job here, beyond the feature request, what drives the decision, hiring and firing, push and pull forces, job story, Bob Moesta, JTBD.
 ---
 
 # Jobs-to-be-Done Product Design
