@@ -1,0 +1,88 @@
+version: 1
+
+paths:
+  registry: "🤖 AI/skills/registry.yaml"
+  runs: "🤖 AI/skills/runs.jsonl"
+  candidates: "🤖 AI/skills/candidates.jsonl"
+  eval_results: "🤖 AI/skills/eval-results.jsonl"
+  review_queue: "🤖 AI/skills/review-queue"
+  rubrics: "🤖 AI/skills/rubrics"
+  evals: "🤖 AI/skills/evals"
+  hook_state: ".cache/claude/hooks/skill-learning"
+  instruction_audit: ".cache/claude/hooks/instructions-loaded.jsonl"
+
+skill_roots:
+  - ".claude/skills"
+  - ".codex/skills"
+
+command_roots:
+  - ".claude/commands"
+  - ".codex/commands"
+
+owners:
+  default: "workspace"
+
+pilots: []
+
+family_overrides: {}
+
+criticality_overrides: {}
+
+wrapper_overrides: {}
+
+learnings:
+  max_total_lines: 50
+  max_entries: 40
+  retention_days: 90
+  min_reinforcement_count: 2
+  min_severity_for_write: medium
+  header_lines:
+    - "# Learned"
+    - "<!-- Machine-maintained. Keep entries specific, reusable, and evidence-backed. -->"
+
+evaluation:
+  aggregate_scale_max: 5.0
+  min_runs_for_eval: 1
+  min_runs_for_candidate: 2
+  min_candidate_confidence: 0.55
+  improvement_threshold: 0.2
+  critical_regression_threshold: -0.35
+  prefer_code_checks_first: true
+  require_holdout_for_proposals: true
+  holdout_window_days: 30
+
+signals:
+  vocabulary:
+    - success
+    - tool_error
+    - user_correction
+    - retry_loop
+    - positive_reinforcement
+    - unresolved
+  praise_terms:
+    - thanks
+    - thank you
+    - exactly
+    - perfect
+    - nice
+    - great
+  correction_terms:
+    - that's wrong
+    - thats wrong
+    - not what i asked
+    - use
+    - instead
+    - no,
+    - no.
+    - you missed
+  retry_terms:
+    - try again
+    - retry
+    - still failing
+    - failed again
+  error_terms:
+    - error
+    - exception
+    - traceback
+    - failed
+    - not found
