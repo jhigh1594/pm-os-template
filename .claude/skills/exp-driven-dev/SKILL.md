@@ -1,6 +1,6 @@
 ---
 name: exp-driven-dev
-description: Builds features with A/B testing in mind using Ronny Kohavi's frameworks and Netflix/Airbnb experimentation culture. Use when implementing feature flags, choosing metrics, designing experiments, or building for fast iteration. Focuses on guardrail metrics, statistical significance, and experiment-driven development.
+description: Builds features with A/B testing in mind using Ronny Kohavi's frameworks and Netflix/Airbnb experimentation culture. Use when deciding how to validate a feature before full rollout, de-risking a build, designing a controlled experiment, measuring whether a change actually worked, rolling out incrementally, or testing an assumption with data rather than opinion. Triggers: validate before building, de-risk, test this assumption, measure impact, did this change work, controlled experiment, feature flag rollout, guardrail metrics, statistical significance, experiment design, know if this worked, A/B test.
 ---
 
 # Experimentation-Driven Development

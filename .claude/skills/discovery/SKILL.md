@@ -1,6 +1,6 @@
 ---
 name: discovery
-description: Use when clarifying what to learn, which assumption matters most, or which discovery method to use next. Triggers: discovery plan, what to learn, user research method, customer interviews, assumption to test, validation approach, research design.
+description: Use when clarifying what to learn, which assumption matters most, or which discovery method to use next. Also use when building an ongoing discovery system, setting up weekly customer contact, mapping an opportunity solution tree (OST), or establishing a product trio workflow. Triggers: discovery plan, what to learn, user research method, customer interviews, assumption to test, validation approach, research design, Teresa Torres, continuous discovery, opportunity solution tree, OST, weekly touchpoints, discovery cadence, product trio, assumption testing hierarchy.
 ---
 
 # Discovery
@@ -64,6 +64,42 @@ Use deep mode when:
 Even then:
 - lead with the decision and assumption
 - recommend the smallest useful study before expanding into a full program
+
+## Cadence Mode (Teresa Torres)
+
+Use cadence mode when the user wants to build an *ongoing* discovery system rather than answer a one-time research question. Trigger phrases: "set up weekly discovery", "opportunity solution tree", "product trio", "continuous discovery", "Teresa Torres", "discovery habit".
+
+**The three pillars:**
+1. **Weekly customer contact** — minimum 3-5 touchpoints/week by the product trio (PM + designer + engineer together, not PM alone)
+2. **Opportunity solution tree (OST)** — visualizes the path from outcome → opportunities → solutions → assumptions → experiments
+3. **Assumption testing before building** — test highest-risk assumptions with the cheapest valid method first
+
+**OST structure:**
+```
+Outcome (the business result we're driving)
+  ↓ Opportunities (customer needs/pain points, from interviews)
+    ↓ Solutions (possible ways to address each opportunity)
+      ↓ Assumptions (what must be true for the solution to work)
+        ↓ Experiments (cheapest way to test each assumption)
+```
+
+**Assumption testing hierarchy** (test in this order):
+1. Desirability — do customers want this?
+2. Usability — can they use it?
+3. Feasibility — can we build it?
+4. Viability — should we build it?
+
+Use cheapest test first: Interview < Survey < Prototype < Concierge < Build
+
+**Weekly cadence template:**
+- Mon–Wed: 3 interviews (product trio attends together)
+- Thu: synthesis session, update OST, capture interview snapshots
+- Fri: decide build / test more / pivot; plan next week
+
+**Quality gate — before closing any cadence or OST output:**
+> "Is the customer insight here based on *stories* — specific customers, specific moments, specific behaviors observed — or on *opinions* — things customers told you they want when asked directly? Opinions are fast to collect and unreliable. Stories are slow to collect and durable. Which type is this built on, and what would it take to upgrade the weakest evidence?"
+
+**Auto-saving to** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md` when cadence mode fires — append the outcome being pursued and the riskiest assumption identified.
 
 ## Discovery Lenses
 
