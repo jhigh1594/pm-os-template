@@ -1,6 +1,6 @@
 ---
 name: launch-execution
-description: B2B product launch execution with sales enablement, internal enablement, launch tiers, and metrics. Use when launching features, creating GTM materials, building sales enablement, or planning launch communications.
+description: B2B product launch execution with sales enablement, internal enablement, launch tiers, and metrics. Use when a feature is built and needs to reach the market — specifically for sales readiness, field enablement, talk tracks, objection handling, limited availability (LA) vs general availability (GA) decisions, internal briefing, and launch success metrics. Distinct from strategy: this is operational launch execution, not planning what to build. Triggers: launch readiness, sales enablement, talk track, limited availability, general availability, LA, GA, field enablement, internal briefing, launch communications, objection handling, launch checklist, what does sales need, how do we roll this out.
 ---
 
 # B2B Product Launch Execution

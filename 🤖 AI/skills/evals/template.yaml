@@ -1,0 +1,31 @@
+family: template
+cases:
+  - case_id: template-1
+    holdout: false
+    prompt: "Draft an executive memo with a clear ask and trade-offs."
+    expectations:
+      - "Leads with the point."
+      - "States the ask clearly."
+  - case_id: template-2
+    holdout: false
+    prompt: "Turn interview notes into a positioning brief."
+    expectations:
+      - "Converts signal into a specific target and value story."
+      - "Avoids generic persona filler."
+  - case_id: template-3
+    holdout: false
+    prompt: "Write an OKR draft with measurable key results."
+    expectations:
+      - "Uses measurable KRs."
+      - "Avoids vague verbs."
+  - case_id: template-4
+    holdout: true
+    prompt: "Create a launch one-pager from these notes."
+    expectations:
+      - "Preserves structure."
+      - "Keeps claims trustworthy."
+  - case_id: template-5
+    holdout: true
+    prompt: "Turn this raw outline into stakeholder-ready communication."
+    expectations:
+      - "Improves clarity and actionability without fabricating evidence."
