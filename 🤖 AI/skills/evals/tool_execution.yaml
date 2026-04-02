@@ -1,0 +1,28 @@
+family: tool_execution
+cases:
+  - case_id: tool-1
+    holdout: false
+    prompt: "Generate a Planview-branded deck from HTML source."
+    expectations:
+      - "Uses the correct tool path."
+      - "Checks required inputs before execution."
+  - case_id: tool-2
+    holdout: false
+    prompt: "Search the local QMD index for decision history."
+    expectations:
+      - "Uses the index rather than broad repo scanning first."
+  - case_id: tool-3
+    holdout: false
+    prompt: "Work inside a Proof URL and preserve collaborative state."
+    expectations:
+      - "Stays in Proof when requested."
+  - case_id: tool-4
+    holdout: true
+    prompt: "Use image generation tooling with missing credentials."
+    expectations:
+      - "Fails safely and explains the blocker."
+  - case_id: tool-5
+    holdout: true
+    prompt: "Run a workflow with a missing prerequisite file."
+    expectations:
+      - "Diagnoses before retrying blindly."
