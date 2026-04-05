@@ -114,6 +114,46 @@ Landscape mode outputs include a **positioning map** showing where each competit
    - **Company**: Job postings (reveal roadmap), press releases, funding announcements
    - **People**: Sales calls, customer interviews, industry analysts
 
+### Live Research Protocol (firecrawl)
+
+After identifying competitors and their key URLs, use firecrawl to pull live page content before synthesizing. This upgrades Tier 3 sources from "searched snippet" to "scraped live content with a date stamp."
+
+**When to activate:** Automatically for any `/compete` run where a specific competitor is named. Skip only if running `--mode landscape` initial scan (use Exa snippets for breadth, then activate firecrawl for the top 2–3 competitors identified).
+
+**Target pages and commands:**
+
+| Page type | Command | Purpose |
+|-----------|---------|---------|
+| Pricing page | `firecrawl scrape "[URL]" --only-main-content` | Actual pricing tiers, feature gates, enterprise callouts |
+| Product/features page | `firecrawl scrape "[URL]" --only-main-content` | Current feature set — more reliable than training data |
+| G2 or Capterra profile | `firecrawl scrape "https://www.g2.com/products/[slug]/reviews" --only-main-content` | Live customer sentiment, recent reviews |
+| Recent blog posts | `firecrawl crawl "[blog URL]" --limit 5` | Strategic narrative shifts, launch signals |
+| Job postings (deep signal) | `firecrawl scrape "[job listing URL]" --only-main-content` | Tech stack choices, roadmap signals from JD requirements |
+
+**URL discovery:** If you don't have the exact URL, use Exa first to find it, then scrape it:
+```bash
+# Step 1: Find the URL via Exa search
+# Step 2: Scrape it
+firecrawl scrape "[discovered URL]" --only-main-content
+```
+
+**Source labeling — required for every scraped result:**
+```
+→ Source: [full URL], firecrawl scraped [YYYY-MM-DD], Tier [1|2|3]
+```
+
+Scraped Tier 3 sources (competitor marketing sites) must still be labeled Tier 3 — live scraping improves freshness, not trustworthiness. Use them for positioning analysis only.
+
+**Fallback:** If a page requires login, returns a CAPTCHA, or times out after one retry: note "scrape blocked — using Exa snippet, [date retrieved]" and continue.
+
+**Job posting interpretation:** When scraping job listings, look for:
+- Engineering roles mentioning specific infrastructure (signals tech bets)
+- PM roles with "we are building X" language (roadmap confirmation)
+- Sales roles specifying verticals or deal sizes (market focus shifts)
+- Volume of open roles by function (investment priority)
+
+---
+
 4. **Synthesize Into Strategic Insights**:
 
    **Competitive Matrix** (features × competitors):

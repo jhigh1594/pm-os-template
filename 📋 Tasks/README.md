@@ -7,7 +7,9 @@ Daily planning, backlog management, and task tracking.
 | File | Purpose |
 |------|---------|
 | `today.md` | Daily plan and priorities |
-| `backlog.md` | Future tasks and ideas |
+| `this-week.md` | Weekly outcomes and ordered priority stack |
+| `backlog.md` | Groomed work not scheduled this week (now / next / later) |
+| `ideas.md` | Raw ideas — triage before promoting to backlog or this week |
 
 ## Subdirectories
 
@@ -19,7 +21,8 @@ Daily planning, backlog management, and task tracking.
 ## Usage
 
 - Update `today.md` each morning
-- Review `backlog.md` weekly
+- Set or refresh `this-week.md` at the start of the week (or after planning)
+- Review `ideas.md` and `backlog.md` weekly; promote ideas → backlog → this week
 - Archive completed tasks monthly
 
 ## Commands

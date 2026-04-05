@@ -46,7 +46,9 @@ Systems-thinking PM who builds tools to amplify effectiveness. Believes simplici
 
 | Name | Role | Relationship | Communication Notes |
 |------|------|--------------|---------------------|
-| Garin Landry | Sr. Director, CEG Internal Tech and BI | Manager | Ensure clear, jargon-free alignment early on decisions to avoid late surprises. |
+| Garin Landry | Sr. Director, CEG Internal Tech and BI | Manager | Ensure clear, jargon-free alignment early on decisions to avoid late surprises. See `📚 Knowledge/People/garin-landry.md` |
+| Amit Zavery | President, CPO & COO | Executive (CPO chain) | Outcome-first, platform-scale thinker. Connect CSP work to Now Platform roadmap. See `📚 Knowledge/People/amit-zavery.md` |
+| Bill McDermott | Chairman & CEO | Executive | AI control tower framing; underdog positioning; over-communication. See `📚 Knowledge/People/bill-mcdermott.md` |
 
 ---
 

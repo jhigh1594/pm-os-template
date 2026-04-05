@@ -1,7 +1,7 @@
 # Learned Patterns
 
-_Last updated: 2026-02-17_
-_Total patterns: 4_
+_Last updated: 2026-04-03_
+_Total patterns: 10_
 _Purpose: Accumulated wisdom that makes future sessions faster and higher quality_
 
 **Separation of concerns:** Workspace conventions, tooling, and repo decisions live here. **PM product decisions** (feature prioritization, roadmap bets, product strategy) go in [product-decisions.md](product-decisions.md). Forecasts and calibration live in [product-judgment-test.md](product-judgment-test.md).
@@ -46,21 +46,23 @@ _Workspace-specific patterns that aren't obvious to newcomers_
 
 > **Format**: Pattern → Context → Why → Confidence
 
-**Context**: Any slide deck creation 
-**Why**: Ensures brand consistency, saves 1-2 hours on formatting per deck, pre-approved by marketing
-**Confidence**: High (reinforced 5x)
-
 ### Documentation Convention: PRDs vs Memos
 **Pattern**: PRDs go in `Products/[product]/initiatives/`; strategic POV docs go in `Docs/memos/`
 **Context**: Creating new documentation
 **Why**: PRDs are product-specific and live with the product; memos are cross-product strategic communications
 **Confidence**: High (reinforced 3x)
 
-### AIPMOS Memory Structure
+### Scratch Is for Disposable Artifacts Only
+**Pattern**: Root `scratch/` holds temp exports and session debris; specs, research, and initiative work live under `📦 Products/...` or `📝 Docs/memos/`
+**Context**: Starting exploration notes or saving research during a session
+**Why**: Prevents a junk drawer of durable docs that are hard to find and link; matches initiative-first organization
+**Confidence**: High
+
+### Memory Structure
 **Pattern**: Single `memory.md` file for current state; `learned-patterns.md` for accumulated wisdom
 **Context**: Understanding where to find/update context
-**Why**: Consolidated from 7-file system - simpler maintenance, faster loading
-**Confidence**: High (reinforced 2x)
+**Why**: Consolidated from multi-file system - simpler maintenance, faster loading
+**Confidence**: High
 
 ---
 
@@ -70,13 +72,39 @@ _Painful lessons that save future time_
 
 > **Format**: What happened → Why it failed → How to avoid → Cost saved
 
-<!-- Example:
-### Don't Create Presentations from Scratch
-**What happened**: Built deck from blank slides, spent 2 hours on formatting
-**Why it failed**: Corporate template already has approved layouts, colors, fonts
-**How to avoid**: Always start with corporate template, use pptx skill
-**Cost saved**: ~2 hours per deck
--->
+### Don't Ask Multiple Questions at Once in Discovery Mode
+**What happened**: In `/spec` command discovery phase, asked 3 questions simultaneously instead of one at a time
+**Why it failed**: The `/spec` template explicitly says "Ask **one question at a time**; wait for the answer before asking the next" - violated Socratic questioning framework
+**How to avoid**: Before asking discovery questions, run this pre-flight checklist:
+```
+BEFORE ASKING QUESTIONS IN DISCOVERY:
+[ ] Am I asking only ONE question?
+[ ] Have I explicitly stated I'll wait for the answer?
+[ ] Is there a clear stop point for me to pause?
+```
+**Cost saved**: User frustration, violated protocol, lost trust in following templates
+
+### Never Hallucinate or Fabricate Content
+**What happened**: In design brief creation, presented synthesized customer quotes and unverified competitor features as factual — removing "(implied from context)" and "(inferred problem)" qualifiers and not flagging competitor assertions as needing verification
+**Why it failed**: Violated truth-in-documentation principle; misrepresented synthesized content as validated research; could mislead stakeholders and propagate unverified claims
+**How to avoid**: Always label unverified content explicitly:
+- Customer quotes: *[Synthesized pain point]* or *[Representative problem statement]*
+- Competitor features: *[NEEDS VERIFICATION]* or *[ASSUMPTION, validate before citing]*
+- Statistics/benchmarks: *[Industry benchmark, source TBD]* or *[Assumption, needs validation]*
+**Self-check before output**:
+1. Do I have a verified source? → Cite it
+2. Am I inferring/synthesizing? → Label it
+3. Am I assuming? → Flag it
+4. Am I making this up? → DELETE IT or use labeled placeholder
+**Cost saved**: Credibility damage; misleading stakeholders; building on unverified assumptions
+
+### PRDs Always Belong to Initiatives
+**What happened**: Created standalone `prds/` folder separate from initiative folders; PRDs lived in isolation from their associated design briefs and implementation context
+**Why it failed**: PRDs became orphaned from their initiative context; harder to find related files; violated principle that PRDs are initiative-specific, not standalone documents
+**How to avoid**: Always place PRDs within initiative folders: `📦 Products/[Product]/initiatives/[initiative-name]/[name]-prd.md`
+- Small features: Use `--type one-pager` or `--type light` with `/spec` instead of full PRD
+- Each initiative folder contains: PRD, design brief, spec-briefs (as needed)
+**Cost saved**: Context fragmentation; easier file discovery; clear relationship between requirements and design
 
 ---
 
@@ -86,17 +114,24 @@ _Repeatable sequences that produce reliable results_
 
 > **Format**: Trigger → Sequence → Why it works → Confidence
 
-<!-- Example:
-### Creating PRDs in This Workspace
-**Trigger**: New feature or significant enhancement
+### Plan Index/Reference File Changes Before Editing
+**Trigger**: Any session where a shared reference file (COMMAND-REFERENCE.md, INDEX.md, or similar) needs updates
 **Sequence**:
-1. Check `Products/[product]/initiatives/` for existing related work
-2. Use PRD template from `.claude/commands/spec.md`
-3. Include success metrics with source attribution
-4. Review with `/think` before sharing
-**Why it works**: Ensures alignment with existing work, consistent format, strategic validation
-**Confidence**: Medium (new pattern)
--->
+1. Read the full file first to understand current structure
+2. Plan all changes as a list before making the first edit
+3. Batch edits into as few operations as possible
+**Why it works**: Without planning, small adjustments cascade into many incremental edits as context shifts — confirmed 3x across separate sessions
+**Confidence**: High
+
+### Breaking Down Work: Always Establish Parent/Child and Dependencies
+**Trigger**: Creating work items from a PRD, epics from initiatives, stories from epics, or any hierarchical breakdown
+**Sequence**:
+1. Create the parent items (epics, initiatives, high-level work)
+2. Create the child items (stories, tasks)
+3. Link parent→child connections
+4. Link dependencies between items (e.g., B1 blocked by A1 when B1 builds on A1)
+**Why it works**: Keeps breakdown traceable and navigable; surfaces blockers; reflects actual delivery order; enables views by hierarchy and dependency chain
+**Confidence**: Medium
 
 ---
 
@@ -106,13 +141,7 @@ _Domain and tool patterns specific to this workspace_
 
 > **Format**: Tool/Domain → Pattern → Context → Gotchas → Confidence
 
-<!-- Example:
-### PowerPoint with pptx Skill
-**Pattern**: Use `rearrange.py` → `inventory.py` → `replace.py` workflow
-**Context**: Editing existing presentations
-**Gotchas**: Don't edit .pptx directly - use the skill
-**Confidence**: High (reinforced 4x)
--->
+<!-- Add tool-specific patterns here as they emerge -->
 
 ---
 
@@ -124,8 +153,14 @@ _Patterns are semantically validated based on session learnings_
 |------|---------|--------|--------|
 | 2026-02-17 | Semantic Pattern Capture System | Added | First decision captured - new system design |
 | 2026-02-17 | Documentation Convention | Added | PRDs vs Memos distinction |
-| 2026-02-17 | AIPMOS Memory Structure | Added | Single-file system understanding |
+| 2026-02-17 | Memory Structure | Added | Single-file system understanding |
 | 2026-02-17 | File created | Initial structure | Starting fresh |
+| 2026-04-03 | Scratch Is for Disposable Artifacts Only | Ported from Planview Work | Durable workspace policy |
+| 2026-04-03 | Don't Ask Multiple Questions at Once | Ported from Planview Work | Methodology mistake to avoid |
+| 2026-04-03 | Never Hallucinate or Fabricate Content | Ported from Planview Work | Critical content integrity rule |
+| 2026-04-03 | PRDs Always Belong to Initiatives | Ported from Planview Work | File placement mistake to avoid |
+| 2026-04-03 | Plan Index/Reference File Changes Before Editing | Ported from Planview Work | Confirmed 3x — generalized to any reference file |
+| 2026-04-03 | Breaking Down Work: Parent/Child and Dependencies | Ported from Planview Work | Work breakdown methodology |
 
 ---
 
@@ -150,5 +185,4 @@ _Patterns are semantically validated based on session learnings_
 
 ---
 
-_Next review: 2026-02-24_
-
+_Next review: 2026-04-10_

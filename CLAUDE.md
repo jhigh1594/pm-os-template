@@ -6,10 +6,11 @@
 
 ## Quick Start (For AI Assistants)
 
-**First 3 Things**:
+**First things to load**:
 1. Check `GOALS.md` for role, portfolio, current goals, and key stakeholders
-2. Check `📋 Tasks/today.md` for daily priorities and active work
-3. Check `🤖 AI/memory/memory.md` for current focus
+2. Check `📋 Tasks/this-week.md` for weekly priorities, then `📋 Tasks/today.md` for the daily plan
+3. Check `📋 Tasks/backlog.md` and `📋 Tasks/ideas.md` when planning, prioritizing, or capturing new work
+4. Check `🤖 AI/memory/memory.md` for current focus
 
 **Context**: See `GOALS.md` for role, portfolio, and current goals.
 
