@@ -19,7 +19,7 @@
       "type": "stdio"
     },
     "exa": {
-      "url": "https://mcp.exa.ai/mcp?tools=web_search_exa,get_code_context_exa,company_research_exa",
+      "url": "https://mcp.exa.ai/mcp?tools=web_search_exa,web_search_advanced_exa,get_code_context_exa,crawling_exa,company_research_exa",
       "type": "http"
     }
   }

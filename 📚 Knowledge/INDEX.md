@@ -11,7 +11,7 @@ _Router for domain-specific context. Load only the folder(s) relevant to your cu
 | [Customers/](Customers/) | Customer account research, strategy docs | Account-specific work, customer narrative, QBR prep |
 | [Market/](Market/) | Competitive landscape, market frameworks, analyst content | Competitive analysis, positioning, market research |
 | [Growth/](Growth/) | Growth signals log, coaching quality gate responses | Growth strategy, usage metrics, retention decisions |
-| [People/](People/) | Stakeholder profiles | Preparing for conversations, navigating relationships |
+| [People/](People/) | Stakeholder profiles (Bill McDermott CEO, Amit Zavery CPO, Garin Landry mgr) | Preparing for conversations, navigating relationships, exec alignment |
 | [Frameworks/](Frameworks/) | Product frameworks (AI risk, etc.) | AI feature work, risk assessment, framework selection |
 | [Writing-Styles/](Writing-Styles/) | Voice guides per audience (exec, customer, sales, board) | Writing any external or internal communication |
 | [Research/](Research/) | Research reports and studies | Validating product decisions, backing claims |

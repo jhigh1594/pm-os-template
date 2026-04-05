@@ -1,5 +1,5 @@
 version: 1
-generated_at: '2026-04-02T18:46:33Z'
+generated_at: '2026-04-05T01:58:59Z'
 skills:
 - skill_id: ai-product-patterns
   base_skill_id: ai-product-patterns
@@ -155,6 +155,18 @@ skills:
   eval_policy: hybrid
   skill_path: .claude/skills/discovery/SKILL.md
   learned_path: .claude/skills/discovery/LEARNED.md
+  wrappers: []
+  pilot: false
+- skill_id: enhance-context
+  base_skill_id: enhance-context
+  name: enhance context
+  surface: claude_skill
+  family: consultative
+  owner: workspace
+  criticality: medium
+  eval_policy: hybrid
+  skill_path: .claude/skills/enhance-context/SKILL.md
+  learned_path: .claude/skills/enhance-context/LEARNED.md
   wrappers: []
   pilot: false
 - skill_id: exec-comms
@@ -601,6 +613,18 @@ skills:
   learned_path: .claude/skills/systems-thinking/LEARNED.md
   wrappers: []
   pilot: false
+- skill_id: claude:user-research-analyst
+  base_skill_id: user-research-analyst
+  name: user research analyst
+  surface: claude_skill
+  family: consultative
+  owner: workspace
+  criticality: medium
+  eval_policy: hybrid
+  skill_path: .claude/skills/user-research-analyst/SKILL.md
+  learned_path: .claude/skills/user-research-analyst/LEARNED.md
+  wrappers: []
+  pilot: false
 - skill_id: zero-to-launch
   base_skill_id: zero-to-launch
   name: zero to launch
@@ -745,7 +769,7 @@ skills:
   learned_path: .codex/skills/systems-thinking/LEARNED.md
   wrappers: []
   pilot: false
-- skill_id: user-research-analyst
+- skill_id: codex:user-research-analyst
   base_skill_id: user-research-analyst
   name: user research analyst
   surface: codex_skill
