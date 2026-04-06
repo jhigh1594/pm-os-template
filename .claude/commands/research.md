@@ -79,6 +79,7 @@ State the prescription explicitly: "Given [Low/Medium/High] evidence confidence,
    - **Customer Voice**: G2, Capterra, TrustRadius reviews; Reddit, forums
    - **Internal Data**: Support tickets, sales CRM notes, win/loss analysis
    - **Job Market Signals**: LinkedIn postings (reveal roadmap direction)
+   - **Practitioner Evidence**: Lenny's Newsletter/Podcast (via `lennysdata` MCP or `qmd query "..." -c pm-frameworks`) — interview-based patterns from operators at real companies; treat as [Practitioner Interview], not analyst report
    - **NOT Acceptable as Truth**: Vendor marketing sites, press releases (use only for positioning analysis)
 
 2. **Time Bounds Required** - Markets move faster than research:
