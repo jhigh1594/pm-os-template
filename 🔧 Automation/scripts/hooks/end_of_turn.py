@@ -72,27 +72,8 @@ def write_rolling_state(workspace: Path) -> None:
         pass
 
 
-def write_turn_marker(workspace: Path) -> None:
-    """Append a lightweight turn marker to the session log."""
-    log_dir = workspace / ".claude" / "logs"
-    log_dir.mkdir(parents=True, exist_ok=True)
-    log_file = log_dir / "session.jsonl"
-
-    entry = {
-        "ts": datetime.now().isoformat(),
-        "event": "turn_end",
-    }
-
-    try:
-        with open(log_file, "a") as f:
-            f.write(json.dumps(entry) + "\n")
-    except Exception:
-        pass
-
-
 def main():
     workspace = Path(os.environ.get("CLAUDE_WORKSPACE", ".")).resolve()
-    write_turn_marker(workspace)
     write_rolling_state(workspace)
 
 

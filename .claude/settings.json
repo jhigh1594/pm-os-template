@@ -1,15 +1,5 @@
 {
   "hooks": {
-    "InstructionsLoaded": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "cd \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/instruction_load_audit.py\""
-          }
-        ]
-      }
-    ],
     "SessionStart": [
       {
         "hooks": [
@@ -36,16 +26,6 @@
           {
             "type": "command",
             "command": "cd \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/compact_state.py\" capture"
-          }
-        ]
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "cd \"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\" && PYTHONPATH=\"🔧 Automation/scripts\" .venv/bin/python \"🔧 Automation/scripts/hooks/continuation_cue.py\""
           }
         ]
       }

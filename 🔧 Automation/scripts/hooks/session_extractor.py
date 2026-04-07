@@ -21,6 +21,7 @@ from typing import Any
 
 CLAUDE_BIN = Path.home() / ".local" / "bin" / "claude"
 SESSIONS_DIR_NAME = "sessions"
+CLAUDE_PROJECTS_DIR = Path.home() / ".claude" / "projects"
 ARCHIVE_DIR_NAME = "sessions-archive"
 MAX_SESSIONS = 10
 ARCHIVE_SUMMARIZE_THRESHOLD = 50
@@ -49,6 +50,20 @@ Rules:
 
 TRANSCRIPT:
 """
+
+
+def find_claude_session_uuid(workspace: Path) -> str | None:
+    """Find the JSONL UUID for the current session.
+
+    At session end, the most recently modified JSONL in the Claude projects
+    directory is the current session. Its stem equals the resume UUID.
+    """
+    key = str(workspace).replace("/", "-")
+    proj_dir = CLAUDE_PROJECTS_DIR / key
+    if not proj_dir.exists():
+        return None
+    files = sorted(proj_dir.glob("*.jsonl"), key=lambda f: f.stat().st_mtime, reverse=True)
+    return files[0].stem if files else None
 
 
 def find_session_transcript(workspace: Path, start_time: datetime | None) -> Path | None:
@@ -96,7 +111,8 @@ def call_claude_extraction(transcript: str) -> dict[str, Any] | None:
 
     try:
         result = subprocess.run(
-            [str(CLAUDE_BIN), "-p", prompt, "--model", "claude-haiku-4-5-20251001"],
+            [str(CLAUDE_BIN), "-p", prompt, "--model", "claude-haiku-4-5-20251001",
+             "--no-session-persistence"],
             capture_output=True,
             text=True,
             timeout=60,
@@ -186,19 +202,45 @@ def _get_section(content: str, section_name: str) -> str:
     return match.group(1) if match else ""
 
 
+def _find_existing_session_file(sessions_dir: Path, transcript_name: str) -> Path | None:
+    """Return an existing session file for this transcript, if any."""
+    for f in sessions_dir.glob("*.md"):
+        try:
+            text = f.read_text(encoding="utf-8")
+        except OSError:
+            continue
+        # Check frontmatter for matching transcript field
+        for line in text.splitlines()[:10]:
+            if line.startswith("transcript:") and transcript_name in line:
+                return f
+    return None
+
+
 def write_session_file(
     workspace: Path,
     facts: dict[str, Any],
     session_state: dict[str, Any],
     transcript_path: Path | None,
+    claude_session_uuid: str | None = None,
 ) -> Path | None:
-    """Write a session summary file to 🤖 AI/memory/sessions/."""
+    """Write a session summary file to 🤖 AI/memory/sessions/.
+
+    Idempotent: if a file for the same transcript already exists, overwrites
+    it in-place rather than creating a new timestamped duplicate.
+    """
     sessions_dir = workspace / "🤖 AI" / "memory" / SESSIONS_DIR_NAME
     sessions_dir.mkdir(parents=True, exist_ok=True)
 
+    transcript_name = transcript_path.name if transcript_path else ""
     now = datetime.now(timezone.utc)
-    filename = now.strftime("%Y-%m-%d-%H%MZ.md")
-    session_file = sessions_dir / filename
+
+    # Reuse existing file for this transcript to avoid duplicates
+    existing = _find_existing_session_file(sessions_dir, transcript_name) if transcript_name else None
+    if existing:
+        session_file = existing
+    else:
+        filename = now.strftime("%Y-%m-%d-%H%MZ.md")
+        session_file = sessions_dir / filename
 
     session_id = session_state.get("session_id", "unknown")
     start_time = session_state.get("start_time", "")
@@ -213,6 +255,7 @@ def write_session_file(
         f"---",
         f"date: {now.strftime('%Y-%m-%d')}",
         f"session_id: {session_id}",
+        f"claude_session_id: {claude_session_uuid or ''}",
         f"start_time: {start_time}",
         f"transcript: {transcript_path.name if transcript_path else 'unknown'}",
         f"---",
@@ -293,7 +336,8 @@ def _maybe_summarize_archive(workspace: Path, archive_file: Path) -> None:
 
     try:
         result = subprocess.run(
-            [str(CLAUDE_BIN), "-p", prompt, "--model", "claude-haiku-4-5-20251001"],
+            [str(CLAUDE_BIN), "-p", prompt, "--model", "claude-haiku-4-5-20251001",
+             "--no-session-persistence"],
             capture_output=True,
             text=True,
             timeout=60,
@@ -337,8 +381,9 @@ def run_extraction(workspace: Path, session_state: dict[str, Any]) -> bool:
     summary = facts.get("session_summary", "")
     print(f"  Session: {summary[:80]}" if summary else "  Session facts extracted.")
 
+    claude_uuid = find_claude_session_uuid(workspace)
     patch_memory_md(workspace, facts)
-    session_file = write_session_file(workspace, facts, session_state, transcript_path)
+    session_file = write_session_file(workspace, facts, session_state, transcript_path, claude_uuid)
     archived = manage_session_archive(workspace)
 
     if session_file:

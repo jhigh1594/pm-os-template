@@ -308,42 +308,81 @@ def write_candidate_file(
     return total
 
 
+# ── Auto-promotion to learned-patterns.md ────────────────────────────────────
+
+AUTO_SECTION_HEADER = "## Auto-Captured Session Patterns"
+AUTO_SECTION_INTRO = (
+    "*Auto-promoted from session memory. Haiku-curated decisions and insights — "
+    "no manual review required. Demote to candidate-patterns.md or delete if stale.*"
+)
+
+
+def auto_promote_session_candidates(workspace_root: Path, candidates: list[dict]) -> int:
+    """Promote session-decision and session-insight candidates directly to learned-patterns.md.
+
+    These come from Haiku-extracted session summaries (already curated quality).
+    Specstory candidates stay in the manual review queue — they're heuristic regex matches.
+    Returns count promoted.
+    """
+    promotable = [c for c in candidates if c["source"] in ("session-decision", "session-insight")]
+    if not promotable:
+        return 0
+
+    learned_path = workspace_root / LEARNED_PATTERNS_FILE
+    existing = learned_path.read_text(encoding="utf-8") if learned_path.exists() else ""
+
+    new_entries = []
+    for c in promotable:
+        if c["text"][:60] in existing:
+            continue
+        label = "Decision" if c["source"] == "session-decision" else "Strategic Insight"
+        new_entries.append(
+            f"### {label} — {c['date']}\n"
+            f"**Source**: `🤖 AI/memory/sessions/{c['file']}`  \n"
+            f"{c['text']}"
+        )
+
+    if not new_entries:
+        return 0
+
+    learned_path.parent.mkdir(parents=True, exist_ok=True)
+    if AUTO_SECTION_HEADER not in existing:
+        existing = existing.rstrip() + f"\n\n---\n\n{AUTO_SECTION_HEADER}\n\n{AUTO_SECTION_INTRO}\n"
+    existing = existing.rstrip() + "\n\n" + "\n\n".join(new_entries) + "\n"
+    learned_path.write_text(existing, encoding="utf-8")
+    return len(new_entries)
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def run_extraction(workspace_root: Path) -> int:
-    """Run full extraction pipeline. Returns count of new candidates written."""
+    """Run full extraction pipeline. Returns count promoted + candidates written."""
     manifest = load_manifest(workspace_root)
     learned_hashes = load_learned_hashes(workspace_root)
 
     def not_learned(c: dict) -> bool:
-        text = c.get("text") or ""
-        return insight_hash(text[:80]) not in learned_hashes
+        return insight_hash((c.get("text") or "")[:80]) not in learned_hashes
 
-    # Primary: Claude Code-generated session files (Decisions + Context Changes)
-    session_candidates = extract_session_insight_candidates(workspace_root, manifest)
-    session_candidates = [c for c in session_candidates if not_learned(c)]
+    # Primary: session files — auto-promote directly (Haiku-curated, reliable quality)
+    session_candidates = [c for c in extract_session_insight_candidates(workspace_root, manifest) if not_learned(c)]
+    promoted = auto_promote_session_candidates(workspace_root, session_candidates)
 
-    # Secondary: heuristic specstory signals (capped to avoid noise)
-    specstory_candidates = extract_specstory_candidates(workspace_root, manifest)
-    specstory_candidates = [c for c in specstory_candidates if not_learned(c)][:10]
+    # Secondary: specstory heuristic signals — manual review queue only (noisier)
+    specstory_candidates = [c for c in extract_specstory_candidates(workspace_root, manifest) if not_learned(c)][:10]
+    written = write_candidate_file(workspace_root, specstory_candidates, [])
 
-    written = write_candidate_file(workspace_root, specstory_candidates, session_candidates)
-
-    all_hashes = (
-        [c["hash"] for c in session_candidates]
-        + [c["hash"] for c in specstory_candidates]
-    )
+    all_hashes = [c["hash"] for c in session_candidates] + [c["hash"] for c in specstory_candidates]
     manifest["ingested_insight_hashes"] = list(
         set(manifest.get("ingested_insight_hashes", [])) | set(all_hashes)
     )
     manifest["last_extraction"] = datetime.now(timezone.utc).isoformat()
     save_manifest(workspace_root, manifest)
 
-    return written
+    return promoted + written
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Extract pattern candidates from session files and specstory")
+    parser = argparse.ArgumentParser(description="Extract and auto-promote pattern candidates")
     parser.add_argument("--workspace", type=Path, default=Path.cwd())
     parser.add_argument("--dry-run", action="store_true", help="Report counts without writing")
     args = parser.parse_args(argv)
@@ -353,18 +392,17 @@ def main(argv: list[str] | None = None) -> int:
     learned_hashes = load_learned_hashes(workspace)
 
     def not_learned(c: dict) -> bool:
-        text = c.get("text") or ""
-        return insight_hash(text[:80]) not in learned_hashes
+        return insight_hash((c.get("text") or "")[:80]) not in learned_hashes
 
     session_candidates = [c for c in extract_session_insight_candidates(workspace, manifest) if not_learned(c)]
     specstory_candidates = [c for c in extract_specstory_candidates(workspace, manifest) if not_learned(c)][:10]
-    total = len(session_candidates) + len(specstory_candidates)
 
     if args.dry_run:
-        print(f"Would write {total} candidates ({len(session_candidates)} session insights, {len(specstory_candidates)} specstory signals)")
+        print(f"Would promote {len(session_candidates)} session insights, queue {len(specstory_candidates)} specstory signals")
         return 0
 
-    written = write_candidate_file(workspace, specstory_candidates, session_candidates)
+    promoted = auto_promote_session_candidates(workspace, session_candidates)
+    written = write_candidate_file(workspace, specstory_candidates, [])
 
     all_hashes = [c["hash"] for c in session_candidates] + [c["hash"] for c in specstory_candidates]
     manifest["ingested_insight_hashes"] = list(
@@ -373,8 +411,10 @@ def main(argv: list[str] | None = None) -> int:
     manifest["last_extraction"] = datetime.now(timezone.utc).isoformat()
     save_manifest(workspace, manifest)
 
+    if promoted:
+        print(f"✅ {promoted} session patterns → {LEARNED_PATTERNS_FILE}")
     if written:
-        print(f"📋 {written} new pattern candidates → {CANDIDATE_FILE}")
+        print(f"📋 {written} specstory signals → {CANDIDATE_FILE} (manual review)")
 
     return 0
 
