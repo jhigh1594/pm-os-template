@@ -70,6 +70,33 @@ Single unified context file: **`🤖 AI/memory/memory.md`**. Update when session
 
 ---
 
+## Session Startup
+
+### Session Continuity (Automatic)
+
+All previous sessions persist as `.jsonl` files in `~/.claude/projects/-Users-jhigh-SNOW-Work/`. The `/clear` command wipes in-memory context only — transcripts are never deleted.
+
+**When the user references prior work, automatically search for context.** Do not wait for them to invoke `/remember` or any other command. The agent detects intent and acts.
+
+**Detection triggers** — any message (not just the first) containing:
+
+- "continue", "resume", "pick up", "back to", "where were we"
+- "like we discussed", "as we decided", "what did we decide"
+- "remember when", "last time", "previously", "earlier"
+
+**Agent actions by intent:**
+
+| User Intent | Agent Action |
+|-------------|-------------|
+| Wants to literally resume a specific session | Suggest `claude --resume <session-id>` (find ID via `ls -t ~/.claude/projects/-Users-jhigh-SNOW-Work/*.jsonl \| head -10` or grep for content) |
+| Wants to continue most recent work | Suggest `claude --continue`, OR search episodic memory and proceed in current session |
+| References a past decision, topic, or discussion | Search episodic memory automatically, summarize what you found, then respond |
+| Asks "what did we..." or "remember when..." | Search episodic memory + workspace docs (QMD) in parallel, merge results |
+
+**Principle**: The user should never need to know command names. The agent detects the intent and takes the right action. `/remember` exists as an explicit escape hatch, but the default is agent-initiated.
+
+---
+
 ## Accumulated Wisdom
 
 See **`🤖 AI/patterns/learned-patterns.md`** for workspace conventions, past decisions, and patterns worth preserving.

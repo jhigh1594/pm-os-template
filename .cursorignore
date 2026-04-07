@@ -1,0 +1,21 @@
+# Python
+.venv/
+
+# Git
+.git/
+
+# Lenny's podcast transcripts (55M — reference material, not working docs)
+🎓 Product-Management/lennys-podcast-transcripts/
+
+# Spec story history
+.specstory/
+
+# Claude Code internals
+.claude/logs/
+.claude/flashback/
+
+# OS files
+.DS_Store
+
+# Cursor's own cache (prevent recursive indexing)
+.cursor/hooks/state/
