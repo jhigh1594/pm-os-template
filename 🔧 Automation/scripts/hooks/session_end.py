@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import asyncio
 import json
 import os
 import subprocess
@@ -61,13 +60,6 @@ def count_git_commits_since_session_start(workspace_root: Path, session_state: d
     return sum(1 for line in completed.stdout.splitlines() if line.strip())
 
 
-def should_record_observer_session_end(workspace_root: Path) -> bool:
-    return (
-        os.environ.get("AIPMOS_SESSION_END_RECORD_TIME", "1") != "00"
-        and (workspace_root / "🤖 AI" / "config.yaml").exists()
-    )
-
-
 def should_run_memory_extraction(workspace_root: Path) -> bool:
     """Run LLM extraction when .specstory transcripts exist."""
     if os.environ.get("AIPMOS_SESSION_END_AUTO_MEMORY", "1") == "0":
@@ -80,67 +72,9 @@ def should_run_skill_learning_ingest() -> bool:
     return os.environ.get("AIPMOS_SKILL_LEARNING_INGEST", "1") != "0"
 
 
-def should_run_semantic_health_check() -> bool:
-    return os.environ.get("AIPMOS_SESSION_END_SEMANTIC_HEALTH", "1") != "0"
-
-
-def load_session_counter(cache_dir: Path) -> dict[str, int]:
-    counter_file = cache_dir / "session-counter.json"
-    return load_json_file(counter_file, {"count": 0})
-
-
-def save_session_counter(cache_dir: Path, counter: dict[str, int]) -> None:
-    counter_file = cache_dir / "session-counter.json"
-    counter_file.parent.mkdir(parents=True, exist_ok=True)
-    counter_file.write_text(json.dumps(counter, indent=2), encoding="utf-8")
-
-
-def run_semantic_health_check(workspace_root: Path) -> None:
-    sys.path.insert(0, str(workspace_root / "🔧 Automation/scripts"))
-    try:
-        from hooks.semantic_health_checker import check_semantic_drift, format_drift_report
-    except ImportError:
-        return
-    drift = check_semantic_drift(workspace_root, days_back=14)
-    if drift:
-        report = format_drift_report(drift)
-        if report:
-            print("")
-            print(report)
-
-
-async def _mark_session_end_async(workspace_root: Path) -> int | None:
-    sys.path.insert(0, str(workspace_root / "🔧 Automation/scripts"))
-    try:
-        from observers.observer_manager import ObserverManager
-    except Exception:
-        return None
-    manager = ObserverManager()
-    await manager.initialize(workspace_root, str(workspace_root / "🤖 AI" / "config.yaml"))
-    time_observer = manager.get_observer("time_patterns")
-    if not time_observer:
-        return None
-    return await time_observer.mark_session_end()
-
-
-def record_observer_session_end(workspace_root: Path) -> None:
-    if not should_record_observer_session_end(workspace_root):
-        return
-    try:
-        duration = asyncio.run(_mark_session_end_async(workspace_root))
-    except Exception as exc:
-        sys.stderr.write(f"Session end recording failed: {exc}\n")
-        return
-    if duration:
-        print(f"Session duration: {duration}s")
-
-
 def run_session_end(workspace_root: Path, python_cmd: str) -> int:
     """Execute the guarded session-end workflow."""
     session_state = load_session_intent(workspace_root)
-    commit_count = count_git_commits_since_session_start(workspace_root, session_state)
-
-    record_observer_session_end(workspace_root)
 
     # LLM-powered session extraction → memory.md + sessions/
     if should_run_memory_extraction(workspace_root):
@@ -178,15 +112,6 @@ def run_session_end(workspace_root: Path, python_cmd: str) -> int:
                 print(f"📋 {written} new pattern candidates → 🤖 AI/patterns/candidate-patterns.md")
         except Exception as exc:
             sys.stderr.write(f"Pattern extraction failed: {exc}\n")
-
-    # Semantic health check — runs every 7th session
-    if should_run_semantic_health_check():
-        cache_dir = workspace_root / ".cache" / "claude" / "hooks"
-        counter = load_session_counter(cache_dir)
-        counter["count"] += 1
-        save_session_counter(cache_dir, counter)
-        if counter["count"] % 7 == 0:
-            run_semantic_health_check(workspace_root)
 
     rolling_state_path = workspace_root / ".cache" / "claude" / "hooks" / "rolling-state.json"
     rolling_state_path.unlink(missing_ok=True)

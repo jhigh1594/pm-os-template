@@ -142,5 +142,10 @@ if [ -f "$memory_file" ]; then
     fi
 fi
 
+# Background: extract summaries for recent sessions that ended via terminal close
+# (Stop hook never fires on SIGHUP, so this catches up retroactively)
+python3 "$workspace_root/🔧 Automation/scripts/hooks/jsonl_extractor.py" \
+    --workspace "$workspace_root" --max-sessions 3 >/dev/null 2>&1 &
+
 # Hook completed successfully
 exit 0
