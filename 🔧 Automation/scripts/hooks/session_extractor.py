@@ -101,6 +101,21 @@ def truncate_transcript(content: str) -> str:
     return content[:2000] + "\n\n[... middle truncated ...]\n\n" + content[-(TRANSCRIPT_MAX_CHARS - 2000):]
 
 
+def _no_hooks_env() -> dict[str, str]:
+    """Return os.environ with all session-end guard flags disabled.
+
+    Prevents recursive hook triggering when claude CLI is called from within
+    a session_end hook — child claude sessions would otherwise fire SessionEnd
+    again, re-running this script.
+    """
+    import os
+    env = dict(os.environ)
+    env["AIPMOS_SESSION_END_AUTO_MEMORY"] = "0"
+    env["AIPMOS_SKILL_LEARNING_INGEST"] = "0"
+    env["AIPMOS_SESSION_END_PATTERN_EXTRACT"] = "0"
+    return env
+
+
 def call_claude_extraction(transcript: str) -> dict[str, Any] | None:
     """Call claude CLI to extract session facts. Returns parsed dict or None."""
     if not CLAUDE_BIN.exists():
@@ -116,6 +131,7 @@ def call_claude_extraction(transcript: str) -> dict[str, Any] | None:
             capture_output=True,
             text=True,
             timeout=60,
+            env=_no_hooks_env(),
         )
     except (OSError, subprocess.TimeoutExpired) as exc:
         sys.stderr.write(f"session_extractor: claude CLI call failed: {exc}\n")
@@ -341,6 +357,7 @@ def _maybe_summarize_archive(workspace: Path, archive_file: Path) -> None:
             capture_output=True,
             text=True,
             timeout=60,
+            env=_no_hooks_env(),
         )
         if result.returncode == 0 and result.stdout.strip():
             header = f"# Archive (Compacted {datetime.now().strftime('%Y-%m-%d')})\n\n"
