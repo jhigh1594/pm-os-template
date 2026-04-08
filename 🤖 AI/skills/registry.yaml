@@ -1,5 +1,5 @@
 version: 1
-generated_at: '2026-04-07T22:11:42Z'
+generated_at: '2026-04-08T02:40:19Z'
 skills:
 - skill_id: claude:ai-evals
   base_skill_id: ai-evals
@@ -95,6 +95,18 @@ skills:
   eval_policy: nightly
   skill_path: .claude/skills/coaching-hooks/SKILL.md
   learned_path: .claude/skills/coaching-hooks/LEARNED.md
+  wrappers: []
+  pilot: false
+- skill_id: commercial-lens
+  base_skill_id: commercial-lens
+  name: commercial lens
+  surface: claude_skill
+  family: consultative
+  owner: workspace
+  criticality: medium
+  eval_policy: hybrid
+  skill_path: .claude/skills/commercial-lens/SKILL.md
+  learned_path: .claude/skills/commercial-lens/LEARNED.md
   wrappers: []
   pilot: false
 - skill_id: competitive-analysis
@@ -241,18 +253,6 @@ skills:
   learned_path: .claude/skills/growth-embedded/LEARNED.md
   wrappers: []
   pilot: false
-- skill_id: industry-intelligence
-  base_skill_id: industry-intelligence
-  name: industry intelligence
-  surface: claude_skill
-  family: consultative
-  owner: workspace
-  criticality: medium
-  eval_policy: hybrid
-  skill_path: .claude/skills/industry-intelligence/SKILL.md
-  learned_path: .claude/skills/industry-intelligence/LEARNED.md
-  wrappers: []
-  pilot: false
 - skill_id: jtbd-building
   base_skill_id: jtbd-building
   name: jtbd building
@@ -323,18 +323,6 @@ skills:
   eval_policy: hybrid
   skill_path: .claude/skills/mvp/SKILL.md
   learned_path: .claude/skills/mvp/LEARNED.md
-  wrappers: []
-  pilot: false
-- skill_id: okr-frameworks
-  base_skill_id: okr-frameworks
-  name: okr frameworks
-  surface: claude_skill
-  family: template
-  owner: workspace
-  criticality: medium
-  eval_policy: hybrid
-  skill_path: .claude/skills/okr-frameworks/SKILL.md
-  learned_path: .claude/skills/okr-frameworks/LEARNED.md
   wrappers: []
   pilot: false
 - skill_id: openrouter-imagegen
@@ -767,18 +755,6 @@ skills:
   eval_policy: hybrid
   skill_path: .codex/skills/menkesu-awesome-pm-skills-one-step-better-ai-pm/SKILL.md
   learned_path: .codex/skills/menkesu-awesome-pm-skills-one-step-better-ai-pm/LEARNED.md
-  wrappers: []
-  pilot: false
-- skill_id: planview-deck
-  base_skill_id: planview-deck
-  name: planview deck
-  surface: codex_skill
-  family: tool_execution
-  owner: workspace
-  criticality: medium
-  eval_policy: nightly
-  skill_path: .codex/skills/planview-deck/SKILL.md
-  learned_path: .codex/skills/planview-deck/LEARNED.md
   wrappers: []
   pilot: false
 - skill_id: codex:problem-definition
