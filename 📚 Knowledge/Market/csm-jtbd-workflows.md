@@ -491,3 +491,8 @@ None of these are well-served by current CS platforms. The "prove value" problem
 ---
 
 *Last updated: 2026-04-06. Research should be validated with primary CSM interviews. Priority validation gaps are marked [Needs Validation] throughout. Promote confirmed patterns to `🤖 AI/patterns/learned-patterns.md` at 3+ confirmations.*
+
+---
+**Cross-references:** [csm-icp-market-research.md](csm-icp-market-research.md) · [hypotheses.md](hypotheses.md)
+**Confirms hypothesis:** CS Investment Paradox · Cross-Functional Orchestration Whitespace
+**Feeds decision:** CSP product roadmap prioritization

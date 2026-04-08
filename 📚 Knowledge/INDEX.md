@@ -38,3 +38,32 @@ Active unvalidated beliefs, by domain. Promote to `🤖 AI/patterns/learned-patt
 1. **Load on demand** — read this INDEX first, then load only relevant domain folders (don't preload all)
 2. **Hypothesis lifecycle**: unvalidated belief → `hypotheses.md` → confirmed 3x → `🤖 AI/patterns/learned-patterns.md`
 3. **Pattern promotion**: when a hypothesis reaches 3 confirmations, apply the 4 quality gates (Actionable, Specific, Durable, Non-obvious) before promoting
+
+---
+
+## Cross-Reference Convention
+
+When adding any new Knowledge file, include a footer:
+
+```markdown
+---
+**Cross-references:** [related-file.md](path) · [related-file.md](path)
+**Confirms hypothesis:** [hypothesis name from hypotheses.md]
+**Feeds decision:** [decision or initiative name]
+```
+
+---
+
+## Lint Prompt (run weekly or after major research additions)
+
+Run this as a Claude prompt over the knowledge system:
+
+```
+Lint pass on 📚 Knowledge/ and 🤖 AI/memory/:
+1. List any hypothesis in hypotheses.md not touched in 30+ days — promote, kill, or extend
+2. List files referenced in INDEX.md with no corresponding file
+3. List files that exist but are not in INDEX.md
+4. Flag any fact stated identically across 3+ files (duplication signal)
+5. Check the 5 most-referenced strategic claims — do they have a source attribution?
+6. Check candidate-patterns.md for PENDING entries older than 14 days — flag for review
+```
