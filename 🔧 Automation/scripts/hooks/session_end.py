@@ -7,9 +7,33 @@ import json
 import os
 import subprocess
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+_LOCK_TTL = 300  # seconds — any real extraction finishes well within 5 minutes
+
+
+def _acquire_lock(workspace_root: Path) -> bool:
+    """Create a lockfile to prevent recursive re-entry from child claude -p hooks.
+
+    Returns True if we acquired the lock, False if another extraction is running.
+    The lock is stale-safe: if the file is older than _LOCK_TTL it is overwritten.
+    """
+    lock_path = workspace_root / ".cache" / "claude" / "hooks" / ".extraction-in-progress"
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    if lock_path.exists():
+        age = time.time() - lock_path.stat().st_mtime
+        if age < _LOCK_TTL:
+            return False  # Another extraction is actively running
+    lock_path.write_text(str(os.getpid()), encoding="utf-8")
+    return True
+
+
+def _release_lock(workspace_root: Path) -> None:
+    lock_path = workspace_root / ".cache" / "claude" / "hooks" / ".extraction-in-progress"
+    lock_path.unlink(missing_ok=True)
 
 
 def load_json_file(path: Path, default: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -74,6 +98,17 @@ def should_run_skill_learning_ingest() -> bool:
 
 def run_session_end(workspace_root: Path, python_cmd: str) -> int:
     """Execute the guarded session-end workflow."""
+    if not _acquire_lock(workspace_root):
+        return 0  # Recursive invocation from a child claude -p hook — skip
+
+    try:
+        return _run_session_end_locked(workspace_root, python_cmd)
+    finally:
+        _release_lock(workspace_root)
+
+
+def _run_session_end_locked(workspace_root: Path, python_cmd: str) -> int:
+    """Inner implementation — only called when the lock is held."""
     session_state = load_session_intent(workspace_root)
 
     # LLM-powered session extraction → memory.md + sessions/
