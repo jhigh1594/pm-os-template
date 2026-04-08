@@ -259,6 +259,37 @@ Surface any `[NEEDS INPUT]` as open questions that must be resolved before spec 
 - [ ] Prototype plan
 - [ ] Kill criteria
 
+### Step 3.5: Autonomous Polish Pass (Before User Sees Draft)
+
+Before presenting the draft — always, without being asked — run three review lenses and self-correct. Do not present the draft until this pass is complete.
+
+**Lens 1 — Strategic:**
+- Does it ladder up to company/product strategy? Is the "why now" clear?
+- Is the opportunity cost named explicitly?
+- Is strategic fit explicit — or just implied?
+- Fix inline. Flag anything requiring user input as `[NEEDS INPUT]`.
+
+**Lens 2 — Product taste/judgment:**
+- Is the scope right for V1? (Check for scope creep or under-scoping)
+- Is evidence driving decisions, or enthusiasm?
+- Are outcomes foregrounded over capabilities?
+- Decision density: ≥5 decisions per page? Every metric has a threshold?
+- Non-goals explicit with rationale?
+- Fix inline. Flag anything requiring user input as `[NEEDS INPUT]`.
+
+**Lens 3 — Copy:**
+Load `~/.claude/skills/elite-copywriter/SKILL.md` and apply:
+- BLUF: lead with the conclusion in every section
+- Cut AI-isms: "leverage", "robust", "delving into", "Here's", "Let me show you"
+- Target 30–40% reduction on exec-facing sections
+- Sound like a peer briefing, not an AI output
+- Fix inline.
+
+**After all three passes:**
+- Apply all self-corrections to the draft
+- Surface a short `**Before you see this:**` note listing: (a) fixes made, (b) remaining `[NEEDS INPUT]` items
+- Then present the polished draft
+
 ### Step 4: Save (if `--save` flag)
 
 If the `--save` flag was provided:
