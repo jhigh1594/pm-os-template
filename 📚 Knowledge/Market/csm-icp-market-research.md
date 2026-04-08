@@ -537,3 +537,8 @@ There is meaningful variance across analyst firms due to definitional difference
 ---
 
 *Research compiled April 2026. Refresh recommended annually or following major industry events (Pulse, TSIA World, Customer Success Festival).*
+
+---
+**Cross-references:** [csm-jtbd-workflows.md](csm-jtbd-workflows.md) · [hypotheses.md](hypotheses.md)
+**Confirms hypothesis:** CS Investment Paradox · Cross-Functional Orchestration Whitespace · AI Adoption Blocker
+**Feeds decision:** CSP ICP definition · ServiceNow competitive positioning
