@@ -239,7 +239,6 @@ See `integration.md` for:
 See `mcp-integration.md` for:
 - Granola MCP (meeting data)
 - Notion MCP (research repository)
-- AgilePlace MCP (opportunity tracking)
 - Code examples for each MCP
 
 ### Constraints & Anti-Patterns

@@ -34,7 +34,7 @@ Trigger this skill when:
 
 | Collection | Content | Files |
 |------------|---------|-------|
-| `products` | Product strategy, PRDs, designs (AgilePlace, OKRs, Roadmaps, DPD) | 575 |
+| `products` | Product strategy, PRDs, designs, research | 575 |
 | `pm-frameworks` | PM frameworks, mental models, decision patterns | 438 |
 | `company` | Competitive intel, business context | 165 |
 | `ai-toolkit` | AI memory, patterns, prompts | 27 |
@@ -61,7 +61,7 @@ qmd search "Productboard pricing"
 qmd vsearch "how to communicate tradeoffs to stakeholders"
 
 # Get specific document
-qmd get "products/AgilePlace/initiatives/Global attributes/global-attributes-prd.md"
+qmd get "products/CSP/prd-customer-health-scoring.md"
 
 # Multi-get by pattern
 qmd multi-get "company/competitive/*.md" --json

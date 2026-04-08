@@ -29,8 +29,8 @@ All files live at `🤖 AI/context/`. Each has a defined purpose:
 
 | File | What belongs here | Update cadence |
 |---|---|---|
-| `company.md` | Planview mission, scale, market position, strategic bets | Rarely — major pivots only |
-| `product.md` | DPD suite health metrics, capabilities, positioning, strategic questions | Monthly or after significant product events |
+| `company.md` | Company mission, scale, market position, strategic bets | Rarely — major pivots only |
+| `product.md` | Product health metrics, capabilities, positioning, strategic questions | Monthly or after significant product events |
 | `personas.md` | Buyer archetypes with pain, motivation, buying behavior | After customer/sales conversations |
 | `competitors.md` | Competitor profiles, win conditions, GTM patterns | After competitive intelligence or win/loss |
 | `goals.md` | Current quarter priorities, stakeholder map, open strategic questions | Quarterly or after significant strategy decisions |
@@ -46,7 +46,7 @@ If the session's focus is obvious from context, skip asking. Otherwise ask once:
 > "What were the key findings or decisions from this session?"
 
 Accept a brief summary — don't need exhaustive detail. Look for:
-- New facts about Planview, DPD, competitors, or market
+- New facts about the company, product, competitors, or market
 - Customer or stakeholder signals about pain, motivation, or buying behavior
 - Strategic decisions or priority changes
 - Resolved or newly opened strategic questions
