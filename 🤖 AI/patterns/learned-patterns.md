@@ -213,3 +213,293 @@ BEFORE ASKING QUESTIONS IN DISCOVERY:
 ---
 
 *Next review: 2026-04-10*
+
+---
+
+## Auto-Captured Session Patterns
+
+*Auto-promoted from session memory. Haiku-curated decisions and insights — no manual review required. Demote to candidate-patterns.md or delete if stale.*
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2230Z.md`  
+Simplified app from 6 views to 3 core views (Brief, Cross-Reference, Deep Dive)
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2230Z.md`  
+Embedded all data in JS const rather than fetching from files (single-file design)
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2230Z.md`  
+Pain × Persona matrix as centerpiece synthesis tool
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2230Z.md`  
+Used keyword heuristics for JTBD-to-pain matching instead of manual curation
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2230Z.md`  
+Switched to light theme with CSS variables
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2230Z.md`  
+Added workflow/journey toggle using state variable rather than separate views
+
+### Strategic Insight — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2230Z.md`  
+Persona > complexity — simplified from 6 views to 3. Added user journey/workflow data requested by user. Shifted from dark to light theme. Using fuzzy keyword matching rather than explicit mapping to reduce manual curation burden.
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z.md`  
+Deployed parallel agents for two distinct research tracks (internal synthesis via jtbd skill + external market research via research/competitive-analysis skills)
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z.md`  
+Structured ICP profile around VP/Head of CS at $10M–$200M ARR B2B SaaS with board-level NRR accountability
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z.md`  
+Identified three purchase triggers: renewal disaster, headcount freeze + growth pressure, board mandate for cohort reporting
+
+### Strategic Insight — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z.md`  
+CSP research foundation complete. Market research reveals ServiceNow's platform architecture as uniquely positioned to address cross-functional post-sales orchestration gap that no current competitor solves. Data quality as AI blocker is actionable insight for product positioning.
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z-1.md`  
+Disabled session_end.py hook to prevent dual extraction (kept only pre_clear_capture.py on UserPromptSubmit)
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z-1.md`  
+Added filename existence check in write_session_file() to prevent overwriting with fresh timestamps
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z-1.md`  
+Kept 2026-04-07-2140Z-0.md (most complete context) and deleted 4 near-duplicate files
+
+### Strategic Insight — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z-1.md`  
+Session extraction is now deduplication-safe. The memory system will no longer create multiple files for the same transcript on /clear commands.
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2140Z.md`  
+Replaced guest-insights extraction with session-file extraction — session files are the authoritative insight source (9 precise candidates vs 249 bootstrapped entries)
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2140Z.md`  
+Built UserPromptSubmit hook intercept for /clear rather than requiring manual /checkpoint — eliminated user burden
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2140Z.md`  
+Pattern extractor stages candidates with hash-based deduplication to prevent duplicates across runs
+
+### Strategic Insight — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2140Z.md`  
+Memory architecture transitioned from 'architecturally designed for autonomous learning but broken in practice' to 'fully working end-to-end.' Verified hook registration, tested session extraction, confirmed pattern extraction catches new insights. System now auto-updates on every /clear without user intervention.
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2140Z-1.md`  
+Disabled `python.terminal.activateEnvironment` in `.vscode/settings.json` to prevent auto-activation
+
+### Strategic Insight — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2140Z-1.md`  
+Workspace settings updated — Python extension will no longer auto-activate `.venv` in new terminals. Manual activation and explicit `.venv/bin/python` calls still work.
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2102Z.md`  
+Architecture: server-side terminal launching (osascript) instead of client-side shell function
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2102Z.md`  
+Extraction strategy: background process at session-start hook to retroactively extract summaries from JSONL
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2102Z.md`  
+Card display: Summary, Focus, first Open Question (extracted by Claude Haiku at session end or retroactively)
+
+### Strategic Insight — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2102Z.md`  
+Discovered sessions weren't being captured because Stop hook only fires on clean exits (Ctrl+C), not terminal closes. Switched to retroactive extraction at session start as the reliable capture point.
+
+### Strategic Insight — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-1759Z-1.md`  
+User has a /compete command available for manual runs but hasn't automated it yet
+
+### Decision — 2026-04-08
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z.md`  
+Spin up parallel agents for internal synthesis (Track 1) and external market research (Track 2)
+
+### Decision — 2026-04-08
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z.md`  
+Use jtbd skill for JTBD/journey mapping, research and competitive-analysis skills for market data
+
+### Decision — 2026-04-08
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z.md`  
+Structured competitive findings with evidence labels and disconfirming evidence sections per project standards
+
+### Strategic Insight — 2026-04-08
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z.md`  
+Completed market research artifacts now available in knowledge system. Identified three non-obvious strategic findings: CS investment paradox, cross-functional orchestration whitespace, and AI adoption data quality blockers.
+
+### Decision — 2026-04-06
+**Source**: `🤖 AI/memory/sessions/2026-04-08-1608Z.md`  
+Chose Mermaid diagrams over ASCII art for OST visualization (enables dashboard integration and better consumption)
+
+### Decision — 2026-04-06
+**Source**: `🤖 AI/memory/sessions/2026-04-08-1608Z.md`  
+Applied context-first consultative approach to match your workspace conventions instead of the original output-first marketplace style
+
+### Decision — 2026-04-06
+**Source**: `🤖 AI/memory/sessions/2026-04-08-1608Z.md`  
+Encoded semantic meaning into Mermaid shapes: stadiums for outcomes, hexagons for opportunities, rectangles for solutions
+
+### Strategic Insight — 2026-04-06
+**Source**: `🤖 AI/memory/sessions/2026-04-08-1608Z.md`  
+New skill added to registry and LEARNED.md stub created. Skill now reads your actual workspace structure rather than assuming generic paths.
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-08-1607Z.md`  
+Create new commercial-lens skill (not fold into existing business-reasoning)
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-08-1607Z.md`  
+Run commercial research and probabilistic planning in parallel
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-08-1607Z.md`  
+Execute skill building and upgrading in parallel with no file overlap
+
+### Strategic Insight — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-08-1607Z.md`  
+AIPMOS expanded from missing skills gap to 5 new/upgraded skill artifacts (1 new + 4 upgrades), filling commercial reasoning and probabilistic thinking coverage gaps identified in existing skills.
+
+### Decision — 2026-04-06
+**Source**: `🤖 AI/memory/sessions/2026-04-08-0240Z.md`  
+Wired 6 hooks (InstructionsLoaded, PreCompact, PostToolUse, etc.) into .claude/settings.local.json to activate the learning pipeline
+
+### Decision — 2026-04-06
+**Source**: `🤖 AI/memory/sessions/2026-04-08-0240Z.md`  
+Confirmed Python learning infrastructure copied from Planview Work is workspace-generic and functional in SNOW-Work without modification
+
+### Strategic Insight — 2026-04-06
+**Source**: `🤖 AI/memory/sessions/2026-04-08-0240Z.md`  
+The skill learning system transitioned from scaffolded-but-inactive to fully operational. The missing piece was hook wiring, not Python infrastructure—this was already present from prior Planview Work implementation.
+
+### Decision — 2026-04-02
+**Source**: `🤖 AI/memory/sessions/2026-04-08-0239Z.md`  
+Feedback on overconfident rank claims is valid — requires calibrated language and evidence methodology
+
+### Decision — 2026-04-02
+**Source**: `🤖 AI/memory/sessions/2026-04-08-0239Z.md`  
+Adding Section 6 (Why Sophisticated Buyers Still Choose PlanHat) as structural improvement to acknowledge competitive moats honestly
+
+### Decision — 2026-04-02
+**Source**: `🤖 AI/memory/sessions/2026-04-08-0239Z.md`  
+Narrowing strategic implications from 7 parallel recommendations to 3 prioritized bets per feedback
+
+### Strategic Insight — 2026-04-02
+**Source**: `🤖 AI/memory/sessions/2026-04-08-0239Z.md`  
+Competitive analysis now subject to higher evidence rigor standard; peer feedback established that confidence must match evidence tier (direct quotes vs. synthesis vs. inference); moat acknowledgment is now seen as strategically important rather than weakness.
+
+### Decision — 2026-04-06
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2345Z.md`  
+Run parallel agents for two distinct research tracks: internal JTBD/journey synthesis and external market/competitive ICP research
+
+### Decision — 2026-04-06
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2345Z.md`  
+Output to separate structured markdown artifacts in Knowledge/Market/ rather than consolidating initially
+
+### Decision — 2026-04-06
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2345Z.md`  
+Use interactive single-file HTML (CSS custom properties + tab navigation) as the synthesis/digestion tool
+
+### Strategic Insight — 2026-04-06
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2345Z.md`  
+Research revealed the CS investment paradox (75% NRR decline despite 60% increased CS spend per Bain 2024) and identified three critical handoff failures (Sales→PS, PS→CSM, CSM→Renewal) as high-leverage problems. Planhat competitive analysis emerged as the richest existing validation source in the workspace.
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2344Z.md`  
+Deleted 15 empty session-intent.json files from sessions-archive/ (were useless, only timestamps with no intent data)
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2344Z.md`  
+Removed dead code from session_end.py: archive_and_reset_session_intent(), run_pattern_extraction(), session_synthesis.py call from session-start.sh
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2344Z.md`  
+Built three-tier memory: permanent memory.md, rolling 10 sessions/, archive 50+ compacted; LLM extractor runs at session end
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2344Z.md`  
+Use claude -p CLI for extraction (no separate API key needed, inherits session auth)
+
+### Strategic Insight — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2344Z.md`  
+Reviewed Gravity Claw's three-tier memory system. Discovered automatic fact extraction (after every exchange) as the key gap in current SNOW-Work system. Now implemented: LLM reads .specstory transcript → extracts session_summary, current_focus, key_decisions, open_questions as JSON → patches memory.md volatile sections in-place each session end.
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2231Z.md`  
+Abandoned pre_clear_capture.py hook approach (architecturally broken — UserPromptSubmit doesn't fire for built-in CLI commands)
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2231Z.md`  
+Implemented rolling-state.json mechanism to capture work state after each turn
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2231Z.md`  
+Updated session-start.sh recovery logic to check for .specstory transcripts in addition to intent field
+
+### Strategic Insight — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2231Z.md`  
+Discovered fundamental platform constraint: UserPromptSubmit hooks don't fire for built-in Claude Code commands like /clear — they're intercepted by CLI before hook system runs. This is not a code bug but an architectural limitation.
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2230Z-1.md`  
+Commit changes directly to main instead of creating a PR
+
+### Decision — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2230Z-1.md`  
+.specstory/ directory was handled (included or excluded per user's 'PR merged' confirmation)
+
+### Strategic Insight — 2026-04-07
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2230Z-1.md`  
+User prefers direct commits over PRs for this workspace (indicated by 'No PR needed' feedback)
+
+### Decision — 2026-04-08
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z.md`  
+Use parallel agents for two distinct research tracks (internal JTBD synthesis + external market research)
+
+### Decision — 2026-04-08
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z.md`  
+Maintain two separate artifacts rather than merging (internal vs. external sources)
+
+### Decision — 2026-04-08
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z.md`  
+Structure ICP profile around $10M–$200M ARR B2B SaaS with 10–50 CSMs
+
+### Strategic Insight — 2026-04-08
+**Source**: `🤖 AI/memory/sessions/2026-04-07-2229Z.md`  
+Key insight emerged: ServiceNow's workflow orchestration capability uniquely addresses the real market problem (coordination model design, not tooling), which no competitor currently solves. AI adoption in CS is blocked by data fragmentation, not ambition — positioning opportunity for unified post-sales platform.
+
+### Decision — 2026-04-08
+**Source**: `🤖 AI/memory/sessions/2026-04-08-1610Z.md`  
+Remove all Planview/AgilePlace/OKR/Roadmap references from codebase and config files
+
+### Decision — 2026-04-08
+**Source**: `🤖 AI/memory/sessions/2026-04-08-1610Z.md`  
+Keep session continuity guidance in project CLAUDE.md (compressed, not expanded)
+
+### Decision — 2026-04-08
+**Source**: `🤖 AI/memory/sessions/2026-04-08-1610Z.md`  
+Delete industry-intelligence skill — internal platform doesn't need Gartner/Forrester analyst briefings
+
+### Decision — 2026-04-08
+**Source**: `🤖 AI/memory/sessions/2026-04-08-1610Z.md`  
+Treat internal enablement and stakeholder comms with same rigor as external launch (launch-execution stays as-is)
+
+### Decision — 2026-04-08
+**Source**: `🤖 AI/memory/sessions/2026-04-08-1610Z.md`  
+Don't include directory tree in CLAUDE.md — Claude can figure it out
+
+### Strategic Insight — 2026-04-08
+**Source**: `🤖 AI/memory/sessions/2026-04-08-1610Z.md`  
+Global rules apply to all projects, not just SNOW. Important session correction: assistant was called out for making skill recommendations before reading files — established principle that recommendations require reading and understanding context first.

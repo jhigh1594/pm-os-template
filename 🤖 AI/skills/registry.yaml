@@ -1,5 +1,5 @@
 version: 1
-generated_at: '2026-04-08T02:40:19Z'
+generated_at: '2026-04-08T17:48:48Z'
 skills:
 - skill_id: claude:ai-evals
   base_skill_id: ai-evals
@@ -755,6 +755,18 @@ skills:
   eval_policy: hybrid
   skill_path: .codex/skills/menkesu-awesome-pm-skills-one-step-better-ai-pm/SKILL.md
   learned_path: .codex/skills/menkesu-awesome-pm-skills-one-step-better-ai-pm/LEARNED.md
+  wrappers: []
+  pilot: false
+- skill_id: planview-deck
+  base_skill_id: planview-deck
+  name: planview deck
+  surface: codex_skill
+  family: tool_execution
+  owner: workspace
+  criticality: medium
+  eval_policy: nightly
+  skill_path: .codex/skills/planview-deck/SKILL.md
+  learned_path: .codex/skills/planview-deck/LEARNED.md
   wrappers: []
   pilot: false
 - skill_id: codex:problem-definition
