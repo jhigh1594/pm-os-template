@@ -3,18 +3,17 @@ description: Run the story workflow
 ---
 # Story Breakdown Generator
 
-Generate an Epic → Feature → Story hierarchy from an approved PRD, optionally push to AgilePlace.
+Generate an Epic → Feature → Story hierarchy from an approved PRD.
 
 ---
 
 ## Relationship
 
-- **`/story`** generates AgilePlace backlog hierarchy from approved PRDs
+- **`/story`** generates Epic → Feature → Story hierarchy from approved PRDs, saved as structured local files
 - **`prd-shaper`** (`~/.claude/skills/prd-shaper/`) provides the quality gate — only generate from PRDs with Key Use Cases, Success Metrics, and explicit non-goals
-- **`prd-template.md`** (`📝 Docs/templates/`) provides the section structure for parsing
 - **`/design-brief`** is the sibling handoff for designer engagement
 - **`/spec-brief`** is the downstream handoff for engineering
-- Use `/story` after `/spec` to create AgilePlace backlog; use `/design-brief` when engaging a designer first
+- Use `/story` after `/spec` to create the story breakdown; use `/design-brief` when engaging a designer first
 
 ---
 
@@ -32,32 +31,26 @@ Generate an Epic → Feature → Story hierarchy from an approved PRD, optionall
 ## Command Syntax
 
 ```bash
-/story [--prd <path>] [--board <board_id>] [--dry-run] [--skip-discovery] [--save-only] [<description>]
+/story [--prd <path>] [--skip-discovery] [<description>]
 ```
 
 **Arguments**:
 - `--prd <path>`: Path to the PRD file (required)
-- `--board <board_id>`: AgilePlace board ID to push to (optional — without this, saves locally only)
-- `--dry-run`: Generate JSON files but don't push to AgilePlace
 - `--skip-discovery`: Skip clarifying questions, generate immediately
-- `--save-only`: Save JSON files but skip AgilePlace push (for manual review before pushing)
 - `<description>`: Initial description (optional—can provide interactively)
 
 **Examples**:
 ```bash
-/story --prd "📦 Products/AgilePlace/initiatives/in-place-okr-linking/okr-agileplace-integration-prd.md"
-/story --prd path/to/prd.md --board 12345
-/story --prd path/to/prd.md --dry-run
-/story --prd path/to/prd.md --board 12345 --skip-discovery
+/story --prd "📦 Products/CSP/initiatives/feature-slug/prd.md"
+/story --prd path/to/prd.md
+/story --prd path/to/prd.md --skip-discovery
 ```
 
 ---
 
 ## Template Reference
 
-This command parses PRDs using **`prd-template.md`** section structure at `📝 Docs/templates/prd-template.md`.
-
-**Required sections** (all must be present):
+This command parses PRDs by looking for standard sections. **Required sections** (all must be present):
 - **Problem Statement** → Epic description
 - **Key Use Cases / Workflows** → Features (one per use case)
 - **Proposed Solution / Key capabilities** → Story scope
@@ -89,16 +82,13 @@ Reference **`prd-shaper`** quality standards (`~/.claude/skills/prd-shaper/SKILL
 
 Extract from the command invocation:
 - `--prd` value (required)
-- `--board` value (optional)
-- `--dry-run` flag presence
 - `--skip-discovery` flag presence
-- `--save-only` flag presence
 - `<description>` if provided
 
 ### Step 1: Load and Validate PRD
 
 1. Read the PRD at the provided `--prd` path
-2. Parse using `prd-template.md` section structure:
+2. Parse by looking for standard sections:
    - Look for `## Problem Statement` section
    - Look for `## Key Use Cases` or `## Workflows` section
    - Look for `## Proposed Solution` or `## Key Capabilities` section
@@ -165,22 +155,11 @@ Epic: [Title]
 ### Step 5: Write Files
 
 Write to the same directory as the PRD:
-- `epic.json` — Epic definition for AgilePlace CLI
-- `features.json` — Features array with embedded stories
-- `story-breakdown.md` — Human-readable hierarchy with full story text and ACs
+- `story-breakdown.md` — Human-readable hierarchy with full story text and ACs (primary output)
+- `epic.json` — Structured epic definition (for future integration or reference)
+- `features.json` — Structured features array with embedded stories
 
-### Step 6: Push to AgilePlace (if --board and not --dry-run/--save-only)
-
-If `--board` is provided and neither `--dry-run` nor `--save-only`:
-
-```bash
-cd "/Users/jhigh/workspace/🔧 Automation/scripts" && \
-python -m agileplace_cli hierarchy create-epic <board_id> \
-  --epic @<prd-dir>/epic.json \
-  --features @<prd-dir>/features.json
-```
-
-### Step 7: Output Rich Contextual Handoff
+### Step 6: Output Rich Contextual Handoff
 
 After generating the hierarchy, output:
 
@@ -190,8 +169,7 @@ After generating the hierarchy, output:
 
 **What we produced:**
 - Epic: "{epic title}" ({N} features, {total} stories, {total} acceptance criteria)
-- Files: `epic.json`, `features.json`, `story-breakdown.md` → {prd-directory}
-- AgilePlace: {Pushed to board {board_id} / Saved locally — use --board to push}
+- Files: `story-breakdown.md`, `epic.json`, `features.json` → {prd-directory}
 
 **Context to carry forward:**
 - Feature: {feature name}
@@ -243,7 +221,7 @@ Generate the Gherkin acceptance criteria and engineering handoff doc.
 
 ## Key Constraints
 
-- **Max 7 features per epic** — Cognitive limit for sprint planning and AgilePlace board readability
+- **Max 7 features per epic** — Cognitive limit for sprint planning readability
 - **No sub-tasks** — Epic → Feature → Story only (3-level hierarchy)
 - **Never invent personas** — Use only personas present in the PRD Problem Statement
 - **Every story needs 3+ ACs** — Stories with fewer are flagged as incomplete
@@ -267,6 +245,4 @@ Generate the Gherkin acceptance criteria and engineering handoff doc.
 
 ## Pattern References
 
-- PRD template: `📝 Docs/templates/prd-template.md`
-- AgilePlace CLI: `🔧 Automation/scripts/agileplace_cli/commands/hierarchy.py`
 - Quality gate: `~/.claude/skills/prd-shaper/SKILL.md`
