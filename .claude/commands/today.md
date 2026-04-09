@@ -3,6 +3,14 @@ description: Run the today workflow
 ---
 Execute the /today daily planning workflow (Task Tracker only).
 
+## How This Works
+
+**Python handles data collection and deterministic scaffolding** — it calls AgilePlace, Granola, RSS, and GenAIPM, then writes a fully-structured `today.md` with algorithmically-ranked priorities and a One Step Better placeholder. No Gemini or AI is involved.
+
+**Claude handles all synthesis** — contextual reasoning, carry-forward triage, One Step Better, and user personalization. Claude's job is to review Python's draft, apply GOALS.md + memory context, and make the final call.
+
+**Non-Claude Code fallback** — running the Python script directly (without this command) produces the deterministic plan as-is. For AI synthesis outside Claude Code, run `/today` in any Claude session.
+
 ## First-Run Setup
 
 **If `config.yaml` has `task_tracker.type: stub` or no `task_tracker` section**, run setup first:
@@ -21,20 +29,20 @@ Then continue with the normal workflow.
 
 Parse the command arguments in order:
 1. **Mode** (optional, default: `full`): `full` or `dry`
-   - `full`: runs the workflow and sends Slack + stores output
-   - `dry`: runs the workflow without Slack delivery or storage
+   - `full`: runs the workflow and stores output
+   - `dry`: runs the workflow without storage
 2. **Verbose** (optional, default: `true`): `true` or `false`
 
 ## Execution
 
-**Important:** The Python script automatically backs up `today.md` to `yesterday.md` before regenerating, enabling the carry-forward triage workflow.
+**Python backs up `today.md` → `yesterday.md`, then regenerates `today.md` with fresh data from all sources.**
 
 Build the command based on arguments:
 - Base command: `python3 🔧 Automation/scripts/today_cmd/today_launcher.py`
 - If `mode` is `dry`, add `--dry-run`
 - If `verbose` is `true`, add `-v`
 
-The launcher automatically discovers the workspace root and resolves paths via AIPMOSConfig. When `workspace/.venv` exists, the launcher uses that Python so dependencies (feedparser, google-generativeai, etc.) are available without manual venv activation. Cursor and Claude Code agents run `/today` directly; no separate venv setup is required.
+The launcher auto-discovers the workspace root via AIPMOSConfig. When `workspace/.venv` exists, the launcher uses that Python so dependencies are available without manual venv activation.
 
 Run the command using Bash.
 
@@ -48,11 +56,11 @@ Run the command using Bash.
 ## Full Workflow
 
 **How it works:**
-1. Python script backs up `today.md` → `yesterday.md`
-2. Python script regenerates `today.md` with fresh data
-3. Claude workflow reads `yesterday.md` for carry-forward triage
-4. Interactive triage selects items to keep or complete
-5. `today.md` is updated with carried-forward items
+1. Python backs up `today.md` → `yesterday.md`
+2. Python regenerates `today.md` with fresh API data + deterministic priority suggestions
+3. Claude reviews the draft, applies contextual reasoning, and completes synthesis
+4. Interactive triage selects carry-forward items
+5. `today.md` is updated with Claude's final synthesis
 
 After the Python script completes:
 
@@ -107,19 +115,24 @@ PRIORITIES:
 - (Any unselected priorities)
 ```
 
-### Step 2: Read and Analyze
-Read `📋 Tasks/today.md` and analyze the data to generate:
+### Step 2: Review and Synthesize Priorities
 
-**Top 3 Priorities:**
-- Consider: overdue items, dependencies, strategic keywords (OKR, roadmap, PRD), high-priority flags
-- Use context from `GOALS.md` for Q1 goals and priorities, and `🤖 AI/memory/memory.md` for session activity
-- Merge with `carry_forward_priorities` from triage
-- Generate 3 prioritized items with clear reasoning
+Read `📋 Tasks/today.md`. Python has already suggested Top 3 Priorities using algorithmic scoring (due dates, overdue items, weekly priority alignment). Your job is contextual synthesis — not regeneration.
+
+**Review Python's suggested priorities:**
+- Do they align with `GOALS.md` Q-goals and current quarter OKRs?
+- Do they reflect active context from `🤖 AI/memory/memory.md`?
+- Do carry-forward items from triage change the ranking?
+
+**Make the final call:**
+- Keep Python's suggestions if they hold up under contextual review
+- Override if your context reveals a better ranking (e.g., Python scored a card high because it's overdue, but you know it's blocked)
+- Merge carry-forward priorities from Step 1
 
 **Ideas & Considerations:**
-- Identify themes across tasks (PRD/Spec, Skills/Automation, OKRs/Roadmaps, Planning, Learning)
-- Note patterns (batching opportunities, very overdue items, dependencies)
-- Surface blockers or risks
+- Python generates a set of observations (overdue concentration, staleness warnings, etc.)
+- Add any themes, patterns, or blockers you see that Python's algorithm would miss
+- Surface strategic connections Python can't infer (e.g., "this overdue card feeds the Q2 OKR")
 
 ### Step 2b: One Step Better AI PM (MANDATORY — never skip)
 
@@ -127,7 +140,7 @@ Every `/today` run **must** execute this step before updating `today.md`. Do not
 
 Read and follow `.claude/skills/menkesu-awesome-pm-skills-one-step-better-ai-pm/SKILL.md` (Phases 1–3 only; never Phase 4 apply from `/today`).
 
-After analyzing the task data:
+After reviewing the task data:
 
 1. **Run Phases 1–3** of the skill (fetch briefs, build repo profile, match and rank). If `GENAIPM_EMAIL` is unset and the skill requires it, **prompt once** for the subscriber email and continue (or document that the user must set `GENAIPM_EMAIL` in `.env` and re-run).
 2. **Extract the #1 recommended improvement** from the skill output (or the best available ranked item).
@@ -146,7 +159,7 @@ After analyzing the task data:
 - [Check `.one-step-better/history.json` for last 2-3 improvements and list them; if file missing, omit this subsection only]
 ```
 
-4. **Replace the placeholder** `<!-- Claude populates this with /one-step-better-ai-pm recommendations -->` with the formatted content.
+4. **Replace Python's One Step Better placeholder** with the formatted content. Python writes a fallback placeholder from GenAIPM data; Claude's enriched version should replace it with reasoning specific to current GOALS and active initiatives.
 
 **Failure and edge cases (section still required):**
 
@@ -159,13 +172,15 @@ After analyzing the task data:
 - Skipping Step 2b or shipping an empty One Step Better block **invalidates** the `/today` run.
 
 ### Step 3: Update today.md
-Replace the placeholder comments in `📋 Tasks/today.md`:
-- Replace "## 🧠 What's On My Mind Today" section with carried-forward focus areas (if any)
-- Replace `<!-- Claude/Cursor populates this with analysis -->` with actual Top 3 Priorities
-- **MANDATORY:** Replace `<!-- Claude/Cursor populates this with insights -->` with actual Ideas & Considerations. Never leave this section empty. Include: patterns across tasks, process notes, staleness/blocker observations, or strategic connections.
-- **One Step Better (mandatory):** Replace the placeholder in "## 🚀 One Step Better" with the formatted recommendation from Step 2b — never leave this section as the HTML comment placeholder
+
+Update `📋 Tasks/today.md` with Claude's synthesis:
+- Update "## 🧠 What's On My Mind Today" with carried-forward focus areas (if any)
+- Update "## 🎯 Top 3 Priorities for Today" — either confirm Python's suggestions or replace with your refined ranking. Include reasoning for any change.
+- Update "## 💡 Ideas & Considerations" — add contextual insights Python can't infer
+- **MANDATORY:** Update "## 🚀 One Step Better" with enriched recommendation from Step 2b
 
 ### Step 4: Display and Ask User
+
 Show the user the completed today.md. Ask TWO questions:
 
 1. **"What's on your mind today? What additional priorities or focus areas (beyond what you carried forward)?"**
@@ -203,6 +218,6 @@ After execution completes, provide a summary including:
 - Execution time (seconds, if logged)
 - Tasks due today count
 - Overdue count
-- Top 3 priorities (with reasoning)
+- Top 3 priorities (with reasoning — including whether you confirmed or overrode Python's suggestions)
 - Key insights from analysis
 - One Step Better recommendation (title always; say if GenAI PM was unavailable and fallback text was written)
