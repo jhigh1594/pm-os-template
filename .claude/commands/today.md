@@ -5,7 +5,7 @@ Execute the /today daily planning workflow (Task Tracker only).
 
 ## How This Works
 
-**Python handles data collection and deterministic scaffolding** — it calls AgilePlace, Granola, RSS, and GenAIPM, then writes a fully-structured `today.md` with algorithmically-ranked priorities and a One Step Better placeholder. No Gemini or AI is involved.
+**Python handles data collection and deterministic scaffolding** — it calls Granola, RSS, and GenAIPM, then writes a fully-structured `today.md` with algorithmically-ranked priorities and a One Step Better placeholder. No Gemini or AI is involved.
 
 **Claude handles all synthesis** — contextual reasoning, carry-forward triage, One Step Better, and user personalization. Claude's job is to review Python's draft, apply GOALS.md + memory context, and make the final call.
 
@@ -87,12 +87,12 @@ If user chooses "Quick Skip" or "Start fresh", jump to Step 2 with empty carry-f
 
 FOCUS AREAS:
 ☐ Flesh out a PRD for building an OKR focused roadmap
-☐ Tinker with an idea for AI-generated reports/views in AP
+☐ Tinker with an idea for AI-generated reports/views
 ☐ Define the short and mid term plan and experience for Viz in Ensemble
 
 PRIORITIES:
 ☐ Flesh out PRD for OKR-focused roadmap
-☐ Tinker with AI-generated reports/views idea for AgilePlace
+☐ Tinker with AI-generated reports/views idea
 ☐ Define short/mid-term Viz in Ensemble plan
 
 [Confirm Selection] [Quick Skip - Start Fresh]

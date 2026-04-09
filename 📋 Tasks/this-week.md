@@ -1,29 +1,7 @@
-# This week — priorities
+# This Week - Apr 09-Apr 15, 2026
 
-**Week of:** [YYYY-MM-DD]  
-**Theme / focus:** [One line]
+**Total:** 0 cards due
 
-## Outcomes Jon wants by Friday
+---
 
-1. [ ]
-2. [ ]
-3. [ ]
-
-## Priority stack (ordered)
-
-1. [ ] **P1** —
-2. [ ] **P2** —
-3. [ ] **P3** —
-4. [ ] **P4** —
-
-## Dependencies / blockers
-
-- 
-
-## Carry to next week
-
-- 
-
-## Notes
-
-- Sync with `today.md` each morning; roll unfinished P1–P2 into next week or back to `backlog.md`.
+*No cards due this period*
