@@ -189,12 +189,10 @@ def patch_memory_md(workspace: Path, facts: dict[str, Any]) -> bool:
         decisions_body += "\n"
         content = _replace_section(content, "Active Decisions", decisions_body)
 
-    # Patch ## Known Gaps — append context_changes if present
+    # Patch ## Recent Context — replace (not append) with latest context
     if context_changes:
-        gaps_section = _get_section(content, "Known Gaps")
-        if context_changes not in gaps_section:
-            new_gaps = gaps_section.rstrip() + f"\n\n**Context Change**: {context_changes}\n"
-            content = _replace_section(content, "Known Gaps", "\n" + new_gaps + "\n")
+        context_body = f"\n{context_changes}\n"
+        content = _replace_section(content, "Recent Context", context_body)
 
     # Update Last Updated timestamp
     today = datetime.now().strftime("%Y-%m-%d")
