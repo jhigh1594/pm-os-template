@@ -124,19 +124,19 @@ Until a folder is fully populated, use the **substitute commands** below.
 
 ## Skill bundles (natural-language hints)
 
-Telling the assistant the work mode often activates overlapping skills. Examples:
+Telling the assistant the work mode often activates overlapping skills. Examples below use skill folders **present in this repo’s** `.claude/skills/`; the full catalog (including optional installs) is [SKILLS-INDEX.md](../../.claude/skills/SKILLS-INDEX.md).
 
-| Working on | Typical skills |
-|------------|----------------|
-| New AI feature | zero-to-launch, continuous-discovery, ai-product-patterns, strategic-build |
-| Executive presentation | exec-comms, strategic-storytelling, confident-speaking |
-| Roadmap prioritization | prioritization-craft, decision-frameworks, strategy-frameworks |
-| Product–market fit measurement | user-feedback-system, continuous-discovery, metrics-frameworks, exp-driven-dev |
-| Difficult stakeholders | stakeholder-craft, influence-craft, workplace-navigation |
-| New product launch | launch-execution, positioning-craft, growth-embedded |
-| PM career growth | career-growth, strategic-pm, influence-craft |
+| Working on | Typical skills (installed here) |
+|------------|----------------------------------|
+| New AI feature | `zero-to-launch`, `discovery`, `ai-product-patterns`, `strategic-build` |
+| Executive presentation | `exec-comms`, `strategic-storytelling` |
+| Roadmap prioritization | `prioritization-craft`, `decision-frameworks` |
+| Learning loops / PMF-style measurement | `metrics-frameworks`, `exp-driven-dev`, `opportunity-solution-tree` |
+| Stakeholder tension | `stakeholder-craft`, `stakeholder-management` |
+| New product launch | `launch-execution`, `positioning-craft`, `growth-embedded` |
+| Career / operating style | `managing-up`, `strategic-thinking` |
 
-Full catalog: [SKILLS-INDEX.md](../../.claude/skills/SKILLS-INDEX.md). Narrative “how skills stack”: [.claude/skills/README.md](../../.claude/skills/README.md).
+Narrative “how skills stack” (may name skills not yet installed): [.claude/skills/README.md](../../.claude/skills/README.md).
 
 ---
 
