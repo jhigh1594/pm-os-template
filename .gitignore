@@ -28,6 +28,9 @@ node_modules/
 # Runtime cache
 .cache/
 
+# Local SQLite indexes (regenerable)
+**/granola-index.sqlite3
+
 # Secrets - these should NEVER be committed
 # (included for safety, though template doesn't have real secrets)
 *.key
