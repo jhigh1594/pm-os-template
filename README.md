@@ -2,6 +2,22 @@
 
 A complete AI-powered Product Management workspace that supercharges your PM workflow with Cursor or Claude Code.
 
+## Why this exists
+
+PM work scatters across trackers, decks, docs, and meeting notes. Context drops between tools and between sessions, so the same story gets re-explained and decisions get re-derived. This repo is a **single place** to hold product context, goals, and rituals so assistants and humans share one source of truth.
+
+## What it is
+
+**PM-OS** is a **git-backed workspace template**: a folder system plus Cursor/Claude Code configuration—commands, rules, skills, automation, and optional MCP hooks. It is not a hosted product; it is the environment Jon clones and fills in for a role, product, and company.
+
+## So what
+
+- **Onboarding and focus** — structured setup (`/onboard`) so the first 30–90 days have explicit goals and context files.
+- **Daily execution** — `/today` and related automation pull tracker and notes data into a repeatable planning loop.
+- **Consistent PM judgment** — shared rules and memory so AI help aligns with how Jon wants to decide, communicate, and ship.
+
+**[Workflow cheatsheet](📝%20Docs/guides/workflow-cheatsheet.md)** — activity → command and skill entry points (feature lifecycle, cadence workflows, intel routing).
+
 ## Quick Start
 
 ```bash

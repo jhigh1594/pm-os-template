@@ -5,6 +5,8 @@ description: Run the COMMAND REFERENCE workflow
 
 This guide helps AI assistants understand when to suggest specific AIPMOS commands based on user intent. Use this to match natural language requests to the most appropriate command.
 
+**Human-readable summary:** [Workflow cheatsheet](../../📝%20Docs/guides/workflow-cheatsheet.md) — curated activity → command map and idea-to-delivery spine.
+
 ## How to Use This Guide
 
 1. **Analyze the user's intent**: What are they trying to accomplish?
@@ -1021,9 +1023,9 @@ The canonical PM lifecycle. Each step produces outputs carried forward via rich 
 
 ## Workflows
 
-Repeatable cadence playbooks — distinct from the idea-to-delivery lifecycle. When built, each workflow lives in `📁 Workflows/[name]/` with CLAUDE.md (context) + workflow.md (step guide). Invoke by pointing Claude at the folder.
+Repeatable cadence playbooks — distinct from the idea-to-delivery lifecycle. Each workflow lives in `📁 Workflows/[name]/` with CLAUDE.md (context) + workflow.md (step guide). Invoke with `/workflow` by pointing the assistant at that folder once those files exist.
 
-> **Note:** Workflow folders are not yet built. Only `📁 Workflows/README.md` exists. Use the corresponding commands below until workflows are scaffolded.
+> **Note:** Workflow directories may exist as stubs before `CLAUDE.md` and `workflow.md` are added. Until a playbook is complete inside a folder, use the substitute commands below.
 
 | Workflow (planned) | Substitute command | Cadence |
 |----------|---------|---------|
