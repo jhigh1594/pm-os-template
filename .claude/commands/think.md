@@ -56,6 +56,7 @@ For questions that require systematic strategy development (not just analysis), 
 | Product strategy stack / alignment | `Product-Management/Reforge/the-product-strategy-stack.md` | 
 | AI impact on product management | `Product-Management/Reforge/ai-impact-product-management.md` |
 | AI-native product teams | `Product-Management/Reforge/ai-native-product-teams.md` |
+| "How have others solved X?" / Practitioner patterns | `lennysdata` MCP (search by topic) or `qmd query "X" -c pm-frameworks` |
 
 **Trigger conditions**:
 - User asks "help me develop strategy" (not just "think through")

@@ -1,84 +1,47 @@
-# AI Agent Instructions for [YOUR COMPANY] Product Management Workspace
+# AI Agent Instructions — Jon High / ServiceNow CSP
 
-> **Note**: This file contains project-specific context. Customize the sections marked with [UPDATE THIS].
-
----
-
-## Quick Start (For AI Assistants)
-
-**First 3 Things**:
-1. Check `GOALS.md` for role, portfolio, current goals, and key stakeholders
-2. Check `📋 Tasks/today.md` for daily priorities and active work
-3. Check `🤖 AI/memory/memory.md` for current focus
-
-**Context**: See `GOALS.md` for role, portfolio, and current goals.
-
-**Common Commands**: `/today`, `/think`, `/brainstorm`, `/compete` — see `.claude/commands/COMMAND-REFERENCE.md`
-
-**Working principle**: Simplicity > Complexity. Shorter is almost always better. Plain language beats jargon. When in doubt, simplify.
-
-**Before any strategic decision or spec**: Braindump before structure — get raw thinking out first, then organize.
+**Workspace:** PM workspace for Jon High, Senior AI Product Manager at ServiceNow (Customer Success Platform). Simplicity-first. Ships fast. Practicing Stoic.
 
 ---
 
-## Product Rules
+## Session Startup
 
-These rules define how to operate as a 10X Product Leader. Reference them proactively.
+Load in this order:
+1. `GOALS.md` — role, portfolio, quarterly goals, key stakeholders
+2. `📋 Tasks/today.md` → `📋 Tasks/this-week.md` → `📋 Tasks/backlog.md`
+3. `🤖 AI/memory/memory.md` — current focus and recent context
 
-| Rule | When to Reference |
-|------|-------------------|
-| **pm-core.mdc** | DEFAULT - Always loaded — Core operating principles, quick references, conflict resolution |
-| **pm-mental-models.mdc** | Strategic thinking, investment decisions — Load on trigger |
-| **pm-decision-detail.mdc** | Decision documentation, reviews — Load on trigger |
-| **pm-frameworks.mdc** | Framework selection, when to abandon — Load on trigger |
-| **pm-communication.mdc** | Communication deep-dive, audience patterns — Load on trigger |
-| **pm-product-sense.mdc** | Product sense/quality, taste vs data — Load on trigger |
-
-**Default**: Follow `pm-core.mdc` always. Detail files load via MEMORY.md wake-on-trigger pattern.
+**Before any strategic decision or spec:** Braindump before structure — raw thinking first, then organize.
 
 ---
 
-## Workspace Organization
+## Working Principles
 
-### Directory Structure
-```
-./
-├── GOALS.md                # Identity, ownership, quarterly goals, stakeholders (read first)
-├── 📦 Products/            # Product strategy, ICP, ROI
-├── 📁 Workflows/           # Repeatable processes: QPR prep, weekly update, research synthesis
-├── 🏢 Company/             # [UPDATE THIS: Your company] business context
-├── 🎓 Product-Management/  # PM frameworks, mental models, strategy
-├── 📋 Tasks/               # today.md, backlog.md, completed, archive
-├── 📚 Knowledge/           # Reference, Research, People (stakeholder notes)
-├── 🤖 AI/memory/           # AI context (memory.md)
-├── .cursor/                # Cursor IDE (rules, commands)
-└── .ruler/                 # Ruler configuration
-```
-
-### Key Knowledge Sources
-- **Product Strategy**: `Products/[PRODUCT 1]/`, `Products/[PRODUCT 2]/`
-- **Market Intelligence**: `Company/competitive-analysis.md` [UPDATE THIS]
-- **Customer Data**: `Company/customer-research/` [UPDATE THIS]
-- **PM Frameworks**: `Product-Management/`
+- Simplicity > Complexity. Shorter is almost always better.
+- Plain language beats jargon.
+- Propose, don't ask — best-guess + reasoning over stalling.
+- Execution beats planning. Bias toward shipping.
+- Challenge assumptions and push back when warranted.
 
 ---
 
-## Memory Bank
+## Session Continuity
 
-Single unified context file: **`🤖 AI/memory/memory.md`**. Update when session focus or milestones change; use `/refresh-memory` to append session activity.
+When the user references prior work — trigger phrases: "continue", "resume", "where were we", "like we discussed", "what did we decide", "last time", "previously":
+
+| Intent | Action |
+|--------|--------|
+| Resume a specific session | Suggest `claude --resume <id>` — find via `ls -t ~/.claude/projects/-Users-jhigh-SNOW-Work/*.jsonl \| head -10` |
+| Continue most recent work | Suggest `claude --continue`, or search episodic memory and proceed |
+| Reference a past decision or topic | Search episodic memory automatically, summarize findings, then respond |
+
+Agent detects intent and acts. User should never need to know command names.
 
 ---
 
-## Accumulated Wisdom
+## Knowledge System
 
-See **`🤖 AI/patterns/learned-patterns.md`** for workspace conventions, past decisions, and patterns worth preserving.
-
-### Self-Improving Knowledge System
-
-**Knowledge router**: `📚 Knowledge/INDEX.md` — read this first to decide which domain subfolder to load rather than listing all files.
-
-**Hypothesis tracking**: Domain-level unvalidated beliefs live in:
-- `📚 Knowledge/Growth/hypotheses.md`
-- `📚 Knowledge/Market/hypotheses.md`
-
-Add a hypothesis when you observe a pattern but don't have 3+ confirmations yet. Promote to `🤖 AI/patterns/learned-patterns.md` at 3 confirmations using the 4 quality gates: Actionable, Specific, Durable, Non-obvious.
+- **Patterns & conventions:** `🤖 AI/patterns/learned-patterns.md`
+- **Knowledge router:** `📚 Knowledge/INDEX.md` — read first, load only what's relevant
+- **Decisions:** `decisions/` — grep before making any decision that affects more than today's task
+- **Commands:** `.claude/commands/COMMAND-REFERENCE.md`

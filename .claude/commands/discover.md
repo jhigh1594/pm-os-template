@@ -34,10 +34,8 @@ Guide through a structured product discovery process to identify and validate cu
 **Examples**:
 ```bash
 /discover                                                    # Interactive mode — oriented entry question
-/discover --problem "Portfolio managers can't see OKR impact of blocked cards"
 /discover --phase 3                                          # Jump to risk validation
-/discover --phase 2 --problem "Card grouping by custom field"
-/discover --mode external "AgilePlace expansion at Highmark"  # External discovery with buying committee map
+/discover --phase 2 --problem "CSP users can't track health across accounts"
 ```
 
 ---

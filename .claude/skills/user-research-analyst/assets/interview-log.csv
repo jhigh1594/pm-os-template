@@ -1,0 +1,4 @@
+participant_id,interview_date,segment,status,timestamp,verbatim_quote,theme_tag,push_pull_anxiety_inertia,is_insight_or_finding,notes
+P01,YYYY-MM-DD,role/segment,churned/active/trial,00:00,Exact words from transcript — do not paraphrase,theme-label,push/pull/anxiety/inertia,finding,Context before this quote
+P02,YYYY-MM-DD,role/segment,churned/active/trial,00:00,Exact words from transcript — do not paraphrase,theme-label,push/pull/anxiety/inertia,finding,Context before this quote
+P03,YYYY-MM-DD,role/segment,churned/active/trial,00:00,Exact words from transcript — do not paraphrase,theme-label,push/pull/anxiety/inertia,insight,Context before this quote

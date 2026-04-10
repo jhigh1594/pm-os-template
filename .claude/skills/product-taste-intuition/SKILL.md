@@ -1,6 +1,6 @@
 ---
 name: product-taste-intuition
-description: Help develop product taste and intuition. Use when wanting to improve product judgment, struggling to evaluate design quality, needing to make decisions without complete data, or wanting to build better product instincts.
+description: Help develop product taste and intuition. Use when someone wants to improve their product judgment, struggles to evaluate design quality, needs to make decisions without complete data, or wants to build better product instincts.
 ---
 
 # Product Taste & Intuition

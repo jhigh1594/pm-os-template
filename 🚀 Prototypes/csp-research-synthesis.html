@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSP Research Synthesis</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#F8FAFC;--surface:#FFFFFF;--surface2:#F1F5F9;--border:#E2E8F0;
+  --text:#0F172A;--text2:#475569;--text3:#94A3B8;
+  --accent:#2563EB;--accent2:#1D4ED8;
+  --high:#16A34A;--med:#D97706;--warn:#D97706;--danger:#DC2626;
+  --snow:#E2251B;
+}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;line-height:1.5}
+.app{display:flex;height:100vh;overflow:hidden}
+
+/* Sidebar */
+.sidebar{width:200px;min-width:200px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;padding:20px 0}
+.sidebar h1{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--text3);padding:0 20px;margin-bottom:20px}
+.nav-item{padding:10px 20px;cursor:pointer;color:var(--text2);transition:all .15s;border-left:3px solid transparent;font-size:13px}
+.nav-item:hover{color:var(--text);background:var(--surface2)}
+.nav-item.active{color:var(--accent);border-left-color:var(--accent);background:rgba(37,99,235,.06)}
+.nav-item small{display:block;font-size:11px;color:var(--text3);margin-top:2px}
+
+/* Main */
+.main{flex:1;overflow-y:auto;padding:32px 40px}
+.view{display:none}.view.active{display:block}
+.view-header{margin-bottom:28px}
+.view-header h2{font-size:22px;font-weight:700;margin-bottom:4px}
+.view-header p{color:var(--text2);font-size:13px}
+
+/* Brief view */
+.selector{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.chip{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--border);color:var(--text2);transition:all .15s;background:transparent}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.mode-toggle{display:flex;gap:4px;margin-bottom:20px}
+.mode-btn{padding:5px 12px;border-radius:6px;font-size:11px;font-weight:500;cursor:pointer;border:1px solid var(--border);color:var(--text2);background:transparent;transition:all .15s}
+.mode-btn:hover{border-color:var(--accent);color:var(--accent)}
+.mode-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.brief-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:16px}
+.brief-card h3{font-size:14px;font-weight:600;margin-bottom:12px;color:var(--text)}
+.brief-card h4{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);margin-bottom:8px;margin-top:16px}
+.brief-card h4:first-child{margin-top:0}
+.brief-list{list-style:none}
+.brief-list li{padding:6px 0;border-bottom:1px solid var(--border);color:var(--text2);font-size:13px}
+.brief-list li:last-child{border:none}
+.brief-list li strong{color:var(--text)}
+.stat{font-size:20px;font-weight:700;color:var(--accent);display:inline}
+.signal-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;text-transform:uppercase}
+.signal-badge.high{background:rgba(22,163,74,.1);color:var(--high)}
+.signal-badge.med{background:rgba(217,119,6,.1);color:var(--med)}
+.snow-callout{background:rgba(226,37,27,.04);border:1px solid rgba(226,37,27,.15);border-radius:8px;padding:16px 20px;margin-top:16px}
+.snow-callout h4{color:var(--snow);margin-bottom:6px}
+.snow-callout p{font-size:12px;color:var(--text2)}
+
+/* Workflow table */
+.wf-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+.wf-table th{text-align:left;padding:6px 10px;border-bottom:2px solid var(--border);color:var(--text3);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.3px}
+.wf-table td{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top}
+.wf-table tr:last-child td{border:none}
+.wf-table .freq{white-space:nowrap;color:var(--text3);font-size:11px}
+.wf-table .pain{color:var(--danger);font-style:italic}
+
+/* Journey */
+.journey{display:flex;flex-direction:column;gap:16px;margin-top:8px}
+.journey-phase{padding-left:16px;border-left:3px solid var(--border);position:relative}
+.journey-phase::before{content:attr(data-label);position:absolute;left:-16px;top:-8px;background:var(--bg);padding:2px 8px;font-size:10px;font-weight:600;color:var(--accent);white-space:nowrap;transform:translateX(-50%)}
+.journey-phase ul{list-style:none;margin-top:8px}
+.journey-phase li{padding:4px 0;color:var(--text2);font-size:12px}
+.journey-phase .jp-pain{color:var(--danger);font-size:11px;font-style:italic;padding:2px 0}
+
+/* Matrix view */
+.matrix-wrap{overflow-x:auto;margin-bottom:24px}
+.matrix{border-collapse:collapse;width:100%;min-width:900px}
+.matrix th,.matrix td{padding:8px 10px;text-align:left;border:1px solid var(--border);font-size:12px}
+.matrix th{background:var(--surface2);color:var(--text2);font-weight:600;position:sticky;top:0;z-index:1}
+.matrix th:first-child{min-width:140px}
+.matrix td:first-child{font-weight:500;color:var(--text);background:var(--surface2);position:sticky;left:0;z-index:1}
+.cell{width:56px;height:36px;cursor:pointer;border-radius:4px;transition:all .15s;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:11px}
+.cell:hover{transform:scale(1.1);z-index:2}
+.cell.s3{background:rgba(22,163,74,.25);color:var(--high)}
+.cell.s2{background:rgba(22,163,74,.1);color:rgba(22,163,74,.7)}
+.cell.s1{background:rgba(217,119,6,.08);color:rgba(217,119,6,.6)}
+.cell.s0{background:transparent;color:var(--text3);opacity:.3}
+.pain-name{font-size:11px;max-width:120px;line-height:1.3}
+.trend-up{color:var(--high);font-size:10px}
+.trend-flat{color:var(--text3);font-size:10px}
+
+/* Drawer */
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:100;display:none}
+.drawer-overlay.open{display:block}
+.drawer{position:fixed;top:0;right:-480px;width:480px;height:100vh;background:var(--surface);border-left:1px solid var(--border);z-index:101;transition:right .2s ease-out;overflow-y:auto;padding:28px}
+.drawer.open{right:0}
+.drawer-close{position:absolute;top:16px;right:16px;cursor:pointer;color:var(--text3);font-size:20px;background:none;border:none}
+.drawer-close:hover{color:var(--text)}
+.drawer h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.drawer h4{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);margin:20px 0 8px}
+.drawer p{color:var(--text2);font-size:13px;margin-bottom:8px;line-height:1.6}
+.evidence-block{background:var(--surface2);border-left:3px solid var(--accent);padding:12px 16px;margin:8px 0;border-radius:0 6px 6px 0}
+.evidence-block p{font-size:12px;margin:0}
+.snow-tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;background:rgba(226,37,27,.08);color:var(--snow);margin-top:4px}
+
+/* Assumptions view */
+.assumption-card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--warn);border-radius:0 8px 8px 0;padding:20px 24px;margin-bottom:16px}
+.assumption-card .assumption{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px}
+.assumption-card .evidence{color:var(--text2);font-size:13px;margin-bottom:10px;padding:10px 14px;background:rgba(217,119,6,.04);border-radius:6px}
+.assumption-card .implication{color:var(--text2);font-size:13px;font-style:italic}
+
+/* Legend */
+.legend{display:flex;gap:16px;margin-bottom:16px;align-items:center;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text3)}
+.legend-dot{width:14px;height:14px;border-radius:3px}
+.legend-dot.s3{background:rgba(22,163,74,.25)}
+.legend-dot.s2{background:rgba(22,163,74,.1)}
+.legend-dot.s1{background:rgba(217,119,6,.08)}
+
+/* Responsive */
+@media(max-width:768px){
+  .sidebar{width:60px;min-width:60px}
+  .sidebar h1,.nav-item small{display:none}
+  .nav-item{padding:10px 0;text-align:center;font-size:16px}
+  .main{padding:20px}
+  .drawer{width:100vw}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <nav class="sidebar">
+    <h1>CSP Synthesis</h1>
+    <div class="nav-item active" data-view="brief" onclick="showView('brief')">
+      Brief<small>5-min prep</small>
+    </div>
+    <div class="nav-item" data-view="matrix" onclick="showView('matrix')">
+      Cross-Reference<small>Pain x Persona</small>
+    </div>
+    <div class="nav-item" data-view="assumptions" onclick="showView('assumptions')">
+      Assumptions<small>Challenge mode</small>
+    </div>
+  </nav>
+  <main class="main">
+    <div id="view-brief" class="view active"></div>
+    <div id="view-matrix" class="view"></div>
+    <div id="view-assumptions" class="view"></div>
+  </main>
+</div>
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer"></div>
+<script>
+// ═══════════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════════
+const DATA = {
+personas: [
+  {
+    id:'ht-csm', name:'CSM — High-Touch', short:'HT CSM',
+    metric:'NRR, health score', seats:'~250',
+    top_jtbds:[
+      'Morning triage: immediately know which of 80 accounts need attention today',
+      'QBR prep: pull usage, support, milestones, ROI into one place in <30 min',
+      'Early warning: automatic risk signals before renewal conversation starts',
+      'Account handoff: get up to speed on inherited accounts in minutes',
+      'Escalation playbook: structured auto-response when customers escalate',
+      'Coverage tracking: know which high-value accounts haven\'t been touched'
+    ],
+    top_pains:['pain-1','pain-3','pain-6'],
+    stat:'2–4 hrs per QBR deck',
+    snow_advantage:'ITSM + support + contract data already unified in platform — eliminates the 4–5 tool assembly CSMs do today',
+    workflows:[
+      {name:'Morning health triage',freq:'Daily',tools:'CS platform, spreadsheet',pain:'Alerts noisy, signals lack context, requires tool-switching'},
+      {name:'Account prep (calls, QBRs, EBRs)',freq:'Weekly',tools:'Slides, CS platform, CRM, analytics',pain:'Manual assembly from 4–5 sources; no single source of truth'},
+      {name:'Success plan creation + update',freq:'Monthly',tools:'CS platform, Google Docs',pain:'Plans exist but customers rarely engage'},
+      {name:'Escalation management',freq:'Ad hoc',tools:'Email, Slack, CS platform',pain:'No structured playbook; coordination is manual'},
+      {name:'Renewal pipeline review',freq:'Monthly',tools:'CS platform, CRM',pain:'Risk flags unclear; data currency issues'},
+      {name:'Expansion identification',freq:'Monthly',tools:'CS platform + analytics',pain:'Usage data stale; no clear signal threshold'},
+      {name:'Internal handoff to Renewal/AE',freq:'Quarterly',tools:'Email + CRM notes',pain:'Context loss; timing is reactive'},
+      {name:'CS-to-Support coordination',freq:'Ad hoc',tools:'Ticketing + Slack',pain:'CSM visibility into open tickets is partial'}
+    ],
+    journey:[
+      {label:'Week 1',title:'Triage and Pulse',items:['Review health score changes','Flag accounts that moved red/yellow','Run 3–5 account calls, take notes'],pain:'Notes live in 3 places. Recalling context from last quarter requires digging.'},
+      {label:'Week 2',title:'Proactive Outreach',items:['Identify low-engagement accounts','Reach out with relevant content or check-in'],pain:'No automated dormancy trigger — coverage gaps invisible until something breaks.'},
+      {label:'Week 3',title:'Business Review Season',items:['Prepare QBR/EBR decks for 4–6 accounts','Pull product usage, support history, milestones'],pain:'2–4 hours per deck. Data often stale or requires reformatting.'},
+      {label:'Week 4',title:'Renewal and Expansion',items:['Review renewal pipeline; flag at-risk accounts','Surface expansion opportunities to Sales','Update success plans'],pain:'Renewal risk flags based on lagging indicators — CSM wants leading indicators at 180 days.'}
+    ]
+  },
+  {
+    id:'tt-csm', name:'CSM — Tech-Touch / Digital', short:'TT CSM',
+    metric:'NRR, product adoption', seats:'~100',
+    top_jtbds:[
+      'Automated playbook execution: standard sequences run reliably at scale',
+      'Risk automation: intervention triggers before manual review would catch it',
+      'Onboarding automation: structured touchpoints to first value without CSM involvement',
+      'Portfolio health at a glance: segment health vs. risk without pulling reports',
+      'Playbook analytics: see which automations work and which customers ignore'
+    ],
+    top_pains:['pain-9','pain-7','pain-2'],
+    stat:'500 accounts = 25 simultaneous risk interventions at 5% rate',
+    snow_advantage:'Flow Designer as playbook engine — needs CS-specific templates and config UX',
+    workflows:[
+      {name:'Playbook configuration and tuning',freq:'Monthly',tools:'CS platform',pain:'Complex setup; technical user required'},
+      {name:'Segment health review',freq:'Weekly',tools:'CS platform',pain:'Aggregated views coarse; drill-down requires queries'},
+      {name:'Automated sequence monitoring',freq:'Weekly',tools:'CS platform + email tool',pain:'Engagement data often in separate system'},
+      {name:'Manual interventions on triggered accounts',freq:'Ad hoc',tools:'CS platform + email',pain:'No clear handoff protocol from automation to human'},
+      {name:'Cohort analysis',freq:'Monthly',tools:'CS platform + BI tool',pain:'Requires SQL or analyst involvement'}
+    ],
+    journey:[
+      {label:'Week 1',title:'Portfolio Review',items:['Review aggregated health by segment and cohort','Identify accounts automation flagged for human review'],pain:'"Needs attention" list too long or too short. Threshold tuning is trial-and-error.'},
+      {label:'Week 2',title:'Playbook Maintenance',items:['Review which sequences are completing vs. stalling','Adjust email content and timing based on engagement data'],pain:'Sequence analytics in email system, not CS platform — requires context-switching.'},
+      {label:'Week 3',title:'Manual Outreach on Risk',items:['Work through escalation queue from automation flags','Prioritize by risk tier and ARR'],pain:'5% risk rate on 500 accounts = 25 simultaneous interventions. Prioritization underpowered.'},
+      {label:'Week 4',title:'Reporting',items:['Pull adoption and health metrics by segment','Identify cohorts for targeted campaigns'],pain:'Requires CS Ops involvement; platform lacks self-serve analytics.'}
+    ]
+  },
+  {
+    id:'ps', name:'Professional Services / Implementation', short:'PS / Impl',
+    metric:'Time-to-value, CSAT', seats:'~75',
+    top_jtbds:[
+      'Sales handoff: receive complete structured context at contract close',
+      'Project visibility: see all 12 implementations status at a glance',
+      'Blocker escalation: log, trigger path, engage resources without losing thread',
+      'CSM handoff: transition full context at go-live in one structured package',
+      'Methodology improvement: see which milestones slip and why'
+    ],
+    top_pains:['pain-6','pain-1','pain-10'],
+    stat:'First 30 days feel like rework due to handoff gaps',
+    snow_advantage:'Cross-functional workflow orchestration is ServiceNow\'s DNA — PS handoff is a workflow problem, not a data problem',
+    workflows:[
+      {name:'Project kickoff (post-Sales handoff)',freq:'Per engagement',tools:'CRM + project tool + email',pain:'Handoff quality inconsistent; missing context'},
+      {name:'Milestone tracking',freq:'Weekly',tools:'PSA / project tool + CS platform',pain:'Often lives in separate system from CS health data'},
+      {name:'Customer communication and status updates',freq:'Weekly',tools:'Email + project portal',pain:'Status updates manual; customer visibility limited'},
+      {name:'Risk and blocker management',freq:'Ad hoc',tools:'Email, Slack, project tool',pain:'No structured escalation path; coordination reactive'},
+      {name:'PS-to-CSM handoff at go-live',freq:'Per engagement',tools:'Email + CRM + handoff doc',pain:'Context loss; CSM often re-interviews customer'},
+      {name:'Methodology retrospective',freq:'Quarterly',tools:'Manual analysis',pain:'No system-generated milestone analytics'}
+    ],
+    journey:[
+      {label:'Wk 1–2',title:'Discovery and Kickoff',items:['Receive handoff from Sales; chase missing context','Run kickoff call; establish project plan and stakeholder alignment'],pain:'Handoff quality varies. Context about why customer bought often incomplete or verbal.'},
+      {label:'Wk 3–6',title:'Build and Configure',items:['Execute technical implementation tasks','Weekly status calls with customer project lead'],pain:'Scope or personnel changes hard to track. Risk flags live in PM head or email.'},
+      {label:'Wk 7–10',title:'Testing and Adoption',items:['UAT, training','Address blockers; escalate to internal teams'],pain:'Visibility into adoption baseline limited. PS rarely has product telemetry access.'},
+      {label:'Wk 11–12',title:'Go-Live and Handoff to CS',items:['Final sign-off; go-live execution','Transition to CSM'],pain:'Handoff package created manually. CSM may not be aligned. Customer re-explains context.'}
+    ]
+  },
+  {
+    id:'cs-ops', name:'CS Operations / RevOps', short:'CS Ops',
+    metric:'Data quality, coverage', seats:'~20',
+    top_jtbds:[
+      'Health score debugging: trace signal to source, fix data gaps, restore trust',
+      'Self-service reports: generate segment/vertical/region reports without SQL',
+      'Playbook self-service: make changes without engineer or vendor support',
+      'Playbook measurement: compare outcomes for intervened vs. not-intervened accounts',
+      'Single data model: CS + renewal + support + product data without duplication'
+    ],
+    top_pains:['pain-1','pain-3','pain-7'],
+    stat:'CS Ops = single point of failure for every leadership data question',
+    snow_advantage:'Integration Hub + single data model eliminates cross-system duplication that CS Ops spends all day managing',
+    workflows:[
+      {name:'Health scoring model maintenance',freq:'Monthly',tools:'CS platform + data pipeline',pain:'Rule changes require deep platform knowledge; limited testing tools'},
+      {name:'Playbook creation and configuration',freq:'Per initiative',tools:'CS platform',pain:'High complexity; technical barrier to self-service'},
+      {name:'Data pipeline management',freq:'Ongoing',tools:'ETL + CS platform',pain:'Product usage data ingestion fragile; lag is constant'},
+      {name:'Reporting and dashboard builds',freq:'Weekly',tools:'CS platform + BI tool',pain:'Custom reports require analyst or SQL'},
+      {name:'Platform configuration and user management',freq:'Monthly',tools:'CS platform',pain:'Admin tasks time-consuming; poorly documented'},
+      {name:'CS metrics definition and alignment',freq:'Quarterly',tools:'Spreadsheet + CS platform',pain:'Health metrics inconsistently defined across regions'}
+    ],
+    journey:[
+      {label:'Month 1',title:'Foundation Maintenance',items:['Review health scoring model accuracy','Update signal weights','Address CSM "why is this red?" backlog'],pain:'Signal debugging time-consuming. Data lineage opaque.'},
+      {label:'Month 2',title:'New Initiative Configuration',items:['Build playbooks for product launch or segment initiative','Test playbook triggers in staging','Publish and train CSMs'],pain:'Playbook config requires specialized expertise. Significant testing time.'},
+      {label:'Month 3',title:'Reporting and Quarter-Close',items:['Produce quarterly CS scorecard','Pull NRR actuals, health distribution','Prepare segment analysis'],pain:'2–3 days per quarter even with BI tools. Significant manual work.'}
+    ]
+  },
+  {
+    id:'vp-cs', name:'VP Customer Success / CCO', short:'VP CS',
+    metric:'NRR, churn, GRR', seats:'~5',
+    top_jtbds:[
+      'Board-ready view: single credible portfolio health by segment/region/risk tier',
+      'Renewal forecast: leading indicators, not just lagging ones (NPS, date proximity)',
+      'CS ROI proof: correlate CSM coverage and engagement with renewal outcomes',
+      'Alert calibration: notified at the right moment with enough context to decide',
+      'CRO/CFO reporting: show CS as revenue driver in terms they understand'
+    ],
+    top_pains:['pain-5','pain-3','pain-8'],
+    stat:'2–3 days building board slides manually',
+    snow_advantage:'Executive dashboards + NRR forecasting from unified data model. "40% churn risk mitigated" case study is the proof point.',
+    workflows:[
+      {name:'Executive portfolio review',freq:'Weekly',tools:'CS platform + BI dashboard',pain:'Data reliability; often requires CS Ops to validate before meeting'},
+      {name:'Renewal forecast',freq:'Monthly',tools:'CS platform + CRM + spreadsheet',pain:'Multiple competing forecasts; no single authoritative number'},
+      {name:'CS team performance review',freq:'Monthly',tools:'CS platform + HRIS',pain:'Activity data volume-focused; quality indicators absent'},
+      {name:'CS budget and headcount planning',freq:'Quarterly',tools:'Spreadsheet + CRM',pain:'ROI data not available in most platforms'},
+      {name:'Risk escalation (major accounts)',freq:'Ad hoc',tools:'CS platform + Slack + email',pain:'Alert timing and context quality inconsistent'},
+      {name:'Board and executive reporting',freq:'Monthly/Quarterly',tools:'Slide deck manually built',pain:'2–3 days of work per deck; data often stale'}
+    ],
+    journey:[
+      {label:'Month 1',title:'Planning and Reset',items:['Review prior quarter performance','Set segment health targets and renewal forecast','Review CSM book assignments'],pain:'Prior quarter analysis requires significant manual work.'},
+      {label:'Month 2',title:'Execution Review',items:['Mid-quarter health distribution check','Review risk escalation queue','Review team performance metrics'],pain:'Course corrections hard because leading indicators unclear.'},
+      {label:'Month 3',title:'Renewal Close and Reporting',items:['Work through at-risk renewals','Compile quarterly CS report for CRO/CFO/board'],pain:'Board reporting still requires 2–3 days of manual slide construction.'}
+    ]
+  }
+],
+
+pain_points: [
+  {id:'pain-1',name:'Data Fragmentation',short:'No single source of truth',signal:'HIGH',trend:'up',
+   summary:'Customer data scattered across CRM, product analytics, support, billing. CSMs spend more time assembling than acting.',
+   evidence:'46% report negative impact from siloed data; 68% drive outreach from CRM lists, not unified signals; avg SaaS org uses 130 apps, 53% actively used',
+   key_stat:'130 apps, 53% active use'},
+  {id:'pain-2',name:'AI Stuck in Pilot Purgatory',short:'72% believe critical, 32% live',signal:'HIGH',trend:'up',
+   summary:'CS teams know AI matters but can\'t operationalize it. Most deployments are demos, not workflows. Root cause: data quality is the #1 barrier (27%).',
+   evidence:'72% say AI critical by 2026, only 32% run a live use case; 3% describe deployment as "extensive"; top barrier is data quality (27%)',
+   key_stat:'72% believe → 32% live'},
+  {id:'pain-3',name:'Health Scores Are Broken',short:'Lagging indicators miss silent churn',signal:'HIGH',trend:'flat',
+   summary:'Health scores rely on lagging, product-centric metrics. They miss exec sponsor changes, stakeholder silence, sentiment — the signals that actually predict churn.',
+   evidence:'"Most health scores are useless" — CS Snack 2024; 65% of churn preventable if flagged early; model decay is structural; one green-score customer churned 60 days after CFO change',
+   key_stat:'65% preventable if caught early'},
+  {id:'pain-4',name:'CSM Burnout and Scope Creep',short:'47% burned out; 48% have 10+ activities',signal:'HIGH',trend:'up',
+   summary:'CSMs are asked to do everything not explicitly support. 47% report burnout, 50% have quietly quit. Role has undefined edges.',
+   evidence:'47% burned out; 46% negative sleep impact; 48% have 10+ major activities; 50% quietly quit; 63% want more time for client engagement',
+   key_stat:'50% quietly quit'},
+  {id:'pain-5',name:'Proving CS ROI Internally',short:'NRR declined at 75% despite more spend',signal:'HIGH',trend:'up',
+   summary:'CS leaders can\'t demonstrate that investment drives retention or expansion. 75% saw NRR decline despite increasing CS spend. Budget vulnerability.',
+   evidence:'NRR declined at 75% of firms despite 60% increasing CS spend (Bain 2024); "9 of 10 orgs can\'t articulate value in customer terms" (Vitally); 2/3 delayed tool purchases 3+ months',
+   key_stat:'75% NRR decline despite +spend'},
+  {id:'pain-6',name:'Broken Sales-to-CS Handoff',short:'Context loss at deal close',signal:'HIGH',trend:'flat',
+   summary:'Critical context about why customer bought, what was promised, and who matters doesn\'t transfer. Customer feels "forgotten" immediately after signing.',
+   evidence:'79% expect consistent cross-dept interactions; strong alignment = 36% higher retention; "if handoff depends on Slack threads, it\'s fragile by design"',
+   key_stat:'36% higher retention with alignment'},
+  {id:'pain-7',name:'Platform Complexity Kills Adoption',short:'83% CSMs still use Excel daily',signal:'HIGH',trend:'flat',
+   summary:'CS platforms are powerful but hard to use. Gainsight: 8–24 week implementation. 83% still use Excel daily. Adoption failure is the primary ROI killer.',
+   evidence:'83% use Excel daily; Gainsight 8–24 weeks impl; 60% sought alternatives due to complexity; "biggest predictor of ROI is adoption within 90 days, not vendor choice"',
+   key_stat:'83% use Excel daily'},
+  {id:'pain-8',name:'Charter Misalignment',short:'Charters frozen in 2020 priorities',signal:'HIGH',trend:'up',
+   summary:'Charters focus on onboarding/adoption; leaders say retention/expansion are priorities. CSMs measured on wrong things. Only 44% compensated for expansion.',
+   evidence:'Charter unchanged 4 years; leaders prioritize retention/expansion; comp for expansion dropped 57%→44% in one year; <35% of highest-NRR companies have CS owning expansion',
+   key_stat:'57%→44% expansion comp in 1yr'},
+  {id:'pain-9',name:'Digital CS Fails at Personalization',short:'Only 16% believe personalization scales',signal:'MED',trend:'up',
+   summary:'Teams deploy automation but it lacks personalization. Only 16% believe their approach scales. Human-touch vs. scalable automation is a false choice.',
+   evidence:'Only 16% believe personalization scales; 73% have not achieved effective segmentation; guided digital journeys = 30% NRR increase',
+   key_stat:'16% believe it scales'},
+  {id:'pain-10',name:'Value Realization Gap',short:'Customers can\'t articulate what they got',signal:'MED',trend:'up',
+   summary:'Customers renew based on whether they can articulate value received. CSMs lack outcome tracking and ROI documentation tools.',
+   evidence:'65% say post-sales needs "only moderately addressed"; vendors rank tech help #6, buyers rank it #1; "9 of 10 can\'t articulate value in customer terms"',
+   key_stat:'#6 vendor priority vs #1 buyer need'}
+],
+
+matrix: {
+  'pain-1': {'ht-csm':3,'tt-csm':2,'ps':2,'cs-ops':3,'vp-cs':2},
+  'pain-2': {'ht-csm':1,'tt-csm':1,'ps':0,'cs-ops':2,'vp-cs':3},
+  'pain-3': {'ht-csm':3,'tt-csm':2,'ps':1,'cs-ops':3,'vp-cs':3},
+  'pain-4': {'ht-csm':3,'tt-csm':2,'ps':2,'cs-ops':1,'vp-cs':2},
+  'pain-5': {'ht-csm':1,'tt-csm':0,'ps':0,'cs-ops':1,'vp-cs':3},
+  'pain-6': {'ht-csm':2,'tt-csm':1,'ps':3,'cs-ops':2,'vp-cs':2},
+  'pain-7': {'ht-csm':3,'tt-csm':2,'ps':1,'cs-ops':3,'vp-cs':2},
+  'pain-8': {'ht-csm':2,'tt-csm':1,'ps':0,'cs-ops':1,'vp-cs':3},
+  'pain-9': {'ht-csm':1,'tt-csm':3,'ps':0,'cs-ops':2,'vp-cs':2},
+  'pain-10':{'ht-csm':2,'tt-csm':1,'ps':2,'cs-ops':0,'vp-cs':2}
+},
+
+assumptions: [
+  {assumption:'More CS investment → better retention',
+   evidence:'75% of software companies saw NRR decline despite 60% increasing CS spend (Bain 2024). Correlation between CS investment and NRR is weak or negative.',
+   implication:'Product strategy should emphasize model design (role clarity, swim lanes, charter alignment) as much as tooling. Selling into dysfunctional CS orgs produces churned customers.'},
+  {assumption:'CS ownership of expansion drives higher NRR',
+   evidence:'<35% of highest-NRR companies have CS owning expansion — while 56% of lowest-NRR companies claim expansion ownership (ChurnZero 2024).',
+   implication:'The "CS must own NRR" narrative may be a symptom of dysfunction, not a best practice. Don\'t over-index on expansion tooling as primary value driver.'},
+  {assumption:'"AI is sweeping through CS teams"',
+   evidence:'Published figures: 21% (officially adopted) to 52% (incorporating workflows) to 87% (planning). 66-point spread reflects definitional differences, not real adoption. Realistic figure: 20–35%.',
+   implication:'AI as a product differentiator requires precise definition. Vague AI claims will be dismissed by sophisticated buyers. Define exactly what "AI in CS" means for CSP.'},
+  {assumption:'More tooling capability → better CSM performance',
+   evidence:'83% still use Excel daily despite CS platforms existing. Adoption failure more common than success. "Biggest predictor of ROI is adoption within 90 days, not vendor choice." Gainsight\'s high feature count correlates with low adoption.',
+   implication:'A simpler, more opinionated workflow tool may out-ROI a comprehensive platform. Platform complexity is itself a product failure.'},
+  {assumption:'CS platform market is uniformly growing',
+   evidence:'2/3 of CS leaders delayed purchases 3+ months in 2024. Headcount cuts 2022–2024. 2025 felt worse than 2024. Enterprise segment may grow while mid-market consolidates and SMB contracts.',
+   implication:'ICP targeting should account for bifurcation. Enterprise SNOW customers (existing install base) are safer than mid-market acquisition.'},
+  {assumption:'Better CRM integration fixes the handoff',
+   evidence:'Handoff fails because Sales don\'t document context, not because systems can\'t share it. Even deeply integrated Gainsight+Salesforce report failures. Issue is behavioral, not technical.',
+   implication:'Position on "enforcing handoff quality with workflow requirements" not "fixing the handoff with integrations." Workflow enforcement is a different product design challenge.'}
+]
+};
+
+// ═══════════════════════════════════════════════
+// RENDERING
+// ═══════════════════════════════════════════════
+
+function showView(id) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('view-' + id).classList.add('active');
+  document.querySelector('[data-view="' + id + '"]').classList.add('active');
+  if (id === 'brief') renderBrief();
+  if (id === 'matrix') renderMatrix();
+  if (id === 'assumptions') renderAssumptions();
+}
+
+// ─── BRIEF VIEW ───────────────────────────────
+let briefSelection = 'ht-csm';
+let briefMode = 'overview'; // overview | workflows | journey
+
+function renderBrief() {
+  const el = document.getElementById('view-brief');
+  const p = DATA.personas.find(x => x.id === briefSelection);
+  const pains = p.top_pains.map(pid => DATA.pain_points.find(pp => pp.id === pid));
+
+  let modeHTML = '';
+  if (p.workflows.length || p.journey.length) {
+    modeHTML = `
+      <div class="mode-toggle">
+        <div class="mode-btn${briefMode==='overview'?' active':''}" onclick="briefMode='overview';renderBrief()">Overview</div>
+        <div class="mode-btn${briefMode==='workflows'?' active':''}" onclick="briefMode='workflows';renderBrief()">Workflows</div>
+        <div class="mode-btn${briefMode==='journey'?' active':''}" onclick="briefMode='journey';renderBrief()">Journey</div>
+      </div>`;
+  }
+
+  let detailHTML = '';
+  if (briefMode === 'workflows') {
+    detailHTML = `
+      <div class="brief-card">
+        <h4>Primary Workflows</h4>
+        <table class="wf-table">
+          <thead><tr><th>Workflow</th><th>Freq</th><th>Tools</th><th>Key Pain</th></tr></thead>
+          <tbody>
+            ${p.workflows.map(w => `
+              <tr>
+                <td><strong>${w.name}</strong></td>
+                <td class="freq">${w.freq}</td>
+                <td>${w.tools}</td>
+                <td class="pain">${w.pain}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>`;
+  } else if (briefMode === 'journey') {
+    detailHTML = `
+      <div class="brief-card">
+        <h4>${p.journey[0]?.label.includes('Wk') ? '12-Week Implementation' : p.journey[0]?.label.includes('Month') ? 'Typical Quarter' : 'Typical Month'}</h4>
+        <div class="journey">
+          ${p.journey.map(j => `
+            <div class="journey-phase" data-label="${j.label}">
+              <ul>
+                ${j.items.map(i => `<li>${i}</li>`).join('')}
+              </ul>
+              ${j.pain ? `<p class="jp-pain">Pain: ${j.pain}</p>` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>`;
+  } else {
+    detailHTML = `
+      <div class="brief-card">
+        <h4>Top Jobs-to-be-Done</h4>
+        <ul class="brief-list">
+          ${p.top_jtbds.map(j => `<li>${j}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="brief-card">
+        <h4>Most Acute Pain Points</h4>
+        <ul class="brief-list">
+          ${pains.map(pp => `
+            <li>
+              <strong>${pp.name}</strong> <span class="signal-badge ${pp.signal==='HIGH'?'high':'med'}">${pp.signal}</span>
+              <br>${pp.summary}
+              <br><span class="stat">${pp.key_stat}</span>
+            </li>
+          `).join('')}
+        </ul>
+      </div>`;
+  }
+
+  el.innerHTML = `
+    <div class="view-header">
+      <h2>${p.name}</h2>
+      <p>Primary metric: ${p.metric} &nbsp;·&nbsp; Seat count at 500-CSM org: ${p.seats}</p>
+    </div>
+    <div class="selector">
+      ${DATA.personas.map(x => `<div class="chip${x.id===briefSelection?' active':''}" onclick="briefSelection='${x.id}';renderBrief()">${x.short}</div>`).join('')}
+    </div>
+    ${modeHTML}
+    ${detailHTML}
+    <div class="snow-callout">
+      <h4>ServiceNow Structural Advantage</h4>
+      <p>${p.snow_advantage}</p>
+    </div>
+  `;
+}
+
+// ─── MATRIX VIEW ─────────────────────────────
+function renderMatrix() {
+  const el = document.getElementById('view-matrix');
+  const personas = DATA.personas;
+  const pains = DATA.pain_points;
+
+  let rows = '';
+  for (const pain of pains) {
+    const intensities = DATA.matrix[pain.id];
+    let cells = '';
+    for (const p of personas) {
+      const val = intensities[p.id];
+      const cls = val >= 3 ? 's3' : val >= 2 ? 's2' : val >= 1 ? 's1' : 's0';
+      cells += `<td><div class="cell ${cls}" onclick="openDrawer('${pain.id}','${p.id}')">${val || '–'}</div></td>`;
+    }
+    const trend = pain.trend === 'up' ? '<span class="trend-up">&#9650;</span>' : '<span class="trend-flat">&#9632;</span>';
+    rows += `<tr>
+      <td><div class="pain-name">${pain.short} ${trend}</div></td>
+      ${cells}
+    </tr>`;
+  }
+
+  el.innerHTML = `
+    <div class="view-header">
+      <h2>Pain × Persona Matrix</h2>
+      <p>Click any cell to see the JTBD + market evidence. Color intensity = how acutely the persona feels the pain.</p>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot s3"></div> Acutely felt</div>
+      <div class="legend-item"><div class="legend-dot s2"></div> Moderate</div>
+      <div class="legend-item"><div class="legend-dot s1"></div> Peripheral</div>
+      <div class="legend-item"><span class="signal-badge high">HIGH</span> Signal strength</div>
+    </div>
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead><tr>
+          <th>Pain Point</th>
+          ${personas.map(p => `<th>${p.short}</th>`).join('')}
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+// ─── DRAWER ───────────────────────────────────
+function openDrawer(painId, personaId) {
+  const pain = DATA.pain_points.find(p => p.id === painId);
+  const persona = DATA.personas.find(p => p.id === personaId);
+  const intensity = DATA.matrix[painId][personaId];
+  const label = intensity >= 3 ? 'Acutely felt' : intensity >= 2 ? 'Moderate' : intensity >= 1 ? 'Peripheral' : 'Not applicable';
+  const relevantJtbds = persona.top_jtbds.filter(j => {
+    if (painId === 'pain-1') return j.toLowerCase().includes('data') || j.toLowerCase().includes('tool') || j.toLowerCase().includes('source');
+    if (painId === 'pain-3') return j.toLowerCase().includes('health') || j.toLowerCase().includes('score') || j.toLowerCase().includes('risk') || j.toLowerCase().includes('warn');
+    if (painId === 'pain-6') return j.toLowerCase().includes('handoff') || j.toLowerCase().includes('context');
+    if (painId === 'pain-7') return j.toLowerCase().includes('complex') || j.toLowerCase().includes('config') || j.toLowerCase().includes('self-service');
+    if (painId === 'pain-9') return j.toLowerCase().includes('automat') || j.toLowerCase().includes('scale') || j.toLowerCase().includes('playbook');
+    if (painId === 'pain-5') return j.toLowerCase().includes('roi') || j.toLowerCase().includes('prove') || j.toLowerCase().includes('report') || j.toLowerCase().includes('value');
+    if (painId === 'pain-2') return j.toLowerCase().includes('ai') || j.toLowerCase().includes('predict');
+    if (painId === 'pain-4') return j.toLowerCase().includes('time') || j.toLowerCase().includes('capacity') || j.toLowerCase().includes('cover');
+    if (painId === 'pain-8') return j.toLowerCase().includes('metric') || j.toLowerCase().includes('measur') || j.toLowerCase().includes('renewal');
+    if (painId === 'pain-10') return j.toLowerCase().includes('value') || j.toLowerCase().includes('outcome') || j.toLowerCase().includes('roi');
+    return false;
+  });
+
+  document.getElementById('drawer').innerHTML = `
+    <button class="drawer-close" onclick="closeDrawer()">&times;</button>
+    <h3>${pain.name}</h3>
+    <p style="margin-top:4px"><span class="signal-badge ${pain.signal==='HIGH'?'high':'med'}">${pain.signal} SIGNAL</span> &nbsp; ${pain.trend === 'up' ? 'Trending up' : 'Stable'}</p>
+    <h4>${persona.short} Impact: ${label}</h4>
+    <p>${pain.summary}</p>
+    <h4>Market Evidence</h4>
+    <div class="evidence-block"><p>${pain.evidence}</p></div>
+    ${relevantJtbds.length ? `
+      <h4>Related JTBDs for ${persona.short}</h4>
+      <ul class="brief-list">
+        ${relevantJtbds.map(j => `<li>${j}</li>`).join('')}
+      </ul>
+    ` : ''}
+    ${persona.snow_advantage ? `
+      <h4>ServiceNow Advantage</h4>
+      <div class="snow-tag">SNOW</div>
+      <p>${persona.snow_advantage}</p>
+    ` : ''}
+  `;
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('drawer-overlay').classList.add('open');
+}
+
+function closeDrawer() {
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('drawer-overlay').classList.remove('open');
+}
+
+// ─── ASSUMPTIONS VIEW ─────────────────────────
+function renderAssumptions() {
+  const el = document.getElementById('view-assumptions');
+  el.innerHTML = `
+    <div class="view-header">
+      <h2>Disconfirming Evidence</h2>
+      <p>Things that challenge common assumptions about the CS platform market. Read these before anchoring on a strategy.</p>
+    </div>
+    ${DATA.assumptions.map((a,i) => `
+      <div class="assumption-card">
+        <div class="assumption">${i+1}. ${a.assumption}</div>
+        <div class="evidence"><strong>Evidence:</strong> ${a.evidence}</div>
+        <div class="implication"><strong>Implication:</strong> ${a.implication}</div>
+      </div>
+    `).join('')}
+  `;
+}
+
+// ─── INIT ─────────────────────────────────────
+renderBrief();
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+</script></body></html>

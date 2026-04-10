@@ -1,84 +1,63 @@
 # Workspace Memory
 
+> Sections marked VOLATILE are overwritten automatically at session end by the LLM extractor.
+> Sections marked PERMANENT are never auto-updated — edit manually only.
+
+---
+
 ## Current Focus
 
-**Role**: [UPDATE THIS: Your role and company]
-
-**Product Vision**: [UPDATE THIS: Your product vision]
-
-**Active Task**: [UPDATE THIS: What you're working on now]
-
-**Recent Completed Work**:
-- [UPDATE THIS: Recent accomplishments]
-
-## Product Context
-
-### [UPDATE THIS: Your Product Name]
-
-**What is [Product]**: [UPDATE THIS: Product description]
-
-**Value Proposition**: [UPDATE THIS: Core value prop]
-
-**Core Differentiators**:
-- [UPDATE THIS: Key differentiators]
-
-**Target Market**: [UPDATE THIS: ICP, market size, etc.]
-
-## Technical Notes
-
-### Workspace configuration
-**Discovery**: Automation finds project root by searching upward for `GOALS.md` or `CLAUDE.md`.
-
-**Key Files**:
-- `🔧 Automation/scripts/shared/aipmos_config.py` - AIPMOSConfig (workspace discovery, .env loading)
-- `🔧 Automation/scripts/today_cmd/` - Daily planning workflow
-- Session intent: `🤖 AI/session-intent.json`; env: `.env` at project root
-
-### MCP Integrations
-Available: Notion, Figma, GitHub, Browser Automation, Web Search, Claude Mem, Granola
-
-## Workspace Organization
-
-```
-./
-├── 📦 Products/              # Product strategy, ICP, ROI
-├── 🏢 Company/               # Business context
-├── 🎓 Product-Management/    # PM frameworks and resources
-├── 📝 Docs/                  # Documentation, memos, templates
-├── 🔧 Automation/            # Python automation scripts
-├── 📋 Tasks/                 # today.md, backlog.md, completed
-├── 📚 Knowledge/             # Research, People notes
-├── .claude/               # Claude Code configuration
-└── 🤖 AI/                 # AI configuration, memory, and patterns
-    └── memory/           # This file
-```
-
-## Working Principles
-
-1. **Evidence-based decisions** - Data over assumptions, with clear attribution
-2. **Executive communication** - BLUF (bottom line up front), clarity over cleverness
-3. **Source attribution** - Label claims: SOURCE, ASSUMPTION, INFERENCE, NEEDS VALIDATION
-4. **Git workflow** - Frequent checkpoint commits, never force push to main
-5. **Quality** - Run typecheck before ending tasks, never commit without explicit approval
+Working on synthesizing findings from the two research artifacts to create a strategic framing document for CSP product positioning.
 
 ## Active Decisions
 
 **Strategic Questions**:
-1. [UPDATE THIS: Your strategic questions]
 
-**Open Questions**:
-- [UPDATE THIS: Questions you're tracking]
+- Should proceed with synthesis pass to combine strongest signals into strategic framing document
+
+**Recent Decisions**:
+
+- Launched parallel research tracks with separate skills
+- Created comprehensive artifacts: csm-jtbd-workflows.md and csm-icp-market-research.md
+- Identified three strategic findings with direct ServiceNow implications
+
 
 ## Known Gaps
 
 **Baseline Metrics Needed**:
-- [UPDATE THIS: Metrics you need to gather]
+
+- Metrics measuring CEG Internal Tech and CSP usage/success.
 
 **Documentation Gaps**:
-- [UPDATE THIS: Docs that need to be written]
+
+- Need context gathering on CSP ecosystem.
+- Need baseline of current tech stack overhead.
+
+**Research Gaps**:
+
+- No win/loss interview data yet. ICP/JTBD research is desk research — needs primary CSM interview validation before treating inferences as confirmed findings.
+
+## Strategic Context (as of 2026-04-07)
+
+- **CS investment paradox**: 75% of firms saw NRR decline despite 60% increased CS spend — root cause is coordination model design, not tooling. (Source: csm-icp-market-research.md)
+- **Orchestration whitespace**: No competitor coordinates full Sales→CS→Support→PS→Product post-sales motion. ServiceNow's platform architecture is the only credible answer. (Source: csm-icp-market-research.md)
+- **AI adoption blocker**: 72% call AI critical, only 32% have live use cases — blocked by data fragmentation, not ambition. Workflow-byproduct data unification is the unlock. (Source: csm-icp-market-research.md)
+
+## Recent Context
+
+Completed deep market research phase with strong strategic findings about CS investment paradox, cross-functional orchestration whitespace, and AI adoption blockers
+
+## Technical Notes
+
+### Memory System
+
+- `memory.md` — this file; volatile sections updated by LLM extractor at session end
+- `sessions/` — rolling 10 session summaries (LLM-written)
+- `sessions-archive/` — sessions beyond the rolling window, compacted at 50+
+- `patterns/learned-patterns.md` — manually curated patterns and decisions
 
 ---
 
-**Last Updated**: [DATE]
+**Last Updated**: 2026-04-09
 **Purpose**: Single unified memory file for AI context across sessions
 **Location**: `🤖 AI/memory/memory.md`

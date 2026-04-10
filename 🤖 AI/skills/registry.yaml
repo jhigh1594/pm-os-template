@@ -1,6 +1,18 @@
 version: 1
-generated_at: '2026-04-02T18:08:33Z'
+generated_at: '2026-04-09T19:54:02Z'
 skills:
+- skill_id: claude:ai-evals
+  base_skill_id: ai-evals
+  name: ai evals
+  surface: claude_skill
+  family: consultative
+  owner: workspace
+  criticality: medium
+  eval_policy: hybrid
+  skill_path: .claude/skills/ai-evals/SKILL.md
+  learned_path: .claude/skills/ai-evals/LEARNED.md
+  wrappers: []
+  pilot: false
 - skill_id: ai-product-patterns
   base_skill_id: ai-product-patterns
   name: ai product patterns
@@ -11,6 +23,18 @@ skills:
   eval_policy: hybrid
   skill_path: .claude/skills/ai-product-patterns/SKILL.md
   learned_path: .claude/skills/ai-product-patterns/LEARNED.md
+  wrappers: []
+  pilot: false
+- skill_id: claude:ai-product-strategy
+  base_skill_id: ai-product-strategy
+  name: ai product strategy
+  surface: claude_skill
+  family: consultative
+  owner: workspace
+  criticality: medium
+  eval_policy: hybrid
+  skill_path: .claude/skills/ai-product-strategy/SKILL.md
+  learned_path: .claude/skills/ai-product-strategy/LEARNED.md
   wrappers: []
   pilot: false
 - skill_id: ai-startup-building
@@ -71,6 +95,18 @@ skills:
   eval_policy: nightly
   skill_path: .claude/skills/coaching-hooks/SKILL.md
   learned_path: .claude/skills/coaching-hooks/LEARNED.md
+  wrappers: []
+  pilot: false
+- skill_id: commercial-lens
+  base_skill_id: commercial-lens
+  name: commercial lens
+  surface: claude_skill
+  family: consultative
+  owner: workspace
+  criticality: medium
+  eval_policy: hybrid
+  skill_path: .claude/skills/commercial-lens/SKILL.md
+  learned_path: .claude/skills/commercial-lens/LEARNED.md
   wrappers: []
   pilot: false
 - skill_id: competitive-analysis
@@ -217,18 +253,6 @@ skills:
   learned_path: .claude/skills/growth-embedded/LEARNED.md
   wrappers: []
   pilot: false
-- skill_id: industry-intelligence
-  base_skill_id: industry-intelligence
-  name: industry intelligence
-  surface: claude_skill
-  family: consultative
-  owner: workspace
-  criticality: medium
-  eval_policy: hybrid
-  skill_path: .claude/skills/industry-intelligence/SKILL.md
-  learned_path: .claude/skills/industry-intelligence/LEARNED.md
-  wrappers: []
-  pilot: false
 - skill_id: jtbd-building
   base_skill_id: jtbd-building
   name: jtbd building
@@ -251,6 +275,18 @@ skills:
   eval_policy: hybrid
   skill_path: .claude/skills/launch-execution/SKILL.md
   learned_path: .claude/skills/launch-execution/LEARNED.md
+  wrappers: []
+  pilot: false
+- skill_id: claude:managing-up
+  base_skill_id: managing-up
+  name: managing up
+  surface: claude_skill
+  family: consultative
+  owner: workspace
+  criticality: medium
+  eval_policy: hybrid
+  skill_path: .claude/skills/managing-up/SKILL.md
+  learned_path: .claude/skills/managing-up/LEARNED.md
   wrappers: []
   pilot: false
 - skill_id: claude:menkesu-awesome-pm-skills-one-step-better-ai-pm
@@ -289,18 +325,6 @@ skills:
   learned_path: .claude/skills/mvp/LEARNED.md
   wrappers: []
   pilot: false
-- skill_id: okr-frameworks
-  base_skill_id: okr-frameworks
-  name: okr frameworks
-  surface: claude_skill
-  family: template
-  owner: workspace
-  criticality: medium
-  eval_policy: hybrid
-  skill_path: .claude/skills/okr-frameworks/SKILL.md
-  learned_path: .claude/skills/okr-frameworks/LEARNED.md
-  wrappers: []
-  pilot: false
 - skill_id: openrouter-imagegen
   base_skill_id: openrouter-imagegen
   name: openrouter imagegen
@@ -311,6 +335,18 @@ skills:
   eval_policy: nightly
   skill_path: .claude/skills/openrouter-imagegen/SKILL.md
   learned_path: .claude/skills/openrouter-imagegen/LEARNED.md
+  wrappers: []
+  pilot: false
+- skill_id: opportunity-solution-tree
+  base_skill_id: opportunity-solution-tree
+  name: opportunity solution tree
+  surface: claude_skill
+  family: consultative
+  owner: workspace
+  criticality: medium
+  eval_policy: hybrid
+  skill_path: .claude/skills/opportunity-solution-tree/SKILL.md
+  learned_path: .claude/skills/opportunity-solution-tree/LEARNED.md
   wrappers: []
   pilot: false
 - skill_id: positioning-craft
@@ -419,6 +455,18 @@ skills:
   eval_policy: hybrid
   skill_path: .claude/skills/product-taste-intuition/SKILL.md
   learned_path: .claude/skills/product-taste-intuition/LEARNED.md
+  wrappers: []
+  pilot: false
+- skill_id: claude:proof
+  base_skill_id: proof
+  name: proof
+  surface: claude_skill
+  family: tool_execution
+  owner: workspace
+  criticality: medium
+  eval_policy: nightly
+  skill_path: .claude/skills/proof/SKILL.md
+  learned_path: .claude/skills/proof/LEARNED.md
   wrappers: []
   pilot: false
 - skill_id: qmd
@@ -625,6 +673,30 @@ skills:
   learned_path: .claude/skills/zero-to-launch/LEARNED.md
   wrappers: []
   pilot: false
+- skill_id: codex:ai-evals
+  base_skill_id: ai-evals
+  name: ai evals
+  surface: codex_skill
+  family: consultative
+  owner: workspace
+  criticality: medium
+  eval_policy: hybrid
+  skill_path: .codex/skills/ai-evals/SKILL.md
+  learned_path: .codex/skills/ai-evals/LEARNED.md
+  wrappers: []
+  pilot: false
+- skill_id: codex:ai-product-strategy
+  base_skill_id: ai-product-strategy
+  name: ai product strategy
+  surface: codex_skill
+  family: consultative
+  owner: workspace
+  criticality: medium
+  eval_policy: hybrid
+  skill_path: .codex/skills/ai-product-strategy/SKILL.md
+  learned_path: .codex/skills/ai-product-strategy/LEARNED.md
+  wrappers: []
+  pilot: false
 - skill_id: codex:b2b-icp-positioning-craft
   base_skill_id: b2b-icp-positioning-craft
   name: b2b icp positioning craft
@@ -659,6 +731,18 @@ skills:
   eval_policy: hybrid
   skill_path: .codex/skills/dex-improve/SKILL.md
   learned_path: .codex/skills/dex-improve/LEARNED.md
+  wrappers: []
+  pilot: false
+- skill_id: codex:managing-up
+  base_skill_id: managing-up
+  name: managing up
+  surface: codex_skill
+  family: consultative
+  owner: workspace
+  criticality: medium
+  eval_policy: hybrid
+  skill_path: .codex/skills/managing-up/SKILL.md
+  learned_path: .codex/skills/managing-up/LEARNED.md
   wrappers: []
   pilot: false
 - skill_id: codex:menkesu-awesome-pm-skills-one-step-better-ai-pm
@@ -709,7 +793,7 @@ skills:
   learned_path: .codex/skills/product-taste-intuition/LEARNED.md
   wrappers: []
   pilot: false
-- skill_id: proof
+- skill_id: codex:proof
   base_skill_id: proof
   name: proof
   surface: codex_skill

@@ -45,7 +45,7 @@ Each gate response is auto-saved as one entry in the monthly accumulation file (
 ```
 
 **Pattern tag vocabulary:**
-`assumption-visibility` | `strategy-coherence` | `option-diversity` | `problem-grounding` | `evidence-quality` | `bar-raising` | `opportunity-cost` | `value-mechanism` | `signal-interpretation` | `differentiation-logic` | `story-vs-opinion` | `sequencing-logic`
+`assumption-visibility` | `strategy-coherence` | `option-diversity` | `problem-grounding` | `evidence-quality` | `bar-raising` | `opportunity-cost` | `value-mechanism` | `signal-interpretation` | `differentiation-logic` | `story-vs-opinion` | `sequencing-logic` | `calibration` | `bayesian-update` | `resulting-avoidance` | `bet-sizing`
 
 **Accumulation target:** `📚 Knowledge/Growth/growth-signals-[YYYY-MM].md`
 
@@ -57,7 +57,7 @@ Each gate response is auto-saved as one entry in the monthly accumulation file (
 
 ### 1. Judgment / Tradeoffs
 **Commands that invoke this:** `/decide`, `/prioritize`
-**PM failure mode (Ravi Mehta, Reforge strategy stack):** Choosing between A and B without articulating the strategy principle that makes one better — treating prioritization as math when it's strategy.
+**PM failure mode (Ravi Mehta, Reforge strategy stack):** Choosing between A and B without articulating the strategy principle that makes one better — treating prioritization as math when it's strategy. Also: confusing outcome quality with decision quality — evaluating whether the call was right based on what happened, rather than what was known at decision time (Annie Duke: "resulting").
 
 **Prompt A — Strategy coherence probe** _(use in `/decide`)_:
 > "The choice you just made implies something about your product strategy. What does choosing this over the alternative say about what you believe drives value for customers? If someone read only your prioritization decisions for the last quarter, what strategy would they infer?"
@@ -144,12 +144,29 @@ Each gate response is auto-saved as one entry in the monthly accumulation file (
 **PM failure mode (Teresa Torres):** Building without surfacing assumptions; treating conviction as validated learning; asking customers what to build rather than testing what needs to be true.
 
 **Prompt A — Assumption log excavation** _(use in `/discover` Phase 1 exit)_:
-> "Before this moves to Phase 2: name the three highest-risk assumptions — not technical risks, but customer behavior assumptions. For each: how confident are you it's true, what is the cheapest test that would change your confidence, and at what confidence level would you stop or pivot?"
+> "Before this moves to Phase 2: name the three highest-risk assumptions — not technical risks, but customer behavior assumptions. For each: how confident are you it's true, what is the cheapest test that would change your confidence, and at what confidence level would you stop or pivot? And: if early signals come back negative, what's your plan for updating your confidence — not explaining away the signal?"
 
 **Prompt B — Story vs. opinion diagnostic** _(use in `continuous-discovery`)_:
 > "Is the customer insight behind this based on stories — specific customers, specific moments, specific behaviors you observed — or on opinions — things customers told you they want when asked directly? Opinions are fast to collect and unreliable. Stories are slow to collect and durable. Which type of evidence is this built on, and what would it take to upgrade the weakest evidence?"
 
 **Pattern tags:** `assumption-visibility`, `story-vs-opinion`
+
+---
+
+### 8. Probabilistic Reasoning
+**Commands that invoke this:** `/decide` (secondary), `/prioritize` (secondary), `/biz-case` (secondary)
+**PM failure mode (Annie Duke):** Judging decision quality by outcome; treating conviction as confidence; over-investing in poorly-calibrated beliefs; failing to update when new evidence arrives.
+
+**Prompt A — Calibration and bet sizing** _(use in `/decide` and `/prioritize`)_:
+> "Before you commit: state your confidence in the key assumption driving this decision or ranking — a number, not a feeling. What's the single most important thing you don't know that, if you knew it, would most change your answer? And: are you investing in proportion to your confidence, or in proportion to your enthusiasm?"
+
+**Prompt B — Resulting avoidance** _(use after /decide outcomes are known)_:
+> "Now that you know the outcome: was this a good decision or a lucky one? Reconstruct what you knew at the time you decided. If you knew then what you know now, would the decision still have been correct? Separate the quality of the reasoning from the quality of the result — otherwise you'll repeat bad processes that happened to work and abandon good processes that happened to fail."
+
+**Prompt C — Bayesian update trigger** _(use when new data arrives after a decision or ranking)_:
+> "You now have new information. What does it do to your stated confidence? Name a specific number: did your confidence in the original assumption go up or down, and by how much? If the answer is 'the new evidence doesn't really change anything,' explain why — don't let confirming evidence inflate your confidence and disconfirming evidence get explained away."
+
+**Pattern tags:** `assumption-visibility`, `calibration`, `bayesian-update`
 
 ---
 
@@ -164,6 +181,7 @@ From Ravi Mehta (Reforge), Teresa Torres (Continuous Discovery Habits), Marty Ca
 5. **Build mental representation** (product-sense.md) — the prompt should help the PM calibrate against what excellent looks like, not just catch mistakes
 6. **Prediction → outcome feedback loop** (Ericsson + Torres) — assumption logging in `/discover` creates the PM equivalent of Ericsson's feedback loop
 7. **Be archetype-aware** (Ravi Mehta) — growth PMs and discovery PMs need different coaching emphasis; the archetype must match the reasoning being exercised
+8. **Calibrate, don't convince** (Annie Duke) — the PM should be able to put a number on their confidence at any decision point. "I'm confident" is not a statement; "I'm 75% confident, and here's what would move it" is. Every coaching prompt that touches uncertainty should push toward a number and a named updating mechanism.
 
 ---
 

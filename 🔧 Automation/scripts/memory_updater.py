@@ -22,8 +22,8 @@ import subprocess
 
 
 def load_session_intent(workspace_root: Path) -> dict:
-    """Load session intent from .aipmos/session-intent.json."""
-    intent_file = workspace_root / ".aipmos" / "session-intent.json"
+    """Load session intent from 🤖 AI/session-intent.json."""
+    intent_file = workspace_root / "🤖 AI" / "session-intent.json"
 
     if not intent_file.exists():
         return None
@@ -447,7 +447,7 @@ def main():
     args = parser.parse_args()
 
     workspace = args.workspace
-    memory_file = workspace / "memory-bank" / "memory.md"
+    memory_file = workspace / "🤖 AI" / "memory" / "memory.md"
 
     if not memory_file.exists():
         print(f"❌ Memory file not found: {memory_file}")

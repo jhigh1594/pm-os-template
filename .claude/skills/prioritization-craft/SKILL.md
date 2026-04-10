@@ -46,13 +46,14 @@ For normal chat, default to:
 - [goal, capacity, dependency, or commitment]
 
 ## Provisional Order
-1. [item]
-2. [item]
-3. [item]
+1. [item] — Confidence: [High/Med/Low or X%] | Key assumption: [what must be true]
+2. [item] — Confidence: [High/Med/Low or X%] | Key assumption: [what must be true]
+3. [item] — Confidence: [High/Med/Low or X%] | Key assumption: [what must be true]
 
 ## Why / Next Step
 - [main tradeoff]
 - [communication or validation step]
+- "Which item in this ranking are you least confident about? What's the cheapest signal that would let you reorder — a customer interview, a data pull, a spike? Bet size your investment: the lower your confidence, the more you should stage the commitment rather than all-in."
 ```
 
 The questions should reduce shallow ranking, not delay the answer.
@@ -105,6 +106,7 @@ Use only the lenses needed for the decision:
 - time sensitivity
 - opportunity cost
 - commitments and dependencies
+- confidence / assumption risk — how well-validated is the value hypothesis for this item? High-confidence items can be committed fully; low-confidence items should be staged or time-boxed to preserve optionality.
 
 Frameworks like RICE, value vs effort, or cost of delay are optional aids, not the point of the response.
 
@@ -114,6 +116,7 @@ Help the PM improve prioritization judgment:
 - make the constraint explicit
 - show which tradeoff is doing the real work
 - explain why ties usually hide indecision
+- Surface confidence explicitly — the constraint doing the real work is often not capacity or strategy, but evidence quality. A tie between two items usually means you need a signal, not a framework.
 
 ## Historical Context
 
@@ -129,6 +132,7 @@ When local context is useful, refer to:
 - Do not let every item stay above the line.
 - Do not hide hard tradeoffs behind ties or vague scoring.
 - Do not score mechanically if the framework obscures the real decision.
+- Do not rank items at equal confidence when evidence quality differs sharply — flag the gap and recommend a validation step before committing capacity.
 
 ## Example Behavior
 

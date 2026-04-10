@@ -5,6 +5,8 @@ description: Run the COMMAND REFERENCE workflow
 
 This guide helps AI assistants understand when to suggest specific AIPMOS commands based on user intent. Use this to match natural language requests to the most appropriate command.
 
+**Human-readable summary:** [Workflow cheatsheet](../../📝%20Docs/guides/workflow-cheatsheet.md) — curated activity → command map and idea-to-delivery spine.
+
 ## How to Use This Guide
 
 1. **Analyze the user's intent**: What are they trying to accomplish?
@@ -176,7 +178,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 
 **Output**: 6-section roadmap (Strategic Themes, Now/Next/Later, Key Bets, What We're NOT Doing, Open Questions, Success Criteria)
 
-**NOT for**: Strategic prioritization (use `/think` or `/prioritize` first), OKR tracking (use `/okr-progress`)
+**NOT for**: Strategic prioritization (use `/think` or `/prioritize` first)
 
 ---
 
@@ -480,28 +482,6 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 
 ---
 
-### /okr-progress
-**User intent**: Analyze OKR progress, risk, and get actionable recommendations
-
-**Canonical source**: `.claude/prompts/okr-progress-analysis.md`
-
-**When to suggest**:
-- "Track my OKR progress"
-- "Analyze progress on my objectives"
-- "Evaluate this objective for the board"
-- "Which OKRs need attention?"
-- "What's blocking my OKRs?"
-- "OKR health check"
-- "Get one priority action for this week"
-
-**Behavior**: Prompts user for scope (portfolio vs single objective), date, and audience. Then runs analysis with problem-first ordering and one high-impact action.
-
-**NOT for**:
-- Writing new OKRs (use /think or okr-frameworks skill)
-- General metrics definition (use /measure)
-
----
-
 ### /compete
 **User intent**: All competitive intelligence — single competitor deep dive, landscape scan, or battlecard
 
@@ -528,7 +508,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 I need to understand a specific competitor     → /compete [--focus name]
 I need a sales battlecard                      → /compete --output battlecard
 I need to scan the full market landscape       → /compete --mode landscape
-I need analyst/earnings trend analysis         → /daily-brief --industry
+I need analyst/earnings trend analysis         → /ci-brief --industry
 I need pricing competitive research            → /price-intel
 ```
 
@@ -580,17 +560,26 @@ I need pricing competitive research            → /price-intel
 
 ---
 
-### /daily-brief
-**User intent**: Automated daily competitive intelligence summary
+### /ci-brief
+**User intent**: Automated competitive intelligence brief — Claude-native, no external scripts
+
+**Command syntax**:
+```bash
+/ci-brief [quick|standard|deep] [--focus <competitor-or-topic>] [--industry]
+```
 
 **When to suggest**:
 - "Daily competitive briefing"
 - "What's happening in our market?"
 - "Competitive news summary"
+- "Quick scan of [competitor] news"
+- "CI brief with industry signals"
+
+**Replaces**: `/daily-brief` (which depended on an external Python stack that no longer exists)
 
 **NOT for**:
-- Deep competitive analysis (use /compete)
-- General competitive questions
+- Deep single-competitor analysis (use /compete)
+- Battlecard generation (use /compete --output battlecard)
 
 ---
 
@@ -668,6 +657,40 @@ I need pricing competitive research            → /price-intel
 **NOT for**:
 - Post-launch analysis (use /learn)
 - Just writing announcements (use /write)
+
+---
+
+### /deliver
+**User intent**: In-sprint/in-quarter delivery triage — status read, what's at risk, priority focus, next moves
+
+**Canonical skill**: `execution-delivery`
+
+**When to suggest**:
+- "Here's where my sprint stands — what's most at risk?"
+- "We're behind on [launch] — what are the 3 moves that matter?"
+- "I have three initiatives in flight, help me triage"
+- "What do I communicate to stakeholders about the delay?"
+- "Help me design a delivery cadence for the Q2 roadmap"
+
+**NOT for**: Go-to-market launch planning (use `/launch`); pre-launch strategy (use `/ship`)
+
+---
+
+### /launch
+**User intent**: B2B product launch execution — sales enablement, internal readiness, launch tiers, success metrics
+
+**Canonical skill**: `launch-execution`
+
+**When to suggest**:
+- "Create a launch plan for [feature]"
+- "What sales enablement do we need before GA?"
+- "Build a launch tier framework (LA vs GA)"
+- "Launch readiness checklist for [feature]"
+- "What's the go-live checklist?"
+
+**Distinct from `/ship`**: `/ship` = launch strategy and planning (what to do). `/launch` = operational execution muscle (how to do it — tiers, enablement assets, metrics).
+
+**NOT for**: Post-launch learning (use `/learn`); in-flight delivery health (use `/deliver`)
 
 ---
 
@@ -814,7 +837,7 @@ I need pricing competitive research            → /price-intel
 - "Review decisions I made this week"
 - Friday afternoon or Monday morning reorientation
 
-**Five sections**: OKR progress check (delegates to `/okr-progress`) → Signal capture review → Decision retrospective (from decision journal) → Relationship health (K/P files) → Next-week priorities
+**Five sections**: Signal capture review → Decision retrospective (from decision journal) → Relationship health (K/P files) → Next-week priorities
 
 **Core principle**: Calibration ritual, not status report — asks: Are we making good decisions? Capturing signal? Seeing the right people?
 
@@ -825,7 +848,6 @@ I need pricing competitive research            → /price-intel
 
 **NOT for**:
 - Daily planning (use /today)
-- OKR-specific deep analysis (use /okr-progress)
 - Post-meeting extraction (use /granola)
 - Cross-month growth signal synthesis (use /growth-review)
 
@@ -952,7 +974,7 @@ I need pricing competitive research            → /price-intel
 ### /ui-refine
 **User intent**: Implement UI and refine until it scores ≥9.3/10 on an objective rubric
 
-**Canonical source**: `/Users/jhigh/workspace/.claude/prompts/ui-refinement-loop.md`
+**Canonical source**: `/Users/jhigh/SNOW-Work/.claude/prompts/ui-refinement-loop.md`
 
 **When to suggest**:
 - "Refine this UI until it's polished"
@@ -1001,14 +1023,16 @@ The canonical PM lifecycle. Each step produces outputs carried forward via rich 
 
 ## Workflows
 
-Repeatable cadence playbooks — distinct from the idea-to-delivery lifecycle. Each workflow lives in `📁 Workflows/[name]/` with CLAUDE.md (context) + workflow.md (step guide). Invoke by pointing Claude at the folder: "Run @Workflows/metrics-health-check/".
+Repeatable cadence playbooks — distinct from the idea-to-delivery lifecycle. Each workflow lives in `📁 Workflows/[name]/` with CLAUDE.md (context) + workflow.md (step guide). Invoke with `/workflow` by pointing the assistant at that folder once those files exist.
 
-| Workflow | Purpose | Cadence |
+> **Note:** Workflow directories may exist as stubs before `CLAUDE.md` and `workflow.md` are added. Until a playbook is complete inside a folder, use the substitute commands below.
+
+| Workflow (planned) | Substitute command | Cadence |
 |----------|---------|---------|
-| `metrics-health-check` | Pendo + OKR + PRD targets → health check + action | Weekly |
-| `qpr-prep` | Quarterly deck + trade-off narrative for exec review | Quarterly |
-| `weekly-stakeholder-update` | Red/yellow/green status update, under 500 words | Weekly |
-| `customer-research-synthesis` | Granola notes → persistent research themes in Knowledge/ | Ongoing |
+| `metrics-health-check` | `/measure` + `b2b-data-analyst` skill | Weekly |
+| `qpr-prep` | `/think --mode okr` + `/roadmap` + `/write --type exec` | Quarterly |
+| `weekly-stakeholder-update` | `/write --type announcement` | Weekly |
+| `customer-research-synthesis` | `/granola` + `synthesize` skill | Ongoing |
 
 ---
 
@@ -1099,7 +1123,7 @@ Repeatable cadence playbooks — distinct from the idea-to-delivery lifecycle. E
 - "What's the CS-facing version of this insight?"
 
 **NOT for**:
-- Running the analysis itself (use `/pendo` or the b2b-data-analyst skill)
+- Running the analysis itself (use the b2b-data-analyst skill)
 - Writing formal documents (use `/write`)
 
 ---
@@ -1179,13 +1203,13 @@ When you need competitive or market intelligence, use this map:
 
 | I need to… | Use |
 |---|---|
-| Monitor what's happening in my market today | `/daily-brief` |
+| Monitor what's happening in my market today | `/ci-brief` |
 | Deep-dive on a specific competitor or generate a battlecard | `/compete [--focus name] [--output battlecard]` |
 | Analyze a deal we won, lost, or didn't close | `/win-loss` |
 | Research pricing strategy or competitor pricing | `/price-intel` |
-| Scan analyst/earnings/market signals (beyond competitors) | `/daily-brief --industry` (quick) or `/industry-brief` (deep) |
+| Scan analyst/earnings/market signals (beyond competitors) | `/ci-brief --industry` (quick) or `/industry-brief` (deep) |
 
-**Rule**: Start with `/daily-brief` for ongoing awareness. Escalate to `/compete` when you need depth on a specific competitor. `/win-loss` after every deal close.
+**Rule**: Start with `/ci-brief` for ongoing awareness. Escalate to `/compete` when you need depth on a specific competitor. `/win-loss` after every deal close.
 
 ---
 
@@ -1211,9 +1235,8 @@ When you need competitive or market intelligence, use this map:
 | "Generate Spec Brief from PRD" | /spec-brief |
 | "Validate this assumption" | /research |
 | "What metrics to track?" | /measure |
-| "Track my OKR progress" | /okr-progress |
 | "Analyze competitor X" | /compete |
-| "Daily competitive briefing" | /daily-brief |
+| "Daily competitive briefing" | /ci-brief |
 | "Help me brainstorm solutions" | /brainstorm |
 | "Teach me how this works" | /learning-opportunity |
 | "Post-launch learning" | /learn |
@@ -1267,6 +1290,10 @@ When you need competitive or market intelligence, use this map:
 | "Where are my customer knowledge gaps?" | /customer-knowledge-audit --depth quick |
 | "What are analysts saying about our market?" | /industry-brief --mode analyst |
 | "Broader market scan" | /industry-brief |
+| "What's at risk in my sprint?" | /deliver |
+| "Triage in-flight initiatives" | /deliver |
+| "Sales enablement for GA" | /launch |
+| "Launch tier framework for [feature]" | /launch |
 
 **Dual-Mode Commands**: Some capabilities have both a quick command and a deep skill variant:
 - **/prioritize** (quick) vs **prioritization-craft skill** (expanded): Quick scoring vs. prioritization support that starts with outcome/constraint framing and can expand into deeper triage and stakeholder communication

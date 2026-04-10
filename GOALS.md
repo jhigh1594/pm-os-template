@@ -2,48 +2,43 @@
 
 ## Who I Am
 
-**[YOUR NAME]** | [YOUR ROLE] | [YOUR COMPANY] ([PRODUCT 1], [PRODUCT 2])
+**Jon** | Senior AI Product Manager | ServiceNow (Customer Success Platform (CSP))
 
-[UPDATE THIS: Brief bio - what kind of PM are you? What energizes you?]
+Systems-thinking PM who builds tools to amplify effectiveness. Believes simplicity beats complexity, execution beats endless planning, and the best product work happens when you ship fast and iterate. Practicing Stoic.
 
-**Core beliefs:** [UPDATE THIS: Your core beliefs about product management]
+**Core beliefs:** Kindness is a superpower. Everyone has something to teach you. Great questions unlock extraordinary leverage. You don't understand something until you can explain it to a five-year-old.
 
-**What energizes me:** [UPDATE THIS: What types of work give you energy]
+**What energizes me:** Building automations and frameworks that multiply my impact. Strategic positioning and competitive analysis. Customer discovery that gets to the real problem. Clear, jargon-free communication. Shipping.
 
-**What drains me:** [UPDATE THIS: What types of work drain you]
+**What drains me:** Process for process sake. Manual repetitive tasks. Complexity that doesn't add value. Meetings without decisions. Stakeholder misalignment that surfaces late.
+
+**Anchoring quotes:**
+- "You have power over your mind — not outside events. Realize this, and you will find strength." — Marcus Aurelius
+- "Slow is smooth. Smooth is fast."
 
 ---
 
 ## What I Own
 
-### Primary: [PRODUCT 1], [PRODUCT 2]
+### Primary: Customer Success Platform (CSP)
 
 | Product | Description | Key Metrics |
 |---------|-------------|-------------|
-| **[PRODUCT 1]** | [UPDATE THIS: Product description] | [UPDATE THIS: Key metrics] |
-| **[PRODUCT 2]** | [UPDATE THIS: Product description] | [UPDATE THIS: Key metrics] |
+| **Customer Success Platform (CSP)** | Core platform managing customer success at ServiceNow. | TBD |
 
 ---
 
 ## Current Quarter Goals
 
-### Goal 1: [UPDATE THIS: First goal]
+### Goal 1: Onboard and Impact 
 
-**Target:** [UPDATE THIS: Specific target/outcome]
+**Target:** Onboard to SNOW with a 30-60-90 plan and make a material impact within 60 days.
 
 **Key initiatives:**
-- [UPDATE THIS: Initiative 1]
-- [UPDATE THIS: Initiative 2]
+- Complete 30-day discovery and context gathering.
+- Identify and ship a high-leverage initiative within 60 days.
 
-**Status:** [UPDATE THIS: 🟢 On track / 🟡 At risk / 🔴 Blocked]
-
----
-
-### Goal 2: [UPDATE THIS: Second goal]
-
-**Target:** [UPDATE THIS]
-
-**Status:** [UPDATE THIS]
+**Status:** 🟢 On track
 
 ---
 
@@ -51,14 +46,16 @@
 
 | Name | Role | Relationship | Communication Notes |
 |------|------|--------------|---------------------|
-| [UPDATE THIS] | [UPDATE THIS] | [UPDATE THIS] | [UPDATE THIS] |
+| Garin Landry | Sr. Director, CEG Internal Tech and BI | Manager | Ensure clear, jargon-free alignment early on decisions to avoid late surprises. See `📚 Knowledge/People/garin-landry.md` |
+| Amit Zavery | President, CPO & COO | Executive (CPO chain) | Outcome-first, platform-scale thinker. Connect CSP work to Now Platform roadmap. See `📚 Knowledge/People/amit-zavery.md` |
+| Bill McDermott | Chairman & CEO | Executive | AI control tower framing; underdog positioning; over-communication. See `📚 Knowledge/People/bill-mcdermott.md` |
 
 ---
 
 ## Personal Development
 
-1. [UPDATE THIS: Personal development goal]
-2. [UPDATE THIS]
+1. Build automations and frameworks that multiply impact within SNOW.
+2. Advance strategic positioning and customer discovery methodologies.
 
 ---
 

@@ -29,14 +29,15 @@ When estimating revenue or cost impact, use this layered model:
 
 **Revenue Impact Pathway**:
 ```
-Feature → Adoption rate (% of ICP accounts using it)
-  → Affected account segment (new logo / expansion / retention)
-  → ARR mechanism: which of these does it drive?
+Feature → Adoption rate (% of ICP accounts using it) [Confidence: ?%]
+  → Affected account segment (new logo / expansion / retention) [Confidence: ?%]
+  → ARR mechanism: which of these does it drive? [Confidence: ?%]
     - New logo enablement: feature closes deals by removing a blocker
     - Expansion: feature enables seat expansion or tier upgrade
     - Retention: feature reduces churn by addressing a retention risk
-  → ARR impact = (affected accounts) × (ARR per account) × (adoption rate)
+  → ARR impact = (affected accounts) × (ARR per account) × (adoption rate) [Combined confidence: ?%]
 ```
+Label confidence at each step before multiplying. A 70% × 70% × 70% chain produces ~34% confidence in the output, not 70%. Own that math.
 
 **Cost-to-Serve Impact**:
 ```
@@ -102,9 +103,12 @@ Standard 6-element structure for PRD Business Case sections:
 ```markdown
 ## Business Case
 
-**Strategic rationale:** [1-2 sentences — why this aligns with your product's current direction; cite your OKRs or product strategy if applicable]
+**Strategic rationale:** [1-2 sentences — why this aligns with your product's current direction; cite your product strategy if applicable]
 
-**Revenue impact hypothesis:** [How this moves ARR or reduces churn — label as PM estimate; specify mechanism: new logo / expansion / retention]
+**Revenue impact hypothesis (stated as a bet):**
+- We believe [X behavior] will happen in [Y accounts] within [Z months].
+- Confidence: [%] — based on [evidence type: interview/data/analogy/assumption]
+- What would change this estimate: [specific new information]
 - Conservative case: [X% adoption × Y accounts × Z ARR/account = $ARR impact]
 - Expected case: [same structure]
 
@@ -115,6 +119,8 @@ Standard 6-element structure for PRD Business Case sections:
 **Opportunity cost:** [What we are NOT doing to build this — name the competing initiative explicitly]
 
 **Go/no-go criteria:** [Specific, observable threshold that would change the recommendation — e.g., "if adoption <20% in 90 days, reassess" or "if CS enablement requires >40 hours, scope down"]
+
+Frame criteria as bets, not metrics: "We believe adoption will reach 20% in 90 days. If it doesn't, the assumption about [X] was wrong — stop or pivot. If it does, update confidence and increase investment."
 ```
 
 ---
@@ -123,6 +129,8 @@ Standard 6-element structure for PRD Business Case sections:
 After producing the business case output above, include this gate before closing:
 
 **Before we lock this in:**
+
+> "First: state your confidence (0-100%) in the value mechanism you're about to trace. Then trace it. If your confidence in the full chain is below 40%, this is a hypothesis requiring a discovery phase, not a business case."
 
 > "Trace the financial logic explicitly: this feature/decision → what customer behavior changes → what metric moves → what revenue or cost impact follows → over what time horizon → at what confidence. At which step is your confidence lowest, and what would increase it? If you can't trace it, you have a feature, not an investment."
 
@@ -161,6 +169,7 @@ When this skill activates for financial reasoning:
 ## Guardrails
 
 - **Label all financial estimates** as PM model estimates requiring Finance validation — never present modeled numbers as validated data
+- Do not compound uncertain estimates without flagging the probability degradation — a chain of assumptions multiplies uncertainty, it doesn't average it.
 - **Never assume what other functions care about** without grounding in your product context (check stakeholder docs for actual stakeholder context)
 - **Cross-functional perspective is about understanding reasoning**, not characterizing functions as obstacles
 - **No precision theater** — a rough estimate with labeled assumptions is more useful than a false-precision spreadsheet model

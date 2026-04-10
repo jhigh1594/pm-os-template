@@ -83,6 +83,50 @@ except (OSError, json.JSONDecodeError):
     pass
 PY
 
+# --- Clear recovery: emit rolling state if one exists and is recent (< 4h) ---
+python3 - "$workspace_root" <<'PY' 2>/dev/null || true
+import json, sys, time
+from pathlib import Path
+from datetime import datetime, timezone
+
+workspace = Path(sys.argv[1])
+rolling_file = workspace / ".cache" / "claude" / "hooks" / "rolling-state.json"
+
+if not rolling_file.exists():
+    sys.exit(0)
+
+try:
+    state = json.loads(rolling_file.read_text(encoding="utf-8"))
+    # Only show if written within the last 4 hours (stale state isn't helpful)
+    ts_str = state.get("ts", "")
+    if ts_str:
+        try:
+            ts = datetime.fromisoformat(ts_str)
+            if ts.tzinfo is None:
+                ts = ts.replace(tzinfo=timezone.utc)
+            age_hours = (datetime.now(timezone.utc) - ts).total_seconds() / 3600
+            if age_hours > 4:
+                sys.exit(0)
+        except ValueError:
+            pass
+
+    has_content = state.get("intent") or state.get("user_description") or state.get("transcript")
+    if not has_content:
+        sys.exit(0)
+
+    lines = ["[CLEAR RECOVERY] Context from session before /clear:"]
+    if state.get("intent"):
+        lines.append(f"  Intent: {state['intent']}")
+    if state.get("user_description"):
+        lines.append(f"  Context: {state['user_description']}")
+    if state.get("transcript") and not state.get("intent"):
+        lines.append(f"  Transcript: {state['transcript']}")
+    lines.append("  Session file written to 🤖 AI/memory/sessions/ at session end.")
+    print("\n".join(lines))
+except (OSError, json.JSONDecodeError):
+    pass
+PY
+
 # --- Memory freshness check ---
 memory_file="$workspace_root/🤖 AI/memory/memory.md"
 if [ -f "$memory_file" ]; then
@@ -98,14 +142,10 @@ if [ -f "$memory_file" ]; then
     fi
 fi
 
-# --- Session synthesis: emit last session context ---
-scripts_dir="$workspace_root/🔧 Automation/scripts"
-if [ -f "$scripts_dir/hooks/session_synthesis.py" ]; then
-    synthesis_output=$(python3 "$scripts_dir/hooks/session_synthesis.py" "$workspace_root" 2>/dev/null || true)
-    if [ -n "$synthesis_output" ]; then
-        echo "$synthesis_output"
-    fi
-fi
+# Background: extract summaries for recent sessions that ended via terminal close
+# (Stop hook never fires on SIGHUP, so this catches up retroactively)
+python3 "$workspace_root/🔧 Automation/scripts/hooks/jsonl_extractor.py" \
+    --workspace "$workspace_root" --max-sessions 3 >/dev/null 2>&1 &
 
 # Hook completed successfully
 exit 0
