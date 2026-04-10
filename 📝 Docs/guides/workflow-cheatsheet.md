@@ -67,7 +67,7 @@ Canonical lifecycle. Each step hands context to the next; initiative state lives
 | Daily market pulse | `/ci-brief` | — |
 | Deep competitor or battlecard | `/compete` | competitive-analysis |
 | Win / loss on a deal | `/win-loss` | — |
-| Pricing research | `/price-intel` | pricing-strategy |
+| Pricing research | `/price-intel` | pricing-intelligence |
 | Analyst / industry scan | `/industry-brief` | — |
 | **Strategy, roadmap, prioritization** | | |
 | OKRs, positioning, strategic tradeoffs | `/think` | strategic-thinking |
