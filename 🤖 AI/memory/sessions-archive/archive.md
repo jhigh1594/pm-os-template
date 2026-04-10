@@ -810,3 +810,309 @@ Back on main branch with merged changes. Git cleanup and configuration updates (
 
 ## Context Changes
 Launcher scripts removed from codebase; session configuration files updated; back on main with remote synchronized
+
+---
+# 2026-04-08-2209Z
+
+---
+date: 2026-04-07
+claude_session_id: 4b024f0b-9675-4e45-968f-a803982d7e79
+start_time: 
+transcript: 
+---
+
+## Summary
+Built an interactive HTML research synthesis app to explore CSM personas, pain points, and JTBDs from two research documents, then simplified the design to 3 views and added light theme + workflow/journey visualization.
+
+## Focus
+Completing an interactive synthesis app with light theme that lets users explore CS personas, their pain points, JTBDs, and user journeys via toggleable views (overview, workflows, journey). The app embeds research data in JS and uses a persona×pain matrix as the core data structure.
+
+## Decisions
+- Simplified app from 6 views to 3 views (Brief, Cross-Reference, Deep Dive)
+- Embedded all research data in a JS const object rather than fetching from files (works offline)
+- Organized data as persona ID × pain intensity matrix to avoid runtime lookups
+- Used keyword heuristics to auto-match JTBDs to pain points rather than manual mapping
+- Switched to light theme with inverted color hierarchy
+- Added workflows and journey timeline as toggleable sections in the Brief view using CSS pseudo-elements for timeline visualization
+
+## Context Changes
+App evolved from a read-only pain matrix explorer to include dynamic workflow and user journey visualization. Theme shifted from dark to light. Data structure optimized for both brief 5-minute exploration and 30-minute deep dives.
+
+---
+# 2026-04-08-2210Z-1
+
+---
+date: 2026-04-08
+claude_session_id: f2538612-caf0-46a7-8675-882ff1ab087c
+start_time: 
+transcript: 
+---
+
+## Summary
+Analyzed GitHub knowledge system tools (mempalace, Karpathy's approach), extracted key insight about knowledge maintenance, developed and merged a 6-file PR to improve the existing knowledge system with lint checks and cross-referencing.
+
+## Focus
+Knowledge system improvements completed and merged. The system now includes automated maintenance checks (lint prompt) and cross-reference conventions to prevent write-only append degradation.
+
+## Decisions
+- Extract Karpathy's framing (living knowledge artifact maintenance) rather than implementing his tools directly
+- Implement 5 specific improvements to existing system (lint prompt, cross-references, dedupe, hypotheses, conventions)
+- Use ultraplan orchestration to execute changes remotely
+- Keep archived patterns in candidate-patterns.md rather than migrating (no duplication)
+
+## Context Changes
+Knowledge system architecture updated with maintenance-first approach. memory.md reduced 35 lines (duplicate context entries removed), learned-patterns.md reduced 288 lines (staged for future extraction), and new lint prompt + conventions added to prevent knowledge decay.
+
+---
+# 2026-04-08-2210Z
+
+---
+date: 2026-04-07
+claude_session_id: e63f3683-5c6b-4c5c-b82f-458411b4a45f
+start_time: 
+transcript: 
+---
+
+## Summary
+Investigated and fixed session capture mechanism after discovering UserPromptSubmit hooks don't fire for built-in /clear commands; implemented rolling-state.json recovery instead and pushed changes.
+
+## Focus
+Session recovery system is now implemented. `end_of_turn.py` writes rolling state after each turn, `session-start.sh` recovers from rolling state + transcript files, and all changes are committed to main.
+
+## Decisions
+- Abandoned pre_clear_capture.py hook approach — UserPromptSubmit doesn't fire for built-in CLI commands (architectural constraint)
+- Implemented rolling-state.json written by end_of_turn.py to track work persistence across /clear
+- Updated session-start.sh recovery logic to check both intent field AND transcript existence before recovering
+
+## Context Changes
+Discovered that UserPromptSubmit hooks are intercepted by CLI before hook system processes them — only SessionEnd fires on actual exit. This invalidates the original capture strategy but rolling-state provides equivalent signal.
+
+---
+# 2026-04-08-2211Z-1
+
+---
+date: 2026-04-08
+claude_session_id: 90a4633b-e52c-4878-9635-65b7d0d76ee6
+start_time: 
+transcript: 
+---
+
+## Summary
+User challenged reducing the command list from 51 to 15-20 commands; exploration of consolidation strategies began.
+
+## Focus
+Evaluating how to consolidate 51 commands down to 15-20 total commands while preserving functionality and maintaining unknown constraint(s).
+
+## Open Questions
+- What consolidation strategy best balances discoverability with command count reduction?
+- What is the specific constraint mentioned that shapes the solution?
+
+## Context Changes
+New focus area: command list optimization and consolidation strategy
+
+---
+# 2026-04-08-2211Z
+
+---
+date: 2026-04-08
+claude_session_id: 2da70e06-052c-4445-b36c-44de8a3d9499
+start_time: 
+transcript: 
+---
+
+## Summary
+Revamped project CLAUDE.md by researching best practices, removing Planview/AgilePlace/OKR cruft (3 files deleted, 837 lines removed), validating remaining skills, and pushing cleaned-up config to git.
+
+## Focus
+Cleanup complete. All Planview/AgilePlace/OKR references removed, industry-intelligence skill deleted, five questioned skills (precoil-emt, b2b-data-analyst, b2b-icp-positioning, elite-copywriter, launch-execution) reviewed and confirmed as keepers. Changes pushed to main (14 files, 837 deletions, 62 additions).
+
+## Decisions
+- Remove all Planview/AgilePlace/OKR/roadmap references from codebase
+- Delete industry-intelligence skill (not relevant for internal CSP platform)
+- Keep session continuity guidance in project CLAUDE.md as core startup behavior
+- Apply same rigor to internal enablement/stakeholder comms as external launches
+
+## Context Changes
+Significant cleanup: removed 3 skill files and OKR framework folder, deleted outdated rules, rewrote CLAUDE.md to be focused rather than prescriptive. All questioned skills reviewed and validated as still relevant to CSP context.
+
+---
+# 2026-04-08-2212Z-1
+
+---
+date: 2026-04-07
+claude_session_id: 9b4e639b-6b82-4cd5-9ffc-acea36bc3242
+start_time: 
+transcript: 
+---
+
+## Summary
+User created a GitHub profile README using the special username-matching repo feature, debugged initial recognition issues, and used the elite-copywriter skill to craft messaging reflecting Jon's dual identity as Sr. PM at ServiceNow and independent builder/solopreneur.
+
+## Focus
+GitHub profile README has been written and pushed to the jhigh1594/jhigh1594 repo. The README is now live on the user's profile page, using Shubhamsaboo's structure adapted for Jon's content, with messaging emphasizing PM/Builder/Systems Thinker positioning and clarifying pm-os-template as a complete operating system for PMs seeking leverage and impact with AI.
+
+## Decisions
+- Adopt Shubhamsaboo's profile README structure and format
+- Use 'PM · Builder · Systems Thinker' as core positioning
+- Emphasize ServiceNow CSP work alongside solopreneur/builder identity
+- Reframe pm-os-template description to focus on PM leverage and impact with AI
+- Include Stoic quote for brand voice
+
+## Context Changes
+Shifted from technical GitHub setup troubleshooting to brand positioning and copywriting. Clarified Jon's value proposition as a PM who builds AI products, moving away from generic 'AI-native tools' framing to something more authentic (PM by day, builder by night).
+
+---
+# 2026-04-08-2212Z
+
+---
+date: 2026-04-09
+session_id: 1775749977
+claude_session_id: 7e1af71c-1127-4f7b-9eb2-1fe73d1577b8
+start_time: 2026-04-09T15:52:57Z
+transcript: 2026-04-06_21-38-13Z-hey-there.md
+---
+
+## Summary
+Completed deep market and ICP research for CSP product using two parallel agents (internal JTBD/workflow mapping and external competitive/market research), producing detailed ICP profiles, personas, JTBDs, and strategic whitespace analysis.
+
+## Focus
+Market and ICP research for CSP is complete. Two knowledge artifacts have been created documenting JTBD workflows for B2B CSM personas and detailed market ICP research with competitive positioning. Agent awaiting direction on next step (synthesis pass offered but not yet confirmed by user).
+
+## Decisions
+- Used parallel agents for two research tracks: internal JTBD mapping vs. external market research
+- Chose jtbd, research, and competitive-analysis skills for respective tracks
+- Identified cross-functional post-sales orchestration as primary whitespace—no existing CS platform coordinates full Sales→CS→Support→PS→Product motion
+- Documented AI adoption blocker as data quality/fragmentation, not ambition or capability
+
+## Open Questions
+- Whether to proceed with synthesis pass creating strategic framing document for CSP positioning
+
+## Context Changes
+Session interrupted during user's response to research results; login command was invoked and interrupted. User intent for next steps unclear.
+
+---
+# 2026-04-08-2214Z
+
+---
+date: 2026-04-08
+claude_session_id: 242cc513-02da-418a-ad9e-be3941837ec6
+start_time: 
+transcript: 
+---
+
+## Summary
+User explored the `/spec` workflow for creating two CSP AI agent specs, identified gaps in autonomous review passes, updated spec.md in both SNOW-Work and pm-os-template to include review loop, and pushed changes.
+
+## Focus
+Refining the `/spec` workflow to include autonomous review passes (using existing three-lens review: strategic, product taste, copy) before presenting specs to the user. Both SNOW-Work and pm-os-template now have aligned spec.md files.
+
+## Decisions
+- Use existing three-lens review inside /spec (strategic, product taste via elite-copywriter) rather than invoking /product-taste-intuition as a separate review tool
+- Add Step 3.5 to /spec workflow to loop back through reviews autonomously before presenting
+- Keep commits scoped tightly (spec.md only) to maintain readable git history
+
+## Open Questions
+- Exact implementation details of the review loop in /spec (what triggers it, how output is integrated)
+
+## Context Changes
+Template drift problem surfaced and resolved — pm-os-template now matches SNOW-Work on /spec workflow enhancements. This ensures future workspace derivations get the improved workflow by default.
+
+---
+# 2026-04-08-2215Z
+
+---
+date: 2026-04-08
+claude_session_id: 5e504f0f-1db0-4a15-a956-c60fc248d989
+start_time: 
+transcript: 
+---
+
+## Summary
+User requested bulk deletion of OneDrive files not modified since 2023; Claude flagged safety concerns and lack of available tooling to proceed.
+
+## Focus
+Stalled — user wants to clean up old OneDrive files, but the request has been blocked pending clarification on safety implications and alternative approaches.
+
+## Open Questions
+- Does the user understand the risk of bulk-deleting files by modification date?
+- What is the actual goal — archive, backup, or permanent deletion?
+- Should we explore safer alternatives (e.g., manual review, export-then-delete workflow)?
+
+---
+# 2026-04-08-2217Z-1
+
+---
+date: 2026-04-07
+claude_session_id: 4abd16e9-b0e6-4371-868f-bff92bc7b1fc
+start_time: 
+transcript: 
+---
+
+## Summary
+Built a complete session launcher (`csession`) for resuming Claude Code conversations with a visual grid board, retroactive session extraction to handle terminal closes, and terminal tab launching.
+
+## Focus
+Fixing session retroactive extraction via `jsonl_extractor.py` run at session-start to capture sessions that ended via terminal close (SIGHUP). Path resolution being debugged to ensure extractor finds project directory correctly.
+
+## Decisions
+- Architecture flip: server owns terminal launch via osascript detection (Warp/Cursor/iTerm2/Terminal.app) instead of shell function
+- Session-start hook runs background extraction retroactively since session-end hook doesn't fire on SIGHUP
+- Card shows: Summary (Haiku-extracted), Focus (end state), first Open Question
+- Exclude current session from resumable list (most recent JSONL)
+
+## Open Questions
+- Path resolution in jsonl_extractor.py — relative `--workspace .` lookup failing, fix applied but verification interrupted
+- Duplicate extraction possible from concurrent hook runs — needs deduplication logic
+
+## Context Changes
+Discovered SIGHUP from terminal close prevents hooks from firing. Shifted strategy from session-end extraction to retroactive session-start extraction.
+
+---
+# 2026-04-08-2217Z
+
+---
+date: 2026-04-07
+claude_session_id: ecf39c07-28c2-41f9-9142-a59d5e66d364
+start_time: 
+transcript: 
+---
+
+## Summary
+Expanded AIPMOS with a new commercial-lens skill and upgraded 4 existing skills with probabilistic thinking concepts, then shipped to main.
+
+## Focus
+AIPMOS skill expansion is complete and shipped. Commercial-lens skill (8 mental models, 16 key questions) is installed. Probabilistic thinking (Annie Duke concepts) has been integrated into coaching-hooks, decision-frameworks, business-reasoning, and prioritization-craft.
+
+## Decisions
+- Create new commercial-lens skill instead of just upgrading business-reasoning
+- Upgrade 4 existing skills with probabilistic thinking rather than creating a separate skill
+- Execute research and planning in parallel tracks with separate artifacts
+- Execute skill building in parallel (commercial-lens + 4 upgrades)
+- Ship directly to main without PR
+
+## Context Changes
+AIPMOS now has commercial PM lens (value capture, deal economics, payback horizon) and probabilistic decision frameworks (resulting averages, expectancy, chain math confidence compounding). These fill gaps identified in the workspace (zero Lenny matches on commercial PM concepts).
+
+---
+# 2026-04-08-2247Z
+
+---
+date: 2026-04-07
+claude_session_id: 0d8008bf-5462-480a-916e-dcdc77486aa0
+start_time: 
+transcript: 
+---
+
+## Summary
+Committed and pushed changes to delete launcher automation scripts and update session intent/skills registry; PR was created, merged, and branch cleaned up.
+
+## Focus
+Completed. Changes are merged to main, branch is cleaned up, and working directory is up to date.
+
+## Decisions
+- Excluded .specstory/ (untracked generated directory) from commit
+- Deleted 🔧 Automation/scripts/launcher.py and launcher_web.py
+- User preferred direct push over PR workflow
+
+## Context Changes
+Launcher automation scripts removed from codebase; session-intent.json and skills registry updated; PR-based workflow changed to direct push on user request
