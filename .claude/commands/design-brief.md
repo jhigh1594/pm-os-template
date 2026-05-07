@@ -43,7 +43,7 @@ Generate a designer-ready design brief from an approved PRD.
 
 **Examples**:
 ```bash
-/design-brief --prd "📦 Products/AgilePlace/initiatives/in-place-okr-linking/okr-agileplace-integration-prd.md"
+/design-brief --prd "📦 Products/AgilePlace/initiatives/bulk-card-move/bulk-card-move-prd.md"
 /design-brief --prd path/to/prd.md --save
 /design-brief --prd path/to/prd.md --skip-discovery --save
 ```
@@ -206,7 +206,7 @@ Preview the AgilePlace story hierarchy before pushing to the board.
 - Template: `📝 Docs/templates/design-brief-template.md`
 - Quality gate: `~/.claude/skills/prd-shaper/SKILL.md`
 - Real examples:
-  - `📦 Products/AgilePlace/initiatives/in-place-okr-linking/design-brief-okr-linking.md`
+  - `📦 Products/AgilePlace/initiatives/bulk-card-move/design-brief-bulk-card-move.md`
   - `📦 Products/DPD/initiatives/ensemble-custom-views/design-brief-ensemble-custom-views.md`
 
 ---

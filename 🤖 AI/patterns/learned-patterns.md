@@ -1018,7 +1018,7 @@ Apply same rigor to internal enablement/stakeholder comms as external launches
 
 ### Strategic Insight — 2026-04-08
 **Source**: `🤖 AI/memory/sessions/2026-04-08-2211Z.md`  
-Significant cleanup: removed 3 skill files and OKR framework folder, deleted outdated rules, rewrote CLAUDE.md to be focused rather than prescriptive. All questioned skills reviewed and validated as still relevant to CSP context.
+Significant cleanup: removed 3 skill files and legacy framework folder, deleted outdated rules, rewrote CLAUDE.md to be focused rather than prescriptive. All questioned skills reviewed and validated as still relevant to CSP context.
 
 ### Decision — 2026-04-08
 **Source**: `🤖 AI/memory/sessions/2026-04-08-1918Z.md`  
@@ -1826,7 +1826,7 @@ Kept /critique and /research as distinct operations
 
 ### Decision — 2026-04-08
 **Source**: `🤖 AI/memory/sessions/2026-04-09-1908Z-1.md`  
-Removed /okr-progress and /pendo commands entirely
+Removed legacy commands entirely
 
 ### Decision — 2026-04-08
 **Source**: `🤖 AI/memory/sessions/2026-04-09-1908Z-1.md`  
@@ -1834,7 +1834,7 @@ Removed AgilePlace references from /story command
 
 ### Decision — 2026-04-08
 **Source**: `🤖 AI/memory/sessions/2026-04-09-1908Z-1.md`  
-Removed broken Canonical Source dependency in okr-progress.md
+Removed broken Canonical Source dependency in legacy-command.md
 
 ### Strategic Insight — 2026-04-08
 **Source**: `🤖 AI/memory/sessions/2026-04-09-1908Z-1.md`  

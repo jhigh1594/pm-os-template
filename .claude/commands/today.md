@@ -86,12 +86,12 @@ If user chooses "Quick Skip" or "Start fresh", jump to Step 2 with empty carry-f
 🔄 Select items to carry forward from yesterday:
 
 FOCUS AREAS:
-☐ Flesh out a PRD for building an OKR focused roadmap
+☐ Flesh out a PRD for a new feature
 ☐ Tinker with an idea for AI-generated reports/views
 ☐ Define the short and mid term plan and experience for Viz in Ensemble
 
 PRIORITIES:
-☐ Flesh out PRD for OKR-focused roadmap
+☐ Draft PRD for new feature
 ☐ Tinker with AI-generated reports/views idea
 ☐ Define short/mid-term Viz in Ensemble plan
 

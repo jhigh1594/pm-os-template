@@ -12,7 +12,6 @@ The decision retrospective is the most important section — don't skip it when 
 
 ## Relationship
 
-- `/okr-progress` handles OKR-specific deep analysis — delegated to in Step 3
 - `/signal` feeds the signals section
 - `📚 Knowledge/decisions/decision-journal.md` is the source for decision retrospectives
 - `📚 Knowledge/People/` provides relationship health data in Step 4
@@ -113,14 +112,14 @@ Report:
 
 ---
 
-## Step 3: OKR Health (~5 min)
+## Step 3: Goal Health (~5 min)
 
-Delegate to `/okr-progress` behavior for a fast portfolio read.
+Run a fast portfolio read across your key goals.
 
 Focus questions:
 - What's at risk heading into next week?
 - Is any key result going to miss without a course correction?
-- Are there dependencies blocking OKR progress that need escalation?
+- Are there dependencies blocking goal progress that need escalation?
 
 ---
 
@@ -166,7 +165,7 @@ This week: N | Month total: N
 Top theme: [One phrase, or "No dominant theme yet"]
 [Low-signal flag if applicable]
 
-**OKR HEALTH**
+**GOAL HEALTH**
 [Green 🟢 / Yellow 🟡 / Red 🔴] — [One sentence on biggest risk or win]
 
 **RELATIONSHIP FLAGS**
@@ -192,7 +191,6 @@ Top theme: [One phrase, or "No dominant theme yet"]
 
 ## Integration with Other Commands
 
-- Use `/okr-progress` for deep OKR analysis (Step 3 delegates to this behavior)
 - Use `/signal` to capture any uncaptured signals surfaced in Step 2
 - Use `/decide` to log any decisions made during or as a result of the review
 - Use `/today` for daily planning; `/weekly-review` is the Friday/Monday rhythm counterpart

@@ -35,7 +35,7 @@ The fatal flaw: waiting until the end of the week to write up signals. By then, 
 
 **Arguments**:
 - `--source`: Where the signal came from — see full source type list below
-- `--product`: Product area tag (`agileplace | okrs | roadmaps | dpd | platform`) — optional
+- `--product`: Product area tag (`agileplace | roadmaps | dpd | platform`) — optional
 - `<raw-signal>`: The raw signal text — paste verbatim, can be rough or unpolished
 
 **Source types:**
@@ -120,7 +120,7 @@ Strength guide:
 
 Determine where this signal belongs in the current product landscape:
 
-**Check open initiatives** — Scan `📦 Products/` directory structure mentally (AgilePlace, OKRs, Roadmaps, DPD) for any initiative this signal validates, contradicts, or is adjacent to.
+**Check open initiatives** — Scan `📦 Products/` directory structure mentally (AgilePlace, Roadmaps, DPD) for any initiative this signal validates, contradicts, or is adjacent to.
 
 Output one of:
 - **Validates**: "This signal supports [initiative name] — confirms [specific assumption]"

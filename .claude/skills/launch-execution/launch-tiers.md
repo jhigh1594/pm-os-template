@@ -190,7 +190,6 @@ START
 
 **Tier 1:**
 - Native project milestones
-- OKR-to-work deep integration
 - Scenario modeling
 
 **Tier 2:**

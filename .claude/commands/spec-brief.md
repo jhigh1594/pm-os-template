@@ -282,7 +282,7 @@ THEN [error handling and user communication]
 
 **Example 2: Generate with explicit path**
 ```
-/spec-brief /Users/jhigh/Company\ Work/📦 Products/OKRs/features/bulk-import/full-prd.md
+/spec-brief "📦 Products/AgilePlace/features/bulk-import/full-prd.md"
 ```
 
 **Example 3: Interactive mode (no argument)**

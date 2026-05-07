@@ -14,7 +14,7 @@ cases:
       - "Avoids generic persona filler."
   - case_id: template-3
     holdout: false
-    prompt: "Write an OKR draft with measurable key results."
+    prompt: "Write a product requirements summary with measurable success criteria."
     expectations:
       - "Uses measurable KRs."
       - "Avoids vague verbs."

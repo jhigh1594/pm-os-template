@@ -98,8 +98,8 @@ Fallback: Use claude-mem MCP tools directly with mcp__plugin_claude-mem_claude-m
 ## Examples
 
 ```
-/remember OKR integration
-→ Returns discussions about OKR integration work
+/remember dependency mapping feature
+→ Returns discussions about dependency mapping work
 
 /remember --recent
 → Returns all conversations from last 7 days

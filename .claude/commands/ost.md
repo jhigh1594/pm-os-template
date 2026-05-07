@@ -39,7 +39,7 @@ Use this when you need to see the discovery landscape before committing to a dir
 /ost --outcome "Increase ART-level plan confidence"       # Seed with known outcome
 /ost --outcome "Reduce time-to-first-value for new users" --depth 2   # Map opportunities only
 /ost --save "dependency visibility"                       # Build and save to file
-/ost --update "📋 Tasks/ost-2026-04-01-okrs.md"          # Resume an existing tree
+/ost --update "📋 Tasks/ost-2026-04-01-q2-planning.md"          # Resume an existing tree
 ```
 
 ---

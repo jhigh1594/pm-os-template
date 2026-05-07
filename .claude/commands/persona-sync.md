@@ -40,7 +40,7 @@ The fatal flaw: maintaining personas as static documents that get "finalized" at
 ```
 
 **Arguments**:
-- `--product`: `agileplace | okrs | roadmaps | dpd | platform` — if omitted, asks which product
+- `--product`: `agileplace | roadmaps | dpd | platform` — if omitted, asks which product
 - `--persona`: Specific persona file to sync (e.g., `rte-persona.md`) — if omitted, syncs all personas for the product
 - `--period`: Month of signals to draw from (default: current month + prior month combined)
 
@@ -48,7 +48,7 @@ The fatal flaw: maintaining personas as static documents that get "finalized" at
 ```bash
 /persona-sync --product agileplace
 /persona-sync --product agileplace --persona rte-persona.md
-/persona-sync --product okrs --period 2026-03
+/persona-sync --product agileplace --period 2026-03
 /persona-sync --product agileplace --period 2026-02
 ```
 
@@ -59,7 +59,7 @@ The fatal flaw: maintaining personas as static documents that get "finalized" at
 ### Step 0: Parse Arguments and Orient
 
 Extract product, persona file(s), and period. If product is not specified, ask:
-> "Which product's personas should I sync? (`agileplace | okrs | roadmaps | dpd | platform`)"
+> "Which product's personas should I sync? (`agileplace | roadmaps | dpd | platform`)"
 
 Identify the signals period: default is current month + prior month (two-month rolling window).
 

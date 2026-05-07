@@ -42,7 +42,7 @@ The audit doesn't measure what you've done. It measures what you currently know 
 ```
 
 **Arguments**:
-- `--product`: `agileplace | okrs | roadmaps | dpd | platform` — if omitted, asks or audits all
+- `--product`: `agileplace | roadmaps | dpd | platform` — if omitted, asks or audits all
 - `--depth`:
   - `quick` (default) — H/M/L score per dimension + top 3 blind spots + commands to run. 5-10 minutes.
   - `full` — Detailed evidence inventory per persona, signal distribution chart, decision journal analysis. 15-20 minutes.

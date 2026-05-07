@@ -10,4 +10,4 @@ Code prototypes, proof-of-concepts, and technical experiments.
 
 ## Naming
 
-Use descriptive names: `dependency-visualizer-prototype`, `okr-import-poc`
+Use descriptive names: `dependency-visualizer-prototype`, `feature-import-poc`

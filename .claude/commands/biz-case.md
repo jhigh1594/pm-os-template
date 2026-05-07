@@ -40,7 +40,7 @@ Each job is a different mode.
 ```
 
 **Arguments**:
-- `--product`: `agileplace | okrs | roadmaps | dpd | platform` — optional, inferred if obvious
+- `--product`: `agileplace | roadmaps | dpd | platform` — optional, inferred if obvious
 - `--mode`: Mode of business reasoning (default: asks which mode)
   - `model` — Revenue impact model with Conservative/Expected/Upside cases
   - `tradeoff` — Cross-functional constraint map across all five functions
@@ -53,8 +53,8 @@ Each job is a different mode.
 /biz-case --product agileplace --mode model "bulk card operations"
 /biz-case --mode tradeoff "dependency visualization"
 /biz-case --mode perspective "what does CS think about dependency view"
-/biz-case --product okrs --mode review "path/to/spec.md"
-/biz-case --mode model "OKR check-in reminders"
+/biz-case --product agileplace --mode review "path/to/spec.md"
+/biz-case --mode model "Feature usage analytics"
 ```
 
 ---

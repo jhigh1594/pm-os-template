@@ -933,7 +933,7 @@ Cleanup complete. All legacy tools references removed, industry-intelligence ski
 - Apply same rigor to internal enablement/stakeholder comms as external launches
 
 ## Context Changes
-Significant cleanup: removed 3 skill files and OKR framework folder, deleted outdated rules, rewrote CLAUDE.md to be focused rather than prescriptive. All questioned skills reviewed and validated as still relevant to CSP context.
+Significant cleanup: removed 3 skill files and legacy framework folder, deleted outdated rules, rewrote CLAUDE.md to be focused rather than prescriptive. All questioned skills reviewed and validated as still relevant to CSP context.
 
 ---
 # 2026-04-08-2212Z-1

@@ -51,9 +51,9 @@ You are helping me write a clear, complete product specification that enables th
 /spec --type light "Card blocking improvements"         # Lightweight spec with idea
 /spec --skip-discovery "API rate limiting"              # Skip discovery, generate immediately
 /spec --type one-pager --save "Dark mode toggle"        # One-pager saved to file
-/spec --type full "OKR multi-parent support"            # Full PRD for major feature
+/spec --type full "Bulk card move across boards"            # Full PRD for major feature
 /spec --type context-doc "AI dependency suggestions"    # Hypothesis-driven context doc
-/spec --review path/to/okr-multi-parent-prd.md          # Review existing PRD for quality
+/spec --review path/to/bulk-card-move-prd.md          # Review existing PRD for quality
 ```
 
 ---
@@ -293,7 +293,7 @@ Load `~/.claude/skills/elite-copywriter/SKILL.md` and apply:
 ### Step 4: Save (if `--save` flag)
 
 If the `--save` flag was provided:
-1. Generate a slugified filename from the feature description (e.g., "OKR Multi-Parent Support" → `okr-multi-parent-support-prd.md`)
+1. Generate a slugified filename from the feature description (e.g., "Bulk Card Move" → `bulk-card-move-prd.md`)
 2. Save to `/Users/jhigh/workspace/📦 Products/{product}/initiatives/{feature-slug}/`
 3. Confirm the file location to the user
 
