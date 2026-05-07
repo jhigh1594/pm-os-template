@@ -178,12 +178,12 @@ BEFORE ASKING QUESTIONS IN DISCOVERY:
 | 2026-02-17 | Documentation Convention                          | Added                     | PRDs vs Memos distinction                        |
 | 2026-02-17 | Memory Structure                                  | Added                     | Single-file system understanding                 |
 | 2026-02-17 | File created                                      | Initial structure         | Starting fresh                                   |
-| 2026-04-03 | Scratch Is for Disposable Artifacts Only          | Ported from Planview Work | Durable workspace policy                         |
-| 2026-04-03 | Don't Ask Multiple Questions at Once              | Ported from Planview Work | Methodology mistake to avoid                     |
-| 2026-04-03 | Never Hallucinate or Fabricate Content            | Ported from Planview Work | Critical content integrity rule                  |
-| 2026-04-03 | PRDs Always Belong to Initiatives                 | Ported from Planview Work | File placement mistake to avoid                  |
-| 2026-04-03 | Plan Index/Reference File Changes Before Editing  | Ported from Planview Work | Confirmed 3x — generalized to any reference file |
-| 2026-04-03 | Breaking Down Work: Parent/Child and Dependencies | Ported from Planview Work | Work breakdown methodology                       |
+| 2026-04-03 | Scratch Is for Disposable Artifacts Only          | Ported from prior workspace | Durable workspace policy                         |
+| 2026-04-03 | Don't Ask Multiple Questions at Once              | Ported from prior workspace | Methodology mistake to avoid                     |
+| 2026-04-03 | Never Hallucinate or Fabricate Content            | Ported from prior workspace | Critical content integrity rule                  |
+| 2026-04-03 | PRDs Always Belong to Initiatives                 | Ported from prior workspace | File placement mistake to avoid                  |
+| 2026-04-03 | Plan Index/Reference File Changes Before Editing  | Ported from prior workspace | Confirmed 3x — generalized to any reference file |
+| 2026-04-03 | Breaking Down Work: Parent/Child and Dependencies | Ported from prior workspace | Work breakdown methodology                       |
 
 
 ---
@@ -378,11 +378,11 @@ Wired 6 hooks (InstructionsLoaded, PreCompact, PostToolUse, etc.) into .claude/s
 
 ### Decision — 2026-04-06
 **Source**: `🤖 AI/memory/sessions/2026-04-08-0240Z.md`  
-Confirmed Python learning infrastructure copied from Planview Work is workspace-generic and functional in SNOW-Work without modification
+Confirmed Python learning infrastructure copied from prior workspace is workspace-generic and functional in SNOW-Work without modification
 
 ### Strategic Insight — 2026-04-06
 **Source**: `🤖 AI/memory/sessions/2026-04-08-0240Z.md`  
-The skill learning system transitioned from scaffolded-but-inactive to fully operational. The missing piece was hook wiring, not Python infrastructure—this was already present from prior Planview Work implementation.
+The skill learning system transitioned from scaffolded-but-inactive to fully operational. The missing piece was hook wiring, not Python infrastructure—this was already present from prior workspace implementation.
 
 ### Decision — 2026-04-02
 **Source**: `🤖 AI/memory/sessions/2026-04-08-0239Z.md`  
@@ -482,7 +482,7 @@ Key insight emerged: ServiceNow's workflow orchestration capability uniquely add
 
 ### Decision — 2026-04-08
 **Source**: `🤖 AI/memory/sessions/2026-04-08-1610Z.md`  
-Remove all Planview/AgilePlace/OKR/Roadmap references from codebase and config files
+Remove all legacy tools references from codebase and config files
 
 ### Decision — 2026-04-08
 **Source**: `🤖 AI/memory/sessions/2026-04-08-1610Z.md`  
@@ -1002,7 +1002,7 @@ Store findings in two separate artifact files rather than merged document
 
 ### Decision — 2026-04-08
 **Source**: `🤖 AI/memory/sessions/2026-04-08-2211Z.md`  
-Remove all Planview/AgilePlace/OKR/roadmap references from codebase
+Remove all legacy tools/roadmap references from codebase
 
 ### Decision — 2026-04-08
 **Source**: `🤖 AI/memory/sessions/2026-04-08-2211Z.md`  

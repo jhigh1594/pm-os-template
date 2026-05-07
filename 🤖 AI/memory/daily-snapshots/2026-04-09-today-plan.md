@@ -4,11 +4,11 @@
 
 ## Top 3 Priorities
 
-1. [Reassess DPD product planning operating model](https://planview.leankit.com/card/2378307832) – Protects weekly priority w26-01: create a clearer operating model and make trade-offs explicit..
+1. [Reassess DPD product planning operating model]([redacted]) – Protects weekly priority w26-01: create a clearer operating model and make trade-offs explicit..
 
 ## Weekly Priorities Touched
 
-- **W26-01** — [Reassess DPD product planning operating model](https://planview.leankit.com/card/2378307832)
+- **W26-01** — [Reassess DPD product planning operating model]([redacted])
 
 ---
 
@@ -26,7 +26,7 @@
       "expected_output": "End the week with a concrete proposal or decision memo. >.",
       "prep_notes": null,
       "card_id": "2378307832",
-      "card_url": "https://planview.leankit.com/card/2378307832",
+      "card_url": "[redacted]",
       "weekly_priority_id": "W26-01"
     }
   ],
@@ -36,7 +36,7 @@
       "title": "Reassess DPD product planning operating model",
       "status": "active",
       "why": "Create a clearer operating model and make trade-offs explicit.",
-      "link": "https://planview.leankit.com/card/2378307832",
+      "link": "[redacted]",
       "notes": "End the week with a concrete proposal or decision memo. >",
       "source_path": "\ud83d\udccb Tasks/weekly-priorities.md",
       "card_id": "2378307832"

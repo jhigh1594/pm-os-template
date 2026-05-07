@@ -757,18 +757,6 @@ skills:
   learned_path: .codex/skills/menkesu-awesome-pm-skills-one-step-better-ai-pm/LEARNED.md
   wrappers: []
   pilot: false
-- skill_id: planview-deck
-  base_skill_id: planview-deck
-  name: planview deck
-  surface: codex_skill
-  family: tool_execution
-  owner: workspace
-  criticality: medium
-  eval_policy: nightly
-  skill_path: .codex/skills/planview-deck/SKILL.md
-  learned_path: .codex/skills/planview-deck/LEARNED.md
-  wrappers: []
-  pilot: false
 - skill_id: codex:problem-definition
   base_skill_id: problem-definition
   name: problem definition

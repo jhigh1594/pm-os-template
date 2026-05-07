@@ -431,13 +431,13 @@ The self-reinforcing skill learning system is now operational and capturing sign
 
 ## Decisions
 - Wired 6 hooks (InstructionsLoaded, PreCompact, PostToolUse, etc.) into .claude/settings.local.json to activate the learning pipeline
-- Confirmed Python learning infrastructure copied from Planview Work is workspace-generic and functional in SNOW-Work without modification
+- Confirmed Python learning infrastructure copied from prior workspace is workspace-generic and functional in SNOW-Work without modification
 
 ## Open Questions
 - Transcript cuts off mid-sentence during final verification—completion status of cleanup and end-to-end validation unclear
 
 ## Context Changes
-The skill learning system transitioned from scaffolded-but-inactive to fully operational. The missing piece was hook wiring, not Python infrastructure—this was already present from prior Planview Work implementation.
+The skill learning system transitioned from scaffolded-but-inactive to fully operational. The missing piece was hook wiring, not Python infrastructure—this was already present from prior prior workspace implementation.
 
 ---
 # 2026-04-08-1607Z
@@ -498,13 +498,13 @@ transcript:
 ---
 
 ## Summary
-Revamped CLAUDE.md for CSP project by researching best practices, systematically removing Planview/AgilePlace/OKR/Roadmap artifacts, verifying skills usefulness, and pushing cleanup changes.
+Revamped CLAUDE.md for CSP project by researching best practices, systematically removing legacy tools artifacts, verifying skills usefulness, and pushing cleanup changes.
 
 ## Focus
 Completed. CLAUDE.md revamp finished and committed. Removed 3 files and cleaned registry. Verified 5 questioned skills (precoil-emt, b2b-data-analyst, positioning-craft, b2b-icp-positioning-craft, competitive-analysis) are all keepers for internal product context.
 
 ## Decisions
-- Remove all Planview/AgilePlace/OKR/Roadmap references from codebase and config files
+- Remove all legacy tools references from codebase and config files
 - Keep session continuity guidance in project CLAUDE.md (compressed, not expanded)
 - Delete industry-intelligence skill — internal platform doesn't need Gartner/Forrester analyst briefings
 - Treat internal enablement and stakeholder comms with same rigor as external launch (launch-execution stays as-is)
@@ -921,13 +921,13 @@ transcript:
 ---
 
 ## Summary
-Revamped project CLAUDE.md by researching best practices, removing Planview/AgilePlace/OKR cruft (3 files deleted, 837 lines removed), validating remaining skills, and pushing cleaned-up config to git.
+Revamped project CLAUDE.md by researching best practices, removing legacy tools cruft (3 files deleted, 837 lines removed), validating remaining skills, and pushing cleaned-up config to git.
 
 ## Focus
-Cleanup complete. All Planview/AgilePlace/OKR references removed, industry-intelligence skill deleted, five questioned skills (precoil-emt, b2b-data-analyst, b2b-icp-positioning, elite-copywriter, launch-execution) reviewed and confirmed as keepers. Changes pushed to main (14 files, 837 deletions, 62 additions).
+Cleanup complete. All legacy tools references removed, industry-intelligence skill deleted, five questioned skills (precoil-emt, b2b-data-analyst, b2b-icp-positioning, elite-copywriter, launch-execution) reviewed and confirmed as keepers. Changes pushed to main (14 files, 837 deletions, 62 additions).
 
 ## Decisions
-- Remove all Planview/AgilePlace/OKR/roadmap references from codebase
+- Remove all legacy tools/roadmap references from codebase
 - Delete industry-intelligence skill (not relevant for internal CSP platform)
 - Keep session continuity guidance in project CLAUDE.md as core startup behavior
 - Apply same rigor to internal enablement/stakeholder comms as external launches

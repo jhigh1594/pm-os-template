@@ -1,6 +1,6 @@
 # Writing Guide: Board / Analyst Audience
 
-**Who this is for:** Board members, investors, industry analysts (Gartner, Forrester, IDC), and financial analysts — audiences evaluating Planview's strategic position, competitive trajectory, and business outcomes.
+**Who this is for:** Board members, investors, industry analysts (Gartner, Forrester, IDC), and financial analysts — audiences evaluating [Company]'s strategic position, competitive trajectory, and business outcomes.
 
 ---
 
@@ -8,9 +8,9 @@
 
 **Lead with the market signal or strategic move, then the business implication.**
 
-Sentence 1 must contain: what's happening in the market or what Planview is doing strategically.
+Sentence 1 must contain: what's happening in the market or what [Company] is doing strategically.
 
-> ✅ "Enterprise planning software is consolidating around AI-native orchestration — Planview's SPM-to-execution flywheel positions us ahead of this shift."
+> ✅ "Enterprise planning software is consolidating around AI-native orchestration — [Company]'s SPM-to-execution flywheel positions us ahead of this shift."
 > ✅ "Q1 renewal rates reached 94% in the enterprise segment, driven by three product changes made in H2."
 > ❌ "I'd like to walk you through our product updates from the quarter."
 > ❌ "The team has been working hard on several important initiatives."
@@ -25,7 +25,7 @@ Order evidence from most to least persuasive for this audience:
 
 1. **Market signal or macro trend** — what's the strategic context? What's the market doing?
 2. **Business outcome data** — ARR, NRR, win rate, renewal rate, competitive displacement — specific numbers
-3. **Strategic positioning** — how does this differentiate Planview? Why does it matter competitively?
+3. **Strategic positioning** — how does this differentiate [Company]? Why does it matter competitively?
 4. **Customer validation** — named reference customers or segmented evidence (enterprise vs. mid-market)
 5. **Roadmap or capability** — what's being built, and how does it reinforce the strategic position?
 
@@ -48,7 +48,7 @@ Order evidence from most to least persuasive for this audience:
 • [Initiative]: [status] — [outcome: X% improvement in Y, N new logos in Z segment]
 
 ## Competitive Position
-[Where Planview is winning and why. Where there's risk. Honest assessment]
+[Where [Company] is winning and why. Where there's risk. Honest assessment]
 - **Strength:** [Specific differentiation, with evidence]
 - **Risk:** [Where competitors are closing the gap or where we're losing]
 
@@ -87,7 +87,7 @@ Order evidence from most to least persuasive for this audience:
 ## Context-Specific Variants
 
 ### Analyst Briefings (Gartner, Forrester)
-- Lead with the analyst's research question, not Planview's agenda
+- Lead with the analyst's research question, not [Company]'s agenda
 - Anticipate the Magic Quadrant / Wave criteria and address them explicitly
 - Include: differentiation vs. named competitors, customer evidence, roadmap alignment to their evaluation criteria
 - No marketing language — analysts are trained to see through it; use product specifics

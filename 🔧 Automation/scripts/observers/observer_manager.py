@@ -1,6 +1,6 @@
 """Minimal ObserverManager stub for pm-os-template.
 
-The full observer system (used in Planview Work) records skill run events to
+The full observer system records skill run events to
 a structured database. This stub satisfies the import so skills_learning works
 without the full observer infrastructure — get_observer() returns None, which
 the skills_learning module checks before calling any observer methods.

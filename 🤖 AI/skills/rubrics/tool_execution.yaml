@@ -2,7 +2,7 @@ family: tool_execution
 cases:
   - case_id: tool-1
     holdout: false
-    prompt: "Generate a Planview-branded deck from HTML source."
+    prompt: "Generate a branded presentation deck from HTML source."
     expectations:
       - "Uses the correct tool path."
       - "Checks required inputs before execution."
