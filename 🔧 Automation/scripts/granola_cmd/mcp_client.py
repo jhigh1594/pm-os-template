@@ -5,6 +5,8 @@ Reads Granola meetings directly from the cache file.
 This is simpler and more reliable than subprocess MCP communication.
 """
 
+from __future__ import annotations
+
 import json
 import logging
 from datetime import datetime
@@ -12,6 +14,20 @@ from pathlib import Path
 from typing import Any
 
 logger = logging.getLogger(__name__)
+
+_GRANOLA_SUPPORT = Path("~/Library/Application Support/Granola").expanduser()
+# Granola has bumped cache filenames over time (v3 → v6); prefer newest present file.
+_CACHE_CANDIDATES = tuple(
+    _GRANOLA_SUPPORT / f"cache-v{n}.json" for n in range(9, 2, -1)
+)
+
+
+def default_granola_cache_path() -> Path:
+    """Resolve the newest Granola cache JSON on disk."""
+    for candidate in _CACHE_CANDIDATES:
+        if candidate.exists():
+            return candidate
+    return _GRANOLA_SUPPORT / "cache-v3.json"
 
 
 class GranolaCacheReader:
@@ -22,11 +38,12 @@ class GranolaCacheReader:
         Initialize cache reader.
 
         Args:
-            cache_path: Path to cache file (defaults to ~/Library/Application Support/Granola/cache-v3.json)
+            cache_path: Path to cache file (defaults to newest cache-v*.json under Granola support)
         """
         if cache_path is None:
-            cache_path = "~/Library/Application Support/Granola/cache-v3.json"
-        self.cache_path = Path(cache_path).expanduser()
+            self.cache_path = default_granola_cache_path()
+        else:
+            self.cache_path = Path(cache_path).expanduser()
         self._cache_data: dict[str, Any] | None = None
         self._state: dict[str, Any] | None = None
 
@@ -47,9 +64,14 @@ class GranolaCacheReader:
         with open(self.cache_path, "r") as f:
             raw_data = json.load(f)
 
-        # The actual cache is nested under 'cache' key as JSON string
-        cache_str = raw_data.get("cache", "{}")
-        self._cache_data = json.loads(cache_str)
+        # Older caches store `cache` as a JSON string; newer (e.g. v6) may store a dict.
+        cache_val = raw_data.get("cache", "{}")
+        if isinstance(cache_val, str):
+            self._cache_data = json.loads(cache_val)
+        elif isinstance(cache_val, dict):
+            self._cache_data = cache_val
+        else:
+            self._cache_data = {}
         self._state = self._cache_data.get("state", {})
 
         documents = self._state.get("documents", {})

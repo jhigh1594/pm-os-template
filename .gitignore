@@ -20,6 +20,9 @@ ENV/
 # Node
 node_modules/
 
+# Next.js build cache
+.next/
+
 # Logs
 *.log
 .logs/
@@ -41,3 +44,4 @@ node_modules/
 # User-specific files that get created during install
 # (the .template versions are committed, not the final files)
 .claude.bak
+.pnpm-store/

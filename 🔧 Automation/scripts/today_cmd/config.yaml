@@ -1,0 +1,17 @@
+task_tracker:
+  type: stub
+  # Supported values in this workspace:
+  # - stub (default)
+  # Future adapters can be added as this project evolves.
+
+profile:
+  owner_names:
+    - Jon High
+
+delivery:
+  slack:
+    enabled: false
+
+genaipm:
+  # Optional override. If empty, launcher reads GENAIPM_EMAIL from env.
+  email: ""

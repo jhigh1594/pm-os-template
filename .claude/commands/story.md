@@ -128,14 +128,14 @@ If answers are clear from PRD, skip questions.
 
 **Example Story**:
 ```
-As a Portfolio Manager, I want to see which initiatives are impacted by blocked cards,
+As a Portfolio Manager, I want to see which OKRs are impacted by blocked cards,
 So that I can proactively communicate risks to leadership before they become critical.
 
 ACs:
-- [ ] Given I'm viewing a custom view grouped by initiative
+- [ ] Given I'm viewing a custom view grouped by OKR
 - [ ] When a card becomes blocked
-- [ ] Then the initiative group shows a risk indicator with the blocked card highlighted
-- [ ] When I click on the initiative group
+- [ ] Then the OKR group shows a risk indicator with the blocked card highlighted
+- [ ] When I click on the OKR group
 - [ ] Then I see the blocked card details in context
 ```
 

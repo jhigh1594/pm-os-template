@@ -9,7 +9,9 @@ cd "{{WORKSPACE_PATH}}/🔧 Automation/scripts"
 python3 -m granola_cmd.main --target-date yesterday
 ```
 
-Or use the Cursor command: `/granola` (yesterday), `/granola today`, `/granola 2026-02-17`.
+Or use the slash command: **Cursor** `.cursor/commands/granola.md` or **Claude Code** `.claude/commands/granola.md` — `/granola` (yesterday), `/granola today`, `/granola 2026-02-17`.
+
+After a successful run, the CLI prints a machine-readable JSON block between `GRANOLA_AGENT_RESULT_JSON_BEGIN` and `GRANOLA_AGENT_RESULT_JSON_END` so the host agent knows which files were written. Agent-driven `/granola` then inserts a bounded **## AI summary** block at the top of each note (see those command files).
 
 ## Scheduled daily run (LaunchAgent)
 

@@ -35,7 +35,7 @@ The fatal flaw: skipping this command before a high-stakes customer interaction 
 ```
 
 **Arguments**:
-- `--product`: `agileplace | roadmaps | dpd | platform` — optional, inferred from topic if obvious
+- `--product`: `agileplace | okrs | roadmaps | dpd | platform` — optional, inferred from topic if obvious
 - `--mode`: Mode of knowledge building (default: asks which mode)
   - `demo` — Build background knowledge for a demo scenario
   - `changelog` — Surface what changed recently that the PM needs to internalize

@@ -176,7 +176,7 @@ Tailored to: [name + one sentence of context used]
 When applicable, draw from Company/AgilePlace context:
 
 **ICP:** Enterprise (500–10,000+ employees), Financial Services, Insurance, Logistics, Manufacturing, Technology
-**Products:** AgilePlace, Roadmaps, DPD
+**Products:** AgilePlace, OKRs, Roadmaps, DPD
 **Key personas:** Director of IT, VP of Engineering, CTO, Agile Program Managers, RTEs, Product Owners
 **Existing tools (competitive):** Jira (75%), Azure DevOps (60%)
 

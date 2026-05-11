@@ -21,7 +21,7 @@ description: Run the brainstorm workflow
 **Examples**:
 ```bash
 /brainstorm                                    # Interactive mode
-/brainstorm --as pm "AI-generated timeline views"         # PM persona with idea
+/brainstorm --as pm "OKRs in Roadmaps"         # PM persona with idea
 /brainstorm --as designer --save "card UI"     # Designer persona, save output
 /brainstorm --as engineer "API design"         # Engineer persona
 /brainstorm --as all "mobile app"              # All three personas
@@ -191,7 +191,7 @@ After implementation, verify:
 | Test | Command | Expected |
 |------|---------|----------|
 | Interactive mode | `/brainstorm` | Asks persona selection, gathers context |
-| PM persona | `/brainstorm --as pm "AI-generated timeline views"` | PM voice, customer/ROI questions |
+| PM persona | `/brainstorm --as pm "OKRs in Roadmaps"` | PM voice, customer/ROI questions |
 | Designer persona | `/brainstorm --as designer "card UI"` | UX focus, workflow questions |
 | Engineer persona | `/brainstorm --as engineer "API design"` | Technical approach, simplicity |
 | All personas | `/brainstorm --as all "mobile app"` | All three perspectives, sequenced |

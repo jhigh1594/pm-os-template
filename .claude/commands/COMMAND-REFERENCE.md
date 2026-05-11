@@ -50,7 +50,7 @@ This guide helps AI assistants understand when to suggest specific AIPMOS comman
 - Complex decision framing
 
 **New modes added**:
-- **AI product risk analysis**: Automatically triggered when topic involves AI features — loads `📚 Knowledge/Frameworks/ai-product-risks.md` and runs four dimensions (quality, reliability, trust, adoption risk)
+- **AI product risk analysis**: Automatically triggered when topic involves AI features — loads `🎓 Product-Management/Frameworks/ai-product-risks.md` and runs four dimensions (quality, reliability, trust, adoption risk)
 - **Reversibility classification**: Every analysis now opens with Type 1 (one-way door) vs. Type 2 (two-way door) classification — determines rigor level applied
 
 **NOT for**:
@@ -513,7 +513,7 @@ I need pricing competitive research            → /price-intel
 ```
 
 **Battlecard mode** (`--output battlecard`):
-- Loads `📚 Knowledge/Templates/battlecard-template.md` as structure
+- Loads `📝 Docs/templates/battlecard-template.md` as structure
 - Sources intelligence from deal interviews, signals, and research
 - Output: `📚 Knowledge/Market/battlecard-[competitor-slug].md`
 - Update triggers: `/win-loss` flags specific competitor claims for targeted section updates
@@ -550,7 +550,7 @@ I need pricing competitive research            → /price-intel
 **Output**: 8-question structured interview → signal extraction → battlecard implication check → win/loss record + pattern detection
 
 **Feeds into**:
-- `📚 Knowledge/Research/signals-YYYY-MM.md` via `/signal --source sales`
+- `📚 Knowledge/Market/signals-YYYY-MM.md` via `/signal --source sales`
 - `/compete --output battlecard` when 3+ losses to same competitor
 - `/prep` champion briefing mode (win/loss learnings inform equipping strategies)
 
@@ -908,7 +908,7 @@ I need pricing competitive research            → /price-intel
 - "Action items from meeting..."
 - "Pull yesterday's meetings"
 
-**Behavior**: After extraction, automatically surfaces decisions made, action items, stakeholder signals, and `Knowledge/People/` update candidates for each meeting. Nothing is written automatically — intelligence is presented and user confirms via `/follow-up`.
+**Behavior**: Runs the extractor, then **writes a bounded `## AI summary` block** into each new meeting markdown (Claude Code vs Cursor per command file). Parses saved paths from stdout markers `GRANOLA_AGENT_RESULT_JSON_BEGIN` / `END`. After that, automatically surfaces decisions made, action items, stakeholder signals, and `Knowledge/People/` update candidates in chat only — Jon confirms writes via `/follow-up`.
 
 **NOT for**: Drafting follow-up communications (use `/follow-up`), full stakeholder strategy (use `/align`)
 
@@ -952,7 +952,7 @@ I need pricing competitive research            → /price-intel
 - "Add this to the signal file"
 - Any time a customer insight occurs that shouldn't be lost before synthesis
 
-**Output**: Structured atomic nugget (source, signal verbatim, ICP fit, strength, routing to relevant initiative) + optional append to `Knowledge/Research/signals-YYYY-MM.md`
+**Output**: Structured atomic nugget (source, signal verbatim, ICP fit, strength, routing to relevant initiative) + optional append to `Knowledge/Market/signals-YYYY-MM.md`
 
 **NOT for**: Full synthesis (use `synthesize` skill when 10+ signals accumulated), post-meeting extraction (use `/granola`), competitive intelligence (use `/compete`)
 
@@ -974,7 +974,7 @@ I need pricing competitive research            → /price-intel
 ### /ui-refine
 **User intent**: Implement UI and refine until it scores ≥9.3/10 on an objective rubric
 
-**Canonical source**: `/Users/jhigh/SNOW-Work/.claude/prompts/ui-refinement-loop.md`
+**Canonical source**: `/Users/jhigh/workspace/.claude/prompts/ui-refinement-loop.md`
 
 **When to suggest**:
 - "Refine this UI until it's polished"

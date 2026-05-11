@@ -14,8 +14,12 @@ Options:
     -v, --verbose         Enable verbose logging
 """
 
+from __future__ import annotations
+
 import argparse
+import json
 import logging
+import os
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -78,6 +82,14 @@ def parse_args():
         help="Enable verbose logging",
     )
 
+    parser.add_argument(
+        "--last-n",
+        type=int,
+        default=None,
+        metavar="N",
+        help="Save the N most recent meetings by created_at (ignores --target-date)",
+    )
+
     return parser.parse_args()
 
 
@@ -104,7 +116,22 @@ def load_config(config_path: str | None = None) -> dict:
     with open(config_path, "r") as f:
         config = yaml.safe_load(f)
 
-    return config
+    # Resolve {{WORKSPACE_PATH}} in string values (repo root = .../granola_cmd → parents[3])
+    env_wp = os.environ.get("WORKSPACE_PATH", "").strip()
+    workspace = Path(env_wp).expanduser() if env_wp else Path(__file__).resolve().parents[3]
+    if not workspace.is_dir():
+        workspace = Path(__file__).resolve().parents[3]
+
+    def expand_paths(obj):
+        if isinstance(obj, dict):
+            return {k: expand_paths(v) for k, v in obj.items()}
+        if isinstance(obj, list):
+            return [expand_paths(v) for v in obj]
+        if isinstance(obj, str):
+            return obj.replace("{{WORKSPACE_PATH}}", str(workspace))
+        return obj
+
+    return expand_paths(config)
 
 
 def main():
@@ -140,7 +167,10 @@ def main():
 
     # Execute
     try:
-        result = collector.execute()
+        if args.last_n is not None and args.last_n > 0:
+            result = collector.execute_last_n(args.last_n)
+        else:
+            result = collector.execute()
     except Exception as e:
         logger.error(f"Execution failed: {e}")
         if args.verbose:
@@ -155,6 +185,17 @@ def main():
     for file_path in result["files"]:
         logger.info(f"  📄 {file_path}")
     logger.info("=" * 60)
+
+    # Machine-readable footer for agent workflows (Cursor / Claude Code slash commands).
+    # Agents parse lines between these markers to know which files to open for post-steps.
+    payload = {
+        "count": result["count"],
+        "files": result["files"],
+        "date": result.get("date"),
+    }
+    print("\nGRANOLA_AGENT_RESULT_JSON_BEGIN", flush=True)
+    print(json.dumps(payload, ensure_ascii=False), flush=True)
+    print("GRANOLA_AGENT_RESULT_JSON_END\n", flush=True)
 
     return 0
 

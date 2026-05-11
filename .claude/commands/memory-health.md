@@ -93,7 +93,7 @@ if relevant_files:
 ### Step 2: Structural Health Audit
 
 ```bash
-cd "🔧 Automation/scripts" cd "/Users/jhigh/workspace/🔧 Automation/scripts" && python memory_maintainer.py --audit --workspace "/Users/jhigh/workspace"cd "/Users/jhigh/workspace/🔧 Automation/scripts" && python memory_maintainer.py --audit --workspace "/Users/jhigh/workspace" python memory_maintainer.py --audit --workspace "$(pwd)"
+cd "🔧 Automation/scripts" && python memory_maintainer.py --audit --workspace "../.."
 ```
 
 ### Step 3: Synthesized Recommendation

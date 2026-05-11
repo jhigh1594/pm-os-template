@@ -51,19 +51,19 @@ You are helping me write a clear, complete product specification that enables th
 /spec --type light "Card blocking improvements"         # Lightweight spec with idea
 /spec --skip-discovery "API rate limiting"              # Skip discovery, generate immediately
 /spec --type one-pager --save "Dark mode toggle"        # One-pager saved to file
-/spec --type full "Bulk card move across boards"            # Full PRD for major feature
+/spec --type full "OKR multi-parent support"            # Full PRD for major feature
 /spec --type context-doc "AI dependency suggestions"    # Hypothesis-driven context doc
-/spec --review path/to/bulk-card-move-prd.md          # Review existing PRD for quality
+/spec --review path/to/okr-multi-parent-prd.md          # Review existing PRD for quality
 ```
 
 ---
 
 ## Template References
 
-This command uses two core templates located in `/Users/jhigh/workspace/📝 Docs/templates/`:
+This command uses two core templates:
 
-1. **`prd-template.md`** - The PRD structure to follow for `full`, `light`, and `one-pager` formats
-2. **`socratic-questioning.md`** - The discovery questioning framework
+1. **`~/.claude/skills/ai-prd-writer/references/prd-template.md`** - The PRD structure to follow for `full`, `light`, and `one-pager` formats
+2. **`~/.claude/skills/prd-shaper/socratic-framework.md`** - The discovery questioning framework
 
 For `context-doc` format, load `~/.claude/skills/prd-shaper/context-doc-guide.md`.
 
@@ -137,7 +137,7 @@ Extract from the command invocation:
 
 ### Step 1: Socratic Discovery (Before Drafting)
 
-**Read `socratic-questioning.md` to understand the questioning framework.**
+**Read `~/.claude/skills/prd-shaper/socratic-framework.md` to understand the questioning framework.**
 
 For new PRDs, follow the Socratic questioning process. Use the same context-gathering protocol as other consultative skills:
 1. Ask **one question at a time**; wait for the answer before asking the next
@@ -166,7 +166,7 @@ After generating the draft, check whether it includes a Business Case section:
   6. Go/no-go criteria — specific, observable threshold that would change the recommendation
 - **For `--type light` with `--biz-case`**: Generate a condensed Business Case (strategic rationale + revenue mechanism + go/no-go criteria only)
 
-**Read `prd-template.md` and follow its structure exactly** (for `full`, `light`, `one-pager`).
+**Read `~/.claude/skills/ai-prd-writer/references/prd-template.md` and follow its structure exactly** (for `full`, `light`, `one-pager`).
 **Read `context-doc-guide.md`** for `context-doc` format.
 
 When generating the draft:
@@ -293,8 +293,8 @@ Load `~/.claude/skills/elite-copywriter/SKILL.md` and apply:
 ### Step 4: Save (if `--save` flag)
 
 If the `--save` flag was provided:
-1. Generate a slugified filename from the feature description (e.g., "Bulk Card Move" → `bulk-card-move-prd.md`)
-2. Save to `/Users/jhigh/workspace/📦 Products/{product}/initiatives/{feature-slug}/`
+1. Generate a slugified filename from the feature description (e.g., "OKR Multi-Parent Support" → `okr-multi-parent-support-prd.md`)
+2. Save to `📦 Products/{product}/initiatives/{feature-slug}/`
 3. Confirm the file location to the user
 
 **Filename pattern**: `{slugified-feature}-prd.md`

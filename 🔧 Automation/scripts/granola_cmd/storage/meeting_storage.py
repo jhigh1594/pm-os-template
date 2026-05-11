@@ -5,6 +5,8 @@ Stores meetings as markdown files with YAML frontmatter.
 Filename format: DD-MM-YY-title.md
 """
 
+from __future__ import annotations
+
 import json
 import logging
 from dataclasses import dataclass

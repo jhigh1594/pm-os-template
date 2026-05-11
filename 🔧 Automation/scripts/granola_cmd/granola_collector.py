@@ -4,8 +4,10 @@ Granola meeting collector - main orchestrator.
 ETL workflow for extracting meetings from Granola and storing as markdown files.
 """
 
+from __future__ import annotations
+
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Any
 
 from .mcp_client import GranolaCacheReader
@@ -35,6 +37,58 @@ class GranolaCollector:
         self.cache_reader = GranolaCacheReader()
         self.storage = MeetingStorage(output_path=config["storage"]["output_path"])
         logger.info("GranolaCollector initialized")
+
+    def execute_last_n(self, n: int) -> dict[str, Any]:
+        """
+        Save the N most recent documents from cache by created_at (newest first).
+
+        Args:
+            n: Number of meetings to extract
+
+        Returns:
+            Summary dict with meetings saved
+        """
+        logger.info(f"Collecting {n} most recent meeting(s) by created_at")
+        state = self.cache_reader.load_cache().get("state", {})
+        documents = state.get("documents", {})
+
+        rows: list[tuple[datetime, str, dict[str, Any]]] = []
+        for doc_id, doc in documents.items():
+            ca = doc.get("created_at") or ""
+            rows.append((self._parse_created_at(ca), doc_id, doc))
+
+        rows.sort(key=lambda x: x[0], reverse=True)
+        picked = rows[:n]
+
+        if not picked:
+            logger.info("No documents in cache")
+            return {"date": "multi", "count": 0, "files": []}
+
+        saved_files: list[str] = []
+        for dt, meeting_id, doc in picked:
+            search_result: dict[str, Any] = {"meeting_id": meeting_id, **doc}
+            meeting_date = dt.replace(tzinfo=None) if dt.tzinfo else dt
+            try:
+                meeting_data = self._collect_full_meeting_data(search_result, meeting_date)
+                file_path = self.storage.save_meeting(meeting_data)
+                saved_files.append(file_path)
+            except Exception as e:
+                logger.error(f"Failed to process meeting {meeting_id}: {e}")
+
+        return {"date": "multi", "count": len(saved_files), "files": saved_files}
+
+    @staticmethod
+    def _parse_created_at(s: str) -> datetime:
+        if not s:
+            return datetime.min.replace(tzinfo=timezone.utc)
+        s2 = s.replace("Z", "+00:00")
+        try:
+            dt = datetime.fromisoformat(s2)
+        except ValueError:
+            return datetime.min.replace(tzinfo=timezone.utc)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt
 
     def execute(self) -> dict[str, Any]:
         """

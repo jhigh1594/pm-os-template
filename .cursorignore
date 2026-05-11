@@ -19,3 +19,9 @@
 
 # Cursor's own cache (prevent recursive indexing)
 .cursor/hooks/state/
+
+# Node dependencies (637MB in skills-marketplace prototype)
+node_modules/
+
+# Next.js build cache (328MB in skills-marketplace prototype)
+.next/

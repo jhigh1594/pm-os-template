@@ -1,7 +1,7 @@
 ---
 description: Run the granola workflow
 ---
-Extract yesterday's meetings from Granola and save them as markdown files.
+Extract meetings from Granola and save them as markdown files, then **write an AI summary into each new file** (this command runs in Claude Code — use Claude Code attribution).
 
 ## Command Arguments
 
@@ -16,12 +16,55 @@ Parse the command arguments in order:
 
 ## Execution
 
+### 1) Extract (Bash)
+
 Build the command based on arguments:
 - Base command: `cd "🔧 Automation/scripts" && python3 -m granola_cmd.main`
 - Add `--target-date {target_date}` (always)
 - If `verbose` is `true`, add `-v`
 
 Run the command using Bash.
+
+### 2) Parse extractor output
+
+After the script exits successfully, read stdout and parse the JSON object between these two lines (exact text):
+
+- `GRANOLA_AGENT_RESULT_JSON_BEGIN`
+- `GRANOLA_AGENT_RESULT_JSON_END`
+
+The JSON shape is: `{"count": number, "files": string[], "date": string | null}`.
+
+### 3) Workspace AI summary (mandatory when `count` > 0)
+
+If `count` is `0`, skip this entire subsection (nothing new was written).
+
+Otherwise, for **each** path in `files`:
+
+1. **Read** the markdown file.
+2. **Generate** a short workspace summary from the file’s content (prefer **## Summary** / notes if present; otherwise derive cautiously from **## Transcript**). Rules:
+   - Lead with a **BLUF** (one or two sentences).
+   - Add **bullets** only when they improve scanability (themes, open questions, follow-ups).
+   - **Do not invent** decisions, owners, or dates not supported by the text. If the source is thin, say so plainly.
+3. **Write** into the file using bounded markers so re-runs are idempotent:
+   - If the file contains `<!-- workspace-agent-ai-summary -->` … `<!-- /workspace-agent-ai-summary -->`, **replace** that whole span (including both comment lines) with the new block.
+   - Otherwise **insert** the new block **immediately before** the first `# ` title heading after the YAML frontmatter (summary sits directly under the closing `---` and **above** `# Title`).
+4. Use **Claude Code** in the attribution line (not Cursor).
+
+Use this block shape (fill `…` with generated content; use today’s date in ISO form for `YYYY-MM-DD`):
+
+```markdown
+<!-- workspace-agent-ai-summary -->
+## AI summary
+
+*Workspace summary (Claude Code, YYYY-MM-DD). If Granola captured a native summary, it still appears under **## Summary** below.*
+
+…
+
+<!-- /workspace-agent-ai-summary -->
+
+```
+
+5. **Save** the file (one edit pass per meeting file).
 
 ## Examples
 
@@ -32,11 +75,11 @@ Run the command using Bash.
 
 ## Output Summary
 
-After execution completes, provide a summary including:
-- Number of meetings extracted
+After Bash completes **and** any AI summary file edits finish, provide a summary including:
+- Number of meetings extracted (`count` from JSON, or equivalent)
 - List of meeting titles with file paths
 - Any warnings or errors encountered
-- Output directory: `/Users/jhigh/workspace/🏢 Company/meetings/granola/`
+- Output directory: `🏢 Company/meetings/granola/` (resolved via `WORKSPACE_PATH` / repo root in `config.yaml`)
 
 ## Post-Meeting Intelligence
 
@@ -81,5 +124,5 @@ Run `/follow-up --meeting "[title]"` to draft communications and update stakehol
 ## Notes
 
 - Files are named `DD-MM-YY-title.md` format
-- Each file contains: YAML frontmatter (title, date, participants, duration), transcript, and notes
-- Reads directly from Granola's cache at `~/Library/Application Support/Granola/cache-v3.json`
+- Each file contains: YAML frontmatter (title, date, participants, duration), optional native Granola **## Summary**, **## AI summary** (workspace agent), transcript, and documents as available
+- Reads directly from Granola’s cache (newest `cache-v*.json` under `~/Library/Application Support/Granola/`)

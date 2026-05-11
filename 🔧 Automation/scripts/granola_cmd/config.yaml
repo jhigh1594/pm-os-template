@@ -3,7 +3,7 @@
 # Granola MCP server settings
 granola:
   # Path to the granola-mcp-server executable
-  mcp_server_path: {{GRANOLA_MCP_PATH}}/.venv/bin/granola-mcp-server
+  mcp_server_path: "{{GRANOLA_MCP_PATH}}/.venv/bin/granola-mcp-server"
 
 # Meeting filters
 filters:
@@ -23,7 +23,7 @@ storage:
   enabled: true
   # Output path for meeting markdown files
   # Output under 🏢 Company/meetings per workspace restructure
-  output_path: {{WORKSPACE_PATH}}/🏢 Company/meetings/granola
+  output_path: "{{WORKSPACE_PATH}}/🏢 Company/meetings/granola"
 
 # Target date for extraction
 # Options: "yesterday", "today", or "YYYY-MM-DD"

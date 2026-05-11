@@ -50,7 +50,7 @@ Create a quarterly roadmap document with themes, now/next/later sequencing, and 
 ```bash
 /roadmap --product AgilePlace --quarter Q2
 /roadmap --product "DPD" --quarter Q3 --format themes --save
-/roadmap --product AgilePlace --quarter Q2 --format now-next-later
+/roadmap --product OKRs --quarter Q2 --format now-next-later
 ```
 
 ---
