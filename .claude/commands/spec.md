@@ -29,10 +29,11 @@ You are helping me write a clear, complete product specification that enables th
 ## Command Syntax
 
 ```bash
-/spec [--type <format>] [--skip-discovery] [--save] [--review <path>] [--biz-case] [<feature-description>]
+/spec [--type <format>] [--skip-discovery] [--save] [--review <path>] [--biz-case] [--eng-brief <prd-path>] [<feature-description>]
 ```
 
 **Arguments**:
+- `--eng-brief <prd-path>`: Generate engineering handoff (Spec Brief) from an approved PRD — reads PRD, extracts key sections, outputs `SPEC_BRIEF.md` in same directory with Gherkin acceptance criteria, data model, test scenarios, and implementation notes. Replaces deleted `/spec-brief` command.
 - `--type <format>`: Select PRD format (`full`, `light`, `one-pager`, or `context-doc`)
   - `full`: Complete PRD (8-15 pages) for major features/products
   - `light`: Lightweight spec (2-4 pages) for smaller features
@@ -60,10 +61,10 @@ You are helping me write a clear, complete product specification that enables th
 
 ## Template References
 
-This command uses two core templates:
+This command uses two core templates located in `/Users/jhigh/workspace/📝 Docs/templates/`:
 
-1. **`~/.claude/skills/ai-prd-writer/references/prd-template.md`** - The PRD structure to follow for `full`, `light`, and `one-pager` formats
-2. **`~/.claude/skills/prd-shaper/socratic-framework.md`** - The discovery questioning framework
+1. **`prd-template.md`** - The PRD structure to follow for `full`, `light`, and `one-pager` formats
+2. **`socratic-questioning.md`** - The discovery questioning framework
 
 For `context-doc` format, load `~/.claude/skills/prd-shaper/context-doc-guide.md`.
 
@@ -137,7 +138,7 @@ Extract from the command invocation:
 
 ### Step 1: Socratic Discovery (Before Drafting)
 
-**Read `~/.claude/skills/prd-shaper/socratic-framework.md` to understand the questioning framework.**
+**Read `socratic-questioning.md` to understand the questioning framework.**
 
 For new PRDs, follow the Socratic questioning process. Use the same context-gathering protocol as other consultative skills:
 1. Ask **one question at a time**; wait for the answer before asking the next
@@ -166,7 +167,7 @@ After generating the draft, check whether it includes a Business Case section:
   6. Go/no-go criteria — specific, observable threshold that would change the recommendation
 - **For `--type light` with `--biz-case`**: Generate a condensed Business Case (strategic rationale + revenue mechanism + go/no-go criteria only)
 
-**Read `~/.claude/skills/ai-prd-writer/references/prd-template.md` and follow its structure exactly** (for `full`, `light`, `one-pager`).
+**Read `prd-template.md` and follow its structure exactly** (for `full`, `light`, `one-pager`).
 **Read `context-doc-guide.md`** for `context-doc` format.
 
 When generating the draft:
@@ -294,7 +295,7 @@ Load `~/.claude/skills/elite-copywriter/SKILL.md` and apply:
 
 If the `--save` flag was provided:
 1. Generate a slugified filename from the feature description (e.g., "OKR Multi-Parent Support" → `okr-multi-parent-support-prd.md`)
-2. Save to `📦 Products/{product}/initiatives/{feature-slug}/`
+2. Save to `/Users/jhigh/workspace/📦 Products/{product}/initiatives/{feature-slug}/`
 3. Confirm the file location to the user
 
 **Filename pattern**: `{slugified-feature}-prd.md`
@@ -336,7 +337,7 @@ Story breakdown (run to create AgilePlace backlog):
 
 Engineering handoff (run if going straight to dev):
 ```
-/spec-brief {saved-path}
+/spec --eng-brief {saved-path}
 ```
 
 ---

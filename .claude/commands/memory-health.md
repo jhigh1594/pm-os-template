@@ -20,10 +20,16 @@ Run when you want to know: "Is my memory system stale, and what should I do abou
 ## Command Syntax
 
 ```
-/memory-health
+/memory-health [--refresh [--dry-run]]
 ```
 
-No flags needed. Runs both diagnostics by default.
+- No flags: diagnostic only (activity delta + structural audit)
+- `--refresh`: Update `🤖 AI/memory/memory.md` with session activity by running `memory_updater.py`
+  - `--dry-run`: Show what would be written without writing it
+  - Reads session intent from `🤖 AI/session-intent.json` (set by `/today`)
+  - Falls back to git commits when session intent is empty
+
+Replaces both `/refresh-memory` and `/check-progress` (deleted). Run diagnostics first, then `--refresh` if stale.
 
 ---
 
@@ -93,7 +99,7 @@ if relevant_files:
 ### Step 2: Structural Health Audit
 
 ```bash
-cd "🔧 Automation/scripts" && python memory_maintainer.py --audit --workspace "../.."
+cd "🔧 Automation/scripts" cd "/Users/jhigh/workspace/🔧 Automation/scripts" && python memory_maintainer.py --audit --workspace "/Users/jhigh/workspace"cd "/Users/jhigh/workspace/🔧 Automation/scripts" && python memory_maintainer.py --audit --workspace "/Users/jhigh/workspace" python memory_maintainer.py --audit --workspace "$(pwd)"
 ```
 
 ### Step 3: Synthesized Recommendation
