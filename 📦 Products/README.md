@@ -4,20 +4,24 @@ Product strategy, ICPs, ROI frameworks, and feature specifications.
 
 ## Structure
 
-Each product has its own subdirectory:
+Each product you own gets its own subdirectory. **Do not commit predefined product names** — start from `_template/`:
 
 ```
 📦 Products/
-├── {{PRODUCT_1}}/
-│   ├── README.md           # Product overview
-│   ├── ICP.md              # Ideal Customer Profile
-│   ├── ROI-framework.md    # Value proposition and ROI
-│   ├── competitive/        # Competitive positioning
-│   ├── designs/            # Design mockups and specs
+├── _template/              # Copy → rename to your product slug
+│   ├── README.md
+│   ├── context.md
 │   └── initiatives/        # Feature specs and PRDs
-├── {{PRODUCT_2}}/
-└── {{PRODUCT_3}}/
+└── <your-product-slug>/    # e.g. after /onboard or manual copy
+    ├── README.md
+    ├── ICP.md              # Optional
+    ├── ROI-framework.md    # Optional
+    ├── competitive/        # Optional
+    ├── designs/            # Optional
+    └── initiatives/
 ```
+
+**Setup:** `cp -R "📦 Products/_template" "📦 Products/[your-product-slug]"` then replace `[FILL IN]` placeholders.
 
 ## Usage
 

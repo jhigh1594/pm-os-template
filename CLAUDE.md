@@ -1,6 +1,6 @@
-# AI Agent Instructions — Jon High / ServiceNow CSP
+# AI Agent Instructions — PM Operating System
 
-**Workspace:** PM workspace for Jon High, Senior AI Product Manager at ServiceNow (Customer Success Platform). Simplicity-first. Ships fast. Practicing Stoic.
+**Workspace:** Generic PM-OS template. Simplicity-first. Execution over endless planning.
 
 ---
 
@@ -25,17 +25,25 @@ Load in this order:
 
 ---
 
+## Products and company context
+
+- **Do not assume** product names, competitors, or company facts not present in this repo.
+- Product definitions live under `📦 Products/<product-slug>/` — read `GOALS.md` and folder READMEs; if empty, ask the human to name the product before inventing one.
+- Company context lives under `🏢 Company/` and `📚 Knowledge/`.
+
+---
+
 ## Session Continuity
 
-When the user references prior work — trigger phrases: "continue", "resume", "where were we", "like we discussed", "what did we decide", "last time", "previously":
+When the human references prior work — trigger phrases: "continue", "resume", "where were we", "like we discussed", "what did we decide", "last time", "previously":
 
 | Intent | Action |
 |--------|--------|
-| Resume a specific session | Suggest `claude --resume <id>` — find via `ls -t ~/.claude/projects/-Users-jhigh-SNOW-Work/*.jsonl \| head -10` |
+| Resume a specific session | Suggest `claude --resume <id>` — find recent sessions under `~/.claude/projects/` for this workspace |
 | Continue most recent work | Suggest `claude --continue`, or search episodic memory and proceed |
 | Reference a past decision or topic | Search episodic memory automatically, summarize findings, then respond |
 
-Agent detects intent and acts. User should never need to know command names.
+Agent detects intent and acts. The human should not need to know command names.
 
 ---
 

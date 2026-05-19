@@ -8,17 +8,19 @@ PM work scatters across trackers, decks, docs, and meeting notes. Context drops 
 
 ## What it is
 
-**PM-OS** is a **git-backed workspace template**: a folder system plus Cursor/Claude Code configuration—commands, rules, skills, automation, and optional MCP hooks. It is not a hosted product; it is the environment Jon clones and fills in for a role, product, and company.
+**PM-OS** is a **git-backed workspace template**: a folder system plus Cursor/Claude Code configuration—commands, rules, skills, automation, and optional MCP hooks. Clone it and fill in `[FILL IN]` placeholders for your role, products, and company.
 
 ## So what
 
 - **Onboarding and focus** — structured setup (`/onboard`) so the first 30–90 days have explicit goals and context files.
 - **Daily execution** — `/today` and related automation pull tracker and notes data into a repeatable planning loop.
-- **Consistent PM judgment** — shared rules and memory so AI help aligns with how Jon wants to decide, communicate, and ship.
+- **Consistent PM judgment** — shared rules and memory so AI help aligns with how you want to decide, communicate, and ship.
 
 **[Workflow cheatsheet](📝%20Docs/guides/workflow-cheatsheet.md)** — activity → command and skill entry points (feature lifecycle, cadence workflows, intel routing).
 
 ## Quick Start
+
+**New to Git or Cursor?** See [Getting started in Cursor](📝%20Docs/guides/getting-started-cursor.md) for a full walkthrough (install Git, clone, open folder, run `/onboard`).
 
 ```bash
 # 1. Clone this template
@@ -41,7 +43,7 @@ That's it! The `/onboard` command will guide you through setting up your workspa
 The `/onboard` command provides an interactive 30-60-90 day framework to:
 
 1. **Set up your context** — Customize GOALS.md with your role, products, and stakeholders
-2. **Configure your task tracker** — Choose from Jira, Linear, Asana, GitHub Issues, or AgilePlace
+2. **Configure your task tracker** — Choose from Jira, Linear, Asana, GitHub Issues, or stub mode until wired up
 3. **Set up your memory** — Update memory.md with your current focus and product context
 4. **Plan your first 30 days** — Get a structured learning plan for your new role/product
 
@@ -110,7 +112,7 @@ The rules system uses progressive disclosure:
 | `frameworks-as-tools.mdc` | Framework selection, when to abandon |
 | `communication-standards.mdc` | Audience patterns, stakeholder alignment |
 | `product-sense.mdc` | Product critiques, taste development |
-| `agileplace-cli.mdc` | Task tracker CLI integration |
+| Task tracker rule (if configured) | Task tracker CLI integration |
 
 ### `/today` Daily Workflow
 
@@ -124,7 +126,7 @@ The `/today` command runs an automated daily planning workflow:
 
 **Configurable task tracker** — supports multiple backends:
 - **stub** (demo mode with example tasks)
-- **AgilePlace**, **Jira**, **Linear**, **Asana**, **GitHub Issues**
+- **Jira**, **Linear**, **Asana**, **GitHub Issues** (add or extend collectors under `today_cmd/collectors/`)
 - **Custom** — write your own collector
 
 Configure via `🔧 Automation/scripts/today_cmd/config.yaml` or during first `/today` run.

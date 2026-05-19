@@ -41,7 +41,7 @@ Generate an Epic → Feature → Story hierarchy from an approved PRD.
 
 **Examples**:
 ```bash
-/story --prd "📦 Products/CSP/initiatives/feature-slug/prd.md"
+/story --prd "📦 Products/[product-slug]/initiatives/[initiative-slug]/prd.md"
 /story --prd path/to/prd.md
 /story --prd path/to/prd.md --skip-discovery
 ```

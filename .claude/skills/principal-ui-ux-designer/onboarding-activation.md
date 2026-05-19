@@ -284,7 +284,7 @@ EXAMPLES:
   - Facebook: 7 friends in 10 days (social network value)
   - Dropbox: First file synced (cloud storage value)
   - Figma: First collaborative edit (real-time design value)
-  - AgilePlace: First dependency visualized (coordination value)
+  - [Product]: First core workflow completed (value moment)
 
 ACCELERATING AHA MOMENTS:
   - Guide users to moment faster (onboarding focus)

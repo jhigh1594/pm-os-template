@@ -10,7 +10,7 @@
 
 Sentence 1 must contain: what you're recommending OR what decision needs to be made.
 
-> ✅ "I recommend we delay the AgilePlace pricing change until Q3 to preserve the renewal cohort."
+> ✅ "I recommend we delay the pricing change until Q3 to preserve the renewal cohort."
 > ✅ "We need a decision: proceed with the Ensemble integration in Q2 or push to H2."
 > ❌ "I wanted to loop you in on our analysis of the pricing situation."
 > ❌ "Over the past few weeks, the team has been looking into..."

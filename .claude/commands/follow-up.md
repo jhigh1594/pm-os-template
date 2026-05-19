@@ -44,7 +44,7 @@ The fatal flaw: sending "great meeting, let's follow up!" with no substance. Fix
 /follow-up                                                    # Interactive — asks for meeting context
 /follow-up --meeting "Q2 Roadmap Review"                     # Find by title in granola directory
 /follow-up --meeting "26-03-26-q2-roadmap-review.md"        # Specific file
-/follow-up --meeting "DPD Trade-offs" --people "Louise, Marcus"
+/follow-up --meeting "[Meeting title]" --people "[Name], [Name]"
 /follow-up --meeting "NatWest sync" --type decisions
 ```
 
@@ -63,7 +63,7 @@ Extract from the command invocation:
 
 **If `--meeting` is a title:** Search `🏢 Company/meetings/granola/` for the most recent file whose title matches. Case-insensitive, partial match is fine.
 
-**If no `--meeting` provided:** Ask: "Which meeting do you want to follow up on? (title or date, e.g. 'DPD sync today' or '2026-03-26')"
+**If no `--meeting` provided:** Ask: "Which meeting do you want to follow up on? (title or date, e.g. '[initiative] sync today' or '2026-03-26')"
 
 ### Step 1: Extract Follow-Up Material
 

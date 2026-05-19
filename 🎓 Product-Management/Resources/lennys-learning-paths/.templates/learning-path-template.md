@@ -2,7 +2,7 @@
 title: "[TOPIC] - Learning Path from Lenny's Podcast"
 created: "YYYY-MM-DD"
 updated: "YYYY-MM-DD"
-product_focus: "AgilePlace|OKRs|Roadmaps|DPD|General"
+product_focus: "[Product A]|[Product B]|General"
 difficulty_level: "Beginner|Intermediate|Advanced"
 time_investment: "X hours"
 author: "PM Team"
@@ -88,7 +88,7 @@ After completing this learning path, you will be able to:
 **What the experts agree on**: [Common pattern across episodes]
 
 **Application**:
-- [How this applies to AgilePlace/OKRs/Roadmaps/DPD]
+- [How this applies to your product context]
 - [Specific actions to take]
 
 **Key Quotes**:
@@ -100,7 +100,7 @@ After completing this learning path, you will be able to:
 **What the experts agree on**: [Common pattern across episodes]
 
 **Application**:
-- [How this applies to AgilePlace/OKRs/Roadmaps/DPD]
+- [How this applies to your product context]
 - [Specific actions to take]
 
 **Key Quotes**:

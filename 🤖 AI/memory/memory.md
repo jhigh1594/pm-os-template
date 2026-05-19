@@ -7,57 +7,49 @@
 
 ## Current Focus
 
-Working on synthesizing findings from the two research artifacts to create a strategic framing document for CSP product positioning.
+[FILL IN: What you are working on this week. One to three sentences.]
 
 ## Active Decisions
 
-**Strategic Questions**:
+**Open questions:**
 
-- Should proceed with synthesis pass to combine strongest signals into strategic framing document
+- [FILL IN]
 
-**Recent Decisions**:
+**Recent decisions:**
 
-- Launched parallel research tracks with separate skills
-- Created comprehensive artifacts: csm-jtbd-workflows.md and csm-icp-market-research.md
-- Identified three strategic findings with direct ServiceNow implications
-
+- [FILL IN]
 
 ## Known Gaps
 
-**Baseline Metrics Needed**:
+**Metrics / baselines:**
 
-- Metrics measuring CEG Internal Tech and CSP usage/success.
+- [FILL IN]
 
-**Documentation Gaps**:
+**Documentation:**
 
-- Need context gathering on CSP ecosystem.
-- Need baseline of current tech stack overhead.
+- [FILL IN]
 
-**Research Gaps**:
+**Research:**
 
-- No win/loss interview data yet. ICP/JTBD research is desk research — needs primary CSM interview validation before treating inferences as confirmed findings.
+- [FILL IN]
 
-## Strategic Context (as of 2026-04-07)
+## Strategic Context
 
-- **CS investment paradox**: 75% of firms saw NRR decline despite 60% increased CS spend — root cause is coordination model design, not tooling. (Source: csm-icp-market-research.md)
-- **Orchestration whitespace**: No competitor coordinates full Sales→CS→Support→PS→Product post-sales motion. ServiceNow's platform architecture is the only credible answer. (Source: csm-icp-market-research.md)
-- **AI adoption blocker**: 72% call AI critical, only 32% have live use cases — blocked by data fragmentation, not ambition. Workflow-byproduct data unification is the unlock. (Source: csm-icp-market-research.md)
+[FILL IN: Durable context that should survive across sessions — positioning, constraints, bets. Remove this section until you have something worth keeping.]
 
 ## Recent Context
 
-Completed deep market research phase with strong strategic findings about CS investment paradox, cross-functional orchestration whitespace, and AI adoption blockers
+[FILL IN: Short note on what changed recently — optional, often updated by automation.]
 
 ## Technical Notes
 
 ### Memory System
 
-- `memory.md` — this file; volatile sections updated by LLM extractor at session end
-- `sessions/` — rolling 10 session summaries (LLM-written)
-- `sessions-archive/` — sessions beyond the rolling window, compacted at 50+
-- `patterns/learned-patterns.md` — manually curated patterns and decisions
+- `memory.md` — this file
+- `sessions/` — rolling session summaries
+- `sessions-archive/` — older sessions
+- `patterns/learned-patterns.md` — promoted patterns (manual curation)
 
 ---
 
-**Last Updated**: 2026-04-09
-**Purpose**: Single unified memory file for AI context across sessions
-**Location**: `🤖 AI/memory/memory.md`
+*Run `/onboard` to seed this file from your role and company context.*

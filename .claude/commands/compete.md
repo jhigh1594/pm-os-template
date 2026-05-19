@@ -45,7 +45,7 @@ Auto-identify the competitive landscape before analyzing. Run when you need to m
 
 ```bash
 /compete --mode landscape "enterprise work management"
-/compete --mode landscape AgilePlace
+/compete --mode landscape [product-slug]
 ```
 
 **Landscape mode adds Step 0:**
@@ -210,7 +210,7 @@ Scraped Tier 3 sources (competitor marketing sites) must still be labeled Tier 3
 
    ```bash
    /compete --output battlecard "Jira Align"
-   /compete --focus "ServiceNow" --output battlecard
+   /compete --focus "[Competitor name]" --output battlecard
    ```
 
    **Battlecard generation process:**

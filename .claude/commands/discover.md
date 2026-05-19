@@ -35,7 +35,7 @@ Guide through a structured product discovery process to identify and validate cu
 ```bash
 /discover                                                    # Interactive mode — oriented entry question
 /discover --phase 3                                          # Jump to risk validation
-/discover --phase 2 --problem "CSP users can't track health across accounts"
+/discover --phase 2 --problem "[Users] can't [core job-to-be-done]"
 ```
 
 ---

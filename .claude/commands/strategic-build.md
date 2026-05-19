@@ -16,7 +16,7 @@ Applies the LNO (Leverage / Neutral / Overhead) framework to evaluate whether a 
 
 - "Should we build the Salesforce integration this quarter?"
 - "Is the custom dashboard configurability worth the engineering cost?"
-- "Evaluate whether the AgilePlace API redesign is leverage or overhead right now"
+- "Evaluate whether the [product] API redesign is leverage or overhead right now"
 - "We have 3 competing requests — help me assess which are leverage vs neutral"
 
 ## Notes

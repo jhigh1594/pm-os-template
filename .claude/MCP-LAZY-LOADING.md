@@ -62,7 +62,7 @@ Manual lazy loading system for project MCP servers (fetch, notion, etc.) to save
 **Always (Base Load):**
 - ✅ Read, Write, Edit, Bash (core tools)
 - ✅ dotai plugins: ctx, dotai, plan, skills
-- ✅ Global MCPs from Claude Desktop (agileplace, granola, etc.)
+- ✅ Global MCPs from Claude Desktop (task tracker, granola, etc.)
 
 **When Enabled:**
 - ✅ Fetch MCP (web content extraction)

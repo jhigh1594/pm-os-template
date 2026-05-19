@@ -1,19 +1,22 @@
-# 🏢 Company Directory
+# Company context
 
-Company-specific context, competitive intelligence, and customer research.
+> Replace this folder with your employer's context during `/onboard`. Do not ship real company strategy in a public template fork unless intended.
 
-## Subdirectories
+## Suggested files
 
-| Directory | Purpose |
-|-----------|---------|
-| `competitive/` | Competitive analysis and battlecards |
-| `context/` | Company context and business overview |
-| `customer-research/` | Customer interview transcripts and insights |
-| `customers/` | Customer profiles and accounts |
-| `icp/` | Ideal Customer Profile documentation |
-| `meetings/granola/` | Meeting notes from Granola |
+| File / folder | Purpose |
+|---------------|---------|
+| `context.md` | Company overview, segments, GTM |
+| `competitive/` | Competitor notes and battlecards |
+| `meetings/granola/` | Exported meeting notes (from `/granola`) |
+| `customer-research/` | Interview summaries, win/loss |
 
-## Usage
+## Starter
 
-Store company-specific information that provides context for product decisions.
-Update competitive analysis quarterly and customer research after interviews.
+Copy and fill in:
+
+```bash
+cp "🏢 Company/context.md.example" "🏢 Company/context.md"  # if example exists
+```
+
+Or create `context.md` with `[FILL IN]` sections for mission, buyers, and constraints.

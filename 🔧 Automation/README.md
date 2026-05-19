@@ -15,7 +15,6 @@ Scripts, tools, and automated workflows.
 
 - `scripts/today_cmd/` - Daily planning workflow
 - `scripts/granola_cmd/` - Meeting notes extraction
-- `scripts/agileplace_cli/` - AgilePlace API CLI
 
 ## Usage
 

@@ -6,7 +6,7 @@ task_tracker:
 
 profile:
   owner_names:
-    - Jon High
+    - "[FILL IN: Your name]"
 
 delivery:
   slack:

@@ -779,7 +779,7 @@ function addComparisonTable(slide, rows, startY = 0.833) {
 
   const headerOpts = { fontSize: 8, fontFace: FONTS.PRIMARY, bold: true, color: COLORS.WHITE, align: 'center', valign: 'middle' };
   slide.addText('Capability', { ...headerOpts, x: cols.capability.x, y: startY, w: cols.capability.w, h: rowH });
-  slide.addText('DPD', { ...headerOpts, x: cols.product.x, y: startY, w: cols.product.w, h: rowH });
+  slide.addText('[Product]', { ...headerOpts, x: cols.product.x, y: startY, w: cols.product.w, h: rowH });
   slide.addText('TP', { ...headerOpts, x: cols.targetprocess.x, y: startY, w: cols.targetprocess.w, h: rowH });
   slide.addText('Talk Track', { ...headerOpts, x: cols.talktrack.x, y: startY, w: cols.talktrack.w, h: rowH });
 

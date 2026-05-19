@@ -47,7 +47,7 @@ Captured 2026-04-04. From a session exploring Level 9→10 (swarm architect) for
 
 ### 3. Weekly Stakeholder Update Prep
 
-**The manual work today:** `📁 Workflows/weekly-stakeholder-update/` and `/weekly-review` command exist. But tailoring framing for Garin vs. Amit-level, synthesizing the week's work, drafting — still fully manual.
+**The manual work today:** `📁 Workflows/weekly-stakeholder-update/` and `/weekly-review` command exist. But tailoring framing per audience (manager vs. executive), synthesizing the week's work, and drafting — still fully manual.
 
 **What the orchestrator does:**
 - Trigger: end-of-week cron (Friday 4pm)

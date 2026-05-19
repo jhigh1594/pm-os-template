@@ -53,7 +53,7 @@ Read these workspace files when they exist:
 - `🤖 AI/memory/memory.md` — current focus and recent context
 
 Tell the user what you found. For example:
-> "I found your CSP metrics in GOALS.md. Your `📚 Knowledge/` has interview notes from March showing customer friction with workload visibility — that's a strong opportunity candidate. I'll focus the tree on the retention outcome you mentioned."
+> "I found your product metrics in GOALS.md. Your `📚 Knowledge/` has interview notes showing customer friction with [theme] — that's a strong opportunity candidate. I'll focus the tree on the outcome you mentioned."
 
 ## Process
 

@@ -41,7 +41,7 @@ I need to [PROTOTYPE TYPE] for [TARGET USER] so they can [KEY OUTCOME].
 ```
 
 **Examples:**
-- "I need to recreate this AgilePlace board view as an interactive Figma prototype for stakeholder validation"
+- "I need to recreate this [product] board view as an interactive Figma prototype for stakeholder validation"
 - "I need to build a global attributes management interface for Account Administrators to standardize fields across boards"
 - "I need to design an OKR connection modal that links objectives to work cards"
 
@@ -264,7 +264,7 @@ Before presenting the prompt, verify:
 **What prototype do you need to create?**
 
 Example requests:
-- "Recreate this AgilePlace board screenshot as an interactive Figma prototype"
+- "Recreate this product screenshot as an interactive Figma prototype"
 - "Build a global attributes management interface based on the PRD"
 - "Design an OKR connection modal from this existing Figma design"
 - "Create a prototype for the multi-parent objectives popover from this design brief"

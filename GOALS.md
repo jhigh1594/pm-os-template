@@ -1,44 +1,42 @@
 # GOALS.md
 
+> **Template:** Replace every `[FILL IN]` block during `/onboard` or manual setup. Delete example rows you do not need.
+
 ## Who I Am
 
-**Jon** | Senior AI Product Manager | ServiceNow (Customer Success Platform (CSP))
+**[FILL IN: Your name]** | **[FILL IN: Role title]** | **[FILL IN: Company name]**
 
-Systems-thinking PM who builds tools to amplify effectiveness. Believes simplicity beats complexity, execution beats endless planning, and the best product work happens when you ship fast and iterate. Practicing Stoic.
+[FILL IN: 2–4 sentences — how you work, what you optimize for, what energizes/drains you.]
 
-**Core beliefs:** Kindness is a superpower. Everyone has something to teach you. Great questions unlock extraordinary leverage. You don't understand something until you can explain it to a five-year-old.
+**Core beliefs:** [FILL IN — optional bullets]
 
-**What energizes me:** Building automations and frameworks that multiply my impact. Strategic positioning and competitive analysis. Customer discovery that gets to the real problem. Clear, jargon-free communication. Shipping.
-
-**What drains me:** Process for process sake. Manual repetitive tasks. Complexity that doesn't add value. Meetings without decisions. Stakeholder misalignment that surfaces late.
-
-**Anchoring quotes:**
-- "You have power over your mind — not outside events. Realize this, and you will find strength." — Marcus Aurelius
-- "Slow is smooth. Smooth is fast."
+**Anchoring quotes:** [FILL IN — optional]
 
 ---
 
 ## What I Own
 
-### Primary: Customer Success Platform (CSP)
+### Primary: [FILL IN: Portfolio or product area name]
 
 | Product | Description | Key Metrics |
 |---------|-------------|-------------|
-| **Customer Success Platform (CSP)** | Core platform managing customer success at ServiceNow. | TBD |
+| **[FILL IN: Product name]** | [FILL IN: One-line description] | [FILL IN: North-star or team metrics] |
+
+_Add rows only for products you actively own. Remove this table until the first product is defined._
 
 ---
 
 ## Current Quarter Goals
 
-### Goal 1: Onboard and Impact 
+### Goal 1: [FILL IN: Goal title]
 
-**Target:** Onboard to SNOW with a 30-60-90 plan and make a material impact within 60 days.
+**Target:** [FILL IN: Measurable outcome and timeframe]
 
 **Key initiatives:**
-- Complete 30-day discovery and context gathering.
-- Identify and ship a high-leverage initiative within 60 days.
+- [FILL IN]
+- [FILL IN]
 
-**Status:** 🟢 On track
+**Status:** [FILL IN: On track / At risk / Blocked]
 
 ---
 
@@ -46,17 +44,17 @@ Systems-thinking PM who builds tools to amplify effectiveness. Believes simplici
 
 | Name | Role | Relationship | Communication Notes |
 |------|------|--------------|---------------------|
-| Garin Landry | Sr. Director, CEG Internal Tech and BI | Manager | Ensure clear, jargon-free alignment early on decisions to avoid late surprises. See `📚 Knowledge/People/garin-landry.md` |
-| Amit Zavery | President, CPO & COO | Executive (CPO chain) | Outcome-first, platform-scale thinker. Connect CSP work to Now Platform roadmap. See `📚 Knowledge/People/amit-zavery.md` |
-| Bill McDermott | Chairman & CEO | Executive | AI control tower framing; underdog positioning; over-communication. See `📚 Knowledge/People/bill-mcdermott.md` |
+| [FILL IN] | [FILL IN] | [FILL IN: Manager / Peer / Exec sponsor] | [FILL IN] |
+
+_Stakeholder detail files live in `📚 Knowledge/People/` — one markdown file per person when useful._
 
 ---
 
 ## Personal Development
 
-1. Build automations and frameworks that multiply impact within SNOW.
-2. Advance strategic positioning and customer discovery methodologies.
+1. [FILL IN]
+2. [FILL IN]
 
 ---
 
-*Update this file quarterly for goals; update stakeholders and ownership when roles or relationships change.*
+*Update quarterly for goals; update stakeholders and ownership when roles or relationships change.*

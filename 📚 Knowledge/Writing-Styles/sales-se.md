@@ -86,7 +86,7 @@ Use these to surface the pain before presenting the solution:
 |---|---|---|
 | Capability list without deal framing | Rep has to translate — they won't | Lead with the objection it handles or the competitor claim it refutes |
 | "Best-in-class" / "industry-leading" | Meaningless without specifics | "The only tool that does X without requiring Y" — be specific |
-| Missing competitive comparison | SEs face Jira Align / Monday / ServiceNow in real deals | Include named comparison or don't publish for deal use |
+| Missing competitive comparison | SEs face named incumbents in real deals | Include named comparison or don't publish for deal use |
 | No proof point | Claims without evidence in B2B enterprise = ignored | Include at minimum an anonymized customer outcome |
 | PM language in sales copy | "Unlock value stream alignment" → rep loses the room | Translate: "Show your executives exactly where portfolio delays are happening" |
 | Feature-first announcement | Reps have to figure out when to use it | Give them the trigger: "Use this when the customer says X" |

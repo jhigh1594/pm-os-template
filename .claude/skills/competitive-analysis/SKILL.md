@@ -122,13 +122,13 @@ When workspace context matters, prefer:
 ## Example Behavior
 
 If the user asks:
-"How should we assess Targetprocess for this roadmap decision?"
+"How should we assess [competitor] for this roadmap decision?"
 
 Default behavior:
 - ask what roadmap decision this comparison should inform
 - clarify the most relevant lens
 - provide a provisional competitive read
-- explain what that means for DPD
+- explain what that means for [your product]
 - recommend the next response or validation step
 
 ## Self-Learning

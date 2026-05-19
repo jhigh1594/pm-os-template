@@ -15,7 +15,7 @@ Update compiled truth memory or run a health diagnostic on the memory system.
 Detect workspace root dynamically:
 
 ```bash
-WORKSPACE=$(git -C "$(pwd)" rev-parse --show-toplevel 2>/dev/null || echo "/Users/jon.high/SNOW-Work")
+WORKSPACE=$(git -C "$(pwd)" rev-parse --show-toplevel 2>/dev/null || pwd)
 ```
 
 Run:
@@ -48,13 +48,13 @@ Run a two-part diagnostic:
 **Part 1 — Activity Delta (inline Python):**
 
 ```bash
-WORKSPACE=$(git -C "$(pwd)" rev-parse --show-toplevel 2>/dev/null || echo "/Users/jon.high/SNOW-Work")
+WORKSPACE=$(git -C "$(pwd)" rev-parse --show-toplevel 2>/dev/null || pwd)
 python3 - <<'EOF'
 import os, subprocess, json
 from datetime import datetime, timezone
 from pathlib import Path
 
-workspace = os.environ.get("WORKSPACE", "/Users/jon.high/SNOW-Work")
+workspace = os.environ.get("WORKSPACE", os.getcwd())
 memory_file = Path(workspace) / "🤖 AI/memory/memory.md"
 
 # File freshness

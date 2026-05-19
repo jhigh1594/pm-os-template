@@ -67,7 +67,7 @@ After Bash and file edits:
 
 ## Post-meeting intelligence
 
-Same block structure and constraints as `.claude/commands/granola.md` (decisions, action items, stakeholder signals, Knowledge/People candidates, product signals). **Present only in chat** — do not write People files or product signal nuggets unless Jon asks or Jon runs `/follow-up`.
+Same block structure and constraints as `.claude/commands/granola.md` (decisions, action items, stakeholder signals, Knowledge/People candidates, product signals). **Present only in chat** — do not write People files or product signal nuggets unless the human asks or runs `/follow-up`.
 
 ## Notes
 

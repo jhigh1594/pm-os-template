@@ -646,7 +646,7 @@ KNOWLEDGE BASE:
 
 **Case Studies**:
 - Salesforce (enterprise-scale UX patterns)
-- ServiceNow (complex workflow UX)
+- Enterprise workflow platforms (complex multi-step UX)
 - Workday (HR/Finance enterprise UX)
 - Atlassian (developer collaboration UX)
 

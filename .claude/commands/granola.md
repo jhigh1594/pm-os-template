@@ -37,7 +37,7 @@ Note which path was used in the output summary.
 
 ### Step 3: Write markdown files
 
-For each meeting, write a file to `/Users/jon.high/SNOW-Work/🏢 Company/meetings/granola/` using the Write tool.
+For each meeting, write a file to `🏢 Company/meetings/granola/` (workspace root) using the Write tool.
 
 **Filename format:** `DD-MM-YY-{slugified-title}.md`
 - Slugify: lowercase, spaces → hyphens, strip special chars, truncate at 50 chars

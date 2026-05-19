@@ -350,4 +350,4 @@ Priority Score = Impact (1-10) × Strategic Fit (1-10) × Confidence (1-10)
 **Integration Points:**
 - **Granola MCP**: Fetch additional meeting transcripts for deeper synthesis
 - **Notion MCP**: Store synthesis reports in research database
-- **AgilePlace MCP**: Create opportunity cards from top insights
+- **Task tracker MCP** (if configured): Create cards from top insights

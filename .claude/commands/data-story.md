@@ -45,7 +45,7 @@ The fatal flaw: running the analysis, writing up the findings for yourself, and 
 **Examples**:
 ```bash
 /data-story --audience exec "Pendo shows dependency view adoption dropped 23% in Q1 among enterprise accounts"
-/data-story --audience sales --context "agileplace dependency view" "Usage is up 40% YoY in accounts using it weekly"
+/data-story --audience sales --context "[feature or workflow]" "Usage is up 40% YoY in accounts using it weekly"
 /data-story --audience cs "NatWest account has 3 active users on dependency view, down from 12 last quarter"
 /data-story --audience product "Capacity planning feature has 15% adoption in enterprise, 62% in mid-market — adoption stalls at the 'configure swim lanes' step"
 ```

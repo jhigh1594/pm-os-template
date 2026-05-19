@@ -12,7 +12,7 @@ Sentence 1 must contain: what changes for them — what they can now do, avoid, 
 
 > ✅ "Your teams can now plan dependencies across portfolios without switching tools."
 > ✅ "Forecasting accuracy is getting significantly better — here's what changed."
-> ❌ "We're excited to announce the release of Ensemble Custom Views in AgilePlace."
+> ❌ "We're excited to announce the release of Ensemble Custom Views in [Product Name]."
 > ❌ "Today we're shipping a new feature called Dependency Visualization."
 
 **Why this works:** Customers don't care about features. They care about their job getting easier, their team complaining less, or their executive asking fewer hard questions. Lead with that.

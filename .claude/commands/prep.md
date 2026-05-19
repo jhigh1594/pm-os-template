@@ -40,13 +40,13 @@ Prepare for stakeholder meetings with structured context, decisions, and talking
 **Arguments**:
 - `--meeting <title>`: Meeting title or context (optional — e.g., "Q2 Roadmap Review")
 - `--people <names>`: Comma-separated names of attendees (optional — e.g., "Louise, Marcus, Sarah")
-- `--goal <goal>`: Your goal for the meeting (optional — e.g., "Align on DPD trade-offs")
+- `--goal <goal>`: Your goal for the meeting (optional — e.g., "Align on [initiative] trade-offs")
 - `--post`: Post-meeting mode — extract decisions, action items, and draft follow-up communications
 - `<description>`: Additional context (optional — can provide interactively)
 
 **Examples**:
 ```bash
-/prep --people "Louise" --goal "align on DPD trade-offs"
+/prep --people "[Name]" --goal "align on [initiative] trade-offs"
 /prep --meeting "Q2 Roadmap Review" --people "Louise, Marcus"
 /prep --goal "Decision on pricing tier changes"
 /prep --post "Q2 Roadmap Review"        # post-meeting extraction
@@ -178,7 +178,7 @@ Specific questions (not open-ended topics):
 
 **Trigger conditions — activate this mode when ALL of these are true:**
 1. At least one attendee in `--people` is an external customer (not a Company employee)
-2. Their `Knowledge/People/[name].md` file indicates a champion relationship (they advocate internally for AgilePlace/Company)
+2. Their `Knowledge/People/[name].md` file indicates a champion relationship (they advocate internally for your product/company)
 3. The meeting context suggests they will be acting on your behalf internally (exec review, steering committee, PI planning, renewal discussion)
 
 **When this mode activates:** Replace the standard 7-section format with the Champion Briefing format below. The goal is not to inform the champion — it's to **equip** them.

@@ -83,7 +83,7 @@ Check if `📚 Knowledge/Market/industry-intelligence-[YYYY-MM].md` exists for t
 | Report | Relevance | How to use |
 |--------|-----------|------------|
 | Gartner Magic Quadrant for Strategic Portfolio Management | Direct — Company appears | Criteria weights, leader attributes, buyer evaluation criteria |
-| Forrester Wave for Enterprise Agile Planning | Direct — AgilePlace | Evaluation framework, current scores, criteria evolution |
+| Forrester Wave for [your category] | Direct — [your product] | Evaluation framework, current scores, criteria evolution |
 | Gartner Market Guide for Project and Portfolio Management | Category context | Where the market is going broadly |
 | IDC MarketScape for PPM | Alternative perspective | Complements Gartner view |
 
@@ -159,7 +159,7 @@ Check if `📚 Knowledge/Market/industry-intelligence-[YYYY-MM].md` exists for t
 - Atlassian (TEAM) — most direct signal on agile planning investment
 - SAP — portfolio management + strategic planning; large enterprise buyer
 - Salesforce — connected planning framing; enterprise buyer context
-- ServiceNow — workflow automation + strategic portfolio
+- [FILL IN: Relevant public companies in your space]
 - Microsoft (Project, Azure, Teams) — indirect competitor but strong signal on enterprise tooling investment
 - Workday — resource management + strategic planning adjacency
 

@@ -39,17 +39,17 @@ The guide generated here is a structure to internalize, not a script to read. Th
 ```
 
 **Arguments**:
-- `--product`: `agileplace | okrs | roadmaps | dpd | platform` — if omitted, inferred from scenario or asked
+- `--product`: Product slug under `📦 Products/` — if omitted, inferred from scenario or asked
 - `--persona`: Target persona type (e.g., `rte | scrum-master | cto | vp-engineering | agile-coach | coo`) — optional; affects which use cases and aha moments to prioritize
 - `--duration`: Total demo time in minutes (default: 30) — affects how many features to spotlight and how much to time-box
 - `<scenario>`: The demo context — what kind of customer, what they're evaluating, what they've already seen
 
 **Examples**:
 ```bash
-/demo-prep --product agileplace --persona rte --duration 30
-/demo-prep --product agileplace --persona cto --duration 45 "enterprise RTE evaluating capacity planning and dependency management"
-/demo-prep --product okrs --duration 20 "CS renewal call with champion who hasn't driven exec adoption"
-/demo-prep --product roadmaps --persona coo --duration 30 "first demo to portfolio team, strategic alignment angle"
+/demo-prep --product [product-slug] --persona [persona] --duration 30
+/demo-prep --product [product-slug] --persona cto --duration 45 "[scenario description]"
+/demo-prep --product [product-slug] --duration 20 "renewal call with champion who hasn't driven exec adoption"
+/demo-prep --product [product-slug] --persona coo --duration 30 "first demo to executive team, strategic alignment angle"
 ```
 
 ---

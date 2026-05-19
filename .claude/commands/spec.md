@@ -60,7 +60,7 @@ You are helping me write a clear, complete product specification that enables th
 
 ## Template References
 
-This command uses two core templates located in `/Users/jon.high/SNOW-Work/📝 Docs/templates/`:
+This command uses two core templates located in `📝 Docs/templates/` (workspace root):
 
 1. **`prd-template.md`** - The PRD structure to follow for `full`, `light`, and `one-pager` formats
 2. **`socratic-questioning.md`** - The discovery questioning framework
@@ -294,7 +294,7 @@ Load `~/.claude/skills/elite-copywriter/SKILL.md` and apply:
 
 If the `--save` flag was provided:
 1. Generate a slugified filename from the feature description (e.g., "OKR Multi-Parent Support" → `okr-multi-parent-support-prd.md`)
-2. Save to `/Users/jon.high/SNOW-Work/📦 Products/{product}/initiatives/{feature-slug}/`
+2. Save to `📦 Products/{product}/initiatives/{feature-slug}/`
 3. Confirm the file location to the user
 
 **Filename pattern**: `{slugified-feature}-prd.md`

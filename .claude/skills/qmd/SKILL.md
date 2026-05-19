@@ -61,7 +61,7 @@ qmd search "Productboard pricing"
 qmd vsearch "how to communicate tradeoffs to stakeholders"
 
 # Get specific document
-qmd get "products/CSP/prd-customer-health-scoring.md"
+qmd get "products/[product-slug]/initiatives/[initiative]/prd.md"
 
 # Multi-get by pattern
 qmd multi-get "company/competitive/*.md" --json
@@ -71,7 +71,7 @@ qmd multi-get "company/competitive/*.md" --json
 
 ### Competitive Intelligence
 ```bash
-qmd query "Productboard vs DPD positioning differentiation"
+qmd query "[competitor] vs [your product] positioning differentiation"
 qmd search "Productboard pricing revenue" -c company
 qmd vec "portfolio management features Productboard"
 ```

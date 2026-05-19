@@ -23,8 +23,8 @@
 
 Examples:
 - Large enterprise renewals where buyer is consolidating tools
-- Mid-market deals where IT is evaluating Jira ecosystem
-- Financial services prospects with existing ServiceNow contracts
+- Mid-market deals where IT is evaluating an incumbent suite
+- Regulated verticals with long procurement cycles
 
 ---
 

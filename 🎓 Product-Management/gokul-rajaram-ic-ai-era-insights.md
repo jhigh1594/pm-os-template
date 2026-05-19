@@ -329,22 +329,22 @@
 
 ## Personal Context 
 
-### Relevance to AgilePlace Product Strategy
+### Relevance to [Your product] Product Strategy
 
 **AI-Native Transformation**:
 - This conversation reinforces the need for PMs to get hands-on with AI tools
-- AgilePlace roadmap should incorporate AI-powered features that change user behavior
+- [Your product] roadmap should incorporate AI-powered features that change user behavior
 - Consider how AI agents could replace manual workflows in enterprise agile planning
 
 **Customer Outcomes Focus**:
-- Map every AgilePlace feature to specific behavioral changes:
+- Map every [Your product] feature to specific behavioral changes:
   - From: Manual dependency tracking → To: Automated dependency alerts + suggested resolutions
   - From: Weekly status meetings → To: Real-time predictability dashboards
   - From: Spreadsheet-based planning → To: Integrated, data-driven OKR alignment
 - Define metrics for each outcome before building
 
 **Trajectory Evaluation**:
-- AgilePlace positioning: Mid-market → Enterprise transformation in progress
+- [Your product] positioning: Mid-market → Enterprise transformation in progress
 - Talent density: Opportunity to become AI-native product org
 - Market dynamics: Jira dominance but opportunity in integrated planning/execution
 
@@ -388,9 +388,9 @@
 
 ## Follow-Up Questions to Explore
 
-1. How can AgilePlace adopt outcome-based pricing models? (Usage-based → Outcome-based)
+1. How can [Your product] adopt outcome-based pricing models? (Usage-based → Outcome-based)
 2. What customer behavioral outcomes drive our key business metrics?
 3. How do we build talent density in PM org? (Ramp-style founder production rate)
 4. What's our equivalent of "Square POS no-training-needed" simplicity?
 5. How do we structure PM experiments with control groups in enterprise SaaS?
-6. What AI-native capabilities should every AgilePlace PM develop in next 12 months?
+6. What AI-native capabilities should every [Your product] PM develop in next 12 months?

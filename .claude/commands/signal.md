@@ -35,7 +35,7 @@ The fatal flaw: waiting until the end of the week to write up signals. By then, 
 
 **Arguments**:
 - `--source`: Where the signal came from — see full source type list below
-- `--product`: Product area tag (`agileplace | okrs | roadmaps | dpd | platform`) — optional
+- `--product`: Product slug — optional; must match a folder under `📦 Products/` (e.g. the slug from `GOALS.md`)
 - `<raw-signal>`: The raw signal text — paste verbatim, can be rough or unpolished
 
 **Source types:**
@@ -65,7 +65,7 @@ The fatal flaw: waiting until the end of the week to write up signals. By then, 
 
 **Examples**:
 ```bash
-/signal --source call --product agileplace "Customer said they're manually copying card status into a spreadsheet every Friday because they can't get the view they need"
+/signal --source call --product [product-slug] "Customer said they're manually copying status into a spreadsheet every Friday because they can't get the view they need"
 /signal --source support "Ticket from PNC — third one this month about bulk card operations"
 /signal --source slack "Marcus flagged that NatWest asked about dependency visualization in last week's call"
 /signal --source sales "NatWest AE said Jira Align claimed real-time sync across 10K+ cards — buyer tested it in trial"
@@ -120,7 +120,7 @@ Strength guide:
 
 Determine where this signal belongs in the current product landscape:
 
-**Check open initiatives** — Scan `📦 Products/` directory structure mentally (AgilePlace, OKRs, Roadmaps, DPD) for any initiative this signal validates, contradicts, or is adjacent to.
+**Check open initiatives** — Scan `📦 Products/` (actual product folders only; skip `_template`) for any initiative this signal validates, contradicts, or is adjacent to.
 
 Output one of:
 - **Validates**: "This signal supports [initiative name] — confirms [specific assumption]"

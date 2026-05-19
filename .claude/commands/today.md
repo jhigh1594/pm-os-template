@@ -138,12 +138,12 @@ Read `📋 Tasks/today.md`. Python has already suggested Top 3 Priorities using 
 
 Read the `## 📰 Things to Know` section Python wrote to `today.md`. It contains the latest items from GenAI PM, Ben's Bites, and The Rundown AI.
 
-Your job: pick the **3 most relevant signals** to today's work context (CSP, AI PM, ServiceNow) and write a brief "Top Signals" paragraph beneath the raw items.
+Your job: pick the **3 most relevant signals** to today's work context (from `GOALS.md` and `🤖 AI/memory/memory.md`) and write a brief "Top Signals" paragraph beneath the raw items.
 
 **Format:**
 ```markdown
 ### 🔍 Top Signals for Today
-- **[Story headline]** — [1-sentence "so what" connecting it to CSP/AI PM work]
+- **[Story headline]** — [1-sentence "so what" connecting it to the human's current focus]
 - **[Story headline]** — [1-sentence connection]
 - **[Story headline]** — [1-sentence connection]
 ```

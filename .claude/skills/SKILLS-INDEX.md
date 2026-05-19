@@ -13,7 +13,7 @@
 Local AIPMOS extension:
 - **`product-coach`** - artifact review and PM judgment-building skill aligned to `🤖 AI/coaching/scorecard-presets.yaml` and the AIPMOS coaching runtime
 - **`openrouter-imagegen`** - image generation via OpenRouter API (Gemini, Flux, etc.); use when `OPENROUTER_API_KEY` is available and image generation is requested
-- **`m365-cli`** - Microsoft 365 CLI skill for SharePoint, Teams, OneDrive, Outlook, Planner, and Microsoft Search; authenticated as jon.high@servicenow.com
+- **`m365-cli`** - Microsoft 365 CLI skill for SharePoint, Teams, OneDrive, Outlook, Planner, and Microsoft Search; authenticate with your org account when configured
 
 ---
 

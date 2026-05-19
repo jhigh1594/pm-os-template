@@ -119,7 +119,7 @@ Enterprise Agile teams managing 10+ teams struggle with proactive dependency coo
 - 60% of missed deadlines attributed to dependencies (3 customers shared metrics)
 
 **Implications**:
-- High-value opportunity for AgilePlace (core ICP problem)
+- High-value opportunity for [product] (core ICP problem)
 - Clear competitive differentiation vs. Jira (reactive only)
 - Strong signal for proactive alerts feature
 

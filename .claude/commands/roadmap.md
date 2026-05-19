@@ -37,7 +37,7 @@ Create a quarterly roadmap document with themes, now/next/later sequencing, and 
 ```
 
 **Arguments**:
-- `--product <name>`: Product name (required) — e.g., "AgilePlace", "Roadmaps", "DPD"
+- `--product <name>`: Product slug (required) — must match a folder under `📦 Products/` (exclude `_template`)
 - `--quarter <Q>`: Quarter to plan (required) — e.g., "Q2", "Q3"
 - `--format <format>`: Output format (default: `now-next-later`)
   - `now-next-later`: Three-column with confidence indicators
@@ -48,9 +48,9 @@ Create a quarterly roadmap document with themes, now/next/later sequencing, and 
 
 **Examples**:
 ```bash
-/roadmap --product AgilePlace --quarter Q2
-/roadmap --product "DPD" --quarter Q3 --format themes --save
-/roadmap --product OKRs --quarter Q2 --format now-next-later
+/roadmap --product [product-slug] --quarter Q2
+/roadmap --product "[product-slug]" --quarter Q3 --format themes --save
+/roadmap --product [product-slug] --quarter Q2 --format now-next-later
 ```
 
 ---

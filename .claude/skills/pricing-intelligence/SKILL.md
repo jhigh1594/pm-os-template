@@ -110,7 +110,7 @@ When current external pricing information matters, use the current browsing/sear
 ## Example Behavior
 
 If the user asks:
-"How should we think about packaging and pricing a new DPD capability?"
+"How should we think about packaging and pricing a new [product] capability?"
 
 Default behavior:
 - clarify the product, buyer, and commercial motion

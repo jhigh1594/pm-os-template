@@ -108,41 +108,22 @@ Then: Store in Notion research database for future reference
 
 ---
 
-## AgilePlace MCP: Opportunity Tracking
+## Task tracker MCP: Opportunity tracking
 
-### Create opportunity cards from top insights
-
-```javascript
-// After identifying top 3 opportunities:
-mcp__agileplace__create_card({
-  board_id: "roadmap-board-id",
-  lane_id: "opportunities-lane-id",
-  title: "Proactive Dependency Risk Alerts",
-  description: "**Insight:** Enterprise teams spend 3+ hrs/week manually tracking...\n\n**Evidence:** 14 mentions across 12 ICP customers...\n\n**Opportunity:** Build intelligent risk scoring...",
-  priority: "high",
-  tags_json: JSON.stringify(["synthesis", "q1-2026", "dependencies"])
-})
-```
+If the workspace has a task-tracker MCP configured (Jira, Linear, Asana, etc.), create backlog or roadmap items from top synthesis opportunities using that server's API. Replace tool names below with whatever is configured in `.mcp.json`.
 
 ### Usage pattern
 
 ```bash
 # After synthesis identifies opportunities
 Use customer-feedback-synthesis skill → Output: Top 3 prioritized opportunities
-Then: Create AgilePlace cards for each top opportunity
+Then: Create tracker items for each top opportunity (if MCP available)
 ```
 
-### When to use AgilePlace MCP
+### When to use task tracker MCP
 
-✅ **Roadmap integration**
-- Move synthesis insights to roadmap
-- Create opportunity cards from findings
-- Track validation activities
-
-✅ **Stakeholder visibility**
-- Make synthesis findings visible to team
-- Link opportunities to customer evidence
-- Track progress on top opportunities
+✅ **Roadmap integration** — move synthesis insights to the team's board  
+✅ **Stakeholder visibility** — link opportunities to customer evidence
 
 ---
 
@@ -166,12 +147,8 @@ mcp__notion__notion-create-pages({
   pages: [{...synthesis report...}]
 })
 
-# Step 4: Create opportunity cards in AgilePlace
-mcp__agileplace__create_card({
-  board_id: "roadmap-board",
-  title: "Top opportunity from synthesis",
-  ...
-})
+# Step 4: Create opportunity items in task tracker (if MCP configured)
+# Use your tracker MCP's create-issue API
 ```
 
 ---
@@ -247,8 +224,8 @@ When using synthesis with MCP servers:
 ### Data Storage (After Synthesis)
 - [ ] Notion: Store synthesis report
 - [ ] Notion: Update pattern tracking (if continuous)
-- [ ] AgilePlace: Create opportunity cards (if applicable)
-- [ ] AgilePlace: Link to customer evidence
+- [ ] Task tracker: Create opportunity items (if MCP applicable)
+- [ ] Task tracker: Link to customer evidence
 
 ---
 
@@ -258,4 +235,4 @@ When using synthesis with MCP servers:
 |------------|------|-------------|
 | **Granola** | Data source | Meeting transcript analysis, multi-meeting synthesis |
 | **Notion** | Storage/retrieval | Long-term research storage, historical comparison |
-| **AgilePlace** | Action tracking | Move insights to roadmap, opportunity cards |
+| **Task tracker** | Action tracking | Move insights to roadmap, opportunity items |

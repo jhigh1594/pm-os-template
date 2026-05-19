@@ -167,7 +167,7 @@ START
 
 ## Examples by Product
 
-### AgilePlace Launch Tier Examples
+### Launch tier examples (customize per product)
 
 **Tier 1:**
 - AI Copilot for card prioritization

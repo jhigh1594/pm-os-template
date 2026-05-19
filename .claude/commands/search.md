@@ -11,7 +11,7 @@ Search across all product strategy, competitive intelligence, PM frameworks, and
 
 ```
 /search "what did we decide about Global Attributes architecture?"
-/search "DPD competitive positioning vs Productboard"
+/search "[your product] competitive positioning vs [competitor]"
 /search "product sense mental models"
 /search "Command of the Message value proposition"
 ```
@@ -20,7 +20,7 @@ Search across all product strategy, competitive intelligence, PM frameworks, and
 
 | Collection | Content | Documents |
 |------------|---------|-----------|
-| `products` | PRDs, product strategy, designs (AgilePlace, OKRs, DPD) | 575 |
+| `products` | PRDs, product strategy, designs (folders under `📦 Products/`) | varies |
 | `pm-frameworks` | Mental models, decision frameworks, communication patterns | 438 |
 | `company` | Competitive analysis, business intelligence | 165 |
 | `ai-toolkit` | AI patterns, prompts, memory | 27 |
@@ -42,8 +42,8 @@ All runs completely offline—no API calls, data stays local.
 ### Competitive Intelligence
 ```
 /search "Productboard portfolio management capabilities"
-/search "Competitive differentiation for DPD"
-/search "Targetprocess vs DPD"
+/search "Competitive differentiation for [your product]"
+/search "[competitor] vs [your product]"
 ```
 
 ### Product Decisions

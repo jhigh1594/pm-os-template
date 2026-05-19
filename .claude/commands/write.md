@@ -32,8 +32,8 @@ Write stakeholder communications with PM-specific structure, skill routing, and 
 **Examples**:
 ```bash
 /write --type exec --to "Louise" "Q2 roadmap decision update"
-/write --type ask --to "Marcus" "approval on DPD trade-off recommendation"
-/write --type announcement "AgilePlace custom views GA launch"
+/write --type ask --to "[Name]" "approval on [initiative] trade-off recommendation"
+/write --type announcement "[Product] [feature] GA launch"
 /write "stakeholder update on NatWest capacity discussions"   # auto-detect type
 ```
 
@@ -112,7 +112,7 @@ Narrative guide applied: [audience] — opening rule: [one sentence from the gui
 - Implication for them — what they need to know or do
 - Length: 1 page max, ideally 5-8 sentences
 
-**Example opening:** "We're moving forward with Option B on DPD capacity — here's what that means for Q2."
+**Example opening:** "We're moving forward with Option B on [initiative] — here's what that means for Q2."
 
 **Not:** "Thank you for your continued partnership. I wanted to update you on recent developments regarding..."
 
@@ -194,12 +194,9 @@ Tailored to: [name + one sentence of context used]
 
 ## Quick Reference for PM Context
 
-When applicable, draw from Company/AgilePlace context:
+When applicable, draw from `GOALS.md`, `📦 Products/<slug>/`, and `🏢 Company/` — do not invent product or company names.
 
-**ICP:** Enterprise (500–10,000+ employees), Financial Services, Insurance, Logistics, Manufacturing, Technology
-**Products:** AgilePlace, OKRs, Roadmaps, DPD
-**Key personas:** Director of IT, VP of Engineering, CTO, Agile Program Managers, RTEs, Product Owners
-**Existing tools (competitive):** Jira (75%), Azure DevOps (60%)
+**ICP / personas / competitors:** Load from the relevant product `context.md`, `ICP.md`, or `🏢 Company/competitive/` files. If missing, ask once before drafting.
 
 **Available Frameworks:**
 - **Executives**: BLUF, Minto Pyramid (SCQA), MECE

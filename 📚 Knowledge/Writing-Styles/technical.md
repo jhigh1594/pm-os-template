@@ -11,7 +11,7 @@
 Sentence 1 must contain: the specific technical challenge, constraint, or decision being addressed.
 
 > ✅ "The current card-sync pipeline can't handle 10K+ concurrent events without dropping updates — here are three approaches."
-> ✅ "OAuth 2.0 with PKCE is the only flow that satisfies our new SOC 2 Type II requirements for the AgilePlace mobile client."
+> ✅ "OAuth 2.0 with PKCE is the only flow that satisfies our new SOC 2 Type II requirements for the mobile client."
 > ❌ "We want to improve the sync performance."
 > ❌ "The mobile team is working on authentication improvements."
 

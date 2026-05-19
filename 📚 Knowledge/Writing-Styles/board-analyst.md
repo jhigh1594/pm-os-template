@@ -75,7 +75,7 @@ Order evidence from most to least persuasive for this audience:
 
 | Anti-Pattern | Why It Fails | Fix |
 |---|---|---|
-| "We have no real competition" | Destroys credibility — every board member knows the landscape | Acknowledge and differentiate: "ServiceNow competes on [X]; we win on [Y]" |
+| "We have no real competition" | Destroys credibility — every board member knows the landscape | Acknowledge and differentiate: "[Incumbent] competes on [X]; we win on [Y]" |
 | Feature catalog without strategic narrative | Board sees a roadmap, not a strategy | Frame capabilities through the strategic position they reinforce |
 | Vanity metrics (app downloads, page views) | Easy to inflate, hard to connect to business value | Use NRR, win rate, payback period, pipeline coverage |
 | Everything is "on track" | Boards know projects slip; this signals concealment | Acknowledge yellow/red items proactively with the recovery plan |

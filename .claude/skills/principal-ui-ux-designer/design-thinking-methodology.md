@@ -315,7 +315,7 @@ Non-linear, iterative. Cycle through stages as needed.
 
 ### Applied to SaaS Products
 
-**Example: AgilePlace Dependency Management**
+**Example: [Product] — core workflow**
 
 ```
 EMPATHIZE:

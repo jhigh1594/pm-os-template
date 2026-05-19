@@ -40,7 +40,7 @@ Each job is a different mode.
 ```
 
 **Arguments**:
-- `--product`: `agileplace | okrs | roadmaps | dpd | platform` — optional, inferred if obvious
+- `--product`: Product slug under `📦 Products/` — optional, inferred if obvious
 - `--mode`: Mode of business reasoning (default: asks which mode)
   - `model` — Revenue impact model with Conservative/Expected/Upside cases
   - `tradeoff` — Cross-functional constraint map across all five functions
@@ -50,11 +50,11 @@ Each job is a different mode.
 
 **Examples**:
 ```bash
-/biz-case --product agileplace --mode model "bulk card operations"
-/biz-case --mode tradeoff "dependency visualization"
-/biz-case --mode perspective "what does CS think about dependency view"
-/biz-case --product okrs --mode review "path/to/spec.md"
-/biz-case --mode model "OKR check-in reminders"
+/biz-case --product [product-slug] --mode model "[feature name]"
+/biz-case --mode tradeoff "[initiative]"
+/biz-case --mode perspective "what does [function] think about [feature]"
+/biz-case --product [product-slug] --mode review "path/to/spec.md"
+/biz-case --mode model "[initiative]"
 ```
 
 ---
@@ -239,7 +239,7 @@ After presenting the model, offer:
 
 **Goal:** Ensure every full PRD has a genuine Business Case section — not just strategic rationale, but a testable hypothesis with go/no-go criteria.
 
-**Input**: Spec path at `<path>` (e.g., `/biz-case --mode review 📦 Products/AgilePlace/specs/bulk-ops.md`)
+**Input**: Spec path at `<path>` (e.g., `/biz-case --mode review 📦 Products/[product-slug]/initiatives/[initiative]/spec.md`)
 
 **If path provided**: Read the spec, check for Business Case section.
 - If found: Audit against the 6-element standard. Flag any missing elements.
