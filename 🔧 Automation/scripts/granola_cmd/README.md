@@ -15,10 +15,9 @@ After a successful run, the CLI prints a machine-readable JSON block between `GR
 
 ## Scheduled daily run (LaunchAgent)
 
-The job runs **daily at 11:59 PM** via macOS LaunchAgent. It was not running because:
+The job runs **daily at 11:59 PM** (local time) via macOS LaunchAgent. Exports markdown only — use `/granola` in Cursor or Claude Code for AI summaries.
 
-1. **Plist was missing** – the LaunchAgent was never installed or was removed.
-2. **Paths were wrong** – install script pointed at `scripts/automation` instead of `🔧 Automation/scripts`, so the job would have failed even if installed.
+**`/onboard`** can install this after explicit approval (Step 4, Granola = yes).
 
 ### Install or reinstall
 

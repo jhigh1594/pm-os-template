@@ -1,5 +1,7 @@
 # Granola Sync Cron Job Setup
 
+> **Prefer LaunchAgent on macOS:** `bash "🔧 Automation/scripts/granola_cmd/install.sh"` or approve install during `/onboard`. Use this cron doc only if LaunchAgent is not an option.
+
 ## Cron Entry
 
 To run the granola sync every night at 9 PM PST, add this to your crontab:

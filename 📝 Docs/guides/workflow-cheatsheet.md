@@ -83,7 +83,7 @@ Canonical lifecycle. Each step hands context to the next; initiative state lives
 | Deep product context (demo, changelog, confusion) | `/product-depth` | — |
 | Demo guide for a specific audience | `/demo-prep` | — |
 | **Workspace and memory** | | |
-| First-time workspace setup | `/onboard` | — |
+| First-time workspace setup | `/onboard` | — (optional Granola LaunchAgent on macOS) |
 | Persist session context | `/refresh-memory` | — |
 | Search prior conversations | `/remember` | — |
 | Capture a durable decision pattern | `/capture-pattern` | — |

@@ -4,11 +4,11 @@ description: PM-OS / AIPMOS onboarding — four steps only
 
 # /onboard
 
-Portable setup: **Jon’s context first**, then **wire the repo** so `/today` and the rest of AIPMOS work. **Exactly four steps** — no fifth onboarding phase; deeper work uses normal commands afterward.
+Portable setup: **the PM’s context first**, then **wire the repo** so `/today` and the rest of AIPMOS work. **Exactly four steps** — no fifth onboarding phase; deeper work uses normal commands afterward.
 
 ## Design principle
 
-**Durable (job-to-job):** craft, planning rhythm, how Jon communicates — mostly Step 1; easy to re-seed when switching employers.
+**Durable (job-to-job):** craft, planning rhythm, how the PM communicates — mostly Step 1; easy to re-seed when switching employers.
 
 **Tenant (this job):** company, products, stakeholders, keys, task tracker — Steps 2–4. Next role: refresh Step 1–2 and re-run Step 3–4.
 
@@ -30,11 +30,13 @@ Configure `🔧 Automation/scripts/today_cmd/config.yaml`: `task_tracker`, `prof
 **4 — Connectors and first closed loop**  
 `GOOGLE_API_KEY`, **`GENAIPM_EMAIL`** (mandatory **One Step Better** in `/today` — see `.claude/skills/menkesu-awesome-pm-skills-one-step-better-ai-pm/`, https://genaipm.com). Granola / Slack as needed. Align `.env` / `.env.example`; run **`/today dry`** when ready.
 
+**Granola on macOS:** If the PM uses Granola, explain the optional daily LaunchAgent (11:59 PM local export to `🏢 Company/meetings/granola/`), get explicit approval, then run `bash "🔧 Automation/scripts/granola_cmd/install.sh"` and verify with `launchctl list | grep pm-os.granola`. Full script: `.claude/commands/onboard.md` → *Granola daily sync*.
+
 **Done:** confirm all four steps, then use **`/today`** daily.
 
 ## After onboarding (not a fifth step)
 
-Idea-to-delivery lifecycle (`/brainstorm` → `/discover` → `/spec` → … → `/learn`) — pick up when Jon has a real initiative. Full command list: `.claude/commands/onboard.md`.
+Idea-to-delivery lifecycle (`/brainstorm` → `/discover` → `/spec` → … → `/learn`) — pick up when there is a real initiative. Full command list: `.claude/commands/onboard.md` (if present) or `COMMAND-REFERENCE.md`.
 
 **Ruler:** If the repo uses Ruler, edit `.ruler/AGENTS.md` and run `ruler apply` instead of hand-editing generated `CLAUDE.md`.
 
