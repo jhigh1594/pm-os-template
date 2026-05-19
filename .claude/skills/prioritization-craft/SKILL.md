@@ -1,6 +1,9 @@
 ---
+description: 'Use when deciding what to build first, rank a backlog, or make prioritization
+  tradeoffs. Triggers: what goes first, rank these, prioritize backlog, above the
+  line, RICE, value vs effort, capacity constraint, quarterly prioritization, what
+  to cut.'
 name: prioritization-craft
-description: Use when deciding what to build first, rank a backlog, or make prioritization tradeoffs. Triggers: what goes first, rank these, prioritize backlog, above the line, RICE, value vs effort, capacity constraint, quarterly prioritization, what to cut.
 ---
 
 # Prioritization Craft
@@ -118,6 +121,20 @@ Help the PM improve prioritization judgment:
 - explain why ties usually hide indecision
 - Surface confidence explicitly — the constraint doing the real work is often not capacity or strategy, but evidence quality. A tie between two items usually means you need a signal, not a framework.
 
+---
+
+## 🎯 Quality Gate: Opportunity Cost Excavation
+
+**Before we lock this in:**
+
+> "What is this decision saying no to — not just the alternatives you considered, but the types of problems and customers you're de-prioritizing by going in this direction? Who loses in this tradeoff, and is that the right call?"
+
+_(This is the reasoning step that separates a good prioritization from a great one.)_
+
+**Auto-saving to** `📚 Knowledge/Growth/growth-signals-YYYY-MM.md` — append entry now. No prompt needed.
+
+---
+
 ## Historical Context
 
 When local context is useful, refer to:
@@ -145,6 +162,12 @@ Default behavior:
 - provide a provisional order
 - explain the tradeoff
 - suggest the stakeholder message or revisit trigger
+
+
+
+## What Makes This Skill Different
+
+<!-- State what pushes Claude OUT of default behavior. What does a naive response miss? -->
 
 ## Self-Learning
 

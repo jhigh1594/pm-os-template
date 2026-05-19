@@ -12,6 +12,7 @@ The decision retrospective is the most important section — don't skip it when 
 
 ## Relationship
 
+- `/okr-progress` handles OKR-specific deep analysis — delegated to in Step 3
 - `/signal` feeds the signals section
 - `📚 Knowledge/decisions/decision-journal.md` is the source for decision retrospectives
 - `📚 Knowledge/People/` provides relationship health data in Step 4
@@ -30,15 +31,10 @@ Its job is to ask: Are we making good decisions? Are we capturing signal? Are we
 ## Command Syntax
 
 ```bash
-/weekly-review [--week <YYYY-MM-DD>] [--growth-review [--months <N>] [--archetype <name>]]
+/weekly-review [--week <YYYY-MM-DD>]
 ```
 
 - `--week`: Monday of the week to review (default: current week)
-- `--growth-review`: Cross-month growth signal synthesis (replaces deleted `/growth-review` command)
-  - `--months <N>`: How many months back to read (default: 3)
-  - `--archetype <name>`: Filter to one archetype only
-  - Reads all `📚 Knowledge/Growth/growth-signals-YYYY-MM.md` files, builds frequency table by pattern tag, flags repeating patterns (3+ entries), surfaces coverage gaps across 7 coaching archetypes
-  - Use quarterly or when Step 1.5 shows a dominant theme worth tracing across months
 
 ---
 
@@ -196,6 +192,7 @@ Top theme: [One phrase, or "No dominant theme yet"]
 
 ## Integration with Other Commands
 
-- Use `/signal` to capture any uncaptured signals `surfaced` in Step 2
+- Use `/okr-progress` for deep OKR analysis (Step 3 delegates to this behavior)
+- Use `/signal` to capture any uncaptured signals surfaced in Step 2
 - Use `/decide` to log any decisions made during or as a result of the review
 - Use `/today` for daily planning; `/weekly-review` is the Friday/Monday rhythm counterpart

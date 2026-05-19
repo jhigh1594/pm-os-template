@@ -13,8 +13,8 @@ Prepare for stakeholder meetings with structured context, decisions, and talking
 - **`/align`** is the broader stakeholder strategy; `/prep` is per-meeting tactical preparation
 - **`Knowledge/People/[name].md`** files provide stakeholder context
 - **`GOALS.md`** provides current priorities for context
-- **`/granola`** is the downstream handoff after the meeting
-- Use `/prep` before every significant stakeholder meeting; use `/granola` after
+- **`/granola`** extracts meeting intelligence from Granola — use after the meeting; `/prep --post` turns that output into structured follow-up
+- Use `/prep` before every significant stakeholder meeting; use `/prep --post` after
 
 ---
 
@@ -34,12 +34,14 @@ Prepare for stakeholder meetings with structured context, decisions, and talking
 
 ```bash
 /prep [--meeting <title>] [--people <names>] [--goal <goal>] [<description>]
+/prep --post [<meeting-title-or-notes>]
 ```
 
 **Arguments**:
 - `--meeting <title>`: Meeting title or context (optional — e.g., "Q2 Roadmap Review")
 - `--people <names>`: Comma-separated names of attendees (optional — e.g., "Louise, Marcus, Sarah")
 - `--goal <goal>`: Your goal for the meeting (optional — e.g., "Align on DPD trade-offs")
+- `--post`: Post-meeting mode — extract decisions, action items, and draft follow-up communications
 - `<description>`: Additional context (optional — can provide interactively)
 
 **Examples**:
@@ -47,6 +49,8 @@ Prepare for stakeholder meetings with structured context, decisions, and talking
 /prep --people "Louise" --goal "align on DPD trade-offs"
 /prep --meeting "Q2 Roadmap Review" --people "Louise, Marcus"
 /prep --goal "Decision on pricing tier changes"
+/prep --post "Q2 Roadmap Review"        # post-meeting extraction
+/prep --post                            # will ask for meeting context
 /prep
 ```
 
@@ -99,7 +103,7 @@ If `Knowledge/People/[name].md` doesn't exist for someone, note: "⚠️ No cont
 **Check 1: Demo Guide Currency**
 Look in `📚 Knowledge/Systems-and-Processes/` for any demo guide for the relevant product:
 - If a guide exists created within the last 30 days → Surface it: "✅ Demo guide found: `[path]` — created [date]. Surfacing Competitive Awareness section if relevant."
-- If no guide exists or the most recent is >30 days old → Add to Context Gaps: "⚠️ No current demo guide found for [product] — consider `/demo-prep --product [name]` before this meeting to prepare a fresh guide."
+- If no guide exists or the most recent is >30 days old → Add to Context Gaps: "⚠️ No current demo guide found for [product] — use the `product-operational-intelligence` skill to build demo background before this meeting."
 
 **Check 2: Competitive Context**
 If a competitor is mentioned in the People file or meeting description:
@@ -243,6 +247,62 @@ After generating, ask:
 > "Is there anything specific you're worried about going in? I can stress-test your talking points."
 
 If they share a concern, role-play the objection and help refine the response.
+
+---
+
+## Post-Meeting Mode (`--post`)
+
+Activated when `--post` flag is passed. Replaces the pre-meeting flow entirely.
+
+### Step P1: Gather Meeting Context
+
+If notes, a Granola export, or meeting title are provided, proceed. Otherwise ask:
+> "Paste your notes, a summary, or a Granola export from the meeting."
+
+### Step P2: Extract Structured Output
+
+From the meeting content, extract:
+
+```
+## [Meeting Title] — [Date]
+
+**Decisions made:**
+- [Decision 1 — explicit, not implied]
+- [Decision 2]
+
+**Action items:** (max 3)
+- [ ] [Owner]: [Specific action] by [Date or "TBD"]
+
+**Still open:**
+- [Unresolved question or deferred decision — with owner if known]
+
+**Commitments made:** (if any)
+- [What you committed to, to whom, by when]
+```
+
+Rules:
+- Cap action items at 3 — if more exist, rank and surface the 3 that matter most
+- "Still open" section is required even if everything was resolved (write "Nothing open")
+- Never infer decisions that weren't explicit — if uncertain, mark as `[UNCLEAR — verify]`
+
+### Step P3: Draft Communication (if needed)
+
+Ask: "Does anyone need a follow-up based on this meeting?"
+
+If yes, ask who and what type, then draft based on recipient:
+- **Exec recipient**: BLUF format — lead with the decision, not the discussion
+- **Team/peer**: Decisions + action items format — no pleasantries, start with "From today's meeting:"
+- **External customer**: Action-forward — what they're waiting on, what you'll do by when
+
+### Step P4: Update Knowledge/People/ (with confirmation)
+
+If a People file exists for any attendee and the meeting surfaced new context about their position, priorities, or relationship:
+
+Propose the update: "I noticed [Name] mentioned [thing]. Should I add this to `Knowledge/People/[name].md`?"
+
+**Never auto-write to People/ files without explicit confirmation.**
+
+---
 
 ### Step 5: Output Rich Contextual Handoff
 

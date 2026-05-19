@@ -134,7 +134,25 @@ Read `📋 Tasks/today.md`. Python has already suggested Top 3 Priorities using 
 - Add any themes, patterns, or blockers you see that Python's algorithm would miss
 - Surface strategic connections Python can't infer (e.g., "this overdue card feeds the Q2 OKR")
 
-### Step 2b: One Step Better AI PM (MANDATORY — never skip)
+### Step 2b: Things to Know — Synthesize Top Signals
+
+Read the `## 📰 Things to Know` section Python wrote to `today.md`. It contains the latest items from GenAI PM, Ben's Bites, and The Rundown AI.
+
+Your job: pick the **3 most relevant signals** to today's work context (CSP, AI PM, ServiceNow) and write a brief "Top Signals" paragraph beneath the raw items.
+
+**Format:**
+```markdown
+### 🔍 Top Signals for Today
+- **[Story headline]** — [1-sentence "so what" connecting it to CSP/AI PM work]
+- **[Story headline]** — [1-sentence connection]
+- **[Story headline]** — [1-sentence connection]
+```
+
+If fewer than 3 items are relevant, use what's there — don't force connections. If newsletters are all DEGRADED, skip this sub-step and note it.
+
+Replace `*Claude synthesizes top signals for today's context during the workflow.*` with the formatted block.
+
+### Step 2c: One Step Better AI PM (MANDATORY — never skip)
 
 Every `/today` run **must** execute this step before updating `today.md`. Do not treat GenAI PM / One Step Better as optional: the "## 🚀 One Step Better" section must always contain a completed block (not an empty placeholder).
 

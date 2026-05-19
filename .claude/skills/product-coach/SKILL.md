@@ -1,10 +1,15 @@
 ---
+description: 'Review and score PM artifacts (PRDs, memos, roadmaps, research, exec
+  comms) with structured feedback.
+
+  TRIGGERS: "review my PRD", "score this memo", "coach me on this artifact", "what''s
+  wrong with this",
+
+  "improve this draft", "critique my roadmap", "help me strengthen this", "what am
+  I missing",
+
+  "is this ready for review", "tell me what''s weak here", "assess this decision memo"'
 name: product-coach
-description: |
-  Review and score PM artifacts (PRDs, memos, roadmaps, research, exec comms) with structured feedback.
-  TRIGGERS: "review my PRD", "score this memo", "coach me on this artifact", "what's wrong with this",
-  "improve this draft", "critique my roadmap", "help me strengthen this", "what am I missing",
-  "is this ready for review", "tell me what's weak here", "assess this decision memo"
 ---
 
 # Product Coach
@@ -19,6 +24,13 @@ AI-powered PM artifact coaching that improves both the artifact and your product
 - Asks what's missing, weak, or wrong with their work
 - Wants coaching on product judgment, not just edits
 - Says "coach me on..." or "help me strengthen..."
+
+**Proactive activation (default ON):**
+When you just completed producing any of the following in the current session — a spec, PRD, decision memo, prioritization output, roadmap narrative, or research synthesis — proactively offer before moving on:
+
+> "Before we close this out — want a quick coach pass on this [artifact type]? Usually surfaces one thing worth tightening."
+
+Offer once per artifact. Suppress for the session if the user says "skip coaching", "no coaching", or "move on."
 
 **Do NOT activate for:**
 - First-draft generation (use `/spec` or `/think` first)
@@ -134,6 +146,18 @@ See `🤖 AI/coaching/README.md` for system architecture.
 | `output-format.md` | Exact templates for scorecard and JSON | When generating output |
 | `examples.md` | Complete coaching examples | When you need reference patterns |
 | `scoring-rubric.md` | Detailed scoring criteria | When scoring is ambiguous |
+
+
+
+## What Makes This Skill Different
+
+<!-- State what pushes Claude OUT of default behavior. What does a naive response miss? -->
+
+
+
+## Gotchas & Common Pitfalls
+
+<!-- Populate from real usage failures. Each entry: failure mode → root cause → what to do instead. -->
 
 ## Self-Learning
 

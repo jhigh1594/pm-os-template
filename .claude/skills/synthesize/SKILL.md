@@ -1,11 +1,27 @@
 ---
+description: 'Use when synthesizing customer feedback from multiple sources into actionable
+  insights. Triggers: synthesize feedback, customer interviews analysis, support tickets
+  patterns, enhancement requests, thematic analysis, JTBD from feedback, 10+ data
+  points, analyze these interviews, I have transcripts, what do my users actually want,
+  design an interview guide, decision brief, verify this analysis, confidence in findings,
+  disconfirming evidence.'
 name: customer-feedback-synthesis
-description: Use when synthesizing customer feedback from multiple sources into actionable insights. Triggers: synthesize feedback, customer interviews analysis, support tickets patterns, enhancement requests, thematic analysis, JTBD from feedback, 10+ data points.
 ---
 
 # Customer Feedback Synthesis
 
 You are helping me synthesize existing customer feedback into actionable insights using research-validated frameworks.
+
+## Mode Selector
+
+Pick the mode that matches where you are:
+
+| Mode | When to use | Skip to |
+|---|---|---|
+| **Analyze** | You have raw transcripts, survey data, or call notes | Decision Context loading (before Phase 1) |
+| **Design** | You need an interview guide before research happens | Interview Design section |
+| **Synthesize** | You have findings; need insights and interpretive position | Phase 3 (Insight Extraction) |
+| **Verify** | You have existing AI-generated analysis; need a rigor check | Verification Pass section |
 
 ## Your Approach
 
@@ -34,11 +50,50 @@ You are helping me synthesize existing customer feedback into actionable insight
 - ✅ Support ticket root cause analysis (50+ tickets)
 - ✅ Enhancement request consolidation
 - ✅ Cross-source synthesis (interviews + tickets + analytics)
+- ✅ Turning raw transcripts or call notes into a decision brief
+- ✅ Designing a JTBD-clean interview guide before research
+- ✅ Verifying AI-generated analysis for fabricated quotes or generic themes
 
 **When NOT to use this skill:**
 - ❌ Planning future research (use `/discover` or `/research`)
 - ❌ Single interview analysis (analyze as you go)
 - ❌ Real-time triage of incoming requests (use `/prioritize`)
+- ❌ Building personas, segments, or journey maps — use `/research-users`
+- ❌ Designing A/B tests or quantitative experiments — use `/exp-driven-dev`
+
+---
+
+## Finding vs Insight — Enforce the Distinction
+
+These are not interchangeable. Never mix them in output.
+
+**Finding** = what happened (observable, verifiable, source-traceable)
+> "Six of ten participants mentioned pricing."
+
+**Insight** = mechanism + implication + direction
+> "The pricing objection is a proxy for value uncertainty — buyers don't believe the product will change their workflow, and they're using price as an exit rather than the real reason."
+
+Only insights drive decisions. A synthesis full of findings is a summary. A synthesis full of insights is a decision brief.
+
+Four-step upgrade from finding to insight:
+1. State what was observed (the finding)
+2. Explain why it happens (the mechanism)
+3. Name what it means for the decision (the implication)
+4. State what to do differently (the direction)
+
+A pattern that stops at step 1 is not an insight.
+
+---
+
+## Decision Context Loading (Required Before Any Analysis)
+
+Before touching any data, establish:
+
+1. **What decision does this synthesis inform?** (name the specific trade-off or choice)
+2. **What do you currently believe is true?** (surfaces the hypothesis to stress-test)
+3. **What evidence would change your mind?** (defines the evidence threshold)
+
+If context has already been provided, confirm the decision before proceeding. Do not skip this step — it is what separates decision-grade analysis from topic summaries.
 
 ---
 
@@ -89,6 +144,16 @@ Break raw feedback into discrete, analyzable units:
 - **Preserve context**: Who said it, when, in what situation
 - **Tag metadata**: Customer segment, source type, date, topic
 - **Extract verbatim quotes**: Don't paraphrase - capture exact language
+
+**Quote Verification Rules (enforce on every nugget):**
+- Always verbatim — never paraphrase or reconstruct
+- Cite with participant ID and approximate timestamp: [P02 ~14:30]
+- Start where the thought begins; include hedges and qualifiers — they signal uncertainty
+- Include emotional language when present
+- Do not combine statements from different parts of an interview
+- A quote that would exceed 3 sentences should be split into separate quotes
+- No single-source insights — every insight requires at least 2 independent sources
+- Quotes that cannot be traced to an exact source in the raw data are fabricated — flag and remove
 
 **Atomic Nugget Template:**
 ```markdown
@@ -184,6 +249,31 @@ Unlike [Current Alternatives]
 Our approach could [Strategic Differentiation]
 ```
 
+#### 3b-a. Disconfirming Evidence (Required — Not Optional)
+
+Every synthesis must include at least one finding that cuts against the primary insights. A brief that only shows supporting evidence is a bias report, not research.
+
+Ask explicitly: "What did participants say or do that contradicts the main themes?"
+
+Format:
+```
+## Disconfirming Evidence
+- [Finding that cuts against Insight 1] — Source: [P0X ~timestamp]
+- [Finding that cuts against Insight 2 or the overall narrative]
+```
+
+**Confidence Assessment per Insight:**
+
+Rate each insight before surfacing it:
+
+| Confidence | Criteria |
+|---|---|
+| **Strong** | 3+ independent sources; behavioral evidence; consistent across segments |
+| **Provisional** | 2 sources; or stated preference only; or single segment |
+| **Thin** | Single source; or contradicted by other evidence; or could apply to any product |
+
+Never present all insights as equally confident. Thin insights must be flagged explicitly and paired with a recommended validation method.
+
 #### 3c. Assumption Documentation & Validation Tracking
 
 Track assumptions that need validation before committing to build:
@@ -197,6 +287,96 @@ Track assumptions that need validation before committing to build:
 **Priority Score** = Impact (1-10) × Strategic Fit (1-10) × Confidence (1-10)
 
 See `output-templates.md` for the complete Phase 3 output template.
+
+---
+
+---
+
+## Interview Design Mode
+
+Use when the user needs an interview guide before research happens. Skip directly here from the Mode Selector when mode = Design.
+
+### JTBD-Clean Interview Guide Structure
+
+Interviews should surface the struggling moment, the switch, and the forces — not validate features.
+
+**Opening (build rapport, orient to past behavior):**
+- "Walk me through the last time you dealt with [problem area]. Start from the beginning."
+- "What were you doing right before you realized you needed to change something?"
+
+**Struggle + trigger:**
+- "What was the moment you knew your current approach wasn't working?"
+- "What had changed? Why now and not earlier?"
+
+**Alternatives explored:**
+- "What did you look at before you made a decision?"
+- "What almost made you choose something else?"
+
+**Switch decision:**
+- "Walk me through how the decision actually got made."
+- "Who else was involved? How did they feel about it?"
+
+**Outcome:**
+- "What changed after you made the switch?"
+- "What did you expect would happen that didn't?"
+
+### Mom Test Checklist
+
+Before using any question, verify:
+- [ ] Does this ask about the past, not a hypothetical future? ("Have you ever..." not "Would you...")
+- [ ] Does this avoid leading the witness? (no "Do you think X is a problem?")
+- [ ] Does this focus on behavior, not opinion? ("What did you do" not "What do you think")
+- [ ] Does this avoid compliments and validation-seeking? ("That's great" shuts down honest feedback)
+
+### Portigal Probing Moves
+
+When an answer is thin or generic, use one of these:
+- **Mirroring**: Repeat their last 3 words as a question. "You felt stuck?" Forces elaboration.
+- **Naive probe**: "I'm not familiar with that — can you walk me through it?" Removes assumptions.
+- **Clarify "we"**: "When you say 'we' decided — who specifically?" Surfaces the real decision-maker.
+- **Numerical vagueness**: "You said 'often' — how often exactly?" Makes patterns concrete.
+- **Long silence**: Don't fill it. 5-second pause often produces the most honest answer.
+
+### 4 Forces of Progress Questions
+
+Map each participant to the four forces (Bob Moesta):
+- **Push**: "What about your current situation was driving you to look for something new?"
+- **Pull**: "What was appealing about the new solution? What did you hope it would do?"
+- **Anxiety**: "What made you hesitate before committing?"
+- **Habit**: "What almost made you stick with what you had?"
+
+---
+
+## Verification Pass
+
+Use when mode = Verify, or after generating any AI-assisted analysis.
+
+```
+VERIFICATION PASS
+
+Review the analysis above for:
+
+QUOTE VERIFICATION
+- Confirm each quote exists verbatim in the source
+- Flag any quotes that are paraphrased, combined, or not found
+- Flag any quote missing participant ID + timestamp
+
+CONTRADICTION CHECK
+- For each participant, check if statements at different points conflict
+- Look for: stated preferences vs. described behaviors, confidence followed by hedging
+- Flag contradictions — do not resolve them silently
+
+CONFIDENCE ASSESSMENT
+- For any finding based on fewer than 2 independent sources, flag it as "Thin"
+- Flag any theme that could apply to almost any product in this category as "Generic — discard"
+- Rate each insight: Strong / Provisional / Thin
+
+DISCONFIRMING EVIDENCE CHECK
+- Is there at least one finding that cuts against the primary insights?
+- If not, explicitly note: "No disconfirming evidence surfaced — this may indicate a gap"
+
+Output a verification summary with flags and recommended revisions.
+```
 
 ---
 
@@ -282,6 +462,18 @@ After synthesis completes, update:
 **memory-bank/progress.md**
 - Log synthesis milestone completion
 - Track synthesis cadence (quarterly, annual)
+
+
+
+## What Makes This Skill Different
+
+<!-- State what pushes Claude OUT of default behavior. What does a naive response miss? -->
+
+
+
+## Gotchas & Common Pitfalls
+
+<!-- Populate from real usage failures. Each entry: failure mode → root cause → what to do instead. -->
 
 ## Self-Learning
 

@@ -342,6 +342,8 @@ Any ⚠️ or ❌ in the AI Risk Extension must be resolved or explicitly deferr
 4. **Risk Validation Plan**: Testing the Four Risks systematically
 5. **MVP Scoping Doc**: What's in/out for first version
 6. **Discovery Summary**: One-pager capturing problem, solution, validation, scope
+7. **Persona Profile**: Primary + secondary personas with context, motivations, frustrations, and JTBD framing — built from Phase 1 interview synthesis
+8. **Customer Knowledge Assessment**: Audit of what we know vs. don't know across 5 dimensions: business context, process/workflow, pain points, buying criteria, competitive awareness
 
 ---
 

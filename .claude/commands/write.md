@@ -13,7 +13,7 @@ Write stakeholder communications with PM-specific structure, skill routing, and 
 - **`elite-copywriter`** handles general writing quality and style (loaded automatically for most types)
 - **`exec-comms`** skill handles executive-level communications (loaded for exec update type)
 - **`influence-craft`** skill handles persuasion-framed asks (loaded for stakeholder ask type)
-- **`/follow-up`** is the specialized post-meeting follow-up command — if you have a granola file, use `/follow-up` instead
+- **`/prep --post`** is the post-meeting follow-up command — use it after a meeting to extract decisions and draft follow-up comms
 - **`/align`** is for broader stakeholder strategy; `/write` is for drafting specific communications
 
 ---
@@ -25,7 +25,7 @@ Write stakeholder communications with PM-specific structure, skill routing, and 
 ```
 
 **Arguments**:
-- `--type`: Communication type (`exec | follow-up | ask | announcement`) — auto-detected if not specified
+- `--type`: Communication type (`exec | follow-up | ask | announcement | data`) — auto-detected if not specified
 - `--to`: Recipient name(s) — used to load `Knowledge/People/[name].md` context and adjust tone
 - `<what-to-write>`: Description of what to write (optional — can provide interactively)
 
@@ -52,7 +52,9 @@ Write stakeholder communications with PM-specific structure, skill routing, and 
 
 **4. Announcement/broadcast** — Wider team or customer-facing communication about a launch, change, or initiative. Characterized by: broad audience, informational or celebratory, no specific ask.
 
-**If unclear**, ask one question: "Is this informing someone of a decision, asking someone to decide something, following up on a meeting, or announcing something broadly?"
+**5. Data narrative** — Presenting data, metrics, or analysis to a non-data audience. Characterized by: data is the central input, the goal is insight + implication (not just numbers), audience may not be data-literate.
+
+**If unclear**, ask one question: "Is this informing someone of a decision, asking someone to decide something, following up on a meeting, announcing something broadly, or presenting data/findings?"
 
 ---
 
@@ -115,7 +117,9 @@ Narrative guide applied: [audience] — opening rule: [one sentence from the gui
 **Not:** "Thank you for your continued partnership. I wanted to update you on recent developments regarding..."
 
 ### Meeting Follow-Up
-**Prefer `/follow-up` if granola file exists.** If proceeding here:
+> If you have a Granola meeting file, use `/prep --post` instead — it has dedicated extraction logic.
+
+If proceeding here:
 
 **Structure:**
 ```
@@ -150,6 +154,23 @@ Do not bury the ask. It should be unmissable.
 - What's changing/launching and when
 - What they need to do (if anything)
 - Where to learn more
+
+### Data Narrative
+**When**: Presenting metrics, research findings, or analysis to stakeholders who aren't data-literate. Goal is insight + implication — not a data dump.
+
+**Structure:**
+- Context: What were we measuring and why? (1 sentence)
+- Insight: The single most important thing the data shows — lead with this
+- Evidence: 2-3 supporting data points that back the insight
+- Implication: What this means for decisions, priorities, or action
+
+**Rules:**
+- One headline insight — don't bury it in charts or tables
+- Numbers need context: "34% adoption" means nothing; "34% adoption, vs. 18% benchmark for comparable launches" means something
+- If presenting 3 numbers, the audience retains 0. Pick 1.
+- End with a clear "so what" — what should they do or believe differently because of this data?
+
+**Length:** 5-8 sentences for narrative framing; attach raw data or charts separately
 
 ---
 

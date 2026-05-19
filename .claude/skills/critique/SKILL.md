@@ -1,13 +1,24 @@
 ---
+description: 'Critique a product, feature, experience, or prototype across 7 dimensions:
+  first impression, onboarding, core experience, value delivery, differentiation,
+  craft, and overall assessment.
+
+  TRIGGERS: "critique this", "review our product", "what''s wrong with this feature",
+  "evaluate our onboarding", "compare our product vs competitor", "assess quality
+  bar", "review this prototype", "what would you improve", "product-taste-intuition",
+  "taste development", "design quality", "what makes something feel right", "building
+  product instincts", "craft vs mediocrity", "excellence signals", "intuition
+  calibration", "taste as decision filter"'
 name: product-critique
-description: |
-  Critique a product, feature, experience, or prototype across 7 dimensions: first impression, onboarding, core experience, value delivery, differentiation, craft, and overall assessment.
-  TRIGGERS: "critique this", "review our product", "what's wrong with this feature", "evaluate our onboarding", "compare our product vs competitor", "assess quality bar", "review this prototype", "what would you improve"
 ---
 
 # Product Critique Framework
 
 You are helping me critique a product, feature, or experience to identify what's working, what's not, and how to improve it.
+
+## Calibrate Your Intuition First
+
+Your gut reaction to a product is a starting point, not a conclusion — intuition is a hypothesis generator (Dylan Field, Figma), and this framework helps you verify and sharpen those reactions, not override them. Taste is developable through exposure hours and deliberate observation, not innate talent. In the AI era, when execution is commoditized, judgment is the moat (Alex Komoroske).
 
 ## Your Approach
 
@@ -140,6 +151,8 @@ Questions:
 
 **Before we lock this in:**
 
+**Intuition check** — Before running the 7-dimension framework: what's your gut reaction? Note it. Then see whether the framework confirms or challenges it. Divergence is the most interesting signal.
+
 > "What would this look like if it were genuinely excellent, not just adequate? Name one specific change that moves this from 'good enough' to 'something the team would be proud of in a year.' If you can't name it, you may not have a clear enough mental model of excellent in this domain."
 
 _(This is the reasoning step that separates a critique from a calibration. The bar-raising answer is the most valuable output of any critique.)_
@@ -259,6 +272,97 @@ _(This is the reasoning step that separates a critique from a calibration. The b
 - **First Time User is Make-or-Break**: First impression and onboarding matter enormously
 - **Details Make the Design**: Small polish issues signal quality bar
 - **Value Over Everything**: Does this solve a real problem well?
+
+
+
+## What Makes This Skill Different
+
+<!-- State what pushes Claude OUT of default behavior. What does a naive response miss? -->
+
+
+
+## Gotchas & Common Pitfalls
+
+<!-- Populate from real usage failures. Each entry: failure mode → root cause → what to do instead. -->
+
+## Taste-Building: From Intuition to Reliable Judgment
+
+Intuition is your fastest lever. But it's unreliable until trained. Here's how to convert gut feel into defensible product judgment.
+
+**What Makes Something "Feel Right"?**
+When you experience excellent product craft, you're detecting these specific patterns:
+1. **Copy specificity** — anticipates your question rather than describing features ("Get alerts when your teammate hasn't checked in for 2+ hours" vs "Real-time notifications")
+2. **Edge case thinking** — error messages teach, not blame; empty states guide, not abandon
+3. **Visual consistency** — every element follows the same system; you never learn a new pattern
+4. **Constraint-honoring** — works on slow networks, mobile, accessibility contexts — not just ideal conditions
+5. **Anticipation** — surfaces what you need before you have to hunt for it
+6. **Craft in hidden places** — hover states, loading animations, empty states feel first-class, not afterthoughts
+7. **Reduction discipline** — every element earned its place; nothing is "just in case"
+
+**Excellence vs Mediocrity Signals (rapid scan)**
+
+| Mediocre | Excellent |
+|----------|-----------|
+| "Something went wrong" error messages | "Your payment failed — card declined. Try a different card or contact your bank." |
+| "Are you sure?" confirmation dialog | "Delete this project and all 47 tasks inside it. This can't be undone." |
+| Loading spinner with no context | "Analyzing your data — usually takes 30 seconds" |
+| "No data available" empty state | "No tasks yet — create your first task to start tracking work" |
+| Feature-list copy ("Real-time collaboration") | Job-language copy ("See exactly who changed what, and when") |
+| Inconsistent button sizes | Clear size system (S/M/L applied consistently) |
+| Different interaction patterns per screen | One pattern for one type of action, everywhere |
+
+**Taste as a Decision Filter (when you don't have data)**
+When research isn't available, use taste systematically:
+1. Check excellence signals: does option A show more excellence patterns than option B?
+2. Craft question: would a great product builder nod or frown at this?
+3. Constraint check: does this honor the real constraints (mobile, accessibility, simple)?
+4. Second-order: what does the user do AFTER this interaction? Does it create downstream friction?
+5. Make the call explicitly: "Taste says A because [specific pattern]. We'll measure this hypothesis."
+
+**Domain-Specific Quality Standards**
+- **Dashboards**: Glanceable in 3 seconds; drill-down works; defaults show what matters not what's available
+- **Workflows**: Progress visible; undo always works; next step obvious; shortcuts for power users
+- **Consumer apps**: Onboarding is invisible; notifications respect attention; defaults work for 80%
+- **B2B tools**: Power-user paths accessible; bulk operations exist; integrations don't require IT tickets
+
+**Taste Development Practice**
+- Use 3-5 new products/week outside your domain; rate them with the 7-dimension framework
+- Keep a taste log: what specifically made something excellent or mediocre?
+- Before using a new product, predict quality from the landing page — then use it and measure your accuracy
+- Pick one excellent product; spend 2 hours analyzing every edge case, empty state, error. What did the designer think about?
+- When delighted or frustrated, pause and document: what specifically caused this feeling?
+
+Taste is reliable when: you've analyzed 100+ products in your domain, made 50+ taste-based calls, tracked accuracy, and can name the specific patterns you're detecting — not just "feels right."
+
+---
+
+## Build Your Judgment
+
+You've just done a critique. Here's how to internalize the judgment so it becomes instinct.
+
+**Exposure Hours** — Taste builds through deliberate observation, not osmosis:
+- Use 3-5 products outside your industry weekly. Notice what delights or frustrates you.
+- Analyze one excellent product in depth monthly. Write down what makes it excellent.
+
+**Self-Observation Method (Julie Zhuo)** — Your own reactions are data:
+- When you feel delighted or frustrated by a product, pause: "What specifically caused this? How was it designed to create this feeling?"
+- Keep a brief "taste log" — patterns across observations become instinct.
+
+**Predict Before You Measure** — Before seeing data on a feature:
+- Form a hypothesis: "I think X will underperform because..."
+- Check later. Track your prediction accuracy. This calibrates intuition against reality.
+
+**When to trust intuition vs data:**
+| Trust Intuition When | Trust Data When |
+|---------------------|-----------------|
+| No data exists yet | Data is abundant and clear |
+| Exploring new problem spaces | Optimizing existing features |
+| Creative / taste decisions | Factual / behavioral questions |
+| Speed matters more than precision | Stakes are very high |
+
+**Coaching prompt** (after any critique): "What would this product need to look like for you to know immediately — without using the framework — whether it's good? Name the single strongest signal of quality in this product category."
+
+---
 
 ## Integration
 

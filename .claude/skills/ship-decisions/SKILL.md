@@ -1,6 +1,8 @@
 ---
+description: 'Use when deciding whether to ship, iterate, or hold. Triggers: ready
+  to ship, ship or wait, launch decision, is this ready, rollout plan, ship to beta,
+  not ready yet, when should we release, go no-go.'
 name: ship-decisions
-description: Use when deciding whether to ship, iterate, or hold. Triggers: ready to ship, ship or wait, launch decision, is this ready, rollout plan, ship to beta, not ready yet, when should we release, go no-go.
 ---
 
 # Ship Decisions
@@ -78,6 +80,34 @@ Use the smallest set needed:
 
 If rollout matters, recommend the smallest safe path first.
 
+## Craft Level
+
+Answering whether to ship is only half the call. When the verdict is "iterate one more cycle," this matrix scopes exactly what needs polishing — don't gold-plate the whole feature.
+
+```
+                    │ USER-FACING │ INTERNAL
+────────────────────┼─────────────┼──────────
+CORE PRODUCT        │ HIGH CRAFT  │ MEDIUM
+NON-CORE FEATURE    │ MEDIUM      │ LOW
+EXPERIMENT          │ LOW         │ LOW
+```
+
+Dylan Field: "Craft creates moats in the AI era — quality is the differentiator when execution is commoditized. But only in the right places."
+
+**High-craft signals** (invest here):
+- Core product loop
+- User-facing and used frequently
+- Competitive differentiator
+- Brand moment
+
+**Move-fast signals** (don't over-invest):
+- Internal tool
+- One-time or low-frequency use
+- Experiment or validation step
+- Fully behind the scenes
+
+Use this when the verdict isn't "ship now" — it tells you what the one more cycle should actually touch.
+
 ## Rollout Guidance
 
 When shipping:
@@ -93,6 +123,8 @@ When shipping:
 - Do not treat one-way-door decisions like button-copy tests.
 - Do not keep polishing if the real missing input is user learning.
 - Do not recommend broad launch when small-group rollout is the smarter path.
+- Do not gold-plate experiments or internal tools — save craft investment for core product loops.
+- Do not ship a core product feature at experiment-level quality and call it done.
 
 ## Output Variants
 
@@ -127,6 +159,16 @@ Output:
 - trust or platform risks
 - rollout plan
 
+### Variant: craft assessment
+
+Use for:
+- "How much polish does this need before we ship?"
+
+Output:
+- craft level (high / medium / low)
+- specific polish areas worth investing in
+- time budget
+
 ## Example Behavior
 
 If the user asks:
@@ -138,6 +180,12 @@ Default behavior:
 - recommend rollout shape
 
 Do not begin with a long framework explanation unless the user explicitly wants a deep assessment.
+
+
+
+## What Makes This Skill Different
+
+<!-- State what pushes Claude OUT of default behavior. What does a naive response miss? -->
 
 ## Self-Learning
 

@@ -1,11 +1,118 @@
 ---
+description: 'Use when clarifying what to learn, which assumption matters most, or
+  which discovery method to use next. Also use when building an ongoing discovery
+  system, setting up weekly customer contact, mapping an opportunity solution tree
+  (OST), or establishing a product trio workflow. Triggers: discovery plan, what to
+  learn, user research method, customer interviews, assumption to test, validation
+  approach, research design, Teresa Torres, continuous discovery, opportunity solution
+  tree, OST, weekly touchpoints, discovery cadence, product trio, assumption testing
+  hierarchy, problem-definition, is this a real problem, problem validation, symptom
+  vs root cause, shiny object trap, problem worth solving, pre-mortem on problem framing,
+  should we even investigate this.'
 name: discovery
-description: Use when clarifying what to learn, which assumption matters most, or which discovery method to use next. Also use when building an ongoing discovery system, setting up weekly customer contact, mapping an opportunity solution tree (OST), or establishing a product trio workflow. Triggers: discovery plan, what to learn, user research method, customer interviews, assumption to test, validation approach, research design, Teresa Torres, continuous discovery, opportunity solution tree, OST, weekly touchpoints, discovery cadence, product trio, assumption testing hierarchy.
 ---
 
 # Discovery
 
 Use this skill when the user needs to clarify what to learn, which assumption matters most, or what discovery method should come next.
+
+---
+
+## Problem Validation Pre-Gate
+
+Before designing any research, validate the problem statement itself. Wasted discovery starts with an unvalidated problem.
+
+### The Problem-Definition Check
+
+1. **Can you state the problem WITHOUT the solution?**
+   If you mention AI, a platform, or technology, you have a solution in search of a problem. Stop.
+
+2. **Is this a business problem or a customer problem?**
+   - Business problem: what the company needs (e.g., "increase retention")
+   - Customer problem: what the user needs (e.g., "I can't find notes across projects")
+   Are they aligned? If in conflict, name it — the research design changes completely.
+
+3. **Can you describe a specific struggling moment?** (Bob Moesta)
+   Not "users struggle with X" but "last Tuesday, Jamie was in the middle of Y, trying to accomplish Z, and X got in the way." Without a specific moment, you have a hypothesis, not a problem.
+
+4. **Can you describe the finished state?** (Ryan Singer — "see the end from the beginning")
+   If you can't describe what life looks like when this is solved (not the feature — the experience), the problem is too fuzzy to research.
+
+5. **Pre-mortem: What if we're wrong about this being a problem?**
+   What would disconfirm your assumption? What evidence would tell you this isn't real?
+   If you can't name what would change your mind, you're attached to the problem — not curious about it.
+
+### Problem Worth Investigating? (Three-Criteria Test)
+All three must be true:
+- **Frequency:** How often does the struggling moment occur? (daily >> weekly >> monthly)
+- **Pain intensity:** How much does it hurt? (<5 = nice-to-have; 8+ = real pain)
+- **Workaround viability:** How hard is the current workaround? (harder = more pain = more worth solving)
+
+If the problem fails this test, redirect discovery energy before investing further.
+
+---
+
+## Phase 0: Problem Definition (Entry Gate)
+
+Before designing any research, confirm the team is investigating the right problem. Discovery applied to the wrong problem is expensive and misleading.
+
+### Struggling Moment (Bob Moesta)
+
+Demand originates from a specific struggling moment — not from a product, a feature idea, or a trend. Ask:
+
+> "Walk me through the last time you experienced this problem. What were you doing right before? What were you trying to accomplish?"
+
+- What is the user doing RIGHT BEFORE they hit the problem?
+- What context were they in? (rushed, distracted, first time, mobile?)
+- How were they feeling?
+
+If the team can't answer this from specific observed stories — not opinions customers gave when asked — they don't have a problem worth investigating yet.
+
+### Problem Type Qualification (Christopher Miller)
+
+Not all business problems are customer problems. Distinguish them explicitly:
+
+- **Business problem**: What does the business need?
+- **Customer problem**: What does the user need?
+- Are these aligned or in conflict?
+
+A solution that serves the business but not the customer is customer-hostile. If there's a conflict, name it before proceeding.
+
+### See the End from the Beginning (Ryan Singer)
+
+Before committing to discovery:
+
+> Can you draw the finished feature? Can you describe the exact user experience when the problem is solved?
+
+If not, the problem isn't crisp enough to research productively. Discovery will generate noise, not signal.
+
+### Shiny Object Trap Guardrail (Marilyn Nika)
+
+> Can you state the problem without mentioning the technology?
+
+If the answer is no — if the problem statement requires naming AI, a new platform, or a specific implementation — you're solution-first. Pause discovery until the problem is clear independent of the solution.
+
+### Problem Statement Template
+
+Use this to sharpen the problem before moving to research design:
+
+```markdown
+## The Struggling Moment
+[Specific context where user experiences pain — what they were doing, feeling, trying to accomplish]
+
+## Current Workarounds
+- [What they do today] — Painfulness: [1-10]
+
+## Problem Type
+- [ ] Business problem: [what business needs]
+- [ ] Customer problem: [what user needs]
+- Aligned / In conflict: [explain]
+
+## Riskiest Assumption
+[What must be true for this to be a real problem worth solving]
+```
+
+---
 
 ## Default Stance: Consultative First
 
@@ -21,6 +128,11 @@ Before recommendations, analysis, or output, gather context related to the task,
 4. Once context is gathered, proceed to substantive response and continue the iterative collaborative approach.
 
 Default flow:
+- **Phase 0**: Define the problem — struggling moment, problem type, riskiest assumption
+- **Phase 1**: Design the research — decision-first framing, method selection
+- **Phase 2**: Build cadence — ongoing discovery system (Teresa Torres, OST)
+
+Within Phase 1:
 1. gather context (see Context-Gathering Phase above)
 2. reflect back the decision and riskiest assumption in 1-2 lines
 3. recommend the lightest valid discovery method
@@ -133,6 +245,8 @@ When workspace context matters, prefer:
 
 ## Guardrails
 
+- Do not jump to research methods before articulating the struggling moment.
+- Do not design research around a solution — research should test whether the problem exists, not whether your solution works.
 - Do not recommend a large study for a small decision.
 - Do not jump to methods before clarifying the decision.
 - Do not over-index on surveys when the question is still fuzzy.
@@ -150,6 +264,12 @@ Default behavior:
 - recommend the lightest valid method
 - explain what success would look like
 - suggest the next interview, prototype, or experiment step
+
+
+
+## What Makes This Skill Different
+
+<!-- State what pushes Claude OUT of default behavior. What does a naive response miss? -->
 
 ## Self-Learning
 

@@ -1,91 +1,99 @@
 ---
 description: Run the granola workflow
 ---
-Extract meetings from Granola and save them as markdown files, then **write an AI summary into each new file** (this command runs in Claude Code — use Claude Code attribution).
+Extract meetings from Granola and save them as markdown files.
 
 ## Command Arguments
 
 Parse the command arguments in order:
 1. **Target Date** (optional, default: `yesterday`): `yesterday`, `today`, or `YYYY-MM-DD`
-   - `yesterday`: extract meetings from yesterday (default)
-   - `today`: extract meetings from today
-   - `YYYY-MM-DD`: extract meetings from a specific date
 2. **Verbose** (optional, default: `false`): `true` or `false`
-   - `true`: enable verbose logging
-   - `false`: standard logging
 
-## Execution
+## Execution — MCP Primary, Python Fallback
 
-### 1) Extract (Bash)
+### Step 1: Resolve target date range
 
-Build the command based on arguments:
-- Base command: `cd "🔧 Automation/scripts" && python3 -m granola_cmd.main`
-- Add `--target-date {target_date}` (always)
-- If `verbose` is `true`, add `-v`
+Compute `start` and `end` ISO dates from the target date argument:
+- `yesterday` → yesterday's date, 00:00 to 23:59
+- `today` → today's date, 00:00 to 23:59
+- `YYYY-MM-DD` → that date, 00:00 to 23:59
 
-Run the command using Bash.
+### Step 2: Fetch meetings via Granola MCP
 
-### 2) Parse extractor output
+Use `mcp__granola__list_meetings` with:
+- `time_range: "custom"`
+- `custom_start`: start date (YYYY-MM-DD)
+- `custom_end`: end date (YYYY-MM-DD, same day or +1)
 
-After the script exits successfully, read stdout and parse the JSON object between these two lines (exact text):
+For each meeting returned, call `mcp__granola__get_meetings` (batch up to 10 IDs) to get full details: notes, AI summary, attendees, metadata.
 
-- `GRANOLA_AGENT_RESULT_JSON_BEGIN`
-- `GRANOLA_AGENT_RESULT_JSON_END`
+For each meeting, call `mcp__granola__get_meeting_transcript` to get the verbatim transcript.
 
-The JSON shape is: `{"count": number, "files": string[], "date": string | null}`.
+**If MCP tools are unavailable or return errors**, fall back to Python:
+```
+cd "🔧 Automation/scripts" && python3 -m granola_cmd.main --target-date {target_date}
+```
+Note which path was used in the output summary.
 
-### 3) Workspace AI summary (mandatory when `count` > 0)
+### Step 3: Write markdown files
 
-If `count` is `0`, skip this entire subsection (nothing new was written).
+For each meeting, write a file to `/Users/jon.high/SNOW-Work/🏢 Company/meetings/granola/` using the Write tool.
 
-Otherwise, for **each** path in `files`:
+**Filename format:** `DD-MM-YY-{slugified-title}.md`
+- Slugify: lowercase, spaces → hyphens, strip special chars, truncate at 50 chars
 
-1. **Read** the markdown file.
-2. **Generate** a short workspace summary from the file’s content (prefer **## Summary** / notes if present; otherwise derive cautiously from **## Transcript**). Rules:
-   - Lead with a **BLUF** (one or two sentences).
-   - Add **bullets** only when they improve scanability (themes, open questions, follow-ups).
-   - **Do not invent** decisions, owners, or dates not supported by the text. If the source is thin, say so plainly.
-3. **Write** into the file using bounded markers so re-runs are idempotent:
-   - If the file contains `<!-- workspace-agent-ai-summary -->` … `<!-- /workspace-agent-ai-summary -->`, **replace** that whole span (including both comment lines) with the new block.
-   - Otherwise **insert** the new block **immediately before** the first `# ` title heading after the YAML frontmatter (summary sits directly under the closing `---` and **above** `# Title`).
-4. Use **Claude Code** in the attribution line (not Cursor).
-
-Use this block shape (fill `…` with generated content; use today’s date in ISO form for `YYYY-MM-DD`):
-
+**File format:**
 ```markdown
-<!-- workspace-agent-ai-summary -->
-## AI summary
+---
+title: "{meeting title}"
+date: "YYYY-MM-DD"
+meeting_id: "{uuid}"
+duration: {minutes}
+participants:
+  - "{name}"
+source: "mcp"
+---
 
-*Workspace summary (Claude Code, YYYY-MM-DD). If Granola captured a native summary, it still appears under **## Summary** below.*
+# {meeting title}
 
-…
+**Date:** {Month DD, YYYY}
+**Duration:** {N} minutes
+**Participants:** {comma-separated names or N/A}
 
-<!-- /workspace-agent-ai-summary -->
+---
 
+## Notes
+
+{AI-generated notes/summary from get_meetings — or "No notes available"}
+
+---
+
+## Transcript
+
+{verbatim transcript from get_meeting_transcript — or "No transcript available"}
 ```
 
-5. **Save** the file (one edit pass per meeting file).
+Skip meetings where `valid_meeting` is false or duration < 5 minutes.
 
 ## Examples
 
 - `/granola` → extract yesterday's meetings
 - `/granola today` → extract today's meetings
 - `/granola 2026-01-10` → extract meetings from January 10, 2026
-- `/granola yesterday true` → extract yesterday's meetings with verbose logging
 
 ## Output Summary
 
-After Bash completes **and** any AI summary file edits finish, provide a summary including:
-- Number of meetings extracted (`count` from JSON, or equivalent)
+After writing files, provide:
+- Number of meetings extracted
+- Data source used: `mcp` or `python-fallback`
 - List of meeting titles with file paths
-- Any warnings or errors encountered
-- Output directory: `🏢 Company/meetings/granola/` (resolved via `WORKSPACE_PATH` / repo root in `config.yaml`)
+- Any warnings or errors
 
 ## Post-Meeting Intelligence
 
 After the Output Summary, automatically surface intelligence for each extracted meeting. If 0 meetings were extracted, skip this section entirely.
 
-For each meeting, present the following block — do not require a separate user prompt:
+For each meeting, present:
 
 ```
 ## Post-Meeting Intelligence: [Meeting Title]
@@ -102,27 +110,26 @@ For each meeting, present the following block — do not require a separate user
 - (only include if something substantive was observable)
 
 **Knowledge/People/ candidates:**
-- [name].md: Suggest appending: "[one sentence of new context — their position, concern, or commitment]"
-- (only include for participants who have a file in 📚 Knowledge/People/)
+- [name].md: Suggest appending: "[one sentence of new context]"
+- (only include for participants with a file in 📚 Knowledge/People/)
 
 **Product signals:**
-- [Feature/capability]: [Customer reaction — confusion, resonance, surprise, or gap request]
-- (Include only when meeting involved product demo, onboarding review, support escalation, or customer product walk-through)
-- Route confusion signals: suggest `/signal --source [call|support] --product [name] "[signal]"` for each one
+- [Feature/capability]: [Customer reaction — confusion, resonance, surprise, or gap]
+- (only when meeting involved product demo, onboarding review, support escalation, or customer product walk-through)
+- Route confusion signals: suggest `/signal --source [call|support] --product [name] "[signal]"` for each
 
 ---
 Run `/follow-up --meeting "[title]"` to draft communications and update stakeholder files.
 ```
 
 **Constraints:**
-- Intelligence is **presented, not applied** — no files are written without explicit user action or `/follow-up`
-- Do not fabricate decisions or action items — if notes are sparse, say so explicitly
-- Include Knowledge/People/ candidates only for participants with existing files in `📚 Knowledge/People/`
-- Product signals surfaced **only when meeting context involves direct product interaction** — don't invent signals from non-product meetings
-- If multiple meetings were extracted, present one intelligence block per meeting
+- Intelligence presented, not applied — no files written without explicit user action or `/follow-up`
+- Do not fabricate decisions or action items — if notes sparse, say so
+- Knowledge/People/ candidates only for participants with existing files in `📚 Knowledge/People/`
+- Product signals only when meeting context involves direct product interaction
 
 ## Notes
 
-- Files are named `DD-MM-YY-title.md` format
-- Each file contains: YAML frontmatter (title, date, participants, duration), optional native Granola **## Summary**, **## AI summary** (workspace agent), transcript, and documents as available
-- Reads directly from Granola’s cache (newest `cache-v*.json` under `~/Library/Application Support/Granola/`)
+- Cron job (`0 20 * * *`) runs `granola_cmd/main.py` via REST API nightly at 8pm PST — independent of MCP
+- MCP requires paid Granola plan; REST API fallback handles cron and offline scenarios
+- Files named `DD-MM-YY-title.md`

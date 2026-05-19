@@ -29,11 +29,10 @@ You are helping me write a clear, complete product specification that enables th
 ## Command Syntax
 
 ```bash
-/spec [--type <format>] [--skip-discovery] [--save] [--review <path>] [--biz-case] [--eng-brief <prd-path>] [<feature-description>]
+/spec [--type <format>] [--skip-discovery] [--save] [--review <path>] [--biz-case] [<feature-description>]
 ```
 
 **Arguments**:
-- `--eng-brief <prd-path>`: Generate engineering handoff (Spec Brief) from an approved PRD — reads PRD, extracts key sections, outputs `SPEC_BRIEF.md` in same directory with Gherkin acceptance criteria, data model, test scenarios, and implementation notes. Replaces deleted `/spec-brief` command.
 - `--type <format>`: Select PRD format (`full`, `light`, `one-pager`, or `context-doc`)
   - `full`: Complete PRD (8-15 pages) for major features/products
   - `light`: Lightweight spec (2-4 pages) for smaller features
@@ -61,7 +60,7 @@ You are helping me write a clear, complete product specification that enables th
 
 ## Template References
 
-This command uses two core templates located in `/Users/jhigh/workspace/📝 Docs/templates/`:
+This command uses two core templates located in `/Users/jon.high/SNOW-Work/📝 Docs/templates/`:
 
 1. **`prd-template.md`** - The PRD structure to follow for `full`, `light`, and `one-pager` formats
 2. **`socratic-questioning.md`** - The discovery questioning framework
@@ -295,7 +294,7 @@ Load `~/.claude/skills/elite-copywriter/SKILL.md` and apply:
 
 If the `--save` flag was provided:
 1. Generate a slugified filename from the feature description (e.g., "OKR Multi-Parent Support" → `okr-multi-parent-support-prd.md`)
-2. Save to `/Users/jhigh/workspace/📦 Products/{product}/initiatives/{feature-slug}/`
+2. Save to `/Users/jon.high/SNOW-Work/📦 Products/{product}/initiatives/{feature-slug}/`
 3. Confirm the file location to the user
 
 **Filename pattern**: `{slugified-feature}-prd.md`
@@ -325,25 +324,16 @@ After generating and optionally saving the PRD, output this handoff block with a
 
 **Next — choose your downstream:**
 
-Design handoff (run first if designer is next):
-```
-/design-brief --prd {saved-path} --save
-```
+**Design handoff** (run first if designer is next):
+Share the PRD with your designer. Key artifacts to include: primary persona, key use cases (Phase 4 MVP scope), any open `[NEEDS INPUT]` items requiring design decisions, and UX/flow constraints already defined.
 
-Story breakdown (run to create AgilePlace backlog):
-```
-/story --prd {saved-path} --dry-run
-```
-
-Engineering handoff (run if going straight to dev):
-```
-/spec --eng-brief {saved-path}
-```
+**Engineering handoff** (run if going straight to dev):
+Share with your tech lead. Key artifacts: success metrics + thresholds, dependencies table, feasibility risks from Phase 3 validation, and all `[NEEDS INPUT]` items needing engineering input before estimation.
 
 ---
 ```
 
-**Note on next-step:** This is the one place where offering three paths is correct — the PM genuinely chooses which downstream runs first based on team readiness. All other handoffs in the chain are single-path.
+**Note on next-step:** This is the one place where offering two paths is correct — the PM genuinely chooses which downstream runs first based on team readiness.
 
 ---
 
