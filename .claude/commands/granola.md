@@ -9,7 +9,7 @@ Parse the command arguments in order:
 1. **Target Date** (optional, default: `yesterday`): `yesterday`, `today`, or `YYYY-MM-DD`
 2. **Verbose** (optional, default: `false`): `true` or `false`
 
-## Execution — MCP Primary, Python Fallback
+## Execution — Python CLI Primary, MCP Fallback
 
 ### Step 1: Resolve target date range
 
@@ -18,7 +18,19 @@ Compute `start` and `end` ISO dates from the target date argument:
 - `today` → today's date, 00:00 to 23:59
 - `YYYY-MM-DD` → that date, 00:00 to 23:59
 
-### Step 2: Fetch meetings via Granola MCP
+### Step 2: Fetch meetings via Python CLI (primary)
+
+Run the CLI first — it's sub-second, produces zero token overhead, and handles auth automatically:
+
+```
+cd "🔧 Automation/scripts" && /opt/homebrew/bin/python3.12 -m granola_cmd.main --target-date {target_date}
+```
+
+The CLI writes complete markdown files directly to `🏢 Company/meetings/granola/`. After it runs:
+- If files are written with non-empty notes/participants → CLI succeeded, proceed to Step 3
+- If files are missing, empty, or contain only frontmatter stubs → fall through to MCP fallback
+
+**MCP fallback** — use only if CLI fails or produces empty content:
 
 Use `mcp__granola__list_meetings` with:
 - `time_range: "custom"`
@@ -29,15 +41,11 @@ For each meeting returned, call `mcp__granola__get_meetings` (batch up to 10 IDs
 
 For each meeting, call `mcp__granola__get_meeting_transcript` to get the verbatim transcript.
 
-**If MCP tools are unavailable or return errors**, fall back to Python:
-```
-cd "🔧 Automation/scripts" && python3 -m granola_cmd.main --target-date {target_date}
-```
-Note which path was used in the output summary.
+Note which path was used in the output summary (`python-cli`, `mcp`, or `python-fallback+mcp` for hybrid).
 
 ### Step 3: Write markdown files
 
-For each meeting, write a file to `🏢 Company/meetings/granola/` (workspace root) using the Write tool.
+For each meeting, write a file to `/Users/jon.high/SNOW-Work/🏢 Company/meetings/granola/` using the Write tool.
 
 **Filename format:** `DD-MM-YY-{slugified-title}.md`
 - Slugify: lowercase, spaces → hyphens, strip special chars, truncate at 50 chars
@@ -51,7 +59,7 @@ meeting_id: "{uuid}"
 duration: {minutes}
 participants:
   - "{name}"
-source: "mcp"
+source: "python-cli"
 ---
 
 # {meeting title}

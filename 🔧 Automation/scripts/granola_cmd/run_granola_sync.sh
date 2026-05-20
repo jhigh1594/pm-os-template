@@ -9,11 +9,11 @@
 set -euo pipefail
 
 # Configuration (workspace uses 🔧 Automation/scripts)
-WORKSPACE="{{WORKSPACE_PATH}}"
+WORKSPACE="/Users/jon.high/SNOW-Work"
 AUTOMATION_DIR="${WORKSPACE}/🔧 Automation/scripts"
 LOG_DIR="${WORKSPACE}/.logs"
 LOG_FILE="${LOG_DIR}/granola_sync_$(date +%Y%m%d).log"
-PYTHON_BIN="${PYTHON_BIN:-python3}"
+PYTHON_BIN="${PYTHON_BIN:-/opt/homebrew/bin/python3.12}"
 
 # Ensure log directory exists
 mkdir -p "${LOG_DIR}"
